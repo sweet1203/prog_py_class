@@ -1,0 +1,70 @@
+
+  /* u1-algorithm-write 전용 (aw-) */
+
+  /* 공용 코드/의사코드/순서도 보기 (Ⅰ단원: 실행 않고 보여 주기만) */
+  .code{background:#0f2742;color:#e1e9f4;border-radius:10px;padding:12px 14px;margin:10px 0;
+    font-family:"SF Mono","Consolas","D2Coding",ui-monospace,monospace;font-size:.9rem;line-height:1.6;
+    overflow-x:auto;white-space:pre;-webkit-overflow-scrolling:touch}
+  .code b{color:var(--amber);font-weight:700}
+
+  /* 공용 2열 설명 카드 */
+  .aw-box{background:#fbfaf7;border-radius:12px;border-top:5px solid var(--k);padding:11px 14px}
+  .aw-box>b{display:block;color:var(--k);font-size:1.02rem}
+  .aw-box span{display:block;font-size:.9rem;margin-top:3px}
+  .aw-box span b{font-weight:700;color:inherit}
+  .aw-box small{display:block;color:var(--muted);font-size:.82rem;border-top:1px dashed var(--line);padding-top:5px;margin-top:7px}
+
+  /* 01 세 가지 제어 구조 */
+  .aw-cs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:10px 0 0}
+  @media (max-width:760px){.aw-cs{grid-template-columns:1fr}}
+  .aw-cs>div{background:#fbfaf7;border-radius:12px;border-top:5px solid var(--k);padding:10px 14px 12px;display:flex;flex-direction:column}
+  .aw-cs h4{color:var(--k);margin:0 0 2px;font-size:1.02rem}
+  .aw-cs>div>span{color:var(--ink)}
+  .aw-cs .ex{font-size:.82rem;color:var(--muted);margin:8px 0 0;border-top:1px dashed var(--line);padding-top:6px}
+  .aw-fc{background:#fff;border:1px solid var(--line);border-radius:10px;margin:8px 0 2px;max-width:260px;align-self:center;width:100%}
+  .aw-fc rect.b{fill:#fbfaf7;stroke:var(--k);stroke-width:2}
+  .aw-fc polygon.d{fill:#fff;stroke:var(--k);stroke-width:2}
+  .aw-fc .cap{fill:var(--ink);font-size:11px;font-weight:700}
+  .aw-fc .yn{fill:var(--muted);font-size:10px;font-weight:700}
+  .aw-fc .ln{stroke:#9aa5b1;stroke-width:2;fill:none}
+
+  /* 공용 캡션 */
+  .aw-cap{font-size:.93rem;line-height:1.55;margin:10px 0 0;min-height:2.6em}
+  .aw-cap b{color:var(--acc)}
+  .aw-cap .ok{color:var(--mint)} .aw-cap .ng{color:var(--red)}
+
+  /* 02 정수의 합 추적 */
+  .aw-trace{background:#fbfaf7;border-radius:12px;padding:12px 14px;border-left:5px solid var(--acc)}
+  .aw-vars{display:flex;gap:18px;font-size:1.05rem}
+  .aw-vars b{font-variant-numeric:tabular-nums;color:var(--acc)}
+  .aw-log{margin-top:8px;max-height:150px;overflow-y:auto;font-size:.9rem;line-height:1.7;background:#fff;border-radius:8px;padding:8px 12px;border:1px solid var(--line)}
+  .aw-log b{color:var(--acc)}
+  .aw-log .aw-end{color:var(--mint);font-weight:700;margin-top:4px}
+  .aw-log .aw-end b{color:var(--mint)}
+
+  /* 02 공식 계산기 */
+  .aw-calc input{width:110px}
+  .aw-out{background:#fff;border:1px dashed var(--line);border-radius:10px;padding:10px 14px;font-size:.95rem;line-height:1.6}
+  .aw-out b{color:var(--acc)}
+
+  /* 03 그리디 거스름돈 */
+  .aw-greedy input{width:120px}
+  .aw-coins{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 2px}
+  .aw-coin{flex:1 1 72px;min-width:68px;background:#fff;border:2px solid var(--line);border-radius:12px;padding:9px 6px;text-align:center;transition:.2s}
+  .aw-coin .cv{display:block;font-size:.82rem;color:var(--muted)}
+  .aw-coin .cc{display:block;font-weight:900;font-size:1.1rem;font-variant-numeric:tabular-nums;margin-top:2px}
+  .aw-coin.cur{border-color:var(--amber);background:#fff8e6;transform:translateY(-3px)}
+  .aw-coin.done{border-color:var(--mint);background:#eafaf3}
+  .aw-coin.done .cc{color:var(--mint)}
+  .aw-coin.tot{border-style:dashed;background:#fbfaf7}
+  .aw-coin.tot .cc{color:var(--ink);font-size:.98rem}
+
+  /* 04 정렬 막대 */
+  #awSortSvg{background:#fbfaf7;border-radius:12px;max-width:420px;margin:0 auto}
+
+  /* 04 이진 탐색 셀 */
+  .aw-cells{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin:4px 0}
+  .aw-cell{flex:0 0 auto;width:42px;height:46px;display:grid;place-items:center;border-radius:10px;background:#fff;border:2px solid #ccd4df;font-weight:900;font-variant-numeric:tabular-nums;transition:.2s}
+  .aw-cell.dim{opacity:.32}
+  .aw-cell.mid{border-color:var(--amber);background:#fff8e6}
+  .aw-cell.hit{border-color:var(--mint);background:#eafaf3;color:var(--mint)}

@@ -1,0 +1,320 @@
+<!-- 0 시작 -->
+<section class="page" data-name="시작" data-acc="#9b4fc4">
+  <div class="cover">
+    <div class="in">
+      <span class="tag">프로그래밍(Python) · Ⅲ. 프로그램 설계와 구현 · 2. 프로그래밍 실제 ①</span>
+      <h1>매일 쌓이는 PDF를,<br>자동으로 바꿔 볼까?</h1>
+      <div class="story"><b>한국반도체 재무팀 이야기 (222쪽)</b><br>재무팀은 매일 <b>대량으로 쏟아지는 금융·재무 PDF 문서</b>에서 필요한 내용을 추출해 보고서를 만들어요. PDF를 <b>한글 문서로</b> 바꾸고, 문서 속 <b>표를 스프레드시트로</b> 옮기는 일을 날마다 되풀이하지요. "좀 더 효율적으로 일할 방법이 없을까?" 그래서 <b>PDF 변환 처리 프로그램</b>을 직접 개발해 보기로 했어요.</div>
+      <p>오늘은 산업 현장의 개발 절차를 따라 <b>기획(요구 분석)</b> → <b>설계</b> → <b>구현 시작</b>까지 함께 밟아 봐요. 코드는 웹에서 돌리지 않고, <b>읽기용 코드 카드</b>와 <b>다이어그램</b>으로 구조를 읽어요.</p>
+      <ol>
+        <li>기획 · 요구 분석</li><li>설계 · 클래스와 모듈</li><li>UI 설계 · 구현 시작</li>
+        <li>스스로 해결하기</li><li>마무리</li>
+      </ol>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn" style="background:var(--amber);color:var(--navy);box-shadow:none" onclick="document.getElementById('intro').scrollIntoView({behavior:'smooth'})">단원 도입부터 보기 ↓</button>
+        <button class="btn" style="background:transparent;border:2px solid rgba(255,255,255,.5);box-shadow:none" onclick="go(1)">01로 바로 가기 →</button>
+      </div>
+    </div>
+    <div class="route" aria-hidden="true">
+      <div class="st" style="animation-delay:.2s"><i>📝</i><div><b>기획</b><small>요구 분석 명세서</small></div></div>
+      <div class="ar" style="animation-delay:.6s">↓</div>
+      <div class="st" style="animation-delay:.8s"><i>📐</i><div><b>설계</b><small>설계 명세서·모듈화</small></div></div>
+      <div class="ar" style="animation-delay:1.2s">↓</div>
+      <div class="st" style="animation-delay:1.4s"><i>⌨️</i><div><b>구현</b><small>소스 코드 작성</small></div></div>
+      <div class="ar" style="animation-delay:1.8s">↓</div>
+      <div class="st" style="animation-delay:2s"><i>✅</i><div><b>테스트</b><small>확인·유지 보수</small></div></div>
+    </div>
+  </div>
+
+  <div id="intro" class="today">
+    <div class="today-lead">
+      <span class="kicker">단원 도입 · Ⅲ. 프로그램 설계와 구현</span>
+      <p>산업 현장에서 프로그램을 개발할 때는, 먼저 사용자의 요구 사항을 수집·분석해 <b>요구 분석 명세서</b>를 작성해요. 이를 바탕으로 <b>설계 명세서</b>를 만들고, 코드를 <b>구현</b>한 뒤 <b>테스트</b>를 거쳐 프로그램을 완성하지요. 이 단원에서는 이 개발 절차를 그대로 따라가며 실제 개발 과정을 체험해요.</p>
+    </div>
+    <div class="why3">
+      <div class="why">
+        <span class="kicker">핵심 질문</span>
+        <ul class="uses">
+          <li><b>오늘의 질문</b> · 산업 현장에서 사용하는 프로그램 개발 과정은 어떻게 이루어질까?</li>
+        </ul>
+      </div>
+      <div class="why">
+        <span class="kicker">배우고 나면 할 수 있는 것</span>
+        <ul class="can">
+          <li>요구 분석 명세서와 설계 명세서를 작성할 수 있다.</li>
+          <li>프로그램을 구현하고 테스트할 수 있다.</li>
+        </ul>
+      </div>
+      <div class="why">
+        <span class="kicker">오늘 만날 낱말</span>
+        <p style="margin:4px 0 0;font-size:.95rem">요구 분석 명세서 · 설계 명세서 · 모듈화 · 클래스 다이어그램 · GUI · 라이브러리(pymupdf·pyhwpx·pandas·tkinter)</p>
+        <p style="font-size:.86rem;margin-top:8px" class="muted">처음 보는 낱말이 있어도 괜찮아요. 화면을 넘기며 다이어그램과 코드로 하나씩 만나요.</p>
+      </div>
+    </div>
+    <div class="card">
+      <h3>📝 나의 계획 <span class="muted" style="font-weight:400;font-size:.88rem">(222쪽) · (선택)</span></h3>
+      <div class="memo"><label>나는 이 단원에서 다음과 같은 내용을 배우고 싶다. <small>시간이 있으면 한두 가지 적어 보세요. 마지막 화면에서 다시 볼 수 있어요.</small></label><textarea data-memo="planLearn" rows="2"></textarea><div class="saved"></div></div>
+    </div>
+    <div style="text-align:center;margin-top:20px"><button class="btn" style="background:#9b4fc4" onclick="go(1)">01 기획·요구 분석부터 시작하기 →</button></div>
+  </div>
+</section>
+
+<!-- 1 기획·요구 분석 -->
+<section class="page" data-name="기획·요구 분석" data-acc="#e0702b">
+  <div class="head"><div class="num">01</div><div><h2>기획 · 요구 분석</h2><p>교과서 222~223쪽 · 개발 절차, 요구 분석 명세서(표Ⅲ-8)</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>프로그램을 만들기 전에, <b>무엇을 만들어야 하는지</b>를 먼저 또렷하게 적어 두는 단계예요. 사용자가 원하는 것을 정리한 문서가 <b>요구 분석 명세서</b>로, 사용자와 개발자 사이의 <b>약속</b> 역할을 해요.</span></div>
+  <div class="card">
+    <h3>🏭 산업 현장의 개발 절차</h3>
+    <p style="margin-top:0">산업 현장에서는 다음 순서로 프로그램을 개발해요. 오늘은 그중 <b>기획·설계·구현 시작</b>까지를 다뤄요.</p>
+    <ol class="au-pipe" style="--k:#e0702b">
+      <li><span class="n">1</span><div><b>요구 수집·분석</b><span>사용자가 원하는 것을 모으고 분석해 <b>요구 분석 명세서</b>를 작성</span></div></li>
+      <li><span class="n">2</span><div><b>설계</b><span>요구를 어떻게 구현할지 구조·클래스·UI를 정해 <b>설계 명세서</b>를 작성</span></div></li>
+      <li><span class="n">3</span><div><b>구현</b><span>설계한 내용을 실제 <b>소스 코드</b>로 작성</span></div></li>
+      <li><span class="n">4</span><div><b>테스트 · 유지 보수</b><span>동작을 확인하고 오류를 고치며 프로그램을 완성·관리</span></div></li>
+    </ol>
+  </div>
+  <div class="card">
+    <h3>📋 한국반도체 요구 분석 명세서 <span class="muted" style="font-weight:400;font-size:.88rem">(223쪽 표Ⅲ-8)</span></h3>
+    <p style="margin-top:0"><b>목적</b>은 재무팀의 업무 효율성 향상, <b>범위</b>는 특정 페이지 PDF를 한글 문서로 바꾸고 표 데이터를 스프레드시트로 바꾸는 것이에요. 핵심 <b>기능</b>은 세 가지예요.</p>
+    <div class="au-func" style="--k:#e0702b">
+      <div><b>기능 1</b><span>PDF 문서에서 특정 페이지를 <b>PDF 문서로 추출</b> 및 저장</span></div>
+      <div><b>기능 2</b><span>추출된 PDF 페이지를 <b>한글 문서(HWPX)로 변환</b>하여 저장</span></div>
+      <div><b>기능 3</b><span>추출된 PDF 페이지의 <b>표 데이터를 스프레드시트(XLSX)로 변환</b>하여 저장</span></div>
+    </div>
+    <p class="note"><b>성능 요구</b> · 실행 요청 후 2초 이내에 추출·변환하고, 변환된 한글 문서와 스프레드시트는 <b>원본의 내용을 그대로 유지</b>해야 해요. <b>제약</b> · 보안상 사외에서는 사용을 제한해요.</p>
+  </div>
+  <div class="card">
+    <h3>🔄 PDF vs HWP <span class="muted" style="font-weight:400;font-size:.88rem">(223쪽 Tip)</span></h3>
+    <p style="margin-top:0">두 문서 형식은 쓰임이 달라요. 카드를 눌러 특징을 확인해요.</p>
+    <div id="pdfHwpFlip" class="tcards"></div>
+  </div>
+  <div class="quiz" data-quiz="1"></div>
+</section>
+
+<!-- 2 설계 -->
+<section class="page" data-name="설계" data-acc="#9b4fc4">
+  <div class="head"><div class="num">02</div><div><h2>설계 · 클래스와 모듈</h2><p>교과서 224~225쪽 · 개념 설계, 클래스 다이어그램, 모듈화</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>요구 분석 명세서를 <b>어떻게 만들지</b>로 바꾸는 단계예요. 큰 일을 <b>역할이 다른 작은 덩어리(모듈·클래스)</b>로 나누면, 만들기 쉽고 고치기도 쉬워요. 이렇게 나누는 것을 <b>모듈화</b>라고 해요.</span></div>
+  <div class="card">
+    <h3>🧩 개념 설계 <span class="muted" style="font-weight:400;font-size:.88rem">(224쪽)</span></h3>
+    <p style="margin-top:0">객체를 개념적으로 다음과 같이 나누어 설계해요. <b>GUI</b>가 사용자와 만나고, <b>처리 관리자</b>가 전체 흐름을 지휘하며, <b>PDF 추출기</b>와 <b>파일 변환기</b>가 실제 일을 해요.</p>
+    <div class="au-func" style="--k:#9b4fc4">
+      <div><b>GUI · 처리 관리자</b><span>화면을 띄우고, 추출·변환 작업을 순서대로 호출해 관리</span></div>
+      <div><b>PDF 페이지 추출기</b><span>원본에서 특정 페이지만 뽑아 새 PDF로 저장</span></div>
+      <div><b>파일 변환기</b><span>추출한 PDF를 <b>HWPX 변환기</b>·<b>Excel 변환기</b>로 바꿔 저장</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>📐 클래스 다이어그램 <span class="muted" style="font-weight:400;font-size:.88rem">(224쪽)</span></h3>
+    <p style="margin-top:0">클래스의 속성(+)과 메서드(+( ))를 그림으로 설계해요. <b>ProcessGUI</b>가 <b>process_handler( ) 함수</b>를 부르고, 그 함수가 <b>PDFPageExtractor</b>와 <b>FileConverter</b>를 차례로 호출해요.</p>
+    <div class="au-dia au-cls">
+      <svg viewBox="0 0 320 412" role="img" aria-label="ProcessGUI가 process_handler 함수를 호출하고, 그 함수가 PDFPageExtractor와 FileConverter를 호출하는 클래스 다이어그램">
+        <defs><marker id="clsA" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#8a94a3"/></marker></defs>
+        <path class="fl" d="M160 151 V167" marker-end="url(#clsA)"/>
+        <path class="fl" d="M160 206 V222" marker-end="url(#clsA)"/>
+        <path class="fl" d="M160 300 V316" marker-end="url(#clsA)"/>
+        <!-- ProcessGUI -->
+        <rect class="bx" x="20" y="8" width="280" height="143"/>
+        <line class="ln" x1="20" y1="30" x2="300" y2="30"/>
+        <line class="ln" x1="20" y1="98" x2="300" y2="98"/>
+        <text class="nm" x="160" y="24">ProcessGUI</text>
+        <text class="mb" x="30" y="45">+ root</text>
+        <text class="mb" x="30" y="60">+ page_entry</text>
+        <text class="mb" x="30" y="75">+ pdf_path</text>
+        <text class="mb" x="30" y="90">+ save_directory</text>
+        <text class="mb" x="30" y="113">+ load_pdf( )</text>
+        <text class="mb" x="30" y="128">+ select_folder( )</text>
+        <text class="mb" x="30" y="143">+ run_processing( )</text>
+        <!-- process_handler 함수 -->
+        <rect class="fn" x="70" y="167" width="180" height="39"/>
+        <text class="st" x="160" y="182">«함수»</text>
+        <text class="nf" x="160" y="199">process_handler( )</text>
+        <!-- PDFPageExtractor -->
+        <rect class="bx" x="40" y="222" width="240" height="78"/>
+        <line class="ln" x1="40" y1="244" x2="280" y2="244"/>
+        <line class="ln" x1="40" y1="277" x2="280" y2="277"/>
+        <text class="nm" x="160" y="238">PDFPageExtractor</text>
+        <text class="mb" x="50" y="259">+ pdf_path</text>
+        <text class="mb" x="50" y="273">+ reader</text>
+        <text class="mb" x="50" y="294">+ extract_page( )</text>
+        <!-- FileConverter -->
+        <rect class="bx" x="40" y="316" width="240" height="88"/>
+        <line class="ln" x1="40" y1="338" x2="280" y2="338"/>
+        <line class="ln" x1="40" y1="362" x2="280" y2="362"/>
+        <text class="nm" x="160" y="332">FileConverter</text>
+        <text class="st" x="160" y="354">정적 메서드 @staticmethod</text>
+        <text class="mb" x="50" y="379">+ convert_to_hwpx( )</text>
+        <text class="mb" x="50" y="396">+ extract_tables_to_excel( )</text>
+      </svg>
+    </div>
+    <p class="note">속성 앞의 <code>+</code>는 공개(public) 멤버를 뜻해요. <b>FileConverter</b>의 두 메서드는 객체를 만들지 않고 바로 쓰는 <b>정적 메서드</b>예요(03에서 코드로 만나요).</p>
+  </div>
+  <div class="card">
+    <h3>📦 모듈화와 호출 흐름 <span class="muted" style="font-weight:400;font-size:.88rem">(224~225쪽)</span></h3>
+    <p style="margin-top:0">세 클래스와 <code>process_handler( )</code>를 <b>pdf_tool</b>이라는 꾸러미의 여러 <b>.py 모듈</b>로 나눠요. 실행은 <b>main.py</b>에서 시작해 아래 순서로 이어져요.</p>
+    <div class="au-dia au-flow">
+      <svg viewBox="0 0 320 256" role="img" aria-label="main.py에서 시작해 gui.py, process_handler.py를 거쳐 pdf_extractor.py와 file_converter.py를 호출하는 모듈 흐름도">
+        <defs><marker id="flowA" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#8a94a3"/></marker></defs>
+        <path class="fl" d="M160 48 V62" marker-end="url(#flowA)"/>
+        <path class="fl" d="M160 104 V118" marker-end="url(#flowA)"/>
+        <path class="fl" d="M160 162 V181"/>
+        <path class="fl" d="M85 181 H235"/>
+        <path class="fl" d="M85 181 V194" marker-end="url(#flowA)"/>
+        <path class="fl" d="M235 181 V194" marker-end="url(#flowA)"/>
+        <rect class="mn" x="85" y="8" width="150" height="40" rx="8"/>
+        <text class="fn" x="160" y="27">main.py</text>
+        <text class="ro" x="160" y="42">프로그램 실행</text>
+        <rect class="bx" x="85" y="64" width="150" height="40" rx="8"/>
+        <text class="fn" x="160" y="83">gui.py</text>
+        <text class="ro" x="160" y="98">GUI·버튼 이벤트 처리</text>
+        <rect class="bx" x="60" y="118" width="200" height="42" rx="8"/>
+        <text class="fn" x="160" y="138">process_handler.py</text>
+        <text class="ro" x="160" y="153">추출·변환 호출 관리</text>
+        <rect class="lf" x="12" y="194" width="146" height="50" rx="8"/>
+        <text class="fn" x="85" y="214">pdf_extractor.py</text>
+        <text class="ro" x="85" y="230">특정 페이지 PDF 추출</text>
+        <rect class="lf" x="162" y="194" width="146" height="50" rx="8"/>
+        <text class="fn" x="235" y="214">file_converter.py</text>
+        <text class="ro" x="235" y="230">HWPX·Excel 변환</text>
+      </svg>
+    </div>
+    <p class="note"><b>main.py</b>가 GUI를 띄우면 → <b>gui.py</b>의 <code>run_processing( )</code>이 → <b>process_handler.py</b>를 호출하고 → 그 안에서 <b>pdf_extractor.py</b>(추출)와 <b>file_converter.py</b>(변환)를 불러요. 완성된 파일 경로는 다시 GUI 화면에 표시돼요.</p>
+  </div>
+  <div class="quiz" data-quiz="2"></div>
+</section>
+
+<!-- 3 UI 설계 + 구현 시작 -->
+<section class="page" data-name="UI 설계·구현 시작" data-acc="#2f6fd0">
+  <div class="head"><div class="num">03</div><div><h2>UI 설계 · 구현 시작</h2><p>교과서 225~227쪽 · GUI 레이아웃, process_handler·pdf_extractor, 라이브러리</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>사용자가 직접 만지는 <b>화면(GUI)</b>을 먼저 그려 두고, 설계한 클래스를 <b>코드로 옮기기</b> 시작해요. 아래 코드는 웹에서 실행할 수 없는 라이브러리를 쓰므로, <b>읽으며 구조를 이해</b>하는 코드 카드로 보여 줘요.</span></div>
+  <div class="card">
+    <h3>🖥️ GUI 레이아웃 설계 <span class="muted" style="font-weight:400;font-size:.88rem">(225쪽 그림Ⅲ-9)</span></h3>
+    <p style="margin-top:0">원본 PDF 선택 · 추출할 페이지 입력 · 저장 폴더 선택 · 변환 실행 버튼과, 결과 경로를 보여 주는 텍스트 영역으로 구성해요.</p>
+    <div class="au-dia au-gui">
+      <svg viewBox="0 0 260 330" role="img" aria-label="제목 표시줄, 원본 PDF 선택 버튼, 추출할 페이지 입력칸, 저장 폴더 선택 버튼, 변환 실행 버튼, 결과 경로 표시 영역으로 이루어진 GUI 레이아웃">
+        <rect class="win" x="10" y="6" width="240" height="318" rx="10"/>
+        <rect class="bar" x="11" y="7" width="238" height="26" rx="9"/>
+        <text class="tt" x="130" y="24">PDF 변환 프로그램</text>
+        <rect class="btn" x="35" y="46" width="190" height="28" rx="6"/>
+        <text class="lb" x="130" y="64">📂 원본 PDF 선택</text>
+        <text class="lb" x="130" y="92">✏️ 추출할 페이지 입력</text>
+        <rect class="ent" x="95" y="100" width="70" height="24" rx="5"/>
+        <rect class="btn" x="35" y="134" width="190" height="28" rx="6"/>
+        <text class="lb" x="130" y="152">📁 저장 폴더 선택</text>
+        <rect class="run" x="35" y="172" width="190" height="30" rx="6"/>
+        <text class="lb" x="130" y="191">🚀 변환 실행</text>
+        <rect class="res" x="20" y="214" width="220" height="98" rx="8"/>
+        <text class="lb l" x="30" y="234">선택된 파일: 파일명.pdf</text>
+        <text class="lb l" x="30" y="252">저장 폴더: 저장 경로</text>
+        <text class="lb l" x="30" y="278">✅ 저장됨:</text>
+        <text class="lb l" x="30" y="294">추출된_페이지.pdf</text>
+        <text class="lb l" x="30" y="308">변환된_파일.hwpx · 표_데이터.xlsx</text>
+      </svg>
+    </div>
+    <p class="note">버튼을 누르면 이벤트가 발생해 정해진 메서드(<code>load_pdf</code>·<code>select_folder</code>·<code>run_processing</code>)가 호출돼요.</p>
+  </div>
+  <div class="card">
+    <h3>🧭 process_handler.py <span class="muted" style="font-weight:400;font-size:.88rem">(227쪽) · 읽기용</span></h3>
+    <p style="margin-top:0">추출과 변환을 <b>순서대로 호출</b>하는 함수형 모듈이에요. 저장 경로와 파일명을 정한 뒤, 추출기와 변환기의 메서드를 차례로 불러요.</p>
+    <pre class="code"><b>import</b> os                                   <i># 파일 경로를 다루는 os 모듈</i>
+<b>from</b> pdf_extractor <b>import</b> PDFPageExtractor    <i># PDF 페이지 추출 모듈</i>
+<b>from</b> file_converter <b>import</b> FileConverter      <i># 변환 기능 모듈</i>
+
+<b>def</b> process_handler(pdf_path, save_directory, page_number):
+    """PDF 페이지를 추출하고, 한글 문서 및 스프레드시트로 변환"""
+    pdf_output   = os.path.join(save_directory, '추출된_페이지.pdf')
+    hwpx_output  = os.path.join(save_directory, '변환된_파일.hwpx')
+    excel_output = os.path.join(save_directory, '표_데이터.xlsx')
+
+    pdf_extractor = PDFPageExtractor(pdf_path)
+    extracted_pdf = pdf_extractor.extract_page(page_number, pdf_output)
+    FileConverter.convert_to_hwpx(extracted_pdf, hwpx_output)
+    FileConverter.extract_tables_to_excel(extracted_pdf, excel_output)
+    <b>return</b> pdf_output, hwpx_output, excel_output   <i># 세 파일의 경로 반환</i></pre>
+  </div>
+  <div class="card">
+    <h3>📄 pdf_extractor.py <span class="muted" style="font-weight:400;font-size:.88rem">(227쪽) · 읽기용</span></h3>
+    <p style="margin-top:0"><b>PDFPageExtractor</b> 클래스예요. 원본 PDF를 열어 두었다가, <code>extract_page( )</code>로 특정 페이지만 뽑아 새 PDF로 저장해요.</p>
+    <pre class="code"><b>import</b> pymupdf                      <i># PDF 처리 라이브러리</i>
+
+<b>class</b> PDFPageExtractor:
+    <b>def</b> __init__(self, pdf_path):
+        self.pdf_path = pdf_path
+        self.reader = pymupdf.open(pdf_path)   <i># PDF 파일 열기</i>
+
+    <b>def</b> extract_page(self, page_number, output_path):
+        """PDF에서 특정 페이지를 추출하여 새 PDF 파일로 저장"""
+        new_pdf = pymupdf.open( )               <i># 빈 PDF 객체 생성</i>
+        new_pdf.insert_pdf(self.reader,
+                           from_page=page_number + 1, to_page=page_number + 1)
+        new_pdf.save(output_path)               <i># 추출된 PDF 저장</i>
+        new_pdf.close( )
+        <b>return</b> output_path</pre>
+    <p class="note"><b>클래스</b>는 속성(데이터)과 메서드(기능)를 묶은 설계도예요. <code>self</code>는 그 객체 자신을, <code>__init__</code>은 객체를 만들 때 처음 한 번 실행되는 메서드예요.</p>
+  </div>
+  <div class="card">
+    <h3>🧰 필요한 라이브러리 <span class="muted" style="font-weight:400;font-size:.88rem">(227쪽 Tip)</span></h3>
+    <p style="margin-top:0">구현에 필요한 라이브러리를 설치해 모듈별로 쓴다고 했어요. 카드를 눌러 각 역할을 확인해요.</p>
+    <div id="libFlip" class="tcards"></div>
+    <p class="callout" style="margin-top:12px">💡 <b>도큐먼트 문자열(docstring)</b> · 함수나 클래스의 설명을 <code>""" """</code>로 감싸 적어 두면, 문서화·자동화 도구가 그 설명을 활용할 수 있어요. 코드 동작을 짧게 적는 <code>#</code> 주석과는 쓰임이 조금 달라요.</p>
+  </div>
+  <div class="quiz" data-quiz="3"></div>
+</section>
+
+<!-- 4 스스로 해결하기 -->
+<section class="page" data-name="스스로 해결하기" data-acc="#d64535">
+  <div class="head"><div class="num">04</div><div><h2>스스로 해결하기</h2><p>교과서 224쪽 · 객체 간 메시지 다이어그램 구상 · 내 업무 자동화 아이디어</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>설계를 더 또렷하게 하려면, <b>객체들이 어떤 순서로 메시지를 주고받는지</b>를 그려 보면 좋아요. 오늘 본 호출 흐름을 떠올리며, 내 말로 설계 메모를 남겨 봐요. <b>정답 코드는 없어요.</b> 아이디어를 적는 칸이에요.</span></div>
+  <div class="card">
+    <h3>🔁 객체 간 메시지 다이어그램 구상 <span class="muted" style="font-weight:400;font-size:.88rem">(224쪽 해 보기)</span></h3>
+    <p class="muted" style="margin-top:0">PDF 변환 프로그램에서 <b>ProcessGUI → process_handler → PDFPageExtractor / FileConverter</b>가 어떤 메시지를 어떤 순서로 주고받을지, 화살표와 함께 글로 적어 봐요.</p>
+    <div class="memo"><label>① 객체들이 메시지를 주고받는 순서 <small>예: 사용자가 「변환 실행」을 누르면 ProcessGUI가 process_handler에게 …을 요청한다 → process_handler는 …</small></label><textarea data-memo="msgDiagram" rows="4"></textarea><div class="saved"></div></div>
+  </div>
+  <div class="card">
+    <h3>💡 내 업무 자동화 아이디어</h3>
+    <p class="muted" style="margin-top:0">내 주변에서 날마다 되풀이되는 일을 프로그램으로 바꾼다면 무엇을 만들고 싶나요? <b>입력 → 처리 → 출력</b>으로 나누어 적어 봐요.</p>
+    <div class="memo"><label>② 자동화하고 싶은 반복 업무와 그 흐름 <small>예: 사진 수십 장의 이름을 날짜순으로 바꾸기 — 입력(폴더) → 처리(이름 규칙) → 출력(바뀐 파일)</small></label><textarea data-memo="autoIdea" rows="4"></textarea><div class="saved"></div></div>
+  </div>
+  <div class="card">
+    <h3>🏷️ 자동화하면 좋을 일 고르기</h3>
+    <p class="muted" style="margin-top:0">반복되어 자동화하면 도움이 될 것 같은 일을 모두 골라요.</p>
+    <div id="ideaPick"></div>
+  </div>
+</section>
+
+<!-- 5 마무리 -->
+<section class="page" data-name="마무리 · 질문폼" data-acc="#0f2742">
+  <div class="head"><div class="num">05</div><div><h2>마무리</h2><p>핵심 문장 · 마무리 퀴즈 · 생각 정리 질문폼</p></div></div>
+  <div class="key3">
+    <div style="--k:#e0702b">산업 현장의 개발은 <b>요구 수집·분석 → 설계 → 구현 → 테스트</b> 순서로 진행된다. 사용자의 요구를 정리한 <b>요구 분석 명세서</b>는 사용자와 개발자의 약속이 된다.</div>
+    <div style="--k:#9b4fc4">설계는 큰 일을 역할이 다른 <b>모듈·클래스</b>로 나누는 <b>모듈화</b>로 한다. PDF 변환 프로그램은 <b>ProcessGUI·process_handler( )·PDFPageExtractor·FileConverter</b>로 나뉘어 <code>main.py → gui.py → process_handler.py → pdf_extractor.py·file_converter.py</code> 순으로 호출된다.</div>
+    <div style="--k:#2f6fd0">구현은 설계를 <b>코드</b>로 옮기는 단계다. GUI는 <b>tkinter</b>, PDF 처리는 <b>pymupdf</b>, 한글 변환은 <b>pyhwpx</b>, 표 데이터는 <b>pandas</b> 라이브러리를 쓴다. 함수·클래스 설명은 <b>docstring</b>(<code>""" """</code>)으로 적는다.</div>
+  </div>
+  <div class="card">
+    <h3>오늘의 질문에 다시 답하기</h3>
+    <p class="muted" style="margin-top:0">오늘 본 다이어그램과 코드를 떠올리며, 내 말로 답해 보세요.</p>
+    <b style="font-size:.93rem">산업 현장에서 사용하는 프로그램 개발 과정은 어떻게 이루어질까?</b>
+    <textarea data-memo="keyQ" rows="3"></textarea><div class="saved"></div>
+  </div>
+  <div class="card" style="--acc:#0f2742">
+    <h3>마무리 퀴즈</h3>
+    <div class="quiz" data-quiz="5"></div>
+  </div>
+  <div class="card">
+    <h3>개념 퀴즈 결과</h3>
+    <table id="result"></table>
+    <button class="btn ghost" id="quizReset">퀴즈 다시 풀기</button>
+  </div>
+  <div class="formgo">
+    <span class="kicker">생각 정리 과제</span>
+    <h3>질문폼에 내 생각 쓰기</h3>
+    <ol>
+      <li><b>요구 분석 명세서</b>가 무엇이고 왜 필요한지, 한국반도체 PDF 변환 프로그램의 <b>기능 1~3</b>을 예로 들어 설명하세요.</li>
+      <li>PDF 변환 프로그램이 <b>ProcessGUI → process_handler( ) → PDFPageExtractor·FileConverter</b> 순으로 어떻게 동작하는지, 오늘 본 <b>모듈 호출 흐름</b>을 떠올려 설명하세요.</li>
+      <li>04에서 떠올린 <b>내 업무 자동화 아이디어</b>를 <b>입력 → 처리 → 출력</b>으로 나누어, 어떤 모듈로 나누면 좋을지 내 말로 적으세요.</li>
+    </ol>
+    <p>질문폼에는 붙여넣기가 되지 않아요. 아래 메모를 보면서 직접 다시 써 주세요.</p>
+    <a class="go" href="{{FORM_URL}}" target="_blank" rel="noopener">질문폼 열기 →</a>
+    <div class="msum" id="msum"></div>
+  </div>
+</section>

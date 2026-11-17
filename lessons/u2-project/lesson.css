@@ -1,0 +1,10 @@
+  /* u2-project 전용 (td-) */
+  .td-feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:6px 0 10px}
+  .td-feat>div{background:#fbfaf7;border-radius:12px;border-top:5px solid var(--k);padding:10px 12px}
+  .td-feat b{display:block;color:var(--k);font-size:1rem}
+  .td-feat span{display:block;font-size:.88rem;margin-top:4px;line-height:1.5}
+  .td-data{display:grid;gap:6px;margin:8px 0}
+  .td-data>div{display:flex;gap:8px;align-items:center;background:#f2faf6;border:1px solid #bfe3d3;border-radius:10px;padding:7px 12px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88rem;overflow-x:auto}
+  .td-mod{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin:8px 0}
+  .td-mod>div{border:2px dashed #9fd6bf;border-radius:10px;padding:8px 10px;text-align:center;background:#fff;font-size:.88rem}
+  .td-mod b{display:block;color:#1f9d74}

@@ -1,0 +1,65 @@
+
+  /* u3-design 전용 (설계와 절차 ①) */
+
+  /* 본문 속 짧은 코드 조각 (.code 블록·.tscroll은 pyrun.css에 있음) */
+  code{font-family:"Menlo","Consolas","Courier New",monospace;font-size:.9em;
+    background:#eef1f5;color:#1d3a5c;border-radius:5px;padding:1px 5px}
+  .pr-out code,.pr-code code,.code code{background:none;padding:0;color:inherit}
+
+  /* 설명용 작은 표 */
+  .esc-t{width:100%;margin:10px 0 0;font-size:.93rem}
+  .esc-t th{color:var(--muted);font-weight:700;font-size:.82rem;white-space:nowrap}
+  .esc-t th.l,.esc-t td.l{text-align:left}
+  .esc-t td{border-bottom:1px solid var(--line);padding:6px 9px;vertical-align:top}
+  .esc-t td:first-child{white-space:nowrap;color:var(--navy);font-weight:700}
+  .esc-t td code{font-size:.92em}
+
+  /* 공통: 인라인 SVG 그림 상자 */
+  .pl,.uml,.tree,.guiwin{display:flex;justify-content:center;margin:12px 0 2px}
+  .pl svg{width:100%;max-width:330px;height:auto}
+  .uml svg{width:100%;max-width:320px;height:auto}
+  .tree svg{width:100%;max-width:340px;height:auto}
+  .guiwin svg{width:100%;max-width:270px;height:auto}
+
+  /* 01 개발 절차 파이프라인 */
+  .pl .pst{stroke-width:1.8}
+  .pl .s1{fill:#e6f4ee;stroke:#1f9d74}
+  .pl .s2{fill:#f3e9fb;stroke:#9b4fc4}
+  .pl .s3{fill:#eef3fb;stroke:#2f6fd0}
+  .pl .s4{fill:#fdeee3;stroke:#e0702b}
+  .pl .pfl{fill:none;stroke:#8a94a3;stroke-width:1.8}
+  .pl .pnum{fill:#0f2742;font-size:18px;font-weight:800;text-anchor:middle}
+  .pl .pstn{fill:#16202c;font-size:16px;font-weight:800}
+  .pl .psto{fill:#2b3a4b;font-size:12.5px;font-weight:700}
+  .pl .pstd{fill:#5b6776;font-size:11.5px}
+  .pl .pnow{fill:#9b4fc4;font-size:10.5px;font-weight:800;text-anchor:end}
+
+  /* 03 클래스 다이어그램 */
+  .uml .cbox{fill:#fff;stroke:#c3ccd8;stroke-width:1.5}
+  .uml .chd{stroke:none}
+  .uml .g1{fill:#9b4fc4}.uml .g2{fill:#2f6fd0}.uml .g3{fill:#1f9d74}.uml .g4{fill:#e0702b}
+  .uml .cnm{fill:#fff;font-size:14px;font-weight:800;text-anchor:middle}
+  .uml .cat,.uml .cmt{fill:#1d3a5c;font-size:11.5px;font-family:"Menlo","Consolas",monospace;text-anchor:start}
+  .uml .cdv{stroke:#d7dee6;stroke-width:1}
+  .uml .cfl{fill:none;stroke:#8a94a3;stroke-width:1.8}
+  .uml .crel{fill:#5b6776;font-size:10.5px;font-weight:700;text-anchor:start}
+
+  /* 03 패키지 트리 */
+  .tree .troot{fill:#f3e9fb;stroke:#9b4fc4;stroke-width:1.6}
+  .tree .tri{font-size:16px;text-anchor:start}
+  .tree .trn{fill:#5a2f78;font-size:14px;font-weight:800;text-anchor:start}
+  .tree .trk{fill:none;stroke:#b9c2cf;stroke-width:1.6}
+  .tree .tleaf{fill:#fbfaf7;stroke:#d7dee6;stroke-width:1.4}
+  .tree .tlf{fill:#1d3a5c;font-size:13px;font-weight:700;font-family:"Menlo","Consolas",monospace;text-anchor:start}
+  .tree .tld{fill:#5b6776;font-size:11px;text-anchor:start}
+
+  /* 04 GUI 레이아웃 미리보기 */
+  .guiwin .gwb{fill:#fff;stroke:#94a3b8;stroke-width:1.6}
+  .guiwin .gwt{fill:#0f2742}
+  .guiwin .gwt2{fill:#0f2742}
+  .guiwin .gwtt{fill:#fff;font-size:11px;font-weight:700;text-anchor:start}
+  .guiwin .gwlb{fill:#16202c;font-size:12px;font-weight:700;text-anchor:middle}
+  .guiwin .gwbtn{fill:#eef3fb;stroke:#2f6fd0;stroke-width:1.4}
+  .guiwin .gwbt{fill:#1d3a5c;font-size:12px;font-weight:700;text-anchor:middle}
+  .guiwin .gwrs{fill:#9b4fc4;font-size:12.5px;font-weight:800;text-anchor:middle}
+  .guiwin .gwcap{fill:#8a94a3;font-size:10px;text-anchor:middle}

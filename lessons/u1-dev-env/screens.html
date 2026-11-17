@@ -1,0 +1,203 @@
+<!-- 0 시작 -->
+<section class="page" data-name="시작" data-acc="#2f6fd0">
+  <div class="cover">
+    <div class="in">
+      <span class="tag">프로그래밍(Python) · Ⅰ. 프로그래밍 개요 · 4. 프로그램 개발 환경</span>
+      <h1>어디서, 어떤 도구로<br>프로그램을 만들까?</h1>
+      <div class="story"><b>현아와 은호의 모둠 과제 이야기 (46쪽)</b><br>현아와 은호는 모둠 과제로 프로그램 개발 프로젝트에 도전해요. 현아는 「나는 <b>파이썬</b>으로 프로그램을 개발하고 싶은데, 어떤 <b>개발 환경</b>이 가장 적합할까?」, 은호는 「<b>협업</b>해서 개발하는 게 어때? 개발할 영역을 나눠 만들고 서로 병합하면 좋지 않을까?」라고 말해요. 좋은 프로그램을 만들려면 먼저 <b>어디서 어떤 도구로 만들지</b>를 정해야 해요.</div>
+      <p>오늘은 프로그램을 만드는 데 필요한 <b>개발 환경</b>이 무엇이고, <b>통합 개발 환경(IDE)</b>이 왜 편리한지, 그리고 <b>로컬·클라우드 IDE</b>를 어떻게 고르고 준비하는지 살펴봐요.</p>
+      <ol>
+        <li>개발 환경과 디버깅</li><li>통합 개발 환경(IDE)의 구성 요소</li><li>로컬 IDE와 클라우드 IDE</li>
+        <li>스스로 해결하기 · 나에게 맞는 개발 환경 고르기</li><li>마무리 · 질문폼</li>
+      </ol>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn" style="background:var(--amber);color:var(--navy);box-shadow:none" onclick="document.getElementById('intro').scrollIntoView({behavior:'smooth'})">오늘의 목표부터 보기 ↓</button>
+        <button class="btn" style="background:transparent;border:2px solid rgba(255,255,255,.5);box-shadow:none" onclick="go(1)">01로 바로 가기 →</button>
+      </div>
+    </div>
+    <div class="route" aria-hidden="true">
+      <div class="st" style="animation-delay:.2s"><i>🧰</i><div><b>개발 환경</b><small>코드 작성·실행·디버깅을 돕는 도구</small></div></div>
+      <div class="ar" style="animation-delay:.6s">↓</div>
+      <div class="st" style="animation-delay:.8s"><i>🐞</i><div><b>디버깅</b><small>오류를 찾아 고치는 과정</small></div></div>
+      <div class="ar" style="animation-delay:1.2s">↓</div>
+      <div class="st" style="animation-delay:1.4s"><i>🧩</i><div><b>통합 개발 환경(IDE)</b><small>도구를 하나로 묶은 개발 프로그램</small></div></div>
+      <div class="ar" style="animation-delay:1.8s">↓</div>
+      <div class="st" style="animation-delay:2s"><i>💻</i><div><b>로컬 · 클라우드</b><small>목적에 맞게 골라 준비</small></div></div>
+    </div>
+  </div>
+
+  <div id="intro" class="today">
+    <div class="today-lead">
+      <span class="kicker">오늘의 목표 · 4. 프로그램 개발 환경 (46~47쪽)</span>
+      <p>프로그램을 효율적으로 개발하려면 <b>최적의 개발 환경</b>을 선택해야 해요. 프로젝트에 맞는 도구를 골라 환경을 구축하면, 코드를 작성·실행·수정하는 일이 훨씬 수월해져요. 오늘은 개발 환경이 무엇으로 이루어지는지 알아보고, <b>통합 개발 환경(IDE)</b>을 골라 준비하는 방법을 배워요.</p>
+    </div>
+
+    <div class="why3">
+      <div class="why">
+        <span class="kicker">오늘의 질문</span>
+        <ul class="uses">
+          <li>프로그램을 개발하려면 어떤 <b>개발 환경</b>을 갖추고, <b>통합 개발 환경</b>을 어떻게 골라 준비할까?</li>
+        </ul>
+      </div>
+      <div class="why">
+        <span class="kicker">배우고 나면 할 수 있는 것</span>
+        <ul class="can">
+          <li>통합 개발 환경의 필요성을 설명할 수 있다.</li>
+          <li>프로그램 개발 환경을 선택하여 준비할 수 있다.</li>
+        </ul>
+      </div>
+      <div class="why">
+        <span class="kicker">오늘 만날 낱말</span>
+        <p style="margin:4px 0 0;font-size:.95rem">개발 환경 · 에디터 · 디버거 · 디버깅 · 통합 개발 환경(IDE) · 로컬 환경 · 클라우드 환경 · 확장(extension)</p>
+        <p style="font-size:.86rem;margin-top:8px" class="muted">처음 보는 낱말이 있어도 괜찮아요. 화면을 넘기며 하나씩 만나요.</p>
+      </div>
+    </div>
+    <div class="card">
+      <h3>📝 나의 계획 <span class="muted" style="font-weight:400;font-size:.88rem">(46쪽) · (선택)</span></h3>
+      <div class="memo"><label>나는 이 단원에서 다음과 같은 내용을 배우고 싶다. <small>시간이 있으면 한두 가지 적어 보세요. 마지막 화면에서 다시 볼 수 있어요.</small></label><textarea data-memo="planLearn" rows="2"></textarea><div class="saved"></div></div>
+    </div>
+    <div style="text-align:center;margin-top:20px"><button class="btn" style="background:var(--navy)" onclick="go(1)">01 개발 환경의 이해부터 시작하기 →</button></div>
+  </div>
+</section>
+
+<!-- 1 개발 환경의 이해 -->
+<section class="page" data-name="개발 환경의 이해" data-acc="#2f6fd0">
+  <div class="head"><div class="num">01</div><div><h2>개발 환경의 이해</h2><p>교과서 47~48쪽 · 개발 과정과 디버깅, 개발 환경의 구성 요소</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>프로그램을 만드는 일은 코드만 적는 게 아니에요. 코드를 <b>쓰고</b>(에디터), 기계어로 <b>바꾸고</b>(번역 프로그램), 오류를 <b>찾아 고치는</b>(디버거) 여러 도구가 필요해요. 이런 도구와 시스템을 갖춘 작업장이 <b>개발 환경</b>이에요.</span></div>
+  <div class="card">
+    <h3>🧰 개발 환경이란? <span class="muted" style="font-weight:400;font-size:.88rem">(47쪽)</span></h3>
+    <p style="margin-top:0"><b>개발 환경</b>은 코드 작성, 실행, 디버깅, 배포 등을 원활하게 수행할 수 있도록 지원하는 다양한 <b>도구와 시스템</b>을 포함해요. 프로그래밍은 단순히 코드를 입력하는 코딩 작업을 넘어, 여러 단계를 거치는 복합적인 과정이에요.</p>
+  </div>
+  <div class="card">
+    <h3>🐞 프로그램 개발 과정과 디버깅 <span class="muted" style="font-weight:400;font-size:.88rem">(47쪽 그림Ⅰ-22)</span></h3>
+    <p style="margin-top:0">알고리즘을 설계하고 코드를 작성한 뒤, 소스 코드를 기계어로 바꿔 실행 파일을 만들어요. 이때 생기는 오류를 추적·수정하는 <b>디버깅</b>을 반복해 프로그램이 완성돼요. 버튼을 눌러 단계를 하나씩 밝혀 봐요.</p>
+    <div class="grid2">
+      <div class="de-run">
+        <svg id="dbgSvg" viewBox="0 0 360 300" role="img" aria-label="에디터로 작성한 소스 코드를 번역 프로그램이 실행 파일로 바꾸고, 오류가 생기면 디버거가 찾아 소스 코드를 수정하는 디버깅 과정을 단계별로 보여 주는 그림"></svg>
+      </div>
+      <div>
+        <div class="row de-rbtn" id="dbgBtns"></div>
+        <p class="de-rcap" id="dbgCap"></p>
+      </div>
+    </div>
+    <p class="note"><b>디버깅</b> · 프로그램에서 발생하는 오류(버그)를 추적하고 수정하는 과정이에요. 오류가 없을 때까지 디버깅을 반복해요.</p>
+  </div>
+  <div class="card">
+    <h3>🃏 개발 환경을 이루는 도구 <span class="muted" style="font-weight:400;font-size:.88rem">(47~48쪽)</span></h3>
+    <p class="muted" style="margin-top:0">카드를 눌러 각 도구가 하는 일을 확인해요. 뜻을 먼저 떠올려 본 뒤 뒤집으면 더 잘 외워져요.</p>
+    <div id="devTerms" class="tcards"></div>
+  </div>
+  <div class="quiz" data-quiz="1"></div>
+</section>
+
+<!-- 2 통합 개발 환경 구축 -->
+<section class="page" data-name="통합 개발 환경" data-acc="#1f9d74">
+  <div class="head"><div class="num">02</div><div><h2>통합 개발 환경 구축</h2><p>교과서 48~53쪽 · 로컬·클라우드 IDE, VSCode·구글 코랩</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>도구를 각각 따로 쓰기보다 하나로 묶은 <b>통합 개발 환경(IDE)</b>을 쓰면 편해요. IDE는 내 컴퓨터에 설치해 쓰는 <b>로컬 환경</b>과, 웹 브라우저로 접속해 쓰는 <b>클라우드 환경</b>으로 나뉘어요. 각각 장단점이 있어 목적과 상황에 맞게 골라요.</span></div>
+  <div class="card">
+    <h3>🧩 통합 개발 환경(IDE)은 왜 쓸까? <span class="muted" style="font-weight:400;font-size:.88rem">(47쪽)</span></h3>
+    <p style="margin-top:0">개발자는 코드 편집기, 번역 프로그램, 오류 수정 프로그램 등 다양한 도구를 써요. 이 도구들을 <b>각각 따로 쓰기보다 하나로 통합</b>하면 편리하고 개발 속도도 빨라져요.</p>
+    <div class="de-sw" style="--k:#1f9d74"><b>통합 개발 환경(IDE, Integrated Development Environment)</b><span>에디터, 컴파일러, 인터프리터, 디버거 등 프로그램 개발에 필요한 개별 프로그램을 <b>하나로 통합</b>하여 제공하는 소프트웨어 개발 프로그램이에요.</span></div>
+  </div>
+  <div class="card">
+    <h3>💻☁️ 로컬 환경 vs 클라우드 환경 <span class="muted" style="font-weight:400;font-size:.88rem">(47~48쪽 그림Ⅰ-23·24)</span></h3>
+    <p style="margin-top:0">통합 개발 환경은 도구와 자원이 <b>어디에 있느냐</b>에 따라 로컬 환경과 클라우드 환경으로 나뉘어요. 버튼을 눌러 비교해 봐요.</p>
+    <div class="row de-tab" id="ideBtn"></div>
+    <div class="de-tabview" id="ideView"></div>
+  </div>
+  <div class="card">
+    <h3>🛠️ 로컬 IDE 구축하기 · VSCode 설치·설정 <span class="muted" style="font-weight:400;font-size:.88rem">(49~50쪽)</span></h3>
+    <p style="margin-top:0">로컬 IDE 중 <b>비주얼 스튜디오 코드(VSCode)</b>는 가볍고 빠르며, <b>확장(extension)</b> 프로그램으로 원하는 언어와 기능을 더해 개발 환경을 구성할 수 있어 최근 많이 쓰여요. 아래 순서로 준비해요.</p>
+    <ol class="vsteps">
+      <li><b>운영체제에 파이썬 인터프리터 설치</b><p>파이썬 공식 사이트에서 설치 파일을 받아 설치해요. 설치 중 ‘Add python.exe to PATH’ 옵션을 체크해요. (VSCode에서 Python 확장으로 개발하려면 이 과정이 먼저 필요해요.)</p></li>
+      <li><b>VSCode 설치 프로그램 다운로드</b><p>VSCode 공식 홈페이지에 접속해 내 운영체제에 맞는 설치 프로그램을 다운로드해요.</p></li>
+      <li><b>VSCode 설치</b><p>다운로드한 파일을 실행하여 설치해요.</p></li>
+      <li><b>한국어 패키지 설치</b><p>왼쪽 <b>확장(Extensions)</b> 탭을 열고 ‘한국어’를 검색해 설치하면 메뉴 가독성이 높아져요.</p></li>
+      <li><b>Python 확장 설치</b><p>확장 탭에서 ‘python’을 검색해 마이크로소프트의 <b>Python 확장</b>을 설치해요. VSCode에는 파이썬이 내장돼 있지 않아 이 확장이 필요해요.</p></li>
+      <li><b>코드 작성·실행 확인</b><p>파일(File) &gt; 새 파일(New File)에서 ‘Python File’을 골라 <b>.py</b>로 저장하고, ‘실행 및 디버그’ 또는 터미널로 실행해 결과를 확인해요.</p></li>
+    </ol>
+    <p class="note">터미널에서 파일을 찾지 못한다는 오류([Error2])가 나면, <b>Python 확장 설치 여부</b>와 <b>.py 파일의 경로·파일명</b>을 확인하고 다시 실행하면 돼요. · 50쪽의 VSCode 설치 영상·QR은 「선생님 자료」로 안내돼요.</p>
+  </div>
+  <div class="card">
+    <h3>🎯 설치 순서 맞히기 <span class="muted" style="font-weight:400;font-size:.88rem">(49~50쪽)</span></h3>
+    <p class="muted" style="margin-top:0">아래 할 일이 <b>어느 단계</b>에서 하는 일인지 골라 봐요. VSCode로 파이썬 개발 환경을 준비하는 순서를 떠올려요.</p>
+    <div id="vsSort"></div>
+  </div>
+  <div class="card">
+    <h3>☁️ 클라우드 IDE 구축하기 · 구글 코랩 <span class="muted" style="font-weight:400;font-size:.88rem">(51~53쪽 그림Ⅰ-27)</span></h3>
+    <p style="margin-top:0"><b>구글 코랩(Colab)</b>은 대표적인 클라우드 기반 IDE예요. 웹 브라우저만으로 개발할 수 있어 별도의 도구를 설치할 필요가 없고, <b>구글 계정으로 로그인</b>하면 바로 시작할 수 있어요.</p>
+    <ol class="vsteps" style="margin-bottom:10px">
+      <li><b>구글 계정으로 로그인</b><p>코랩을 쓰려면 먼저 구글 계정에 로그인해요.</p></li>
+      <li><b>새 노트북 만들기</b><p>상단 메뉴에서 ‘파일’ → ‘Drive의 새 노트북’을 클릭해 새 노트북을 만들어요. 파일은 자동으로 <b>.ipynb</b> 확장자로 구글 드라이브에 저장돼요.</p></li>
+      <li><b>코드 셀에 작성·실행</b><p>코드 셀에 코드를 적고, 셀 왼쪽의 실행(▶) 버튼이나 Ctrl+Enter로 실행해요. 결과가 셀 아래에 표시돼요.</p></li>
+    </ol>
+    <p class="muted" style="margin:0 0 6px">코랩은 <b>주피터 노트북</b>과 비슷한 환경이에요. 카드를 눌러 코랩의 네 가지 기능을 확인해요.</p>
+    <div id="colabFeat" class="tcards"></div>
+    <p class="note"><b>주피터 노트북</b> · 웹 브라우저에서 코드 셀 단위로 실행하는 대화형 파이썬 개발 환경. · <b>마크다운</b> · 일반 텍스트로 서식 있는 문서를 쉽게 작성하는 경량 마크업 언어로, HTML 태그로 변환돼 브라우저에 출력돼요.</p>
+  </div>
+  <p class="callout">🤖 <b>구글의 인공지능 서비스, 제미나이(Gemini) <span class="muted" style="font-weight:400;font-size:.86rem">(53쪽 「정보」)</span></b> 구글 코랩에서는 생성형 AI 서비스 <b>제미나이(Gemini)</b>로 코드 작성을 도움받을 수 있어요(만 18세 이상 구글 계정·로그인 필요). 코드에 오류가 날 때 ‘오류 설명’ 버튼으로 수정을 도움받을 수도 있어요. 다만 생성형 AI가 만든 코드가 정답은 아니므로, 쓰기 전에 꼭 <b>직접 분석하고 검토</b>해야 해요.</p>
+  <div class="quiz" data-quiz="2"></div>
+</section>
+
+<!-- 3 스스로 해결하기 -->
+<section class="page" data-name="개발 환경 고르기" data-acc="#d64535">
+  <div class="head"><div class="num">03</div><div><h2>스스로 해결하기 · 나에게 맞는 개발 환경 고르기</h2><p>교과서 47~53쪽 바탕 · 탐구 활동</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>현아처럼, 내가 만들고 싶은 프로그램과 <b>개발 상황</b>을 떠올려 봐요. 그에 맞춰 <b>로컬 IDE</b>와 <b>클라우드 IDE</b> 중 무엇이 어울리는지 고르고, 오늘 배운 장단점을 근거로 이유를 적어 봐요.</span></div>
+  <div class="card">
+    <h3>1️⃣ 내 개발 상황은 어떤가요?</h3>
+    <p class="muted" style="margin-top:0">가장 가까운 상황을 하나 골라요.</p>
+    <div id="devSituation"></div>
+  </div>
+  <div class="card">
+    <h3>2️⃣ 어떤 개발 환경을 고를까요?</h3>
+    <p class="muted" style="margin-top:0">내 상황에 어울리는 통합 개발 환경을 하나 골라요.</p>
+    <div id="ideChoose"></div>
+    <div class="memo"><label>고른 이유 <small>오늘 배운 장단점(설치·협업·사양·휴대성 등)을 근거로 적어요.</small></label><textarea data-memo="ideReason" rows="2" placeholder="예: 모둠이 함께 작업하고 공유가 쉬워야 해서…"></textarea><div class="saved"></div></div>
+  </div>
+  <div class="card">
+    <h3>3️⃣ 준비하며 적어 두기 <span class="muted" style="font-weight:400;font-size:.88rem">(선택)</span></h3>
+    <div class="memo"><label>개발 환경을 준비하며 막혔던 점이나 궁금한 점 <small>설치·확장·로그인 등 무엇이든 좋아요.</small></label><textarea data-memo="envNote" rows="2"></textarea><div class="saved"></div></div>
+  </div>
+  <div class="card">
+    <h3>✅ 성취도 평가 · 스스로 점검</h3>
+    <p class="muted" style="margin-top:0">오늘 할 수 있게 된 것을 모두 골라요.</p>
+    <div id="selfCheck"></div>
+  </div>
+</section>
+
+<!-- 4 마무리 -->
+<section class="page" data-name="마무리 · 질문폼" data-acc="#0f2742">
+  <div class="head"><div class="num">04</div><div><h2>마무리</h2><p>핵심 문장 · 마무리 퀴즈 · 생각 정리 질문폼</p></div></div>
+  <div class="key3">
+    <div style="--k:#2f6fd0"><b>개발 환경</b>은 코드 작성·실행·디버깅·배포를 돕는 여러 도구와 시스템이다. 프로그램은 알고리즘 설계 → 코드 작성 → 번역(컴파일러/인터프리터) → 실행 과정을 거치며, 오류를 추적·수정하는 <b>디버깅</b>을 반복해 완성된다.</div>
+    <div style="--k:#1f9d74">에디터·번역 프로그램·디버거 같은 개별 도구를 하나로 통합한 소프트웨어가 <b>통합 개발 환경(IDE)</b>이다. 따로 쓰기보다 통합해 쓰면 편리하고 개발 속도가 빨라진다.</div>
+    <div style="--k:#d64535">IDE는 도구와 자원의 위치에 따라 <b>로컬 환경</b>(내 컴퓨터에 설치 · VSCode 등)과 <b>클라우드 환경</b>(웹 브라우저로 접속 · 구글 코랩 등)으로 나뉜다. 목적·시스템 환경·협업 여부를 고려해 적절히 고른다.</div>
+  </div>
+  <div class="card">
+    <h3>오늘의 질문에 다시 답하기</h3>
+    <p class="muted" style="margin-top:0">03에서 고른 내 개발 상황과 환경을 떠올리며, 오늘 배운 내용을 근거로 내 말로 답해 보세요.</p>
+    <b style="font-size:.93rem">프로그램을 개발하려면 어떤 개발 환경을 갖추고, 통합 개발 환경을 어떻게 골라 준비할까?</b>
+    <textarea data-memo="keyQ" rows="3"></textarea><div class="saved"></div>
+  </div>
+  <div class="card" style="--acc:#0f2742">
+    <h3>마무리 퀴즈</h3>
+    <div class="quiz" data-quiz="4"></div>
+  </div>
+  <div class="card">
+    <h3>개념 퀴즈 결과</h3>
+    <table id="result"></table>
+    <button class="btn ghost" id="quizReset">퀴즈 다시 풀기</button>
+  </div>
+  <div class="formgo">
+    <span class="kicker">생각 정리 과제</span>
+    <h3>질문폼에 내 생각 쓰기</h3>
+    <ol>
+      <li>프로그램이 만들어지는 과정(알고리즘 설계 → 코드 작성 → 번역 → 실행)과 그 과정에서 오류를 찾아 고치는 <b>디버깅</b>을 설명하세요. <b>에디터·번역 프로그램·디버거</b>가 각각 어떤 역할을 하는지 넣어서 쓰세요.</li>
+      <li><b>통합 개발 환경(IDE)</b>이 무엇이고 왜 편리한지 쓰고, <b>로컬 환경 IDE</b>와 <b>클라우드 환경 IDE</b>의 장단점과 대표 예(VSCode / 구글 코랩)를 비교해 설명하세요.</li>
+      <li>03에서 고른 내 <b>개발 상황</b>과 그에 어울린다고 고른 <b>개발 환경</b>(로컬/클라우드)을 쓰고, 왜 그 환경이 적절한지 오늘 배운 장단점을 근거로 설명하세요.</li>
+    </ol>
+    <p>질문폼에는 붙여넣기가 되지 않아요. 아래 메모를 보면서 직접 다시 써 주세요.</p>
+    <a class="go" href="{{FORM_URL}}" target="_blank" rel="noopener">질문폼 열기 →</a>
+    <div class="msum" id="msum"></div>
+  </div>
+</section>

@@ -1,0 +1,269 @@
+<!-- 0 시작 -->
+<section class="page" data-name="시작" data-acc="#1f9d74">
+  <div class="cover">
+    <div class="in">
+      <span class="tag">프로그래밍(Python) · Ⅱ. 프로그래밍 기초 · 2. 변수와 자료형</span>
+      <h1>어떤 그릇에<br>무엇을 담을까?</h1>
+      <div class="story"><b>그릇 이야기 (84쪽)</b><br>밥상에는 국그릇, 밥그릇, 반찬 그릇이 따로 있어요. 음식에 맞지 않는 그릇을 쓰면 국이 넘치거나 빈 공간이 너무 많이 남지요. 프로그램도 같아요. 데이터를 담는 <b>변수</b>와, 담는 데이터의 종류인 <b>자료형</b>을 알맞게 골라야 해요.</div>
+      <p>오늘은 파이썬에서 값을 <b>변수</b>에 저장하고, 값의 <b>자료형</b>을 확인하고, <b>문자열</b>과 <b>리스트</b>를 다루는 방법을 직접 코드를 돌려 보며 익혀요.</p>
+      <ol>
+        <li>변수와 대입</li><li>기본 자료형</li><li>문자열 다루기</li>
+        <li>리스트와 튜플</li><li>스스로 해결하기 · 마무리</li>
+      </ol>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn" style="background:var(--amber);color:var(--navy);box-shadow:none" onclick="document.getElementById('intro').scrollIntoView({behavior:'smooth'})">오늘의 목표 보기 ↓</button>
+        <button class="btn" style="background:transparent;border:2px solid rgba(255,255,255,.5);box-shadow:none" onclick="go(1)">01로 바로 가기 →</button>
+      </div>
+    </div>
+    <div class="route" aria-hidden="true">
+      <div class="st" style="animation-delay:.2s"><i>📦</i><div><b>변수</b><small>값을 담는 이름표 상자</small></div></div>
+      <div class="ar" style="animation-delay:.6s">↓</div>
+      <div class="st" style="animation-delay:.8s"><i>🏷️</i><div><b>자료형</b><small>int·float·str·bool</small></div></div>
+      <div class="ar" style="animation-delay:1.2s">↓</div>
+      <div class="st" style="animation-delay:1.4s"><i>🔤</i><div><b>문자열</b><small>인덱싱·슬라이싱</small></div></div>
+      <div class="ar" style="animation-delay:1.8s">↓</div>
+      <div class="st" style="animation-delay:2s"><i>📋</i><div><b>리스트</b><small>여러 값을 한 번에</small></div></div>
+    </div>
+  </div>
+
+  <div id="intro" class="today">
+    <div class="today-lead">
+      <span class="kicker">오늘의 도입 (84쪽)</span>
+      <p>프로그래밍에서 <b>변수</b>는 데이터를 저장하는 공간이고, <b>자료형</b>은 변수에 저장할 수 있는 데이터의 종류를 정해요. 이 둘을 잘 이해하면 효율적이고 정확한 프로그램을 쓸 수 있어요.</p>
+    </div>
+    <div class="card">
+      <h3>🖥️ 변수에 값을 담고 자료형을 물어봐요 <span class="muted" style="font-weight:400;font-size:.88rem">(85쪽)</span></h3>
+      <p style="margin-top:0">먼저 <b>▶ 실행</b>을 눌러 봐요. 처음 한 번은 파이썬을 불러오느라 몇 초 걸려요. <code>type( )</code>은 값의 자료형을 알려 주는 함수예요.</p>
+      <div id="helloRun"></div>
+      <p class="note">숫자 10을 바꿔 다시 실행해 봐요. <code>10.5</code>나 <code>'안녕'</code>을 넣으면 자료형이 어떻게 달라질까요?</p>
+    </div>
+    <div class="why3">
+      <div class="why">
+        <span class="kicker">핵심 질문</span>
+        <ul class="uses">
+          <li><b>오늘의 질문</b> · 변수와 자료형을 활용하여 상황에 맞게 프로그램을 작성할 수 있을까?</li>
+        </ul>
+      </div>
+      <div class="why">
+        <span class="kicker">배우고 나면 할 수 있는 것</span>
+        <ul class="can">
+          <li>변수와 자료형의 개념과 특징을 설명할 수 있다.</li>
+          <li>변수와 자료형을 적절하게 사용한 프로그램을 작성할 수 있다.</li>
+        </ul>
+      </div>
+      <div class="why">
+        <span class="kicker">오늘 만날 낱말</span>
+        <p style="margin:4px 0 0;font-size:.95rem">변수 · 대입 · 자료형 · 정수·실수·문자열·불 · 인덱싱·슬라이싱 · 리스트 · 튜플</p>
+        <p style="font-size:.86rem;margin-top:8px" class="muted">처음 보는 낱말이 있어도 괜찮아요. 화면을 넘기며 코드로 하나씩 만나요.</p>
+      </div>
+    </div>
+    <div class="card">
+      <h3>📝 나의 계획 <span class="muted" style="font-weight:400;font-size:.88rem">(84쪽) · (선택)</span></h3>
+      <div class="memo"><label>나는 이 단원에서 다음과 같은 내용을 배우고 싶다. <small>시간이 있으면 한두 가지 적어 보세요. 마지막 화면에서 다시 볼 수 있어요.</small></label><textarea data-memo="planLearn" rows="2"></textarea><div class="saved"></div></div>
+    </div>
+    <div style="text-align:center;margin-top:20px"><button class="btn" style="background:var(--mint)" onclick="go(1)">01 변수와 대입부터 시작하기 →</button></div>
+  </div>
+</section>
+
+<!-- 1 변수와 대입 -->
+<section class="page" data-name="변수와 대입" data-acc="#1f9d74">
+  <div class="head"><div class="num">01</div><div><h2>변수와 대입</h2><p>교과서 85·86쪽 · 변수, 값 대입과 재대입, 다중 할당</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>변수는 데이터를 담아 두는 <b>이름 붙은 상자</b>예요. <code>x = 10</code>은 &quot;변수 x에 10을 넣어라&quot;라는 뜻이에요. 등호(<code>=</code>)는 <b>같다</b>가 아니라 오른쪽 값을 왼쪽 변수에 <b>넣는다(대입)</b>는 표시예요.</span></div>
+  <div class="card">
+    <h3>📦 변수에 값 넣기 <span class="muted" style="font-weight:400;font-size:.88rem">(85쪽)</span></h3>
+    <p style="margin-top:0">물건에 맞는 상자를 쓰듯, 프로그램도 데이터 모양에 맞는 저장 공간이 필요해요. 파이썬에서는 <b>변수명 = 데이터</b> 꼴로 변수를 만들고, 값은 주기억 장치(메모리)에 저장돼요. 값을 넣을 때 자료형이 자동으로 정해지므로 <b>처음 값을 꼭 넣어야</b> 해요.</p>
+    <div class="flow2">
+      <div style="--k:#1f9d74"><b>변수명</b><span>x</span></div>
+      <div class="ar">=</div>
+      <div style="--k:#e0702b"><b>데이터</b><span>10</span></div>
+      <div class="ar">→</div>
+      <div style="--k:#2f6fd0"><b>저장</b><span>메모리에 10이 저장돼요</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>🔄 값을 다시 넣으면? <span class="muted" style="font-weight:400;font-size:.88rem">(85쪽)</span></h3>
+    <p style="margin-top:0">변수는 <b>한 번에 한 개의 값</b>만 저장해요. 아래 코드를 실행하기 전에 마지막에 어떤 값이 출력될지 먼저 예상해 보세요.</p>
+    <div id="reRun"></div>
+    <p class="note">15는 출력되지 않았지만 한 번 저장되었다가 10.5로 덮어써졌어요. 변수에는 마지막에 저장한 값만 남아요.</p>
+  </div>
+  <div class="card">
+    <h3>👤 같은 변수에 다른 값 담기 <span class="muted" style="font-weight:400;font-size:.88rem">(86쪽 해 보기 1)</span></h3>
+    <p style="margin-top:0">같은 변수 <code>name</code>·<code>height</code>·<code>age</code>·<code>hobby</code>에 짱구의 값을 넣어 출력한 뒤, 코난의 값으로 바꿔 다시 출력해요. 값을 바꿔 가며 실행해 봐요.</p>
+    <div id="introRun"></div>
+  </div>
+  <div class="card">
+    <h3>✂️ 여러 변수에 한 번에 담기 <span class="muted" style="font-weight:400;font-size:.88rem">(85·86쪽)</span></h3>
+    <p style="margin-top:0">한 문장에서 여러 변수에 값을 넣을 수 있어요(다중 할당, <code>a, b = 1, 'a'</code>). <code>input( ).split( )</code>과 함께 쓰면 키보드로 입력한 여러 값을 한 번에 변수에 나눠 담을 수 있어요. <b>입력값</b> 칸에는 <b>띄어쓰기로</b> 네 개를 적어요.</p>
+    <div id="splitRun"></div>
+    <p class="note">입력한 값의 개수가 변수 개수(4개)와 다르면 오류가 나요. 취미 안에 띄어쓰기를 넣어 보면 어떻게 되는지 확인해 봐요.</p>
+  </div>
+  <p class="callout">💡 <b>변수 이름 짓기 <span class="muted" style="font-weight:400;font-size:.86rem">(86쪽 정보)</span></b> 이름은 영문자·한글·밑줄(_)로 시작하고, 숫자는 첫 글자에 쓸 수 없어요. 공백·하이픈(-)과 <code>if</code>, <code>for</code> 같은 예약어는 쓸 수 없고, 대소문자를 구별해요. 단어가 여러 개면 <code>sum_result</code>, <code>myAge</code>처럼 이어 쓰면 읽기 좋아요.</p>
+  <div class="quiz" data-quiz="1"></div>
+</section>
+
+<!-- 2 기본 자료형 -->
+<section class="page" data-name="기본 자료형" data-acc="#2f6fd0">
+  <div class="head"><div class="num">02</div><div><h2>기본 자료형</h2><p>교과서 88~90쪽 · 숫자형(int·float), 불형(bool), 문자열형(str)</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>자료형은 <b>데이터의 종류</b>예요. 종류에 따라 할 수 있는 계산과 기능이 달라요. 파이썬은 값의 모양을 보고 자료형을 <b>자동으로</b> 정해요. <code>type( )</code>으로 언제든 확인할 수 있어요.</span></div>
+  <div class="card">
+    <h3>🗂️ 값을 알맞은 자료형으로 보내 봐요 <span class="muted" style="font-weight:400;font-size:.88rem">(88~90쪽)</span></h3>
+    <p style="margin-top:0">정수(<code>int</code>), 실수(<code>float</code>), 문자열(<code>str</code>), 불(<code>bool</code>) 중 어디에 속할까요?</p>
+    <div id="typeGame"></div>
+  </div>
+  <div class="card">
+    <h3>🔢 숫자형 · int와 float <span class="muted" style="font-weight:400;font-size:.88rem">(88쪽)</span></h3>
+    <p style="margin-top:0">정수와 정수를 계산하면 보통 정수가 나오지만, <b>나눗셈(/)</b>은 정수끼리여도 <b>실수</b>가 나와요. 정수와 실수를 계산해도 실수가 돼요. 마지막 세 줄이 어떻게 나올지 예상한 뒤 실행해 봐요.</p>
+    <div id="numRun"></div>
+    <p class="note"><code>1 + 2j</code>는 복소수(complex)예요. 파이썬에서는 허수를 <code>i</code> 대신 <code>j</code>로 써요.</p>
+  </div>
+  <div class="card">
+    <h3>✅ 불형 · True와 False <span class="muted" style="font-weight:400;font-size:.88rem">(89쪽)</span></h3>
+    <p style="margin-top:0">불(bool)은 참(<code>True</code>)과 거짓(<code>False</code>) 두 값만 가져요. 첫 글자를 <b>대문자</b>로 써야 해요. <code>bool( )</code>은 다른 값을 참·거짓으로 바꿔요. 비어 있거나 0이면 거짓, 내용이 있으면 참이에요.</p>
+    <div id="boolRun"></div>
+  </div>
+  <div class="card">
+    <h3>🔤 문자열형 · str과 문자열 연산 <span class="muted" style="font-weight:400;font-size:.88rem">(90쪽)</span></h3>
+    <p style="margin-top:0">따옴표로 감싼 값은 문자열이에요. 문자열은 <b>더하면 이어 붙고</b>(<code>+</code>), <b>곱하면 반복</b>돼요(<code>*</code>). 비교(<code>&lt;</code>)는 철자 순서로 하고, <code>in</code>·<code>not in</code>은 포함 여부를 불(bool)로 알려 줘요.</p>
+    <div id="strRun"></div>
+    <p class="note">문자열 안에 큰따옴표를 넣고 싶으면 바깥을 작은따옴표로 감싸요(<code>'name is "짱구"'</code>). 문자열 <code>'100'</code>에 정수 1을 더하면 오류가 나요.</p>
+  </div>
+  <div class="card">
+    <h3>🔁 자료형 바꾸기 <span class="muted" style="font-weight:400;font-size:.88rem">(89쪽 Tip · 연습용)</span></h3>
+    <p style="margin-top:0"><code>int( )</code>·<code>float( )</code>·<code>str( )</code> 안에 값을 넣으면 그 자료형으로 바뀌어요. 문자열 <code>'100'</code>이 정수가 되면 계산할 수 있어요. 결과의 <code>type</code>을 눈으로 확인해 봐요.</p>
+    <div id="castRun"></div>
+  </div>
+  <div class="quiz" data-quiz="2"></div>
+</section>
+
+<!-- 3 문자열 다루기 -->
+<section class="page" data-name="문자열 다루기" data-acc="#e0702b">
+  <div class="head"><div class="num">03</div><div><h2>문자열 다루기</h2><p>교과서 91~93쪽 · 인덱싱, 슬라이싱, 문자열 메소드</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>문자열의 글자에는 <b>0부터 시작하는 번호(인덱스)</b>가 붙어 있어요. 공백도 한 글자예요. <code>a[번호]</code>는 글자 하나를 꺼내는 <b>인덱싱</b>, <code>a[시작:끝]</code>은 부분을 잘라 내는 <b>슬라이싱</b>이에요. 끝 번호의 글자는 <b>포함되지 않아요</b>.</span></div>
+  <div class="card">
+    <h3>🔢 인덱스 번호 <span class="muted" style="font-weight:400;font-size:.88rem">(91쪽)</span></h3>
+    <p style="margin-top:0"><code>a = 'Hello Python'</code>에는 글자마다 앞에서부터 0, 1, 2 … 번호가 있고, 뒤에서부터는 -1, -2 … 번호도 있어요.</p>
+    <table class="esc-t idx-t">
+      <tr><th>글자</th><th>H</th><th>e</th><th>l</th><th>l</th><th>o</th><th>␣</th><th>P</th><th>y</th><th>t</th><th>h</th><th>o</th><th>n</th></tr>
+      <tr><td class="l">앞 번호</td><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td></tr>
+      <tr><td class="l">뒤 번호</td><td>-12</td><td>-11</td><td>-10</td><td>-9</td><td>-8</td><td>-7</td><td>-6</td><td>-5</td><td>-4</td><td>-3</td><td>-2</td><td>-1</td></tr>
+    </table>
+    <p style="margin:10px 0 0">아래 코드의 각 줄이 무엇을 출력할지 예상한 뒤 실행해 봐요. 숫자를 바꿔 가며 확인해도 좋아요.</p>
+    <div id="sliceRun"></div>
+    <p class="note">슬라이싱은 <code>변수[시작:종료:간격]</code> 꼴이고, 간격을 생략하면 1이에요. <code>a[:]</code>는 전체, <code>a[::-1]</code>은 전체를 거꾸로예요.</p>
+  </div>
+  <div class="card">
+    <h3>🧾 생년월일 꺼내기 <span class="muted" style="font-weight:400;font-size:.88rem">(93쪽 해 보기 2 · 1)</span></h3>
+    <p style="margin-top:0">번호의 앞 6자리에서 연·월·일을 슬라이싱으로 잘라 출력해요. 아래 입력값은 <b>연습용 가짜 번호</b>예요. 슬라이싱 번호(<code>0:2</code> 등)를 바꾸면 결과가 어떻게 달라지는지 확인해 봐요.</p>
+    <div id="juminRun"></div>
+    <p class="note">실제 주민등록번호 같은 개인정보는 입력하지 말아요.</p>
+  </div>
+  <div class="card">
+    <h3>🔐 암호문 만들기 <span class="muted" style="font-weight:400;font-size:.88rem">(93쪽 해 보기 2 · 2)</span></h3>
+    <p style="margin-top:0">글자를 <b>거꾸로</b> 뒤집고(<code>[::-1]</code>), <code>e→3</code>, <code>o→0</code>, <code>l→1</code>로 <b>바꿔요</b>(<code>replace( )</code>). 입력값에 다른 영어 문장을 넣어 암호문이 어떻게 나오는지 봐요.</p>
+    <div id="cryptRun"></div>
+  </div>
+  <div class="card">
+    <h3>🧰 문자열 메소드 <span class="muted" style="font-weight:400;font-size:.88rem">(92쪽 표Ⅱ-2)</span></h3>
+    <p style="margin-top:0">메소드는 변수 뒤에 점(<code>.</code>)을 찍고 <code>변수명.함수명( )</code>으로 써요. 카드를 눌러 뜻을 확인해요.</p>
+    <div id="methFlip" class="tcards"></div>
+    <p style="margin:10px 0 0">앞뒤에 공백이 있는 문자열에 여러 메소드를 적용해 봐요. <code>len( )</code>은 글자(공백 포함) 수를 알려 줘요.</p>
+    <div id="methRun"></div>
+  </div>
+  <div class="quiz" data-quiz="3"></div>
+</section>
+
+<!-- 4 리스트와 튜플 -->
+<section class="page" data-name="리스트와 튜플" data-acc="#9b4fc4">
+  <div class="head"><div class="num">04</div><div><h2>리스트와 튜플</h2><p>교과서 94~99쪽 · 컨테이너 자료형, 리스트의 인덱싱·변경, 튜플</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>학생 100명의 점수를 변수 100개로 만들 수는 없지요. <b>리스트</b>는 여러 값을 <b>하나로 묶어</b> 순서대로 저장해요. 대괄호 <code>[ ]</code> 안에 쉼표로 나열하고, 문자열처럼 인덱스로 꺼내요. <b>튜플</b>은 리스트와 비슷하지만 <b>바꿀 수 없어요</b>.</span></div>
+  <div class="card">
+    <h3>📋 리스트 만들고 꺼내기 <span class="muted" style="font-weight:400;font-size:.88rem">(94·95쪽)</span></h3>
+    <p style="margin-top:0">리스트에는 서로 다른 자료형의 값과 다른 리스트도 넣을 수 있어요. 인덱싱과 슬라이싱은 문자열과 같은 방식이고, 안쪽 리스트는 대괄호를 두 번 써서 꺼내요. 결과를 예상해 보고 실행해요.</p>
+    <div id="listRun"></div>
+  </div>
+  <div class="card">
+    <h3>✏️ 리스트 값 바꾸기 <span class="muted" style="font-weight:400;font-size:.88rem">(96쪽 표Ⅱ-3)</span></h3>
+    <div class="tscroll"><table class="esc-t">
+      <tr><th>메소드</th><th class="l">하는 일</th></tr>
+      <tr><td><code>append( )</code></td><td class="l">리스트 끝에 값 추가</td></tr>
+      <tr><td><code>insert( )</code></td><td class="l">특정 위치에 값 추가</td></tr>
+      <tr><td><code>extend( )</code></td><td class="l">여러 값을 한꺼번에 추가</td></tr>
+      <tr><td><code>remove( )</code></td><td class="l">특정 값 삭제(처음 일치하는 값)</td></tr>
+      <tr><td><code>pop( )</code></td><td class="l">특정 위치 값 삭제(생략하면 마지막 값)</td></tr>
+    </table></div>
+    <p style="margin:10px 0 0">리스트가 한 줄씩 어떻게 변하는지 눈으로 따라가 봐요.</p>
+    <div id="editRun"></div>
+  </div>
+  <div class="card">
+    <h3>🌡️ 평균 기온에서 찾기 <span class="muted" style="font-weight:400;font-size:.88rem">(98쪽 해 보기 3)</span></h3>
+    <p style="margin-top:0">1~10월 평균 기온 리스트에 11·12월 기온을 입력받아 <code>append( )</code>로 넣고, <code>sort( )</code>로 오름차순 정렬해요. 그다음 <b>가장 낮은 값</b>은 <code>min( )</code>, <b>2번째로 높은 값</b>은 뒤에서 두 번째인 <code>[-2]</code>로 찾아요. 입력값(11월·12월)을 바꿔 봐요.</p>
+    <div id="tempRun"></div>
+    <p class="note">오름차순으로 정렬했기 때문에 맨 끝(<code>[-1]</code>)이 가장 높은 기온, 그 앞(<code>[-2]</code>)이 2번째로 높은 기온이에요.</p>
+  </div>
+  <div class="card">
+    <h3>🔒 튜플과 언패킹 <span class="muted" style="font-weight:400;font-size:.88rem">(99쪽)</span></h3>
+    <p style="margin-top:0">튜플은 소괄호 <code>( )</code>로 만들고 요소의 추가·수정·삭제가 불가능해요. 빛의 삼원색 RGB 값처럼 <b>바뀌지 않아야 하는 값</b>에 알맞아요. 값이 하나뿐이면 <code>(5,)</code>처럼 뒤에 쉼표를 붙여요. 튜플의 값을 여러 변수에 한 번에 나눠 담는 것을 <b>언패킹</b>이라고 해요.</p>
+    <div id="tupleRun"></div>
+    <p class="note">마지막 줄은 일부러 오류가 나도록 한 거예요. 튜플의 값을 바꾸려 하면 어떤 안내가 나오는지 확인하고, 그 줄을 지우면 나머지 결과가 정상으로 나와요.</p>
+  </div>
+  <div class="quiz" data-quiz="4"></div>
+</section>
+
+<!-- 5 스스로 해결하기 -->
+<section class="page" data-name="스스로 해결하기" data-acc="#d64535">
+  <div class="head"><div class="num">05</div><div><h2>스스로 해결하기 · 나만의 소개 만들기</h2><p>오늘 배운 내용을 내 이야기로 바꿔 보아요</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>이 차시 범위에는 따로 정해진 수행 활동이 없어요. 대신 86쪽의 소개 코드를 <b>내 이야기</b>로 바꾸며 변수·자료형·문자열을 한꺼번에 연습해요.</span></div>
+  <div class="card">
+    <h3>🛠️ 코드를 내 것으로 바꾸기</h3>
+    <p style="margin-top:0">아래 코드의 <b>이름·키·취미</b>를 나의 것으로 바꾸고 실행해 봐요. <code>type( )</code> 결과는 어떻게 나오는지, <code>name[0]</code> 자리를 <code>name[-1]</code>이나 <code>name[0:2]</code>로 바꾸면 무엇이 나오는지도 확인해 봐요.</p>
+    <div id="selfRun"></div>
+  </div>
+  <div class="card">
+    <h3>1️⃣ 내가 만든 것 적어 보기</h3>
+    <p class="muted" style="margin-top:0">실행하며 알게 된 것을 내 말로 정리해 봐요.</p>
+    <div class="memo"><label>① 내가 만든 변수와 값 <small>변수 이름은 무엇이고, 어떤 값을 담았는지 적어 보세요.</small></label><textarea data-memo="reflVar" rows="2"></textarea><div class="saved"></div></div>
+    <div class="memo"><label>② 자료형이 달라 헷갈린 점 <small>숫자와 문자열, 정수와 실수 중 달라서 놀란 결과가 있었나요?</small></label><textarea data-memo="reflType" rows="2"></textarea><div class="saved"></div></div>
+  </div>
+  <div class="card">
+    <h3>✅ 성취도 평가 · 스스로 점검</h3>
+    <p class="muted" style="margin-top:0">오늘 할 수 있게 된 것을 모두 골라요.</p>
+    <div id="selfCheck"></div>
+  </div>
+</section>
+
+<!-- 6 마무리 -->
+<section class="page" data-name="마무리 · 질문폼" data-acc="#0f2742">
+  <div class="head"><div class="num">06</div><div><h2>마무리</h2><p>핵심 문장 · 마무리 퀴즈 · 생각 정리 질문폼</p></div></div>
+  <div class="key3">
+    <div style="--k:#1f9d74"><b>변수</b>는 데이터를 담아 두는 이름 붙은 공간이고, 등호(<code>=</code>)로 값을 <b>대입</b>한다. 여러 번 대입하면 마지막 값만 남는다.</div>
+    <div style="--k:#2f6fd0"><b>자료형</b>은 데이터의 종류다. 값의 모양에 따라 <b>int·float·str·bool</b>이 자동으로 정해지고, <b>type( )</b>으로 확인하며 <b>int( )·float( )·str( )</b>으로 바꿀 수 있다.</div>
+    <div style="--k:#e0702b"><b>문자열·리스트</b>는 0부터 시작하는 <b>인덱스</b>로 꺼내고 <b>슬라이싱</b>으로 자른다. 리스트는 <b>append( )·sort( )</b> 같은 메소드로 바꾸고, <b>튜플</b>은 바꿀 수 없다.</div>
+  </div>
+  <div class="card">
+    <h3>오늘의 질문에 다시 답하기</h3>
+    <p class="muted" style="margin-top:0">오늘 실행해 본 코드를 떠올리며, 내 말로 답해 보세요.</p>
+    <b style="font-size:.93rem">변수와 자료형을 활용하여 상황에 맞게 프로그램을 작성할 수 있을까?</b>
+    <textarea data-memo="keyQ" rows="3"></textarea><div class="saved"></div>
+  </div>
+  <div class="card" style="--acc:#0f2742">
+    <h3>마무리 퀴즈</h3>
+    <div class="quiz" data-quiz="6"></div>
+  </div>
+  <div class="card">
+    <h3>개념 퀴즈 결과</h3>
+    <table id="result"></table>
+    <button class="btn ghost" id="quizReset">퀴즈 다시 풀기</button>
+  </div>
+  <div class="formgo">
+    <span class="kicker">생각 정리 과제</span>
+    <h3>질문폼에 내 생각 쓰기</h3>
+    <ol>
+      <li><b>변수</b>와 <b>자료형</b>이 각각 무엇인지 설명하고, <code>age = 14</code> 다음에 <code>age = 10.5</code>를 실행하면 어떻게 되는지 적으세요.</li>
+      <li><b>정수·실수·문자열·불</b>이 어떻게 다른지 오늘 실행해 본 예(<code>6 / 2</code>, <code>'100'</code>, <code>bool('')</code> 등)를 들어 설명하세요.</li>
+      <li>문자열과 리스트에서 <b>슬라이싱·메소드</b>(<code>[::-1]</code>, <code>replace( )</code>, <code>append( )</code>, <code>sort( )</code> 등)를 어떤 문제에 쓸 수 있을지 내 말로 설명하세요.</li>
+    </ol>
+    <p>질문폼에는 붙여넣기가 되지 않아요. 아래 메모를 보면서 직접 다시 써 주세요.</p>
+    <a class="go" href="{{FORM_URL}}" target="_blank" rel="noopener">질문폼 열기 →</a>
+    <div class="msum" id="msum"></div>
+  </div>
+</section>

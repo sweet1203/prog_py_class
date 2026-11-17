@@ -1,0 +1,47 @@
+
+  /* u1-collab 전용 (cl-) */
+
+  /* 공용 코드 보기 (Ⅰ단원: 실행 않고 보여 주기만) */
+  .code{background:#0f2742;color:#e1e9f4;border-radius:10px;padding:12px 14px;margin:10px 0;
+    font-family:"SF Mono","Consolas","D2Coding",ui-monospace,monospace;font-size:.9rem;line-height:1.6;
+    overflow-x:auto;white-space:pre;-webkit-overflow-scrolling:touch}
+  .code b{color:var(--amber);font-weight:700}
+  .code i{color:#8aa6cc;font-style:normal}
+
+  /* 깃 vs 깃허브 · 역할 2열 카드 */
+  .cl-sw{background:#fbfaf7;border-radius:12px;border-top:5px solid var(--k);padding:11px 14px}
+  .cl-sw>b{display:block;color:var(--k);font-size:1.02rem}
+  .cl-sw span{display:block;font-size:.9rem;margin-top:3px}
+  .cl-sw span b{font-weight:700;color:inherit}
+  .cl-sw small{display:block;color:var(--muted);font-size:.82rem;border-top:1px dashed var(--line);padding-top:5px;margin-top:7px}
+
+  /* 협업 도구 · 분류 3카드 */
+  .cl-crit{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:8px 0 0}
+  @media (max-width:760px){.cl-crit{grid-template-columns:1fr}}
+  .cl-crit>div{background:#fff;border-radius:12px;border-top:5px solid var(--k);box-shadow:0 5px 14px rgba(15,39,66,.07);padding:11px 14px}
+  .cl-crit b{display:block;color:var(--k);font-size:1rem}
+  .cl-crit span{display:block;font-size:.9rem;margin-top:3px}
+
+  /* 버전 관리 과정 SVG (그림Ⅰ-30) */
+  .cl-vc svg{width:100%;height:auto;background:radial-gradient(circle at 50% 30%,#1b3d66,#0f2742 72%);border-radius:12px}
+  .cl-vc .bx rect.box{fill:#13263f;stroke:#3b5a86;stroke-width:1.5;transition:fill .25s,stroke .25s}
+  .cl-vc .bx .tt{fill:#cfe0f5;font-size:12px;font-weight:700}
+  .cl-vc .bx .ts{fill:#9fb6d6;font-size:9.5px}
+  .cl-vc .bx.on rect.box{fill:#1f4b82;stroke:#f2a516;stroke-width:2.6}
+  .cl-vc .bx.on .tt{fill:#fff}
+  .cl-vc .bx.on .ts{fill:#ffe0a6}
+  .cl-vc .arw{stroke:#6b82a6;stroke-width:2.4;fill:none;opacity:.22;transition:opacity .25s,stroke .25s}
+  .cl-vc .arw.on{stroke:#f2a516;opacity:1;stroke-width:3}
+  .cl-vc .lbl{fill:#9fb6d6;font-size:10px;font-weight:700;transition:fill .25s}
+  .cl-vc .lbl.on{fill:#ffd37a}
+  .cl-vc .zone{fill:#7f97bb;font-size:10px;font-weight:700}
+  .cl-vc .sep{stroke:#3b5a86;stroke-width:1.2;stroke-dasharray:4 4}
+  .cl-rbtn{gap:8px}
+  .cl-rcap{font-size:.95rem;min-height:4.8em;margin:10px 0 0;line-height:1.6}
+  .cl-rcap b{color:var(--acc)}
+  @media (max-width:860px){.cl-rcap{min-height:0}}
+
+  /* 동작 순서 번호 카드 */
+  .cl-steps{display:grid;gap:7px;margin:8px 0 0;counter-reset:s}
+  .cl-steps>div{background:#fbfaf7;border-radius:10px;border-left:5px solid var(--acc);padding:8px 12px;font-size:.92rem;display:flex;gap:10px;align-items:baseline}
+  .cl-steps>div::before{counter-increment:s;content:counter(s);flex:0 0 auto;width:22px;height:22px;border-radius:50%;background:var(--acc);color:#fff;font-weight:700;font-size:.8rem;display:grid;place-items:center}

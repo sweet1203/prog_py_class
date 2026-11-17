@@ -1,0 +1,268 @@
+<!-- 0 시작 -->
+<section class="page" data-name="시작" data-acc="#1f9d74">
+  <div class="cover">
+    <div class="in">
+      <span class="tag">프로그래밍(Python) · Ⅱ. 프로그래밍 기초 · 6. 제어문: 반복문</span>
+      <h1>같은 일을<br>몇 번이고 시키려면?</h1>
+      <div class="story"><b>생각해 보기</b><br>1부터 10까지 더하라는 일을 <b>손으로 10번</b> 적으면 어떨까요? 1부터 1000까지라면요? 컴퓨터는 <b>같은 명령을 정해진 만큼 되풀이</b>하는 일에 강해요. 그 방법이 <b>반복문</b>이에요.</div>
+      <p>오늘은 <b>while 문</b>과 <b>for 문</b>, 반복문 속에 반복문을 넣는 <b>중첩 반복</b>, 반복을 건너뛰거나 끝내는 <b>continue·break</b>를 직접 실행하며 익혀요. 마지막에는 Ⅱ단원의 <b>제어문</b>을 한꺼번에 정리해요.</p>
+      <ol>
+        <li>while 문</li><li>for 문과 range( )</li><li>중첩 반복</li>
+        <li>반복 제어 break · continue</li><li>스스로 해결하기 · 마무리·제어문 정리</li>
+      </ol>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn" style="background:var(--amber);color:var(--navy);box-shadow:none" onclick="document.getElementById('intro').scrollIntoView({behavior:'smooth'})">오늘 배울 것 보기 ↓</button>
+        <button class="btn" style="background:transparent;border:2px solid rgba(255,255,255,.5);box-shadow:none" onclick="go(1)">01로 바로 가기 →</button>
+      </div>
+    </div>
+    <div class="route" aria-hidden="true">
+      <div class="st" style="animation-delay:.2s"><i>🔁</i><div><b>while</b><small>조건이 참인 동안 반복</small></div></div>
+      <div class="ar" style="animation-delay:.6s">↓</div>
+      <div class="st" style="animation-delay:.8s"><i>🔢</i><div><b>for · range</b><small>정해진 횟수만큼 반복</small></div></div>
+      <div class="ar" style="animation-delay:1.2s">↓</div>
+      <div class="st" style="animation-delay:1.4s"><i>🪆</i><div><b>중첩 반복</b><small>반복 안의 반복</small></div></div>
+      <div class="ar" style="animation-delay:1.8s">↓</div>
+      <div class="st" style="animation-delay:2s"><i>⏭️</i><div><b>continue · break</b><small>건너뛰기·끝내기</small></div></div>
+    </div>
+  </div>
+
+  <div id="intro" class="today">
+    <div class="today-lead">
+      <span class="kicker">지난 시간에서 이어서</span>
+      <p>조건문은 <b>조건에 따라 길을 고르는</b> 구조였어요. 오늘 배울 반복문은 <b>같은 길을 여러 번 도는</b> 구조예요. 둘을 합치면 복잡한 문제도 풀 수 있어요.</p>
+    </div>
+    <div class="why3">
+      <div class="why">
+        <span class="kicker">핵심 질문</span>
+        <ul class="uses">
+          <li><b>오늘의 질문</b> · 같은 일을 여러 번 반복하려면 어떻게 해야 할까?</li>
+        </ul>
+      </div>
+      <div class="why">
+        <span class="kicker">배우고 나면 할 수 있는 것</span>
+        <ul class="can">
+          <li>while 문과 for 문(range)으로 반복하는 프로그램을 작성할 수 있다.</li>
+          <li>중첩 반복과 break·continue를 이해하고 쓸 수 있다.</li>
+          <li>문제에 알맞은 제어 구조를 고를 수 있다.</li>
+        </ul>
+      </div>
+      <div class="why">
+        <span class="kicker">오늘 만날 낱말</span>
+        <p style="margin:4px 0 0;font-size:.95rem">반복문 · while · for · range( ) · 증감 값 · 무한 반복 · 중첩 반복 · break · continue</p>
+        <p style="font-size:.86rem;margin-top:8px" class="muted">코드는 화면에서 바로 실행해 볼 수 있어요. 들여쓰기는 공백 2칸이에요.</p>
+      </div>
+    </div>
+    <div class="card">
+      <h3>📝 나의 계획 <span class="muted" style="font-weight:400;font-size:.88rem">(선택)</span></h3>
+      <div class="memo"><label>일상이나 게임에서 「같은 일을 계속 되풀이하는」 예를 떠올려 적어 보세요. <small>마지막 화면에서 다시 볼 수 있어요.</small></label><textarea data-memo="planLearn" rows="2"></textarea><div class="saved"></div></div>
+    </div>
+    <div style="text-align:center;margin-top:20px"><button class="btn" style="background:var(--mint)" onclick="go(1)">01 while 문부터 시작하기 →</button></div>
+  </div>
+</section>
+
+<!-- 1 while -->
+<section class="page" data-name="while 문" data-acc="#1f9d74">
+  <div class="head"><div class="num">01</div><div><h2>while 문</h2><p>교과서 132·133쪽 · 조건이 참인 동안 반복</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span><b>while 문</b>은 <b>조건이 참인 동안</b> 안쪽 명령을 계속 되풀이해요. 그래서 반복 안에서 <b>조건이 언젠가 거짓이 되도록</b> 변수를 바꿔 줘야 해요.</span></div>
+  <div class="card">
+    <h3>🔁 1부터 10까지의 합 <span class="muted" style="font-weight:400;font-size:.88rem">(132쪽)</span></h3>
+    <p style="margin-top:0"><code>i</code>는 1부터 1씩 늘어나고, <code>sum</code>에 <code>i</code>가 차례로 더해져요. <code>i</code>가 11이 되면 조건 <code>i &lt;= 10</code>이 거짓이 되어 끝나요. 결과를 예상한 뒤 실행해 봐요.</p>
+    <div id="whileSumRun"></div>
+    <div class="flow2">
+      <div style="--k:#1f9d74"><b>① 초깃값</b><span>i = 1, sum = 0</span></div>
+      <div class="ar">→</div>
+      <div style="--k:#2f6fd0"><b>② 조건 확인</b><span>i &lt;= 10 이 참이면 안으로</span></div>
+      <div class="ar">→</div>
+      <div style="--k:#e0702b"><b>③ 처리·증가</b><span>sum += i, i += 1 후 ②로</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>⚠️ 순서가 바뀌면 결과도 달라져요 <span class="muted" style="font-weight:400;font-size:.88rem">(132쪽)</span></h3>
+    <p style="margin-top:0">교과서는 두 가지 실수를 보여 줘요. 첫째, <code>i += 1</code>을 <b>빼먹으면</b> <code>i</code>가 계속 1이라 조건이 늘 참이어서 <b>무한 반복</b>이 돼요. 그래서 이 코드는 화면에서 <b>실행하지 않고 읽기만</b> 해요.</p>
+<pre class="code">i = 1
+sum = 0
+while i &lt;= 10:
+  sum += i      <i># i를 늘리는 명령이 없다 → 끝나지 않음</i>
+print(sum)</pre>
+    <p style="margin:10px 0 0">둘째, <code>i += 1</code>과 <code>sum += i</code>의 <b>순서를 바꾸면</b> 값이 어긋나요. 실행해서 합이 얼마인지 확인해요.</p>
+    <div id="whileOrderRun"></div>
+    <p class="note">1부터 10까지의 합은 55인데 54가 나와요. 교과서 설명대로 <code>i</code>를 먼저 늘리면 첫 값 1이 빠지기 때문이에요. 초깃값을 <code>i = 0</code>으로 바꿔 실행하면 55가 돼요.</p>
+  </div>
+  <div class="card">
+    <h3>✌️ 두 수 사이의 짝수 출력 <span class="muted" style="font-weight:400;font-size:.88rem">(133쪽 해 보기 6)</span></h3>
+    <p style="margin-top:0">두 정수를 입력받아, 작은 수에서 큰 수 사이의 <b>짝수만</b> 출력해요. 시작이 홀수면 1을 더해 짝수로 만들고, 2씩 늘려요. <b>입력값</b>의 두 수를 바꿔 실행해 봐요. 앞의 수가 더 커도 같은 결과가 나와요.</p>
+    <div id="whileEvenRun"></div>
+    <p class="note"><code>print(start, end=' ')</code>의 <code>end</code>는 출력 끝에 붙는 글자를 정해요. 기본값은 줄 바꿈이라, 공백으로 바꾸면 한 줄에 이어서 나와요.</p>
+  </div>
+  <div class="quiz" data-quiz="1"></div>
+</section>
+
+<!-- 2 for와 range -->
+<section class="page" data-name="for 문·range" data-acc="#2f6fd0">
+  <div class="head"><div class="num">02</div><div><h2>for 문과 range( )</h2><p>교과서 134·136쪽 · 시작 값, 종료 값, 증감 값</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span><b>for 문</b>은 <b>횟수가 정해진</b> 반복에 편해요. <code>range(시작, 종료, 증감)</code>이 숫자를 한 번에 만들어 주고, 종료 값은 <b>그 값 바로 앞까지</b>만 포함돼요.</span></div>
+  <div class="card">
+    <h3>🔢 range( )로 숫자 만들기 <span class="muted" style="font-weight:400;font-size:.88rem">(134쪽)</span></h3>
+    <div class="tscroll"><table class="esc-t">
+      <tr><th>형식</th><th class="l">만들어지는 값</th></tr>
+      <tr><td><code>range(7, 9)</code></td><td class="l">7, 8 · 증감 값을 생략하면 1씩</td></tr>
+      <tr><td><code>range(5, 12, 2)</code></td><td class="l">5, 7, 9, 11 · 2씩 늘어나며 12 앞까지</td></tr>
+      <tr><td><code>range(5)</code></td><td class="l">0, 1, 2, 3, 4 · 시작을 생략하면 0부터</td></tr>
+    </table></div>
+    <p style="margin:10px 0 0">아래 코드의 숫자를 바꿔 가며 어떤 값이 나오는지 확인해 봐요. 다 맞히면 <code>range(10, 0, -3)</code>처럼 <b>줄어드는</b> 경우도 해 봐요.</p>
+    <div id="rangeRun"></div>
+  </div>
+  <div class="card">
+    <h3>➕ while 대신 for로 합 구하기 <span class="muted" style="font-weight:400;font-size:.88rem">(134쪽)</span></h3>
+    <p style="margin-top:0">01의 1부터 10까지 합을 for 문으로 바꾼 코드예요. while에서는 <b>초깃값·조건·증가</b>를 따로 썼지만, for에서는 <code>range( )</code> 한 줄에 모여 있어요.</p>
+    <div id="forSumRun"></div>
+  </div>
+  <div class="card">
+    <h3>✌️ 짝수의 합 <span class="muted" style="font-weight:400;font-size:.88rem">(136쪽 해 보기 7-1)</span></h3>
+    <p style="margin-top:0">입력한 수까지 <b>짝수만</b> 더해요. 2에서 시작해 2씩 늘리면 짝수만 골라져요. 입력값을 10, 100 등으로 바꿔 보세요.</p>
+    <div id="evenSumRun"></div>
+  </div>
+  <div class="card">
+    <h3>✖️ 구구단 <span class="muted" style="font-weight:400;font-size:.88rem">(136쪽 해 보기 7-2)</span></h3>
+    <p style="margin-top:0">단 수를 입력받아 곱하는 수 1~9를 반복해요. 입력값을 바꿔 다른 단도 출력해 봐요.</p>
+    <div id="gugRun"></div>
+  </div>
+  <p class="callout">💡 <b>for 문의 in 뒤에는 range( )만 오는 게 아니에요 <span class="muted" style="font-weight:400;font-size:.86rem">(134·135쪽)</span></b> 리스트·튜플·문자열처럼 <b>요소를 하나씩 꺼낼 수 있는 자료형</b>도 쓸 수 있어요. 예를 들어 <code>for c in 'abc':</code>는 글자를 하나씩 꺼내요.</p>
+  <div class="quiz" data-quiz="2"></div>
+</section>
+
+<!-- 3 중첩 반복 -->
+<section class="page" data-name="중첩 반복" data-acc="#9b4fc4">
+  <div class="head"><div class="num">03</div><div><h2>중첩 반복</h2><p>교과서 138·139쪽 · 반복문 안의 반복문, 별 찍기</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>반복문 안에 또 반복문을 넣은 것이 <b>중첩 반복</b>이에요. 바깥 반복은 <b>줄 수</b>를, 안쪽 반복은 <b>한 줄에 찍을 개수</b>를 맡아요.</span></div>
+  <div class="card">
+    <h3>⭐ 별 삼각형 <span class="muted" style="font-weight:400;font-size:.88rem">(138·139쪽)</span></h3>
+    <p style="margin-top:0">줄 번호 <code>i</code>가 1, 2, 3일 때 별이 1개, 2개, 3개예요. 그래서 안쪽 반복은 <code>range(1, i + 1)</code>이에요. 안쪽 반복이 한 줄을 다 찍으면, <b>바깥 반복에서</b> <code>print( )</code>로 줄을 바꿔요.</p>
+    <div id="starRun"></div>
+    <div class="flow2">
+      <div style="--k:#9b4fc4"><b>i = 1</b><span>안쪽 1번 → <code>*</code></span></div>
+      <div class="ar">→</div>
+      <div style="--k:#2f6fd0"><b>i = 2</b><span>안쪽 2번 → <code>* *</code></span></div>
+      <div class="ar">→</div>
+      <div style="--k:#e0702b"><b>i = 3</b><span>안쪽 3번 → <code>* * *</code></span></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>🔍 end 옵션이 없으면? <span class="muted" style="font-weight:400;font-size:.88rem">(139쪽)</span></h3>
+    <p style="margin-top:0">아래는 <code>end = ' '</code>를 <b>지운</b> 코드예요. 실행하기 전에 무엇이 달라질지 예상해 봐요. 별이 한 줄에 모일까요, 줄마다 하나씩 나올까요?</p>
+    <div id="starNoEndRun"></div>
+    <p class="note"><code>print( )</code>는 기본적으로 출력 뒤에 줄을 바꿔요. 그래서 한 줄에 이어서 찍으려면 안쪽의 <code>print</code>에 <code>end</code>를 지정해야 해요.</p>
+  </div>
+  <div class="card">
+    <h3>🔻 역삼각형 <span class="muted" style="font-weight:400;font-size:.88rem">(139쪽 해 보기 8-1)</span></h3>
+    <p style="margin-top:0">안쪽 반복의 범위를 <b>줄어들게</b> 바꾸면 거꾸로 된 삼각형이 돼요. <code>range(3, i - 1, -1)</code>에서 <code>i</code>가 1, 2, 3일 때 몇 번 반복하는지 세어 보고 실행해 봐요. 숫자 3을 바꾸면 별의 개수가 달라져요.</p>
+    <div id="starRevRun"></div>
+  </div>
+  <div class="quiz" data-quiz="3"></div>
+</section>
+
+<!-- 4 반복 제어 -->
+<section class="page" data-name="break·continue" data-acc="#e0702b">
+  <div class="head"><div class="num">04</div><div><h2>반복 제어 · break와 continue</h2><p>교과서 140·142쪽 · 반복을 끝내거나 건너뛰기</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span><b>break</b>는 반복문을 <b>바로 끝내고</b>, <b>continue</b>는 이번 차례의 <b>남은 명령만 건너뛰고</b> 다음 반복으로 가요. 둘 다 for와 while에서 쓸 수 있어요.</span></div>
+  <div class="card">
+    <h3>⏭️ continue · 홀수만 출력 <span class="muted" style="font-weight:400;font-size:.88rem">(142쪽 해 보기 9)</span></h3>
+    <p style="margin-top:0">짝수일 때 <code>continue</code>를 만나면 <code>print</code>를 건너뛰고 다음 반복으로 가요. 먼저 실행해 보고, 아래에서 <code>continue</code>를 지운 코드와 비교해 봐요.</p>
+    <div id="contRun"></div>
+    <p style="margin:10px 0 0">이번에는 <code>continue</code> 줄(과 그 조건)을 <b>없앴어요</b>. 결과는 어떻게 달라질까요?</p>
+    <div id="noContRun"></div>
+  </div>
+  <div class="card">
+    <h3>🛑 break · 소수 판별 <span class="muted" style="font-weight:400;font-size:.88rem">(140쪽 예제 10)</span></h3>
+    <p style="margin-top:0">2부터 <code>num - 1</code>까지 나누어 보다가, 나누어떨어지는 수를 만나면 소수가 아니므로 <code>break</code>로 <b>즉시 반복을 끝내요</b>. 입력값을 7, 10, 13, 9로 바꿔 봐요.</p>
+    <div id="primeRun"></div>
+    <p class="note">교과서 코드로 <b>2</b>를 넣으면 오류가 나요. 2는 <code>range(2, 2)</code>가 비어 있어 반복이 한 번도 돌지 않고, 변수 <code>i</code>가 만들어지지 않기 때문이에요. 직접 넣어 확인해 봐요.</p>
+  </div>
+  <div class="card">
+    <h3>🎯 숫자 맞히기 · 횟수를 정해서 <span class="muted" style="font-weight:400;font-size:.88rem">(139쪽 해 보기 8-2 변형)</span></h3>
+    <p style="margin-top:0">교과서는 정답을 맞힐 때까지 <code>while num != com</code>으로 반복해요. 이 화면에서는 입력이 끝없이 이어지지 않도록 <b>최대 5번</b>만 묻는 <code>for</code> 문으로 바꿨고, 정답도 <code>7</code>로 정해 두었어요. 입력값 세 줄(3, 9, 7)을 바꿔 가며 <code>break</code>가 언제 일어나는지 봐요.</p>
+    <div id="guessRun"></div>
+    <p class="note">정답을 맞히면 <code>break</code>로 나오고, 5번 안에 못 맞히면 반복이 저절로 끝나요. 입력값이 모자라면 오류 안내가 나오니 5개 이내로 쓰세요.</p>
+    <p class="callout" style="margin-top:12px">⚠️ <b>교과서 원본(139쪽)</b>은 정답을 맞힐 때까지 계속 묻는 <code>while</code> 문이라, 이 화면의 실행 칸에서는 돌리지 않아요. 입력이 끝없이 이어질 수 있는 반복은 웹 실행 칸에서 다루기 어렵기 때문이에요. 파이썬을 설치한 환경에서 직접 해 보세요.</p>
+  </div>
+  <p class="callout">💡 <b>많이 쓰면 읽기 어려워요 <span class="muted" style="font-weight:400;font-size:.86rem">(140쪽 Tip)</span></b> break와 continue를 너무 많이 쓰면 흐름이 복잡해져 코드를 읽기 힘들어요. 꼭 필요할 때만 쓰는 것이 좋아요.</p>
+  <div class="quiz" data-quiz="4"></div>
+</section>
+
+<!-- 5 스스로 해결하기 -->
+<section class="page" data-name="스스로 해결하기" data-acc="#d64535">
+  <div class="head"><div class="num">05</div><div><h2>스스로 해결하기 · 급식 메뉴 알림</h2><p>교과서 144쪽 · 문제에 맞는 제어 구조 고르기</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>교과서의 수행 활동은 <b>요일을 입력하면 그날 급식 메뉴를 알려 주고, 「종료」를 입력하면 끝나는</b> 프로그램이에요. 코드를 쓰기 전에 <b>어떤 제어 구조가 필요한지</b> 먼저 설계해 봐요.</span></div>
+  <div class="card">
+    <h3>🍱 만들 프로그램 <span class="muted" style="font-weight:400;font-size:.88rem">(144쪽)</span></h3>
+    <pre class="code">원하는 요일을 입력하세요(예: 월), 종료 시 '종료' 입력: 월
+(월요일 급식 메뉴를 안내)
+원하는 요일을 입력하세요(예: 월), 종료 시 '종료' 입력: 종료
+(프로그램 종료)</pre>
+    <p class="note">교과서는 메뉴를 글자 대신 <b>음성</b>(TTS)으로 들려줘요. 구글 코랩에서 외부 모듈 <code>gTTS</code>를 설치해 써야 해서, 이 화면에서는 실행하지 않고 <b>설계까지만</b> 해 봐요. 음성 없이 <code>print( )</code>로 메뉴를 보여 주는 프로그램으로 바꿔도 구조는 같아요.</p>
+  </div>
+  <div class="card">
+    <h3>1️⃣ 해결해야 할 문제 적어 보기</h3>
+    <p class="muted" style="margin-top:0">무엇을 입력받고, 무엇을 판단하고, 언제까지 반복할지 내 말로 정리해 봐요.</p>
+    <div class="memo"><label>① 해결해야 할 문제 <small>프로그램이 하는 일을 한두 문장으로</small></label><textarea data-memo="planProb" rows="2"></textarea><div class="saved"></div></div>
+    <div class="memo"><label>② 반복은 어떻게 끝낼까? <small>어떤 입력이 들어오면 멈추게 할지, 어떤 명령으로 끝낼지</small></label><textarea data-memo="planStop" rows="2"></textarea><div class="saved"></div></div>
+    <div class="memo"><label>③ 요일마다 다른 메뉴는 어떻게 고를까? <small>어떤 제어 구조가 필요한지</small></label><textarea data-memo="planPick" rows="2"></textarea><div class="saved"></div></div>
+  </div>
+  <div class="card">
+    <h3>2️⃣ 핵심 기능 고르기</h3>
+    <p class="muted" style="margin-top:0">이 프로그램을 만드는 데 꼭 필요한 구조를 모두 골라요.</p>
+    <div id="featPick"></div>
+  </div>
+  <div class="card">
+    <h3>✅ 성취도 평가 · 스스로 점검</h3>
+    <p class="muted" style="margin-top:0">오늘 할 수 있게 된 것을 모두 골라요.</p>
+    <div id="selfCheck"></div>
+  </div>
+</section>
+
+<!-- 6 마무리 -->
+<section class="page" data-name="마무리 · 질문폼" data-acc="#0f2742">
+  <div class="head"><div class="num">06</div><div><h2>마무리 · 제어문 정리</h2><p>Ⅱ단원 제어문 정리 · 마무리 퀴즈 · 생각 정리 질문폼</p></div></div>
+  <div class="card">
+    <h3>🧭 제어 구조 정리 <span class="muted" style="font-weight:400;font-size:.88rem">(145쪽)</span></h3>
+    <p style="margin-top:0">조건문부터 반복문까지, 프로그램의 흐름을 정하는 구조를 카드로 다시 확인해요.</p>
+    <div id="ctrlFlip" class="tcards"></div>
+  </div>
+  <div class="card">
+    <h3>🎮 문제에 맞는 제어 구조는? </h3>
+    <p style="margin-top:0">상황을 보고, 어떤 구조가 가장 알맞은지 골라요.</p>
+    <div id="ctrlGame"></div>
+  </div>
+  <div class="key3">
+    <div style="--k:#1f9d74"><b>while 문</b>은 조건이 참인 동안 반복하고, 반복 안에서 조건을 바꾸지 않으면 <b>무한 반복</b>이 된다. <b>for 문</b>은 <code>range(시작, 종료, 증감)</code>으로 정해진 횟수만큼 반복한다.</div>
+    <div style="--k:#9b4fc4">반복문 안에 반복문이나 조건문을 넣는 <b>중첩 제어 구조</b>로 줄·칸이 있는 패턴이나 구구단 같은 문제를 풀 수 있다. 바깥은 줄, 안쪽은 한 줄 안의 반복이다.</div>
+    <div style="--k:#e0702b"><b>break</b>는 반복을 즉시 끝내고, <b>continue</b>는 남은 명령을 건너뛰고 다음 반복으로 간다. 문제에 따라 <b>순차·선택·반복·중첩</b> 구조를 알맞게 고른다.</div>
+  </div>
+  <div class="card">
+    <h3>오늘의 질문에 다시 답하기</h3>
+    <p class="muted" style="margin-top:0">오늘 실행해 본 코드를 떠올리며, 내 말로 답해 보세요.</p>
+    <b style="font-size:.93rem">같은 일을 여러 번 반복하려면 어떻게 해야 할까?</b>
+    <textarea data-memo="keyQ" rows="3"></textarea><div class="saved"></div>
+  </div>
+  <div class="card" style="--acc:#0f2742">
+    <h3>마무리 퀴즈</h3>
+    <div class="quiz" data-quiz="6"></div>
+  </div>
+  <div class="card">
+    <h3>개념 퀴즈 결과</h3>
+    <table id="result"></table>
+    <button class="btn ghost" id="quizReset">퀴즈 다시 풀기</button>
+  </div>
+  <div class="formgo">
+    <span class="kicker">생각 정리 과제</span>
+    <h3>질문폼에 내 생각 쓰기</h3>
+    <ol>
+      <li><b>while 문</b>과 <b>for 문</b>이 각각 어떤 때 편한지, 오늘 실행해 본 예(합 구하기·구구단 등)를 들어 설명하세요.</li>
+      <li><b>중첩 반복</b>에서 바깥 반복과 안쪽 반복이 각각 무엇을 맡는지, 별 삼각형 예로 설명하세요. <b>break</b>와 <b>continue</b>의 차이도 함께 적으세요.</li>
+      <li>05에서 설계한 <b>급식 메뉴 알림</b>에 어떤 제어 구조(순차·선택·반복)가 왜 필요한지 내 말로 설명하세요.</li>
+    </ol>
+    <p>질문폼에는 붙여넣기가 되지 않아요. 아래 메모를 보면서 직접 다시 써 주세요.</p>
+    <a class="go" href="{{FORM_URL}}" target="_blank" rel="noopener">질문폼 열기 →</a>
+    <div class="msum" id="msum"></div>
+  </div>
+</section>

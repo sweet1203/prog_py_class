@@ -1,0 +1,28 @@
+  /* u2-if 전용 */
+  code{font-family:"Menlo","Consolas","Courier New",monospace;font-size:.9em;
+    background:#eef1f5;color:#1d3a5c;border-radius:5px;padding:1px 5px}
+  .pr-out code,.pr-code code,.code code{background:none;padding:0;color:inherit}
+
+  /* 순서도 */
+  .fc{display:block;width:100%;max-width:440px;height:auto;margin:6px auto 0}
+  .fc .bx{fill:#fbfaf7;stroke:var(--k,#1f9d74);stroke-width:2}
+  .fc .dm{fill:#e8f6f0;stroke:var(--k,#1f9d74);stroke-width:2.2}
+  .fc .ln{fill:none;stroke:#5b6b7d;stroke-width:2}
+  .fc .ah{fill:#5b6b7d}
+  .fc text{font:700 13px "Pretendard","Apple SD Gothic Neo",sans-serif;fill:#1d2b3a;text-anchor:middle}
+  .fc text.lb{font-size:12px;fill:#c1521e}
+  .fc text.sm{font-size:11px;font-weight:400;fill:#5b6b7d}
+  .fcw{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;align-items:start}
+  .fcw figure{margin:0}
+  .fcw figcaption{text-align:center;font-size:.88rem;color:var(--muted);margin-top:4px}
+
+  /* 구조 비교 카드 */
+  .st3{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+  .st3>div{background:#fbfaf7;border-radius:12px;padding:12px 14px;border-top:5px solid var(--k)}
+  .st3 b{display:block;margin-bottom:4px}
+  .st3 span{font-size:.9rem}
+
+  /* 작은 설명 표 */
+  .esc-t{width:100%;margin:10px 0 0;font-size:.93rem}
+  .esc-t th{color:var(--muted);font-weight:700;font-size:.82rem;white-space:nowrap}
+  .esc-t td{border-bottom:1px solid var(--line);padding:6px 9px}

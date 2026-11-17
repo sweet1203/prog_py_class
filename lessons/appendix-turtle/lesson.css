@@ -1,0 +1,37 @@
+
+  /* appendix-turtle 전용 (tg-) */
+
+  /* 본문 속 짧은 코드 조각 (.code 는 pyrun.css 공용) */
+  code{font-family:"Menlo","Consolas","Courier New",monospace;font-size:.9em;
+    background:#eef1f5;color:#1d3a5c;border-radius:5px;padding:1px 5px}
+  .pr-out code,.pr-code code,.code code{background:none;padding:0;color:inherit}
+
+  /* 명령어 설명용 작은 표 */
+  .esc-t{width:100%;margin:10px 0 0;font-size:.93rem}
+  .esc-t th{color:var(--muted);font-weight:700;font-size:.82rem;white-space:nowrap;text-align:center}
+  .esc-t th.l{text-align:left}
+  .esc-t td{border-bottom:1px solid var(--line);padding:6px 9px;text-align:center}
+  .esc-t td.l{text-align:left}
+  .esc-t td code{font-size:.9em;white-space:nowrap}
+
+  /* 실행 결과 그림 공통 래퍼 */
+  .tg-wrap{max-width:300px;margin:10px auto 0;background:#fbfdff;border:1px solid var(--line);
+    border-radius:12px;padding:14px}
+  .tg-wrap svg{display:block;width:100%;height:auto}
+
+  /* 01 사각형 SVG */
+  .tg-sq .tg-edge{fill:none;stroke:#2f6fd0;stroke-width:3;stroke-linecap:round}
+  .tg-sq .tg-guide{stroke:#9aa6b4;stroke-width:1.6;stroke-dasharray:4 4}
+  .tg-sq .tg-origin{fill:#5a6b7b}
+  .tg-sq .tg-lab{fill:#5b6776;font-size:11px;text-anchor:middle;font-weight:700}
+  .tg-sq .tg-turtle{font-size:22px;text-anchor:middle;dominant-baseline:central}
+
+  /* 02 겹치는 삼각형(꽃 모양) SVG */
+  .tg-rose .tri{fill:rgba(31,157,116,.16);stroke:#1f9d74;stroke-width:2;stroke-linejoin:round}
+
+  /* 03·04 점 격자 SVG */
+  .tg-dot{max-width:100%}
+
+  /* 04 예시 결과 배지 */
+  .pill-ex{display:inline-block;margin-left:4px;font-size:.72rem;font-weight:700;color:#fff;
+    background:#5a6b7b;border-radius:999px;padding:2px 9px;vertical-align:middle}

@@ -1,0 +1,23 @@
+
+  /* u3-build 전용 (.code·.tscroll 은 pyrun.css 에 이미 있음) */
+
+  /* 본문 속 짧은 코드 조각 */
+  code{font-family:"Menlo","Consolas","Courier New",monospace;font-size:.9em;
+    background:#eef1f5;color:#1d3a5c;border-radius:5px;padding:1px 5px}
+  .pr-out code,.pr-code code,.code code{background:none;padding:0;color:inherit}
+
+  /* 테스트 케이스 등 작은 설명표 */
+  .esc-t{width:100%;margin:10px 0 0;font-size:.92rem}
+  .esc-t th{color:var(--muted);font-weight:700;font-size:.82rem;white-space:nowrap}
+  .esc-t th.l,.esc-t td.l{text-align:left}
+  .esc-t td{border-bottom:1px solid var(--line);padding:6px 9px;text-align:center;vertical-align:top}
+  .esc-t td code{font-size:.92em}
+
+  /* 01 프로그래밍 기법 탭 */
+  .al-tab{gap:8px;margin:4px 0 10px}
+  .al-tab button{display:flex;align-items:center;gap:7px;border:2px solid var(--line);background:#fff;border-radius:999px;padding:6px 16px;font:inherit;font-weight:700;cursor:pointer;color:var(--ink)}
+  .al-tab button .e{font-size:1.1rem}
+  .al-tab button.on{border-color:var(--acc);background:var(--acc);color:#fff}
+  .al-tw{background:#fbfaf7;border-radius:12px;border-left:6px solid var(--k);padding:12px 16px}
+  .al-tw>p{margin:0 0 6px;font-size:.95rem}
+  .al-tw>p:last-child{margin-bottom:0}

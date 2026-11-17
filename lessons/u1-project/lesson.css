@@ -1,0 +1,37 @@
+
+  /* u1-project 전용 (pj-) */
+
+  /* 01 조건 및 제한 사항 카드 */
+  .pj-cond{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:4px 0 12px}
+  .pj-cond>div{background:#fbfaf7;border-radius:12px;border-top:5px solid var(--k);padding:11px 14px}
+  .pj-cond b{display:block;color:var(--k);font-size:1rem}
+  .pj-cond span{display:block;font-size:.9rem;margin-top:4px;line-height:1.55}
+
+  /* 02 진행 절차 세로 단계 */
+  .pj-proc{display:grid;gap:8px;margin:8px 0 0}
+  .pj-proc>div{display:flex;align-items:center;gap:12px;background:#fff;border-radius:12px;border-left:7px solid var(--k);box-shadow:0 4px 12px rgba(15,39,66,.07);padding:9px 14px}
+  .pj-proc .n{flex:0 0 auto;width:30px;height:30px;border-radius:999px;background:var(--k);color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:1rem}
+  .pj-proc b{display:block;color:var(--k);font-size:1rem}
+  .pj-proc small{display:block;color:var(--ink);font-size:.88rem;margin-top:1px}
+
+  /* 03 알고리즘 첫 단계 강조 상자 */
+  .pj-first{display:flex;align-items:center;gap:10px;background:#eef6ff;border:2px dashed #9cc2f0;border-radius:12px;padding:11px 14px;font-weight:700;font-size:.98rem}
+  .pj-first span{flex:0 0 auto;width:26px;height:26px;border-radius:999px;background:#2f6fd0;color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:.9rem}
+
+  /* 03 순서도 기호 모아 보기 */
+  .pj-sym{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px;margin:8px 0 0}
+  .pj-sym>div{background:#fbfaf7;border-radius:12px;border:1px solid var(--line);padding:12px 10px;text-align:center}
+  .pj-sym svg{width:84px;height:auto;display:block;margin:0 auto 6px}
+  .pj-sym svg *{fill:none;stroke:var(--k);stroke-width:2.6;stroke-linejoin:round}
+  .pj-sym .arr svg polygon{fill:var(--k);stroke:none}
+  .pj-sym b{display:block;color:var(--k);font-size:.96rem}
+  .pj-sym span{display:block;font-size:.82rem;color:var(--muted);margin-top:3px;line-height:1.45}
+
+  /* 04 읽을거리 · 직업인 카드 */
+  .pj-read{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+  @media (max-width:720px){.pj-read{grid-template-columns:1fr}}
+  .pj-read>div{background:#fff;border-radius:14px;border-top:5px solid var(--k);box-shadow:0 5px 14px rgba(15,39,66,.08);padding:14px 16px}
+  .pj-read>div>b{display:block;color:var(--k);font-size:1.04rem;margin-bottom:6px}
+  .pj-read span{display:block;font-size:.92rem;line-height:1.6}
+  .pj-read span b{color:inherit;font-weight:700}
+  .pj-read small{display:block;color:var(--muted);font-size:.84rem;border-top:1px dashed var(--line);padding-top:7px;margin-top:9px;line-height:1.5}

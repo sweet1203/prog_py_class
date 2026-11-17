@@ -1,0 +1,306 @@
+<!-- 0 시작 -->
+<section class="page" data-name="시작" data-acc="#1f9d74">
+  <div class="cover">
+    <div class="in">
+      <span class="tag">프로그래밍(Python) · Ⅱ. 프로그래밍 기초 · 5. 제어문: 조건문</span>
+      <h1>조건에 따라<br>다르게 움직이려면?</h1>
+      <div class="story"><b>코딩 동아리 이야기 (120쪽)</b><br>코딩 동아리를 만들려는 현아와 은호는 <b>몇 가지 조건</b>을 정했어요. 그리고 <b>조건에 맞는 사람만 가입</b>할 수 있도록 프로그램을 만들고 싶어 해요. 사용자에게 정보를 입력받고, 조건을 만족하는지 확인해서 <b>다르게 반응</b>하는 프로그램이지요.</div>
+      <p>오늘은 코드의 <b>실행 흐름</b>을 조절하는 제어문 가운데, <b>조건에 따라 실행할 문장을 고르는 조건문</b>을 직접 코드를 돌려 보며 익혀요.</p>
+      <ol>
+        <li>제어 구조와 순차 구조</li><li>if 문</li><li>if ~ else 문</li>
+        <li>if ~ elif ~ else 문</li><li>스스로 해결하기 · 마무리</li>
+      </ol>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn" style="background:var(--amber);color:var(--navy);box-shadow:none" onclick="document.getElementById('intro').scrollIntoView({behavior:'smooth'})">단원 도입부터 보기 ↓</button>
+        <button class="btn" style="background:transparent;border:2px solid rgba(255,255,255,.5);box-shadow:none" onclick="go(1)">01로 바로 가기 →</button>
+      </div>
+    </div>
+    <div class="route" aria-hidden="true">
+      <div class="st" style="animation-delay:.2s"><i>➡️</i><div><b>순차</b><small>위에서 아래로 차례대로</small></div></div>
+      <div class="ar" style="animation-delay:.6s">↓</div>
+      <div class="st" style="animation-delay:.8s"><i>🔀</i><div><b>선택</b><small>조건이 참이냐 거짓이냐</small></div></div>
+      <div class="ar" style="animation-delay:1.2s">↓</div>
+      <div class="st" style="animation-delay:1.4s"><i>🔁</i><div><b>반복</b><small>같은 일을 여러 번(다음에)</small></div></div>
+    </div>
+  </div>
+
+  <div id="intro" class="today">
+    <div class="today-lead">
+      <span class="kicker">단원 도입 · 제어문 (120쪽)</span>
+      <p><b>제어문</b>은 프로그램에서 <b>코드의 실행 흐름을 조절</b>해요. 명령이 위에서 아래로 차례로 실행되는 흐름, 조건에 따라 실행할 문장을 고르는 흐름, 같은 작업을 여러 번 반복하는 흐름이 있어요. 오늘은 그 가운데 <b>순차 구조</b>와 <b>선택 구조</b>(조건문)를 만나요.</p>
+    </div>
+    <div class="why3">
+      <div class="why">
+        <span class="kicker">핵심 질문</span>
+        <ul class="uses">
+          <li><b>오늘의 질문</b> · 조건에 따라 다르게 동작하는 프로그램은 어떻게 작성할까?</li>
+        </ul>
+      </div>
+      <div class="why">
+        <span class="kicker">배우고 나면 할 수 있는 것</span>
+        <ul class="can">
+          <li>순차 구조와 선택 구조를 구분할 수 있다.</li>
+          <li>if, if ~ else, if ~ elif ~ else 문으로 조건에 맞게 실행하는 프로그램을 작성할 수 있다.</li>
+        </ul>
+      </div>
+      <div class="why">
+        <span class="kicker">오늘 만날 낱말</span>
+        <p style="margin:4px 0 0;font-size:.95rem">제어문 · 순차 구조 · 선택 구조 · 조건식 · if · else · elif · 들여쓰기</p>
+        <p style="font-size:.86rem;margin-top:8px" class="muted">처음 보는 낱말이 있어도 괜찮아요. 화면을 넘기며 코드로 하나씩 만나요.</p>
+      </div>
+    </div>
+    <div class="card">
+      <h3>📝 나의 계획 <span class="muted" style="font-weight:400;font-size:.88rem">(120쪽) · (선택)</span></h3>
+      <div class="memo"><label>나는 이 단원에서 다음과 같은 내용을 배우고 싶다. <small>시간이 있으면 한두 가지 적어 보세요. 마지막 화면에서 다시 볼 수 있어요.</small></label><textarea data-memo="planLearn" rows="2"></textarea><div class="saved"></div></div>
+    </div>
+    <div style="text-align:center;margin-top:20px"><button class="btn" style="background:var(--mint)" onclick="go(1)">01 제어 구조와 순차 구조부터 시작하기 →</button></div>
+  </div>
+</section>
+
+<!-- 1 제어 구조와 순차 구조 -->
+<section class="page" data-name="제어 구조·순차" data-acc="#1f9d74">
+  <div class="head"><div class="num">01</div><div><h2>제어 구조와 순차 구조</h2><p>교과서 121·123쪽 · 순차 구조, 선택 구조, 반복 구조</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>프로그램이 <b>어떤 순서로 실행되는지</b>를 정하는 틀을 <b>제어 구조</b>라고 해요. 위에서 아래로 차례대로 가면 <b>순차</b>, 조건에 따라 길이 갈리면 <b>선택</b>, 같은 일을 되풀이하면 <b>반복</b>이에요.</span></div>
+  <div class="card">
+    <h3>🧭 제어 구조의 세 가지 <span class="muted" style="font-weight:400;font-size:.88rem">(121쪽)</span></h3>
+    <div class="st3">
+      <div style="--k:#1f9d74"><b>➡️ 순차 구조</b><span>프로그램 명령을 순서에 따라 차례대로, 한 방향으로 진행해요. (처리 1 → 처리 2 → 처리 3)</span></div>
+      <div style="--k:#2f6fd0"><b>🔀 선택 구조</b><span>주어진 조건이 참이냐 거짓이냐에 따라 실행하는 내용이 서로 달라요. 오늘 중심이에요.</span></div>
+      <div style="--k:#9b4fc4"><b>🔁 반복 구조</b><span>조건을 만족하는 동안 특정 부분을 여러 번 반복해 실행해요. 다음 시간에 만나요.</span></div>
+    </div>
+    <p class="note">교과서는 로봇 청소기로 예를 들어요. 전체 작동 과정(거실 → 안방 → 충전소)은 순차, 카펫을 만나면 터보 모드로 바꾸는 부분은 선택, 벽을 만날 때까지 전진하는 부분은 반복이에요.</p>
+  </div>
+  <div class="card">
+    <h3>▶ 직접 해 보기 · 순차 구조 <span class="muted" style="font-weight:400;font-size:.88rem">(123쪽 해 보기 1)</span></h3>
+    <p style="margin-top:0">투명 페트병을 모으면 개당 300원을 주는 프로그램이에요. 위 줄부터 <b>한 줄씩 차례대로</b> 실행돼요. <b>입력값</b> 칸의 개수를 바꿔 <b>▶ 실행</b>해 봐요.</p>
+    <div id="petRun"></div>
+    <p class="note">어떤 값을 넣어도 <b>같은 줄이 같은 순서</b>로 실행돼요. 길이 갈리지 않아서 순차 구조예요. 입력에 따라 다른 문장을 실행하려면 선택 구조가 필요해요.</p>
+  </div>
+  <div class="quiz" data-quiz="1"></div>
+</section>
+
+<!-- 2 if 문 -->
+<section class="page" data-name="if 문" data-acc="#2f6fd0">
+  <div class="head"><div class="num">02</div><div><h2>if 문</h2><p>교과서 124·125쪽 · 조건이 참일 때만 실행</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span><b>if</b>는 「만약에 ~라면」이에요. 조건식이 <b>참</b>이면 아래 문장을 실행하고, <b>거짓</b>이면 그냥 지나가요. 조건식 끝에 <b>콜론( : )</b>, 실행할 문장은 <b>들여쓰기</b>가 필요해요.</span></div>
+  <div class="card">
+    <h3>🔀 if 문의 모양 <span class="muted" style="font-weight:400;font-size:.88rem">(표Ⅱ-14)</span></h3>
+    <div class="fcw">
+      <figure>
+        <svg class="fc" viewBox="0 0 400 232" role="img" aria-label="if 문 순서도: 조건식이 참이면 처리 1을 실행하고, 거짓이면 아무것도 하지 않고 다음 문장으로 간다" style="--k:#2f6fd0">
+          <polygon class="dm" points="200,12 280,46 200,80 120,46"/><text x="200" y="51">조건식</text>
+          <path class="ln" d="M120 46H70V108"/><polygon class="ah" points="64,100 76,100 70,110"/><text class="lb" x="95" y="39">참</text>
+          <rect class="bx" x="20" y="110" width="100" height="36" rx="6"/><text x="70" y="133">처리 1</text>
+          <path class="ln" d="M280 46H330V175H200"/><text class="lb" x="305" y="39">거짓</text><text class="sm" x="330" y="115">아무것도</text><text class="sm" x="330" y="130">안 함</text>
+          <path class="ln" d="M70 146V175H200V196"/><polygon class="ah" points="194,188 206,188 200,198"/>
+          <rect class="bx" x="150" y="198" width="100" height="28" rx="14"/><text x="200" y="217">다음 문장</text>
+        </svg>
+        <figcaption>판단 기호(◇)에서 참이면 처리 1, 거짓이면 건너뛰어요.</figcaption>
+      </figure>
+      <div>
+        <pre class="code"><b>if</b> 조건식<b>:</b>
+  처리 1   <i># 참일 때만 실행</i></pre>
+        <ul style="margin:8px 0 0;padding-left:20px;font-size:.93rem">
+          <li><b>콜론( : )</b> · if 조건식 끝에 꼭 붙여요.</li>
+          <li><b>들여쓰기</b> · 참일 때 실행할 명령은 들여써요. 들여쓰지 않으면 오류가 나요. 여러 줄이면 모두 같게 들여써요.</li>
+          <li>이 교과서는 <b>공백 2칸</b>으로 들여써요.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>▶ 나이가 18세 이상이면 <span class="muted" style="font-weight:400;font-size:.88rem">(124쪽)</span></h3>
+    <p style="margin-top:0">18세 이상일 때만 「성인입니다.」를 출력해요. <b>입력값</b>을 18에서 17로 바꿔 두 번 실행해 비교해 봐요. 거짓일 때는 <b>아무것도 출력되지 않아요</b>.</p>
+    <div id="ifAgeRun"></div>
+  </div>
+  <div class="card">
+    <h3>▶ 정수가 0보다 크면 ok <span class="muted" style="font-weight:400;font-size:.88rem">(125쪽 예제 2)</span></h3>
+    <p style="margin-top:0">들여쓴 <code>print('ok')</code>은 조건이 참일 때만, 들여쓰지 않은 <code>print('end')</code>는 <b>언제나</b> 실행돼요. 입력값을 1, 0, -3으로 바꿔 보며 <b>ok</b>가 나오는지 확인해요.</p>
+    <div id="ifPosRun"></div>
+  </div>
+  <div class="card">
+    <h3>▶ 자동 시차 계산기 <span class="muted" style="font-weight:400;font-size:.88rem">(125쪽 해 보기 2)</span></h3>
+    <p style="margin-top:0">우리나라 시간에서 7을 빼면 프랑스 시간이에요. 그런데 <b>3시 − 7 = −4</b>처럼 음수가 되면 <b>24를 더해</b> 바로잡아요. 시간을 3에서 17로 바꿔 실행해 보고, 어느 경우에 if 안쪽이 실행되는지 찾아봐요.</p>
+    <div id="timeRun"></div>
+    <p class="note">시간이 3일 때는 <code>france_hour</code>가 −4가 되어 조건이 참, 17일 때는 10이라 거짓이에요. 거짓이면 <code>france_hour += 24</code>는 건너뛰어요.</p>
+  </div>
+  <div class="quiz" data-quiz="2"></div>
+</section>
+
+<!-- 3 if ~ else 문 -->
+<section class="page" data-name="if ~ else" data-acc="#9b4fc4">
+  <div class="head"><div class="num">03</div><div><h2>if ~ else 문</h2><p>교과서 126·127쪽 · 참이면 처리 1, 거짓이면 처리 2</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>조건이 <b>참</b>이면 한 가지를, <b>거짓</b>이면 다른 가지를 실행해요. 두 갈래 중 <b>하나만</b> 실행되고, <code>if</code>와 <code>else</code>의 들여쓰기 위치는 같아야 해요.</span></div>
+  <div class="card">
+    <h3>🔀 if ~ else 문의 모양 <span class="muted" style="font-weight:400;font-size:.88rem">(표Ⅱ-15)</span></h3>
+    <div class="fcw">
+      <figure>
+        <svg class="fc" viewBox="0 0 400 232" role="img" aria-label="if else 순서도: 조건식이 참이면 처리 1, 거짓이면 처리 2를 실행한 뒤 다음 문장으로 간다" style="--k:#9b4fc4">
+          <polygon class="dm" points="200,12 280,46 200,80 120,46"/><text x="200" y="51">조건식</text>
+          <path class="ln" d="M120 46H70V108"/><polygon class="ah" points="64,100 76,100 70,110"/><text class="lb" x="95" y="39">참</text>
+          <rect class="bx" x="20" y="110" width="100" height="36" rx="6"/><text x="70" y="133">처리 1</text>
+          <path class="ln" d="M280 46H330V108"/><polygon class="ah" points="324,100 336,100 330,110"/><text class="lb" x="305" y="39">거짓</text>
+          <rect class="bx" x="280" y="110" width="100" height="36" rx="6"/><text x="330" y="133">처리 2</text>
+          <path class="ln" d="M70 146V175H200V196M330 146V175H200"/><polygon class="ah" points="194,188 206,188 200,198"/>
+          <rect class="bx" x="150" y="198" width="100" height="28" rx="14"/><text x="200" y="217">다음 문장</text>
+        </svg>
+        <figcaption>두 갈래 중 하나만 실행하고 다음 문장으로 합쳐져요.</figcaption>
+      </figure>
+      <pre class="code"><b>if</b> 조건식<b>:</b>
+  처리 1   <i># 참일 때</i>
+<b>else:</b>
+  처리 2   <i># 거짓일 때</i></pre>
+    </div>
+    <p class="note">조건식은 비교 연산자나 논리 연산자로 만들고, 결과는 참(True) 또는 거짓(False)이에요. <code>else</code> 뒤에는 조건식을 쓰지 않고 콜론만 붙여요.</p>
+  </div>
+  <div class="card">
+    <h3>▶ 짝수일까, 홀수일까 <span class="muted" style="font-weight:400;font-size:.88rem">(126쪽 예제 3)</span></h3>
+    <p style="margin-top:0">2로 나눈 <b>나머지가 0</b>이면 짝수예요. <b>입력값</b>을 7에서 10으로 바꿔 실행해 봐요.</p>
+    <div id="evenRun"></div>
+  </div>
+  <div class="card">
+    <h3>▶ 윤년 판별 <span class="muted" style="font-weight:400;font-size:.88rem">(127쪽 예제 4)</span></h3>
+    <p style="margin-top:0">조건식에 비교·논리·나머지 연산자가 함께 쓰여요. 연도를 2028, 2026, 2100, 2000으로 바꿔 가며 결과를 확인해 봐요.</p>
+    <div id="leapRun"></div>
+    <p class="note">4로 나누어 떨어져도 100으로 나누어 떨어지면 윤년이 아니고, 400으로 나누어 떨어지면 윤년이에요. 그래서 2100은 윤년이 아니고 2000은 윤년이에요.</p>
+  </div>
+  <div class="card">
+    <h3>▶ 교통 카드 종류 알려 주기 <span class="muted" style="font-weight:400;font-size:.88rem">(127쪽 해 보기 3)</span></h3>
+    <p style="margin-top:0">18세 이하는 어린이/청소년 카드, 그 밖은 성인 카드가 발급돼요. <b>경계값</b>인 <b>18</b>과 <b>19</b>를 차례로 넣어 어느 쪽이 실행되는지 비교해 봐요.</p>
+    <div id="cardRun"></div>
+    <p class="note">18은 <code>age &lt;= 18</code>이 참이라 if 쪽, 19는 거짓이라 else 쪽이에요. 조건이 갈리는 <b>경계 값</b>은 꼭 확인해 봐요.</p>
+  </div>
+  <div class="quiz" data-quiz="3"></div>
+</section>
+
+<!-- 4 if ~ elif ~ else 문 -->
+<section class="page" data-name="if ~ elif ~ else" data-acc="#e0702b">
+  <div class="head"><div class="num">04</div><div><h2>if ~ elif ~ else 문</h2><p>교과서 128~130쪽 · 여러 갈래로 나누기</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>갈래가 셋 이상이면 <b>elif</b>(else if)를 이어 붙여요. 조건은 <b>위에서부터 차례로</b> 확인하고, 처음 만난 <b>참</b>에서 그 부분만 실행한 뒤 끝나요. 모두 거짓이면 <b>else</b>가 실행돼요.</span></div>
+  <div class="card">
+    <h3>🔀 if ~ elif ~ else 문의 모양 <span class="muted" style="font-weight:400;font-size:.88rem">(표Ⅱ-16)</span></h3>
+    <div class="fcw">
+      <figure>
+        <svg class="fc" viewBox="0 0 400 320" role="img" aria-label="if elif else 순서도: 조건 1이 참이면 처리 1, 거짓이면 조건 2를 확인해 참이면 처리 2, 거짓이면 처리 3을 실행한다" style="--k:#e0702b">
+          <polygon class="dm" points="150,8 220,40 150,72 80,40"/><text x="150" y="45">조건 1</text>
+          <path class="ln" d="M80 40H45V103"/><polygon class="ah" points="39,95 51,95 45,105"/><text class="lb" x="62" y="33">참</text>
+          <rect class="bx" x="5" y="105" width="80" height="34" rx="6"/><text x="45" y="127">처리 1</text>
+          <path class="ln" d="M150 72V106"/><polygon class="ah" points="144,98 156,98 150,108"/><text class="lb" x="174" y="92">거짓</text>
+          <polygon class="dm" points="150,108 220,140 150,172 80,140"/><text x="150" y="145">조건 2</text>
+          <path class="ln" d="M220 140H262"/><polygon class="ah" points="254,134 254,146 264,140"/><text class="lb" x="241" y="132">참</text>
+          <rect class="bx" x="264" y="123" width="80" height="34" rx="6"/><text x="304" y="145">처리 2</text>
+          <path class="ln" d="M150 172V206"/><polygon class="ah" points="144,198 156,198 150,208"/><text class="lb" x="174" y="192">거짓</text>
+          <rect class="bx" x="110" y="208" width="80" height="34" rx="6"/><text x="150" y="230">처리 3</text>
+          <path class="ln" d="M45 139V268H304V157M150 242V268M175 268V286"/><polygon class="ah" points="169,278 181,278 175,288"/>
+          <rect class="bx" x="125" y="288" width="100" height="26" rx="13"/><text x="175" y="306">다음 문장</text>
+        </svg>
+        <figcaption>조건 1 → 조건 2 순서로 확인하고, 참인 곳 하나만 실행해요.</figcaption>
+      </figure>
+      <div>
+        <pre class="code"><b>if</b> 조건식 1<b>:</b>
+  처리 1
+<b>elif</b> 조건식 2<b>:</b>
+  처리 2
+<b>else:</b>
+  처리 3</pre>
+        <ul style="margin:8px 0 0;padding-left:20px;font-size:.93rem">
+          <li><b>elif</b>는 여러 개 쓸 수 있고, <b>else</b>는 생략할 수 있어요.</li>
+          <li>if, elif, else 끝에는 콜론( : )을 붙이고 들여쓰기 위치를 맞춰요.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>▶ 월을 입력하면 계절은? <span class="muted" style="font-weight:400;font-size:.88rem">(128쪽 예제 5)</span></h3>
+    <p style="margin-top:0">월을 <b>3으로 나눈 몫</b>(<code>month // 3</code>)으로 계절을 나눠요. 입력값을 3, 5, 6, 8, 9, 11, 12, 1, 2로 바꿔 가며 어떤 계절이 나오는지 확인해 봐요.</p>
+    <div id="seasonRun"></div>
+    <div class="tscroll"><table class="esc-t">
+      <tr><th>월</th><th>month // 3</th><th class="l">출력</th></tr>
+      <tr><td>3 · 4 · 5</td><td>1</td><td class="l">봄</td></tr>
+      <tr><td>6 · 7 · 8</td><td>2</td><td class="l">여름</td></tr>
+      <tr><td>9 · 10 · 11</td><td>3</td><td class="l">가을</td></tr>
+      <tr><td>12 · 1 · 2</td><td>4 · 0 · 0</td><td class="l">겨울(else)</td></tr>
+    </table></div>
+    <p class="note">몫이 1, 2, 3인 달만 조건에 걸리고, 나머지는 모두 else로 가서 <b>겨울</b>이 돼요. 그래서 겨울은 12월부터 2월까지 한 해 끝과 처음이 이어져요.</p>
+  </div>
+  <div class="card">
+    <h3>▶ 잘못된 입력 막기 <span class="muted" style="font-weight:400;font-size:.88rem">(129쪽 해 보기 4)</span></h3>
+    <p style="margin-top:0">위 코드에 13이나 −1을 넣으면 <b>겨울</b>이 나와 버려요. 1~12 밖의 값을 먼저 걸러 내는 조건을 맨 앞에 더했어요. 입력값을 13, 0, 12로 바꿔 비교해 봐요.</p>
+    <div id="rangeRun"></div>
+    <p class="note">13 // 3은 4라서 앞의 조건에 모두 걸리지 않고 else로 가요. 범위를 확인하는 조건을 <b>맨 앞</b>에 두면 잘못된 값이 계절로 처리되지 않아요.</p>
+  </div>
+  <div class="card">
+    <h3>▶ 점수로 성취도 알아보기 <span class="muted" style="font-weight:400;font-size:.88rem">(130쪽 해 보기 5)</span></h3>
+    <p style="margin-top:0">90 이상 A, 80 이상 B, 70 이상 C, 60 이상 D, 그 밖은 F예요. 입력값을 95, 85, 70, 59, 90으로 바꿔 보며 <b>경계 값</b>에서 어떻게 달라지는지 봐요.</p>
+    <div id="scoreRun"></div>
+  </div>
+  <div class="card">
+    <h3>🔬 조건 순서를 바꾸면? <span class="muted" style="font-weight:400;font-size:.88rem">(130쪽 Tip 확인)</span></h3>
+    <p style="margin-top:0">같은 조건을 <b>작은 수부터</b> 물어보도록 순서만 바꿨어요. 95점을 넣으면 어떤 결과가 나올지 먼저 예상한 뒤 실행해 봐요.</p>
+    <div id="orderRun"></div>
+    <p class="note">95는 맨 위의 <code>&gt;= 60</code>에서 이미 참이라 D가 나오고 아래 조건은 확인하지도 않아요. <b>이상·초과</b> 조건은 <b>큰 수부터</b> 물어야 하고, <b>이하·미만</b> 조건은 <b>작은 수부터</b> 물어보는 것이 알맞아요.</p>
+  </div>
+  <div class="callout">💡 <b>예외 상황 처리 <span class="muted" style="font-weight:400;font-size:.86rem">(129쪽 정보)</span></b> 문법이 맞아도 숫자가 아닌 값을 입력하면 실행 중 오류가 나서 멈출 수 있어요. 파이썬은 <code>try ~ except ~ finally</code>로 이런 상황을 미리 대비해 안정적으로 실행하게 해요. 이번 시간에는 이름만 알고 넘어가요.</div>
+  <div class="quiz" data-quiz="4"></div>
+</section>
+
+<!-- 5 스스로 해결하기 -->
+<section class="page" data-name="스스로 해결하기" data-acc="#d64535">
+  <div class="head"><div class="num">05</div><div><h2>스스로 해결하기</h2><p>알맞은 조건 구조 고르기 · 코딩 동아리 가입 프로그램 설계</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>상황을 보고 <b>갈래가 몇 개인지</b> 세어 보면 어떤 조건문을 쓸지 정해져요. 먼저 상황을 알맞은 구조로 보내 보고, 120쪽의 <b>코딩 동아리 가입 프로그램</b>을 내 말로 설계해 봐요.</span></div>
+  <div class="card">
+    <h3>1️⃣ 알맞은 조건문 고르기</h3>
+    <p style="margin-top:0">아래 상황을 해결하기에 알맞은 구조로 보내 봐요.</p>
+    <div id="structGame"></div>
+  </div>
+  <div class="card">
+    <h3>2️⃣ 코딩 동아리 가입 프로그램 설계하기 <span class="muted" style="font-weight:400;font-size:.88rem">(120쪽 도입)</span></h3>
+    <p class="muted" style="margin-top:0">정답이 정해진 문제가 아니에요. 내가 만들고 싶은 가입 조건을 정해 흐름을 적어 봐요.</p>
+    <div class="memo"><label>① 가입 조건 <small>예: 나이가 몇 세 이상이면 가입 가능</small></label><textarea data-memo="clubRule" rows="2"></textarea><div class="saved"></div></div>
+    <div class="memo"><label>② 입력받을 값 <small>조건을 확인하려면 어떤 정보를 입력받아야 할까?</small></label><textarea data-memo="clubIn" rows="2"></textarea><div class="saved"></div></div>
+    <div class="memo"><label>③ 쓸 구조와 이유 <small>if · if ~ else · if ~ elif ~ else 중 무엇이 알맞을까?</small></label><textarea data-memo="clubStruct" rows="2"></textarea><div class="saved"></div></div>
+    <div class="memo"><label>④ 조건이 참일 때와 거짓일 때 출력 <small>어떤 말을 보여 줄까?</small></label><textarea data-memo="clubOut" rows="2"></textarea><div class="saved"></div></div>
+  </div>
+  <div class="card">
+    <h3>✅ 성취도 평가 · 스스로 점검</h3>
+    <p class="muted" style="margin-top:0">오늘 할 수 있게 된 것을 모두 골라요.</p>
+    <div id="selfCheck"></div>
+  </div>
+</section>
+
+<!-- 6 마무리 -->
+<section class="page" data-name="마무리 · 질문폼" data-acc="#0f2742">
+  <div class="head"><div class="num">06</div><div><h2>마무리</h2><p>핵심 문장 · 마무리 퀴즈 · 생각 정리 질문폼</p></div></div>
+  <div class="key3">
+    <div style="--k:#1f9d74">제어 구조에는 <b>순차</b>(차례대로), <b>선택</b>(조건에 따라), <b>반복</b>(여러 번)이 있다. 선택 구조는 조건이 <b>참이냐 거짓이냐</b>에 따라 실행하는 문장이 달라진다.</div>
+    <div style="--k:#2f6fd0">조건이 참일 때만 할 일이 있으면 <b>if</b>, 두 갈래면 <b>if ~ else</b>, 세 갈래 이상이면 <b>if ~ elif ~ else</b>를 쓴다. 조건식 끝에는 <b>콜론( : )</b>을 붙이고 실행할 문장은 <b>들여쓴다</b>.</div>
+    <div style="--k:#e0702b">조건은 <b>위에서부터 차례로</b> 확인하고 참인 곳 하나만 실행한다. 이상·초과 조건은 <b>큰 수부터</b>, 범위를 벗어난 입력은 <b>맨 앞</b>에서 먼저 걸러 낸다.</div>
+  </div>
+  <div class="card">
+    <h3>오늘의 질문에 다시 답하기</h3>
+    <p class="muted" style="margin-top:0">오늘 실행해 본 코드를 떠올리며, 내 말로 답해 보세요.</p>
+    <b style="font-size:.93rem">조건에 따라 다르게 동작하는 프로그램은 어떻게 작성할까?</b>
+    <textarea data-memo="keyQ" rows="3"></textarea><div class="saved"></div>
+  </div>
+  <div class="card" style="--acc:#0f2742">
+    <h3>마무리 퀴즈</h3>
+    <div class="quiz" data-quiz="6"></div>
+  </div>
+  <div class="card">
+    <h3>개념 퀴즈 결과</h3>
+    <table id="result"></table>
+    <button class="btn ghost" id="quizReset">퀴즈 다시 풀기</button>
+  </div>
+  <div class="formgo">
+    <span class="kicker">생각 정리 과제</span>
+    <h3>질문폼에 내 생각 쓰기</h3>
+    <ol>
+      <li><b>순차 구조</b>와 <b>선택 구조</b>가 어떻게 다른지, 페트병 보상 프로그램과 나이별 교통 카드 프로그램을 예로 들어 설명하세요.</li>
+      <li>교통 카드 코드에 <b>18</b>과 <b>19</b>를 넣었을 때 각각 어느 쪽(<b>if</b>·<b>else</b>)이 실행됐는지, 그 이유를 조건식과 함께 적으세요.</li>
+      <li>점수 코드에서 조건을 <b>큰 수부터</b> 물어야 하는 이유, 계절 코드에 <b>13</b>을 넣으면 생기는 문제와 해결 방법을 오늘 실행해 본 결과로 설명하세요.</li>
+    </ol>
+    <p>질문폼에는 붙여넣기가 되지 않아요. 아래 메모를 보면서 직접 다시 써 주세요.</p>
+    <a class="go" href="{{FORM_URL}}" target="_blank" rel="noopener">질문폼 열기 →</a>
+    <div class="msum" id="msum"></div>
+  </div>
+</section>

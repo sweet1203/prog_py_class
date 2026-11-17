@@ -1,0 +1,356 @@
+<!-- 0 시작 -->
+<section class="page" data-name="시작" data-acc="#9b4fc4">
+  <div class="cover">
+    <div class="in">
+      <span class="tag">프로그래밍(Python) · Ⅲ. 프로그램 설계와 구현 · 1. 설계와 절차 ①</span>
+      <h1>무엇을 만들지 정하고,<br>어떻게 만들지 그려 보기</h1>
+      <div class="story"><b>대한고등학교 급식 이야기 (202쪽)</b><br>대한고 학생들은 급식 메뉴를 <b>미리 고를 수 없어</b> 불편하고, 급식실은 <b>주문량을 몰라</b> 식재료가 낭비돼요. "먹고 싶은 메뉴를 미리 선택할 수 없을까?" 이 문제를 프로그램으로 풀려면, 코드부터 짜기 전에 <b>무엇을 만들지 정하고(기획)</b>, <b>어떻게 만들지 그려 보는(설계)</b> 과정이 필요해요.</div>
+      <p>오늘은 소프트웨어 개발 절차의 <b>앞 두 단계 — 기획과 설계</b>를 급식 메뉴 선택 프로그램 사례로 따라가 봐요. 구현·테스트는 다음 차시에서 이어서 해요.</p>
+      <ol>
+        <li>개발 절차 한눈에 보기</li><li>기획 · 요구 분석 명세서</li><li>설계 · 모듈화와 클래스 다이어그램</li>
+        <li>알고리즘 설계 · 로직 미리보기</li><li>스스로 해결하기 · 마무리</li>
+      </ol>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn" style="background:var(--amber);color:var(--navy);box-shadow:none" onclick="document.getElementById('intro').scrollIntoView({behavior:'smooth'})">단원 도입부터 보기 ↓</button>
+        <button class="btn" style="background:transparent;border:2px solid rgba(255,255,255,.5);box-shadow:none" onclick="go(1)">01로 바로 가기 →</button>
+      </div>
+    </div>
+    <div class="route" aria-hidden="true">
+      <div class="st" style="animation-delay:.2s"><i>📋</i><div><b>기획</b><small>요구 분석 명세서</small></div></div>
+      <div class="ar" style="animation-delay:.6s">↓</div>
+      <div class="st" style="animation-delay:.8s"><i>📐</i><div><b>설계</b><small>설계 명세서</small></div></div>
+      <div class="ar" style="animation-delay:1.2s">↓</div>
+      <div class="st" style="animation-delay:1.4s"><i>⌨️</i><div><b>구현</b><small>소스 코드</small></div></div>
+      <div class="ar" style="animation-delay:1.8s">↓</div>
+      <div class="st" style="animation-delay:2s"><i>🧪</i><div><b>테스트·유지 보수</b><small>검증·개선</small></div></div>
+    </div>
+  </div>
+
+  <div id="intro" class="today">
+    <div class="today-lead">
+      <span class="kicker">단원 도입 · Ⅲ. 프로그램 설계와 구현 (201~202쪽)</span>
+      <p>이 단원에서는 프로그램을 <b>체계적으로 개발하는 절차</b>를 배워요. 문제를 분석하고(<b>기획</b>) 해결 방법을 그린 뒤(<b>설계</b>), 코드로 옮기고(<b>구현</b>) 오류를 고쳐 나가는(<b>테스트·유지 보수</b>) 단계별 과정이에요. 이렇게 단계를 밟으면 시행착오를 줄이고 품질 좋은 소프트웨어를 만들 수 있어요. 오늘은 그 첫 두 단계인 <b>기획과 설계</b>를 만나요.</p>
+    </div>
+    <div class="card">
+      <h3>🍱 오늘 풀어 볼 문제 <span class="muted" style="font-weight:400;font-size:.88rem">(202쪽)</span></h3>
+      <p style="margin-top:0">대한고등학교 학생회가 이런 프로그램을 요청했어요. 아래 상황을 머릿속에 그려 두면 오늘 배우는 기획·설계가 훨씬 또렷해져요.</p>
+      <div class="flow2">
+        <div style="--k:#9b4fc4"><b>🙋 학생</b><span>먹고 싶은 메뉴를 미리 고르고 싶어요.</span></div>
+        <div class="ar">→</div>
+        <div style="--k:#2f6fd0"><b>🍽️ 급식실</b><span>메뉴별 주문량을 미리 알고 싶어요.</span></div>
+        <div class="ar">→</div>
+        <div style="--k:#1f9d74"><b>💡 해결</b><span>화면에서 메뉴를 선택하는 프로그램 만들기</span></div>
+      </div>
+      <p class="note">메뉴 예시 · 제육볶음 · 돈가스 · 돼지고기 김치찌개 · 비빔밥. 이 네 가지가 오늘 설계의 바탕이 돼요.</p>
+    </div>
+    <div class="why3">
+      <div class="why">
+        <span class="kicker">핵심 질문</span>
+        <ul class="uses">
+          <li><b>오늘의 질문</b> · 사용자의 요구를 분석하고 자동화하는 개발 절차는 어떻게 진행될까?</li>
+        </ul>
+      </div>
+      <div class="why">
+        <span class="kicker">배우고 나면 할 수 있는 것</span>
+        <ul class="can">
+          <li>프로그램 개발 절차를 설명할 수 있다.</li>
+          <li>프로그램을 기획하고 설계할 수 있다.</li>
+        </ul>
+      </div>
+      <div class="why">
+        <span class="kicker">오늘 만날 낱말</span>
+        <p style="margin:4px 0 0;font-size:.95rem">기획 · 설계 · 요구 분석 명세서 · 설계 명세서 · 모듈화 · 결합도 · 응집도 · 클래스 다이어그램 · 패키지</p>
+        <p style="font-size:.86rem;margin-top:8px" class="muted">처음 보는 낱말이 있어도 괜찮아요. 급식 프로그램을 따라가며 하나씩 만나요.</p>
+      </div>
+    </div>
+    <div class="card">
+      <h3>📝 나의 계획 <span class="muted" style="font-weight:400;font-size:.88rem">(202쪽) · (선택)</span></h3>
+      <div class="memo"><label>나는 이 단원에서 다음과 같은 내용을 배우고 싶다. <small>시간이 있으면 한두 가지 적어 보세요. 마지막 화면에서 다시 볼 수 있어요.</small></label><textarea data-memo="planLearn" rows="2"></textarea><div class="saved"></div></div>
+    </div>
+    <div style="text-align:center;margin-top:20px"><button class="btn" style="background:var(--mint)" onclick="go(1)">01 개발 절차 한눈에 보기 →</button></div>
+  </div>
+</section>
+
+<!-- 1 개발 절차 한눈에 -->
+<section class="page" data-name="개발 절차" data-acc="#2f6fd0">
+  <div class="head"><div class="num">01</div><div><h2>개발 절차 한눈에 보기</h2><p>교과서 202·203쪽 · 소프트웨어 개발 4단계와 산출물</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>집을 지을 때 <b>설계도 없이</b> 벽돌부터 쌓지 않아요. 프로그램도 마찬가지예요. <b>무엇을 만들지 정하고(기획)</b>, <b>어떻게 만들지 그린 뒤(설계)</b>, <b>코드로 짓고(구현)</b>, <b>문제를 고치며 관리(테스트·유지 보수)</b>하는 순서를 밟아요.</span></div>
+  <div class="card">
+    <h3>🧭 소프트웨어 개발 4단계</h3>
+    <p style="margin-top:0">각 단계마다 다음 단계로 넘겨 줄 <b>산출물(만들어 내는 결과물)</b>이 있어요. 앞 단계의 산출물이 다음 단계의 바탕이 되지요. 오늘은 이 중 <b>기획</b>과 <b>설계</b>를 배워요.</p>
+    <div class="pl"><svg viewBox="0 0 330 492" role="img" aria-label="소프트웨어 개발 4단계 파이프라인: 기획(요구 분석 명세서), 설계(설계 명세서), 구현(소스 코드), 테스트와 유지 보수(검증과 개선). 기획과 설계가 이번 차시 범위.">
+      <defs><marker id="plA" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#8a94a3"/></marker></defs>
+      <path class="pfl" d="M165 98 V126" marker-end="url(#plA)"/>
+      <path class="pfl" d="M165 216 V244" marker-end="url(#plA)"/>
+      <path class="pfl" d="M165 334 V362" marker-end="url(#plA)"/>
+      <rect class="pst s1" x="15" y="10" width="300" height="88" rx="13"/>
+      <text class="pnum" x="38" y="42">1</text><text class="pstn" x="62" y="42">기획</text><text class="pnow" x="300" y="33">이번 차시</text>
+      <text class="psto" x="62" y="66">산출물 · 요구 분석 명세서</text><text class="pstd" x="62" y="85">무엇을 만들지 분석하고 정하기</text>
+      <rect class="pst s2" x="15" y="128" width="300" height="88" rx="13"/>
+      <text class="pnum" x="38" y="160">2</text><text class="pstn" x="62" y="160">설계</text><text class="pnow" x="300" y="151">이번 차시</text>
+      <text class="psto" x="62" y="184">산출물 · 설계 명세서</text><text class="pstd" x="62" y="203">어떻게 만들지 구조·모듈 그리기</text>
+      <rect class="pst s3" x="15" y="246" width="300" height="88" rx="13"/>
+      <text class="pnum" x="38" y="278">3</text><text class="pstn" x="62" y="278">구현</text>
+      <text class="psto" x="62" y="302">산출물 · 소스 코드</text><text class="pstd" x="62" y="321">설계를 실제 코드로 옮기기</text>
+      <rect class="pst s4" x="15" y="364" width="300" height="88" rx="13"/>
+      <text class="pnum" x="38" y="396">4</text><text class="pstn" x="62" y="396">테스트·유지 보수</text>
+      <text class="psto" x="62" y="420">산출물 · 검증 결과 · 개선</text><text class="pstd" x="62" y="439">오류를 찾아 고치고 오래 관리</text>
+    </svg></div>
+    <p class="note">기획·설계는 다음 두 화면에서 자세히, 구현·테스트는 다음 차시(급식 ②)에서 이어 가요.</p>
+  </div>
+  <div class="card">
+    <h3>📦 단계와 산출물 짝 맞추기</h3>
+    <p style="margin-top:0">카드를 눌러 각 단계가 만들어 내는 <b>산출물</b>을 확인해 봐요.</p>
+    <div id="stepFlip" class="tcards"></div>
+  </div>
+  <div class="quiz" data-quiz="1"></div>
+</section>
+
+<!-- 2 기획 -->
+<section class="page" data-name="기획" data-acc="#1f9d74">
+  <div class="head"><div class="num">02</div><div><h2>기획 · 계획 수립과 요구 분석</h2><p>교과서 203~205쪽 · 계획 수립 5요소, 요구 분석 명세서</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span><b>기획</b>은 "무엇을, 왜, 어떻게 진행할지" 큰 그림을 그리는 단계예요. 먼저 <b>계획을 세우고(계획 수립)</b>, 사용자가 진짜 원하는 것을 파악해 <b>요구 분석 명세서</b>로 정리해요. 이 문서가 설계와 구현의 기준이 돼요.</span></div>
+  <div class="card">
+    <h3>🗂️ 계획 수립의 5가지 요소 <span class="muted" style="font-weight:400;font-size:.88rem">(203쪽)</span></h3>
+    <p style="margin-top:0">비용·기간·자원을 고려해 계획을 세워야 원하는 결과를 얻을 수 있어요. 계획 수립에 꼭 담아야 할 다섯 가지를 카드로 확인해 봐요.</p>
+    <div id="planFlip" class="tcards"></div>
+  </div>
+  <div class="card">
+    <h3>🤝 요구 분석 명세서란? <span class="muted" style="font-weight:400;font-size:.88rem">(204쪽)</span></h3>
+    <p style="margin-top:0">요구 분석은 사용자의 현재 상태와 요구 사항을 파악해, 개발에 반영할 내용을 정하는 <b>핵심 단계</b>예요. 이 과정이 부실하면 비용이 늘고 품질이 떨어져요. 그 최종 산출물이 <b>요구 분석 명세서</b>랍니다.</p>
+    <ul class="uses" style="margin:6px 0 10px">
+      <li>요구 분석의 <b>최종 산출물</b>로, 설계·구현에서 참조할 내용을 담아요.</li>
+      <li>사용자와 개발자를 연결하는 <b>계약서</b> 역할을 해요.</li>
+    </ul>
+    <p style="margin:0 0 6px">요구 분석은 아래 순서로 진행해요.</p>
+    <div class="flow2 four">
+      <div style="--k:#1f9d74"><b>① 문제 정의</b><span>인터뷰·설문으로 자료 수집</span></div>
+      <div class="ar">→</div>
+      <div style="--k:#2f6fd0"><b>② 요구 도출</b><span>자료를 분석해 반영할 요구 정리</span></div>
+      <div class="ar">→</div>
+      <div style="--k:#e0702b"><b>③ 문서화</b><span>요구 분석 명세서로 작성</span></div>
+      <div class="ar">→</div>
+      <div style="--k:#9b4fc4"><b>④ 검증</b><span>요구가 잘 담겼는지 점검</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>🍱 급식 프로그램 요구 분석 명세서 사례 <span class="muted" style="font-weight:400;font-size:.88rem">(204쪽 표Ⅲ-2)</span></h3>
+    <p style="margin-top:0">대한고 학생회의 요청을 분석해 작성한 명세서의 핵심이에요. <b>무엇을</b> 만들지가 구체적으로 적혀 있어요.</p>
+    <div class="tscroll"><table class="esc-t">
+      <tr><th>항목</th><th class="l">내용</th></tr>
+      <tr><td>목적</td><td class="l">급식 메뉴를 <b>사전에 선택</b>하고 메뉴별 <b>주문량을 파악</b></td></tr>
+      <tr><td>범위</td><td class="l">학교 구성원 전체가 프로그램으로 사전에 메뉴 선택</td></tr>
+      <tr><td>기능 요구</td><td class="l">메뉴 전체를 화면에 보여 줌 · 버튼 클릭으로 메뉴 선택 · 선택 결과 텍스트 표시</td></tr>
+      <tr><td>성능 요구</td><td class="l">실행 요청 후 <b>1초 이내</b>에 메뉴 선택 완료</td></tr>
+      <tr><td>사용 환경</td><td class="l">Windows 10 이상 · 윈도 위젯 기반 사용자 인터페이스</td></tr>
+    </table></div>
+    <p class="note">이 "기능 요구" 세 가지가 다음 화면에서 <b>Gui·Student·Menu·MenuItem</b> 클래스로 이어져요.</p>
+  </div>
+  <div class="quiz" data-quiz="2"></div>
+</section>
+
+<!-- 3 설계 -->
+<section class="page" data-name="설계" data-acc="#9b4fc4">
+  <div class="head"><div class="num">03</div><div><h2>설계 · 모듈화와 클래스 다이어그램</h2><p>교과서 206~209쪽 · 요구 분석과 설계의 차이, 모듈화, 구조 설계</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span><b>설계</b>는 "요구 분석 명세서를 <b>어떻게 실현할까</b>"를 구체적으로 정하는 단계예요. 전체 구조를 정하고, 큰 프로그램을 작은 <b>모듈</b>로 나눠요. 그리고 각 모듈(클래스)이 어떤 데이터와 기능을 갖고 서로 어떻게 연결되는지 <b>그림</b>으로 그려요.</span></div>
+  <div class="card">
+    <h3>🔍 요구 분석 vs 설계 <span class="muted" style="font-weight:400;font-size:.88rem">(206쪽 표Ⅲ-3)</span></h3>
+    <p style="margin-top:0">요구 분석이 <b>무엇(What)</b>을 만들지라면, 설계는 그것을 <b>어떻게(How)</b> 만들지예요.</p>
+    <div class="tscroll"><table class="esc-t">
+      <tr><th>구분</th><th class="l">요구 분석</th><th class="l">설계</th></tr>
+      <tr><td>산출물</td><td class="l">요구 분석 명세서</td><td class="l">설계 명세서</td></tr>
+      <tr><td>관점</td><td class="l">무엇(What)</td><td class="l">어떻게(How)</td></tr>
+      <tr><td>특징</td><td class="l">개념적·추상적</td><td class="l">사용 환경을 반영해 구체적</td></tr>
+    </table></div>
+    <p class="note">설계 단계는 크게 <b>시스템 구조 설계 · 프로그램 설계 · 사용자 인터페이스(UI) 설계</b> 세 가지로 나뉘어요.</p>
+  </div>
+  <div class="card">
+    <h3>🧩 모듈화 · 결합도는 낮게, 응집도는 높게 <span class="muted" style="font-weight:400;font-size:.88rem">(207쪽)</span></h3>
+    <p style="margin-top:0"><b>모듈화</b>는 소프트웨어를 작은 독립 단위(패키지·클래스)로 나누는 것이에요. 코드 재사용·유지 보수·가독성이 좋아져요. 두 카드를 눌러 모듈화의 두 원칙을 확인해 봐요.</p>
+    <div id="cohFlip" class="tcards"></div>
+    <p class="note"><b>결합도(coupling)</b>는 모듈이 서로 의존하는 정도 → <b>낮을수록</b> 좋아요. <b>응집도(cohesion)</b>는 모듈 안 요소들이 관련된 정도 → <b>높을수록</b> 좋아요.</p>
+  </div>
+  <div class="card">
+    <h3>🗺️ 급식 프로그램 클래스 다이어그램 <span class="muted" style="font-weight:400;font-size:.88rem">(208~209쪽 그림Ⅲ-3)</span></h3>
+    <p style="margin-top:0">역할별로 객체를 나눠 <b>4개의 클래스</b>로 설계했어요. 각 상자는 <b>클래스 이름 · 속성(데이터) · 메소드(기능)</b>로 이루어져요. <b>−</b>는 숨김(은닉), <b>+</b>는 공개를 뜻해요. 위에서 아래로 메시지를 주고받아요.</p>
+    <div class="uml"><svg viewBox="0 0 300 408" role="img" aria-label="급식 메뉴 선택 프로그램 클래스 다이어그램. Gui는 student과 result_label 속성, show_order 메소드를 가지며 Student를 참조한다. Student는 menu 속성과 order 메소드를 가지며 Menu를 참조한다. Menu는 items 속성과 choose 메소드를 가지며 MenuItem 네 개를 가진다. MenuItem은 name 속성을 가진다.">
+      <defs><marker id="umA" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto"><path d="M1 1L11 6L1 11z" fill="#8a94a3"/></marker></defs>
+      <!-- Gui -->
+      <rect class="cbox" x="40" y="8" width="220" height="98"/>
+      <rect class="chd g1" x="40" y="8" width="220" height="26"/>
+      <text class="cnm" x="150" y="26">Gui</text>
+      <text class="cat" x="52" y="52">− student</text>
+      <text class="cat" x="52" y="70">− result_label</text>
+      <line class="cdv" x1="40" y1="78" x2="260" y2="78"/>
+      <text class="cmt" x="52" y="96">+ show_order(menu_name)</text>
+      <!-- Student -->
+      <path class="cfl" d="M150 106 V130" marker-end="url(#umA)"/><text class="crel" x="158" y="122">student</text>
+      <rect class="cbox" x="40" y="130" width="220" height="80"/>
+      <rect class="chd g2" x="40" y="130" width="220" height="26"/>
+      <text class="cnm" x="150" y="148">Student</text>
+      <text class="cat" x="52" y="174">− menu</text>
+      <line class="cdv" x1="40" y1="182" x2="260" y2="182"/>
+      <text class="cmt" x="52" y="200">+ order(menu_name)</text>
+      <!-- Menu -->
+      <path class="cfl" d="M150 210 V234" marker-end="url(#umA)"/><text class="crel" x="158" y="226">menu</text>
+      <rect class="cbox" x="40" y="234" width="220" height="80"/>
+      <rect class="chd g3" x="40" y="234" width="220" height="26"/>
+      <text class="cnm" x="150" y="252">Menu</text>
+      <text class="cat" x="52" y="278">− items</text>
+      <line class="cdv" x1="40" y1="286" x2="260" y2="286"/>
+      <text class="cmt" x="52" y="304">+ choose(name)</text>
+      <!-- MenuItem -->
+      <path class="cfl" d="M150 314 V338" marker-end="url(#umA)"/><text class="crel" x="158" y="330">items ◆ 1..4</text>
+      <rect class="cbox" x="40" y="338" width="220" height="58"/>
+      <rect class="chd g4" x="40" y="338" width="220" height="26"/>
+      <text class="cnm" x="150" y="356">MenuItem</text>
+      <text class="cat" x="52" y="382">− name</text>
+    </svg></div>
+    <p class="note"><b>◆ 1..4</b>는 메뉴판(Menu)이 메뉴 항목(MenuItem)을 <b>4개 갖는다</b>는 뜻이에요(제육볶음·돈가스·돼지고기 김치찌개·비빔밥).</p>
+  </div>
+  <div class="card">
+    <h3>🌳 패키지(모듈) 구조 <span class="muted" style="font-weight:400;font-size:.88rem">(209쪽 그림Ⅲ-5)</span></h3>
+    <p style="margin-top:0">클래스들을 역할별 <b>모듈(.py 파일)</b>로 나누고, 하나의 폴더(<b>패키지</b>)에 모아요. 급식 프로그램 패키지 <code>schoollunch</code>의 구조예요.</p>
+    <div class="tree"><svg viewBox="0 0 332 272" role="img" aria-label="schoollunch 패키지 구조. 폴더 schoollunch 아래에 menu.py(메뉴 데이터 관리), student.py(학생 메뉴 선택, menu.choose 호출), gui.py(GUI 실행, student.order 호출), main.py(프로그램 실행, 모든 모듈 호출) 네 모듈이 있다.">
+      <rect class="troot" x="12" y="10" width="200" height="34" rx="8"/>
+      <text class="tri" x="26" y="32">📦</text><text class="trn" x="48" y="32">schoollunch</text>
+      <path class="trk" d="M34 44 V250"/>
+      <path class="trk" d="M34 72 H58"/><path class="trk" d="M34 128 H58"/><path class="trk" d="M34 184 H58"/><path class="trk" d="M34 240 H58"/>
+      <rect class="tleaf" x="58" y="54" width="262" height="40" rx="7"/>
+      <text class="tlf" x="70" y="72">menu.py</text><text class="tld" x="70" y="88">메뉴 데이터 관리 모듈</text>
+      <rect class="tleaf" x="58" y="110" width="262" height="40" rx="7"/>
+      <text class="tlf" x="70" y="128">student.py</text><text class="tld" x="70" y="144">학생의 메뉴 선택 (menu.choose 호출)</text>
+      <rect class="tleaf" x="58" y="166" width="262" height="40" rx="7"/>
+      <text class="tlf" x="70" y="184">gui.py</text><text class="tld" x="70" y="200">GUI 실행 (student.order 호출)</text>
+      <rect class="tleaf" x="58" y="222" width="262" height="40" rx="7"/>
+      <text class="tlf" x="70" y="240">main.py</text><text class="tld" x="70" y="256">프로그램 실행 (모든 모듈 호출)</text>
+    </svg></div>
+    <p class="note"><b>모듈</b>은 하나의 스크립트 파일(.py), <b>패키지</b>는 여러 모듈을 모은 폴더예요. 다른 모듈을 쓸 때는 <code>import</code>로 불러와요.</p>
+  </div>
+  <div class="quiz" data-quiz="3"></div>
+</section>
+
+<!-- 4 알고리즘 설계 + 로직 미리보기 -->
+<section class="page" data-name="알고리즘 설계" data-acc="#e0702b">
+  <div class="head"><div class="num">04</div><div><h2>알고리즘 설계와 로직 미리보기</h2><p>교과서 210·211쪽 · 기본 알고리즘 STEP 1~7, GUI 레이아웃, 핵심 로직</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>클래스 구조를 정했으면, 이제 프로그램이 <b>어떤 순서로 동작할지</b> 알고리즘을 설계해요. 메뉴를 준비하고, 객체를 만들고, 화면을 띄운 뒤, 버튼 클릭을 기다렸다가, 선택한 메뉴를 <b>확인해 결과를 보여 주는</b> 흐름이에요.</span></div>
+  <div class="card">
+    <h3>🔢 기본 알고리즘 STEP 1~7 <span class="muted" style="font-weight:400;font-size:.88rem">(210쪽)</span></h3>
+    <p style="margin-top:0">프로그램이 실행되는 순서예요. 카드를 눌러 각 단계가 하는 일을 확인해 봐요.</p>
+    <div id="stepCards" class="tcards"></div>
+  </div>
+  <div class="card">
+    <h3>🖼️ GUI 레이아웃 설계 <span class="muted" style="font-weight:400;font-size:.88rem">(211쪽 그림Ⅲ-6)</span></h3>
+    <p style="margin-top:0">사용자가 만나는 화면이에요. <code>tkinter</code>의 <b>Label</b>(글자)·<b>Button</b>(버튼)·<b>pack</b>(배치)으로 간단하고 깔끔하게 구성해요.</p>
+    <div class="guiwin"><svg viewBox="0 0 280 300" role="img" aria-label="급식 메뉴 선택 GUI 레이아웃. 제목 표시줄 학교 급식 메뉴 선택, 안내 라벨 메뉴를 선택하세요, 메뉴 버튼 세 개, 선택 결과 라벨 선택한 메뉴 입니다.">
+      <rect class="gwb" x="8" y="8" width="264" height="284" rx="10"/>
+      <rect class="gwt" x="8" y="8" width="264" height="30" rx="10"/>
+      <rect class="gwt2" x="8" y="26" width="264" height="12"/>
+      <text class="gwtt" x="20" y="28">학교 급식 메뉴 선택</text>
+      <text class="gwlb" x="140" y="66">메뉴를 선택하세요:</text>
+      <rect class="gwbtn" x="55" y="84" width="170" height="30" rx="6"/><text class="gwbt" x="140" y="104">제육볶음</text>
+      <rect class="gwbtn" x="55" y="124" width="170" height="30" rx="6"/><text class="gwbt" x="140" y="144">돈가스</text>
+      <rect class="gwbtn" x="55" y="164" width="170" height="30" rx="6"/><text class="gwbt" x="140" y="184">비빔밥</text>
+      <text class="gwrs" x="140" y="236">선택한 메뉴: ○입니다.</text>
+      <text class="gwcap" x="140" y="272">↑ Label · Button · pack으로 배치</text>
+    </svg></div>
+    <p class="note">화면(tkinter)을 만드는 코드는 웹에서 바로 돌리기 어려워, 아래는 <b>읽기용 코드 카드</b>로만 봐요.</p>
+  </div>
+  <div class="card">
+    <h3>📄 gui.py 핵심 (읽기용) <span class="muted" style="font-weight:400;font-size:.88rem">(210·211쪽 · 실행하지 않아요)</span></h3>
+    <p style="margin-top:0">Gui 클래스는 메뉴마다 버튼을 만들고, 버튼을 누르면 <code>show_order( )</code>가 선택한 메뉴명을 확인해 결과를 라벨에 보여 줘요. <b>이 코드는 눈으로 읽기만</b> 해요.</p>
+    <pre class="code"><b>import</b> tkinter as tk
+<b>from</b> student <b>import</b> Student
+
+<b>class</b> Gui:
+    <b>def</b> __init__(self, root, student):
+        self.student = student
+        root.title('학교 급식 메뉴 선택')   <i># 창 제목</i>
+        tk.Label(root, text='메뉴를 선택하세요:').pack()
+        <b>for</b> item <b>in</b> student.menu.items:   <i># 메뉴마다 버튼 생성</i>
+            tk.Button(root, text=item.name,
+                command=<b>lambda</b> name=item.name: self.show_order(name)).pack()
+        self.result_label = tk.Label(root, text='')
+        self.result_label.pack()
+
+    <b>def</b> show_order(self, menu_name):
+        result = self.student.order(menu_name)   <i># 선택 메뉴 확인</i>
+        self.result_label.config(text=result)    <i># 결과를 라벨에 표시</i></pre>
+    <p class="note"><code>lambda</code>는 <b>어떤 버튼을 눌렀는지(name)</b>를 <code>show_order( )</code>에 전달하는 역할을 해요. <code>mainloop( )</code>는 버튼 클릭을 계속 기다리는 무한 반복이라 웹에서 멈추므로 여기선 넣지 않았어요.</p>
+  </div>
+  <div class="card">
+    <h3>▶ 핵심 로직 미리보기 · 콘솔로 돌려 보기 <span class="muted" style="font-weight:400;font-size:.88rem">(menu.py·student.py 로직)</span></h3>
+    <p style="margin-top:0">화면(tkinter)을 뺀 <b>Menu.choose( ) 핵심 로직</b>만 순수 파이썬으로 떼어낸 거예요. 메뉴 목록에서 <b>이름이 같은 항목을 찾아</b> 결과를 출력해요. <b>입력값</b> 칸의 메뉴명을 바꿔 가며 <b>▶ 실행</b>해 봐요.</p>
+    <div id="chooseRun"></div>
+    <p class="note">목록에 없는 메뉴(예: <code>라면</code>)를 넣으면 <code>choose( )</code>가 <code>None</code>을 돌려줘 "해당 메뉴는 없습니다!"가 나와요. 실제 프로그램에서는 이 결과를 GUI 라벨에 보여 줘요.</p>
+  </div>
+  <div class="quiz" data-quiz="4"></div>
+</section>
+
+<!-- 5 스스로 해결하기 -->
+<section class="page" data-name="스스로 해결하기" data-acc="#d64535">
+  <div class="head"><div class="num">05</div><div><h2>스스로 해결하기 · 동아리 신청 프로그램</h2><p>교과서 205·211쪽 · 해 보기 1·2 (분석·설계 메모)</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>이번엔 <b>동아리 신청 프로그램</b>을 기획·설계해 봐요. 코딩을 바로 시작하지 말고, 급식 사례처럼 <b>요구 분석 → 개념 설계 → 모듈 구상</b> 순서로 생각을 정리해요. (아직 구현 단계가 아니니 코드는 쓰지 않아요.)</span></div>
+  <div class="card">
+    <h3>1️⃣ 요구 분석 명세서 틀 채우기 <span class="muted" style="font-weight:400;font-size:.88rem">(205쪽 해 보기 1)</span></h3>
+    <p class="muted" style="margin-top:0">급식 사례(204쪽)를 참고해, 동아리 신청 프로그램이 <b>무엇을</b> 해야 할지 내 말로 적어요.</p>
+    <div class="memo"><label>이 프로그램의 목적·기능·사용자 <small>예: 학생이 희망 동아리를 화면에서 선택하면 신청 결과를 보여 준다. 사용자는 우리 학교 학생 전체.</small></label><textarea data-memo="reqMemo" rows="3"></textarea><div class="saved"></div></div>
+  </div>
+  <div class="card">
+    <h3>2️⃣ UML 개념 설계 <span class="muted" style="font-weight:400;font-size:.88rem">(211쪽 해 보기 2)</span></h3>
+    <p class="muted" style="margin-top:0">관련되는 <b>사람·행위·대상</b>과 그 관계를 도식처럼 글로 정리해요. (예: 학생 — 동아리를 선택 → 동아리판 — 동아리 항목을 검색)</p>
+    <div class="memo"><label>객체(사람·대상)와 역할, 서로 주고받는 메시지 <small>급식의 Gui·Student·Menu·MenuItem처럼, 동아리 신청에는 어떤 객체가 필요할까요?</small></label><textarea data-memo="umlMemo" rows="3"></textarea><div class="saved"></div></div>
+  </div>
+  <div class="card">
+    <h3>3️⃣ 모듈(.py) 트리 구상 <span class="muted" style="font-weight:400;font-size:.88rem">(211쪽 해 보기 2)</span></h3>
+    <p class="muted" style="margin-top:0"><code>schoollunch</code> 패키지처럼, 동아리 신청 패키지 아래에 <b>객체별 이름.py</b>로 모듈 구조를 그려 봐요. (지금은 빈 파일의 트리 구조만 구상해요.)</p>
+    <div class="memo"><label>패키지명과 모듈(.py) 목록 <small>예: clubapply / club.py · student.py · gui.py · main.py</small></label><textarea data-memo="moduleMemo" rows="2"></textarea><div class="saved"></div></div>
+  </div>
+  <div class="card">
+    <h3>🧰 꼭 필요한 핵심 기능 고르기</h3>
+    <p class="muted" style="margin-top:0">동아리 신청 프로그램을 만드는 데 꼭 필요한 기능을 모두 골라요.</p>
+    <div id="featPick"></div>
+  </div>
+  <div class="card">
+    <h3>✅ 성취도 평가 · 스스로 점검</h3>
+    <p class="muted" style="margin-top:0">오늘 할 수 있게 된 것을 모두 골라요.</p>
+    <div id="selfCheck"></div>
+  </div>
+</section>
+
+<!-- 6 마무리 -->
+<section class="page" data-name="마무리 · 질문폼" data-acc="#0f2742">
+  <div class="head"><div class="num">06</div><div><h2>마무리</h2><p>핵심 문장 · 마무리 퀴즈 · 생각 정리 질문폼</p></div></div>
+  <div class="key3">
+    <div style="--k:#2f6fd0">소프트웨어는 <b>기획 → 설계 → 구현 → 테스트·유지 보수</b> 순서로 개발한다. 각 단계는 <b>산출물</b>(요구 분석 명세서·설계 명세서·소스 코드 등)을 만들어 다음 단계로 넘긴다.</div>
+    <div style="--k:#1f9d74"><b>기획</b>에서는 비용·기간·자원을 고려해 계획을 세우고, 사용자의 요구를 분석해 <b>요구 분석 명세서</b>를 만든다. 이 문서는 사용자와 개발자의 <b>계약서</b> 역할을 한다.</div>
+    <div style="--k:#9b4fc4"><b>설계</b>는 요구를 <b>어떻게(How)</b> 실현할지 정하는 단계다. 프로그램을 작은 <b>모듈</b>로 나누되 <b>결합도는 낮게·응집도는 높게</b> 유지하고, <b>클래스 다이어그램·패키지 구조</b>로 표현한다.</div>
+  </div>
+  <div class="card">
+    <h3>오늘의 질문에 다시 답하기</h3>
+    <p class="muted" style="margin-top:0">오늘 따라가 본 급식 프로그램 사례를 떠올리며, 내 말로 답해 보세요.</p>
+    <b style="font-size:.93rem">사용자의 요구를 분석하고 자동화하는 개발 절차는 어떻게 진행될까?</b>
+    <textarea data-memo="keyQ" rows="3"></textarea><div class="saved"></div>
+  </div>
+  <div class="card" style="--acc:#0f2742">
+    <h3>마무리 퀴즈</h3>
+    <div class="quiz" data-quiz="6"></div>
+  </div>
+  <div class="card">
+    <h3>개념 퀴즈 결과</h3>
+    <table id="result"></table>
+    <button class="btn ghost" id="quizReset">퀴즈 다시 풀기</button>
+  </div>
+  <div class="formgo">
+    <span class="kicker">생각 정리 과제</span>
+    <h3>질문폼에 내 생각 쓰기</h3>
+    <ol>
+      <li>소프트웨어 <b>개발 절차 4단계</b>를 순서대로 적고, 각 단계의 <b>산출물</b>이 무엇인지 설명하세요.</li>
+      <li><b>요구 분석</b>과 <b>설계</b>는 어떻게 다른지(<b>무엇 ↔ 어떻게</b>), 그리고 좋은 설계를 위한 <b>모듈화</b>의 원칙(<b>결합도·응집도</b>)을 내 말로 설명하세요.</li>
+      <li>05에서 설계한 <b>동아리 신청 프로그램</b>을 떠올려, 어떤 객체(클래스)로 나누고 어떤 모듈(.py)로 구성할지 설명하세요.</li>
+    </ol>
+    <p>질문폼에는 붙여넣기가 되지 않아요. 아래 메모를 보면서 직접 다시 써 주세요.</p>
+    <a class="go" href="{{FORM_URL}}" target="_blank" rel="noopener">질문폼 열기 →</a>
+    <div class="msum" id="msum"></div>
+  </div>
+</section>

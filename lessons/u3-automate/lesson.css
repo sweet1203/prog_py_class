@@ -1,0 +1,66 @@
+
+  /* u3-automate 전용 (au-) · 강조색 Ⅲ=#9b4fc4 */
+
+  /* 본문 속 짧은 코드 조각 (인라인) — 블록 코드 카드 .code 는 pyrun.css */
+  code{font-family:"Menlo","Consolas","Courier New",monospace;font-size:.9em;
+    background:#eef1f5;color:#1d3a5c;border-radius:5px;padding:1px 5px}
+  .code code,.au-dia code{background:none;padding:0;color:inherit}
+
+  /* 작은 설명표 */
+  .esc-t{width:100%;margin:10px 0 0;font-size:.93rem}
+  .esc-t th{color:var(--muted);font-weight:700;font-size:.82rem;white-space:nowrap}
+  .esc-t td{border-bottom:1px solid var(--line);padding:6px 9px;vertical-align:top}
+  .esc-t td.l{text-align:left}
+  .esc-t td code{font-size:.92em}
+
+  /* 01 개발 절차 세로 단계 */
+  .au-pipe{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:8px}
+  .au-pipe li{display:flex;gap:12px;align-items:flex-start;background:#faf6fd;border-radius:12px;
+    border-left:6px solid var(--k,#9b4fc4);padding:10px 14px}
+  .au-pipe li .n{flex:none;width:26px;height:26px;border-radius:50%;background:var(--k,#9b4fc4);color:#fff;
+    font-weight:800;display:flex;align-items:center;justify-content:center;font-size:.9rem}
+  .au-pipe li b{display:block;font-size:.98rem}
+  .au-pipe li span{display:block;font-size:.88rem;color:var(--muted);margin-top:2px}
+
+  /* 01 요구 분석 명세서 기능 카드 */
+  .au-func{display:grid;gap:8px;margin:8px 0 0}
+  .au-func div{background:#fbfaf7;border-radius:12px;border-top:5px solid var(--k,#9b4fc4);padding:10px 14px}
+  .au-func div b{color:var(--k,#9b4fc4)}
+  .au-func div span{display:block;font-size:.9rem;margin-top:3px}
+
+  /* 02·03 인라인 SVG 공통 */
+  .au-dia{display:flex;justify-content:center;margin:10px 0 0}
+  .au-dia svg{width:100%;height:auto}
+
+  /* 02 클래스 다이어그램 */
+  .au-cls svg{max-width:300px}
+  .au-cls .bx{fill:#faf6fd;stroke:#9b4fc4;stroke-width:1.6}
+  .au-cls .fn{fill:#eef3fb;stroke:#2f6fd0;stroke-width:1.6}
+  .au-cls .ln{stroke:#d3b8ea;stroke-width:1}
+  .au-cls .fl{fill:none;stroke:#8a94a3;stroke-width:1.8}
+  .au-cls .nm{text-anchor:middle;font-weight:800;font-size:12.5px;fill:#6a2f93}
+  .au-cls .nf{text-anchor:middle;font-weight:800;font-size:12px;fill:#2155a0}
+  .au-cls .st{text-anchor:middle;font-size:9.5px;fill:#6b7684;font-style:italic}
+  .au-cls .mb{font-family:"SF Mono","D2Coding",ui-monospace,monospace;font-size:11px;fill:#16202c}
+
+  /* 02 모듈 호출 흐름 */
+  .au-flow svg{max-width:300px}
+  .au-flow .bx{fill:#faf6fd;stroke:#9b4fc4;stroke-width:1.6}
+  .au-flow .mn{fill:#eaf6f0;stroke:#1f9d74;stroke-width:1.6}
+  .au-flow .lf{fill:#fff4dc;stroke:#e0702b;stroke-width:1.6}
+  .au-flow .fl{fill:none;stroke:#8a94a3;stroke-width:1.8}
+  .au-flow .fn{text-anchor:middle;font-weight:800;font-size:11.5px;fill:#16202c;
+    font-family:"SF Mono","D2Coding",ui-monospace,monospace}
+  .au-flow .ro{text-anchor:middle;font-size:10px;fill:#5b6776}
+
+  /* 03 GUI 레이아웃 목업 */
+  .au-gui svg{max-width:260px}
+  .au-gui .win{fill:#fff;stroke:#b9c3d0;stroke-width:1.6}
+  .au-gui .bar{fill:#9b4fc4}
+  .au-gui .btn{fill:#eef3fb;stroke:#2f6fd0;stroke-width:1.4}
+  .au-gui .run{fill:#cfe6fb;stroke:#2f6fd0;stroke-width:1.6}
+  .au-gui .ent{fill:#fff;stroke:#9aa7b5;stroke-width:1.4}
+  .au-gui .res{fill:#f6f3fb;stroke:#c7b2e0;stroke-width:1.4;stroke-dasharray:4 3}
+  .au-gui .tt{text-anchor:middle;fill:#fff;font-weight:800;font-size:11.5px}
+  .au-gui .lb{text-anchor:middle;fill:#24405e;font-size:10.5px}
+  .au-gui .lb.l{text-anchor:start;fill:#6b7684;font-size:9.5px}

@@ -1,0 +1,255 @@
+<!-- 0 시작 -->
+<section class="page" data-name="시작" data-acc="#2f6fd0">
+  <div class="cover">
+    <div class="in">
+      <span class="tag">프로그래밍(Python) · Ⅰ. 프로그래밍 개요 · 4. 프로그램 개발 환경</span>
+      <h1>혼자 짠 코드,<br>여럿이 함께 키우기</h1>
+      <div class="story"><b>팀 프로젝트의 고민</b><br>간단한 프로그램은 혼자 만들 수도 있지만, 실제 개발은 보통 <b>여러 개발자가 역할을 나눠</b> 진행해요. 「내가 고친 코드랑 친구가 고친 코드를 어떻게 합치지?」, 「어제 코드로 되돌리고 싶은데 방법이 없을까?」 이런 고민을 풀어 주는 것이 <b>깃(git)</b>과 <b>깃허브(GitHub)</b>예요.</div>
+      <p>오늘은 <b>버전 관리</b>가 왜 필요한지, 깃의 <b>주요 명령어</b>로 코드를 어떻게 올리고 가져오는지, 깃허브로 어떻게 <b>협업</b>하는지 살펴봐요.</p>
+      <ol>
+        <li>공유·협업과 버전 관리</li><li>깃으로 버전 관리하기</li><li>깃허브와 협업</li>
+        <li>스스로 해결하기</li><li>마무리 · Ⅰ단원 4절 정리</li>
+      </ol>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn" style="background:var(--amber);color:var(--navy);box-shadow:none" onclick="document.getElementById('intro').scrollIntoView({behavior:'smooth'})">단원 도입부터 보기 ↓</button>
+        <button class="btn" style="background:transparent;border:2px solid rgba(255,255,255,.5);box-shadow:none" onclick="go(1)">01로 바로 가기 →</button>
+      </div>
+    </div>
+    <div class="route" aria-hidden="true">
+      <div class="st" style="animation-delay:.2s"><i>🗂️</i><div><b>버전 관리</b><small>코드의 이력을 저장하고 되돌리기</small></div></div>
+      <div class="ar" style="animation-delay:.6s">↓</div>
+      <div class="st" style="animation-delay:.8s"><i>💾</i><div><b>깃(git)</b><small>분산 버전 관리 시스템</small></div></div>
+      <div class="ar" style="animation-delay:1.2s">↓</div>
+      <div class="st" style="animation-delay:1.4s"><i>☁️</i><div><b>깃허브(GitHub)</b><small>협업을 돕는 웹 호스팅 서비스</small></div></div>
+      <div class="ar" style="animation-delay:1.8s">↓</div>
+      <div class="st" style="animation-delay:2s"><i>🤝</i><div><b>협업</b><small>여럿이 나눠 짜고 하나로 합치기</small></div></div>
+    </div>
+  </div>
+
+  <div id="intro" class="today">
+    <div class="today-lead">
+      <span class="kicker">단원 마무리 · Ⅰ. 프로그래밍 개요 4절 (54~61쪽)</span>
+      <p>지난 차시에서는 혼자 쓰는 <b>개발 환경(IDE)</b>을 갖췄어요. 이번에는 한 걸음 더 나아가, <b>여러 사람이 코드를 공유하고 함께 개발</b>하는 환경을 배워요. 이 차시는 Ⅰ단원 「프로그램 개발 환경」을 마무리하는 시간이라, 마지막에 4절 전체를 한 번에 정리해요.</p>
+    </div>
+    <div class="card">
+      <h3>☁️ 깃·깃허브가 주는 네 가지 <span class="muted" style="font-weight:400;font-size:.88rem">(54·56쪽)</span></h3>
+      <p style="margin-top:0">깃과 깃허브는 왜 전 세계 개발자가 즐겨 쓸까요? 카드를 눌러 하나씩 뒤집어 봐요.</p>
+      <div id="introFlip" class="tcards"></div>
+      <p class="note">지금은 「왜 쓰는지」 느낌만 잡아 두세요. 자세한 과정과 명령어는 다음 화면에서 만나요.</p>
+    </div>
+
+    <div class="why3">
+      <div class="why">
+        <span class="kicker">핵심 질문</span>
+        <ul class="uses">
+          <li><b>오늘의 질문</b> · 여러 사람이 함께 개발할 때 코드를 어떻게 공유하고 버전을 관리할까?</li>
+        </ul>
+      </div>
+      <div class="why">
+        <span class="kicker">배우고 나면 할 수 있는 것</span>
+        <ul class="can">
+          <li>깃과 깃허브의 역할, 버전 관리의 필요성을 설명할 수 있다.</li>
+          <li>깃의 주요 명령어로 코드를 공유하고 다른 사람과 협업할 수 있다.</li>
+        </ul>
+      </div>
+      <div class="why">
+        <span class="kicker">오늘 만날 낱말</span>
+        <p style="margin:4px 0 0;font-size:.95rem">버전 관리 · 깃(git) · 깃허브(GitHub) · 로컬 저장소 · 원격 저장소 · 스테이지 · 브랜치 · 병합(merge) · 커밋 · 푸시</p>
+        <p style="font-size:.86rem;margin-top:8px" class="muted">처음 보는 낱말이 있어도 괜찮아요. 화면을 넘기며 하나씩 만나요.</p>
+      </div>
+    </div>
+    <div class="card">
+      <h3>📝 나의 계획 <span class="muted" style="font-weight:400;font-size:.88rem">· (선택)</span></h3>
+      <div class="memo"><label>나는 이 차시에서 다음과 같은 내용을 배우고 싶다. <small>시간이 있으면 한두 가지 적어 보세요. 마지막 화면에서 다시 볼 수 있어요.</small></label><textarea data-memo="planLearn" rows="2"></textarea><div class="saved"></div></div>
+    </div>
+    <div style="text-align:center;margin-top:20px"><button class="btn" style="background:var(--navy)" onclick="go(1)">01 공유·협업과 버전 관리부터 시작하기 →</button></div>
+  </div>
+</section>
+
+<!-- 1 공유·협업과 버전 관리 -->
+<section class="page" data-name="공유·협업과 버전 관리" data-acc="#2f6fd0">
+  <div class="head"><div class="num">01</div><div><h2>공유·협업과 버전 관리</h2><p>교과서 54·56쪽 · 왜 버전 관리가 필요할까</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>개발을 하다 보면 코드를 <b>고쳤다 되돌렸다</b> 하고, 여럿이 <b>같은 파일을 동시에</b> 고치기도 해요. 이걸 안전하게 관리해 주는 것이 <b>버전 관리</b>예요. 깃은 버전을 관리하는 <b>도구</b>, 깃허브는 그 코드를 <b>인터넷에 올려 함께 쓰는 공간</b>이라고 생각하면 돼요.</span></div>
+  <div class="card">
+    <h3>👥 왜 협업에는 버전 관리가 필요할까? <span class="muted" style="font-weight:400;font-size:.88rem">(54·56쪽)</span></h3>
+    <p style="margin-top:0">팀 프로젝트에서는 개발자마다 역할을 나눠 코드를 쓰고, 그것을 모아 하나로 <b>합쳐야(병합)</b> 해요. 또 개발 중에는 코드를 고치고 되돌리는 일이 자주 생기죠. 이런 일을 체계적으로 돕는 것이 버전 관리예요.</p>
+    <div class="flow2">
+      <div style="--k:#d64535"><b>😵 버전 관리가 없으면</b><span>코드_최종.py, 코드_최종2.py, 진짜최종.py … 파일이 쌓이고, 누가 무엇을 바꿨는지 알기 어려워요.</span></div>
+      <div class="ar">→</div>
+      <div style="--k:#1f9d74"><b>😊 버전 관리가 있으면</b><span>변경 내역을 추적하고, 이전 상태로 되돌리고, 동시 수정으로 생긴 충돌도 합쳐서 해결할 수 있어요.</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>🔧 깃(git) vs 깃허브(GitHub) <span class="muted" style="font-weight:400;font-size:.88rem">(54·56쪽)</span></h3>
+    <p style="margin-top:0">비슷해 보이지만 하는 일이 달라요. 둘은 짝을 이뤄 함께 쓰여요.</p>
+    <div class="grid2 even">
+      <div class="cl-sw" style="--k:#2f6fd0"><b>💾 깃(git)</b>
+        <span>소스 코드를 <b>내 컴퓨터(로컬)에 독립적으로</b> 저장해 버전을 관리하는 <b>분산 버전 관리 시스템</b>이에요.</span>
+        <span style="margin-top:6px">변경 사항을 추적하고, 여럿이 동시에 작업하는 <b>병렬 개발</b>과 충돌 병합을 지원해요.</span>
+        <small>혼자 하는 프로젝트도 버전을 정리해 포트폴리오로 쓸 수 있어요.</small>
+      </div>
+      <div class="cl-sw" style="--k:#1f9d74"><b>☁️ 깃허브(GitHub)</b>
+        <span>깃으로 관리하는 코드를 <b>클라우드에 저장</b>하도록 돕는 <b>웹 기반 호스팅 서비스</b>예요.</span>
+        <span style="margin-top:6px">여러 개발자가 협업하고, 프로젝트를 <b>오픈 소스로 공개</b>하거나 남의 오픈 소스를 활용할 수 있어요.</span>
+        <small>가입은 깃허브 사이트(github.com)에서 해요.</small>
+      </div>
+    </div>
+    <p class="note"><b>브랜치(branch)</b> · 기존 코드에 영향을 주지 않고 새 기능을 추가하거나 버그를 수정하도록 만든 독립적인 작업 공간이에요. 각자 브랜치에서 작업한 뒤 <b>병합(merge)</b>해 하나로 통합해요.</p>
+  </div>
+  <div class="card">
+    <h3>⬇️ 깃 설치와 환경 설정 <span class="muted" style="font-weight:400;font-size:.88rem">(56쪽)</span></h3>
+    <p style="margin-top:0">깃은 깃 사이트(git-scm.com)에서 운영체제에 맞는 설치 파일을 내려받아 설치해요. 설치한 뒤에는 깃허브에 등록한 이름과 이메일을 깃에도 등록해 둬요.</p>
+    <pre class="code"><b>git config</b> --global user.name '계정 아이디'   <i># 이름 등록</i>
+<b>git config</b> --global user.email '이메일 주소'  <i># 이메일 등록</i>
+<b>git config</b> --list                       <i># 등록이 잘 됐는지 확인</i></pre>
+    <p class="note">🎬 깃 설치 영상·QR과 설치 화면은 <b>「선생님 자료」</b>로 함께 봐요. 설치 방법은 운영체제에 따라 조금씩 달라요.</p>
+  </div>
+  <div class="quiz" data-quiz="1"></div>
+</section>
+
+<!-- 2 깃으로 버전 관리하기 -->
+<section class="page" data-name="깃으로 버전 관리하기" data-acc="#9b4fc4">
+  <div class="head"><div class="num">02</div><div><h2>깃으로 버전 관리하기</h2><p>교과서 57~58쪽 · 버전 관리 과정과 주요 명령어</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>내 코드를 깃허브에 올리는 길은 <b>작업 폴더 → 스테이지 → 로컬 저장소 → 원격 저장소</b> 네 칸을 거쳐요. 칸을 넘길 때마다 쓰는 명령이 <b>add · commit · push</b>이고, 반대로 가져올 때는 <b>pull</b>이에요.</span></div>
+  <div class="card">
+    <h3>🔄 깃을 활용한 버전 관리 과정 <span class="muted" style="font-weight:400;font-size:.88rem">(57쪽 그림Ⅰ-30)</span></h3>
+    <p style="margin-top:0">버튼을 눌러 단계를 하나씩 밝혀 봐요. 어떤 명령이 코드를 어느 칸으로 옮기는지 살펴봐요.</p>
+    <div class="grid2">
+      <div class="cl-vc">
+        <svg id="vcSvg" viewBox="0 0 300 360" role="img" aria-label="작업 폴더에서 스테이지·로컬 저장소를 거쳐 원격 저장소로 코드를 올리고, 원격 저장소에서 다시 가져오는 버전 관리 과정을 단계별로 보여 주는 그림"></svg>
+      </div>
+      <div>
+        <div class="row cl-rbtn" id="vcBtns"></div>
+        <p class="cl-rcap" id="vcCap"></p>
+      </div>
+    </div>
+    <p class="note"><b>스테이지(Staging Area)</b> · 커밋하기 전에 변경된 파일을 준비해 두는 임시 저장 공간이에요.</p>
+  </div>
+  <div class="card">
+    <h3>⌨️ 코드를 처음 올리는 명령 흐름 <span class="muted" style="font-weight:400;font-size:.88rem">(57쪽)</span></h3>
+    <p style="margin-top:0">실제 명령은 아래와 같아요. 여기서는 <b>읽어 보기만</b> 해요(직접 실행하지 않아요).</p>
+    <pre class="code">cd MyProject                      <i># 프로젝트 폴더로 이동</i>
+<b>git init</b>                          <i># 이 폴더를 깃 저장소로 초기화</i>
+<b>git remote add</b> origin &lt;원격 저장소 URL&gt;  <i># 원격 저장소와 연결</i>
+<b>git add</b> .                         <i># 변경된 모든 파일을 스테이지에 올리기</i>
+<b>git commit</b> -m 'first project'      <i># 로컬 저장소에 기록하기</i>
+<b>git push</b> origin main              <i># 원격 저장소에 전송하기</i></pre>
+    <div class="cl-steps">
+      <div>프로그래밍 소스 파일이 든 폴더를 깃 저장소로 초기화해요.</div>
+      <div>깃허브에서 만든 원격 저장소와 연결해요.</div>
+      <div>작업한 파일을 스테이지에 올려요.</div>
+      <div>스테이지의 내용을 커밋 메시지와 함께 기록해요.</div>
+      <div>변경 사항을 원격 저장소에 추가로 전송해요.</div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>🃏 깃 주요 명령어 매칭 <span class="muted" style="font-weight:400;font-size:.88rem">(58쪽 표Ⅰ-6)</span></h3>
+    <p class="muted" style="margin-top:0">카드를 눌러 명령어가 하는 일과 예시를 확인해요. 무엇을 하는 명령인지 먼저 떠올려 본 뒤 뒤집으면 더 잘 외워져요.</p>
+    <div id="gitCmd" class="tcards"></div>
+  </div>
+  <div class="quiz" data-quiz="2"></div>
+</section>
+
+<!-- 3 깃허브와 협업 -->
+<section class="page" data-name="깃허브와 협업" data-acc="#1f9d74">
+  <div class="head"><div class="num">03</div><div><h2>깃허브와 협업</h2><p>교과서 54~55·58쪽 · 저장소 만들기, 함께 개발하기</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>깃허브에 <b>원격 저장소</b>를 하나 만들면, 거기에 코드를 올려 두고 <b>여럿이 함께</b> 가져다 고치고 다시 올릴 수 있어요. 각자 <b>브랜치</b>에서 작업한 뒤 <b>병합</b>하면 충돌 없이 하나로 합쳐져요.</span></div>
+  <div class="card">
+    <h3>🗃️ 깃허브에서 원격 저장소 만들기 <span class="muted" style="font-weight:400;font-size:.88rem">(54~55쪽)</span></h3>
+    <p style="margin-top:0">깃허브 사이트(github.com)에 가입·로그인한 뒤, 아래 순서로 원격 저장소(Repository)를 만들어요.</p>
+    <div class="cl-steps">
+      <div>화면에서 <b>Create repository</b>를 눌러 새 원격 저장소 폴더를 만들어요.</div>
+      <div>Owner(계정 아이디) 옆 빈칸에 <b>저장소 폴더 이름</b>을 입력해요.</div>
+      <div>공개 범위로 <b>Public</b>을 고르고, 맨 아래 <b>Create repository</b> 버튼을 눌러 완료해요.</div>
+      <div>만들어진 저장소의 <b>URL</b>을 확인해 두면, 로컬 저장소와 연결할 때 써요.</div>
+    </div>
+    <p class="note"><b>Public</b>은 인터넷의 누구나 볼 수 있고, <b>Private</b>은 내가 지정한 사용자만 볼 수 있도록 설정해요.</p>
+  </div>
+  <div class="card">
+    <h3>🌿 브랜치로 나눠 짜고, 병합으로 합치기 <span class="muted" style="font-weight:400;font-size:.88rem">(54쪽)</span></h3>
+    <div class="cl-crit">
+      <div style="--k:#1f9d74"><b>🌿 브랜치에서 작업</b><span>기존 코드를 건드리지 않는 독립 공간에서 각자 새 기능·수정 작업을 해요.</span></div>
+      <div style="--k:#2f6fd0"><b>🔀 병합(merge)</b><span>각 브랜치의 작업을 하나로 합쳐 프로젝트를 통합해요. 토론으로 품질도 높여요.</span></div>
+      <div style="--k:#e0702b"><b>🌍 오픈 소스</b><span>프로젝트를 공개하거나 남의 오픈 소스를 활용해 개발에 참여할 수 있어요.</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>🛠️ 협업을 돕는 커뮤니케이션 도구 <span class="muted" style="font-weight:400;font-size:.88rem">(58쪽 「정보」)</span></h3>
+    <p style="margin-top:0">여러 명이 함께 개발할 때는 일정·역할·진행 상황을 명확히 공유해야 해요. 온라인 협업 도구를 쓰면 더 효율적이에요.</p>
+    <div class="cl-crit">
+      <div style="--k:#111"><b>노션(notion)</b><span>프로젝트 관리·문서 정리·데이터베이스를 통합해 업무를 관리하는 협업 도구예요.</span></div>
+      <div style="--k:#2563c9"><b>지라(jira)</b><span>이슈·프로젝트 추적 소프트웨어로, 업무를 시각화하고 유연한 관리를 지원해요.</span></div>
+      <div style="--k:#5a1ec4"><b>슬랙(slack)</b><span>채널 기반 메시징 플랫폼으로, 실시간 소통과 협업을 효과적으로 지원해요.</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>✍️ 협업 상황 메모</h3>
+    <p class="muted" style="margin-top:0">혼자 코드를 관리할 때와, 여럿이 함께 관리할 때를 떠올려 적어 봐요. 마지막 화면에서 다시 볼 수 있어요.</p>
+    <div class="memo"><label>여럿이 함께 코드를 개발할 때, 깃·깃허브가 있으면 어떤 점이 좋을까요? <small>버전 관리·병합·공유 중 하나를 예로 들어도 좋아요.</small></label><textarea data-memo="collabMemo" rows="3"></textarea><div class="saved"></div></div>
+  </div>
+  <div class="quiz" data-quiz="3"></div>
+</section>
+
+<!-- 4 스스로 해결하기 -->
+<section class="page" data-name="스스로 해결하기" data-acc="#d64535">
+  <div class="head"><div class="num">04</div><div><h2>스스로 해결하기 · 협업 개발 환경 구축</h2><p>교과서 60쪽 · 활동 · 조사 보고서</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>직접 원격 저장소를 하나 정하고, 어떤 파일을 올릴지 계획해 봐요. 오늘 배운 <b>깃 명령 흐름(init→add→commit→push)</b>을 떠올리며, 내가 할 일을 간단히 적어 보는 활동이에요.</span></div>
+  <div class="card">
+    <h3>1️⃣ 내 원격 저장소 계획하기</h3>
+    <p class="muted" style="margin-top:0">깃허브에 만들 저장소의 이름과, 올릴 파일을 생각해 적어요. 공개 범위(Public/Private)도 골라 보세요.</p>
+    <div class="memo"><label>만들 원격 저장소 이름</label><input type="text" data-memo="repoName" placeholder="예: my-first-project"><div class="saved"></div></div>
+    <div class="memo"><label>올리고 싶은 파일과, 버전 관리가 필요한 이유 <small>어떤 파일을 왜 올리고 싶은지 한두 줄로 적어요.</small></label><textarea data-memo="taskPlan" rows="2"></textarea><div class="saved"></div></div>
+  </div>
+  <div class="card">
+    <h3>2️⃣ 깃으로 올리는 순서 다시 떠올리기 <span class="muted" style="font-weight:400;font-size:.88rem">(60쪽 활동)</span></h3>
+    <p class="muted" style="margin-top:0">아래 흐름을 보며, 내 저장소에 적용하면 어떤 명령을 차례로 쓸지 상상해 봐요.</p>
+    <pre class="code"><b>git init</b>                         <i># 저장소 초기화</i>
+<b>git remote add</b> origin &lt;원격 저장소 URL&gt;
+<b>git add</b> .
+<b>git commit</b> -m '메시지'
+<b>git push</b> origin main</pre>
+    <p class="note">클라우드 개발 환경인 코랩(colab.research.google.com)에서 <code>print('Hello world')</code>를 실행해 보는 활동도 60쪽에 함께 있어요. 실습은 <b>「선생님 자료」</b>의 안내를 따라 진행해요.</p>
+  </div>
+  <div class="card">
+    <h3>✅ 스스로 점검 <span class="muted" style="font-weight:400;font-size:.88rem">(60~61쪽 평가 기준)</span></h3>
+    <p class="muted" style="margin-top:0">오늘 할 수 있게 된 것을 모두 골라요.</p>
+    <div id="selfCk"></div>
+  </div>
+</section>
+
+<!-- 5 마무리 -->
+<section class="page" data-name="마무리 · 정리" data-acc="#0f2742">
+  <div class="head"><div class="num">05</div><div><h2>마무리 · Ⅰ단원 4절 정리</h2><p>핵심 문장 · 마무리 퀴즈 · 생각 정리 질문폼</p></div></div>
+  <div class="key3">
+    <div style="--k:#2f6fd0"><b>깃(git)</b>은 코드의 이력을 추적·수정·복원하는 <b>분산 버전 관리 시스템</b>이고, <b>깃허브(GitHub)</b>는 여러 개발자가 코드를 관리·병합하며 협업하도록 돕는 공유·협업 환경(웹 호스팅 서비스)이다.</div>
+    <div style="--k:#9b4fc4">코드는 <b>작업 폴더 → (add) 스테이지 → (commit) 로컬 저장소 → (push) 원격 저장소</b> 순서로 올라가고, 원격 저장소의 변경 내용은 <b>pull</b>로 다시 가져온다. 각자 <b>브랜치</b>에서 작업한 뒤 <b>병합(merge)</b>해 하나로 통합한다.</div>
+    <div style="--k:#1f9d74"><b>Ⅰ단원 4절 정리</b> · <b>통합 개발 환경(IDE)</b>은 에디터·컴파일러/인터프리터·디버거를 하나로 모은 개발 프로그램이다. 설치해 쓰는 <b>로컬 IDE</b>(VSCode·PyCharm 등)와 웹에서 쓰는 <b>클라우드 IDE</b>(Colab·Replit 등)가 있고, 공유·협업은 <b>깃·깃허브</b>로 한다.</div>
+  </div>
+  <div class="card">
+    <h3>오늘의 질문에 다시 답하기</h3>
+    <p class="muted" style="margin-top:0">03에서 적은 협업 메모와 오늘 배운 과정을 떠올리며, 내 말로 답해 보세요.</p>
+    <b style="font-size:.93rem">여러 사람이 함께 개발할 때 코드를 어떻게 공유하고 버전을 관리할까?</b>
+    <textarea data-memo="keyQ" rows="3"></textarea><div class="saved"></div>
+  </div>
+  <div class="card" style="--acc:#0f2742">
+    <h3>마무리 퀴즈</h3>
+    <div class="quiz" data-quiz="5"></div>
+  </div>
+  <div class="card">
+    <h3>개념 퀴즈 결과</h3>
+    <table id="result"></table>
+    <button class="btn ghost" id="quizReset">퀴즈 다시 풀기</button>
+  </div>
+  <div class="formgo">
+    <span class="kicker">생각 정리 과제</span>
+    <h3>질문폼에 내 생각 쓰기</h3>
+    <ol>
+      <li><b>버전 관리</b>가 왜 필요한지, 혼자 개발할 때와 여럿이 협업할 때를 들어 설명하세요. 깃(git)과 깃허브(GitHub)가 각각 어떤 역할을 하는지도 함께 적으세요.</li>
+      <li>코드를 깃허브에 올리는 과정을 <b>작업 폴더·스테이지·로컬 저장소·원격 저장소</b>와 <b>add·commit·push</b>를 모두 넣어 순서대로 설명하세요. <b>pull</b>이 하는 일도 함께 적으세요.</li>
+      <li>04에서 계획한 <b>내 원격 저장소</b>를 쓰고, 그 저장소로 다른 사람과 어떻게 협업할 수 있을지(브랜치·병합·협업 도구를 들어) 설명하세요.</li>
+    </ol>
+    <p>질문폼에는 붙여넣기가 되지 않아요. 아래 메모를 보면서 직접 다시 써 주세요.</p>
+    <a class="go" href="{{FORM_URL}}" target="_blank" rel="noopener">질문폼 열기 →</a>
+    <div class="msum" id="msum"></div>
+  </div>
+</section>

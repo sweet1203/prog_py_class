@@ -1,0 +1,174 @@
+<!-- 0 시작 -->
+<section class="page" data-name="시작" data-acc="#1f9d74">
+  <div class="cover">
+    <div class="in">
+      <span class="tag">프로그래밍(Python) · Ⅱ. 프로그래밍 기초 · 협력적 프로젝트</span>
+      <h1>나만의 할 일 목록,<br>우리 모둠이 만든다!</h1>
+      <div class="story"><b>협력적 프로젝트 (178쪽)</b><br>과제, 숙제, 학교 활동으로 해야 할 일이 많은 민수는 노트에 적다가 자꾸 잊어버려요. 그래서 할 일을 <b>추가·보기·완료 표시·삭제</b>할 수 있는 프로그램을 직접 만들기로 해요. 우리 모둠도 함께 설계하고 만들어 봐요.</div>
+      <p>오늘은 새 개념을 배우기보다, 배운 <b>리스트 · 딕셔너리 · 반복 · 조건 · 예외 처리</b>를 모아 프로그램 하나를 <b>직접 설계</b>해 봐요.</p>
+      <ol><li>프로젝트 소개</li><li>모둠 역할과 진행</li><li>설계 메모</li><li>틀로 실험하기</li><li>마무리 · 질문폼</li></ol>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn" style="background:var(--amber);color:var(--navy);box-shadow:none" onclick="document.getElementById('intro').scrollIntoView({behavior:'smooth'})">프로젝트 안내부터 보기 ↓</button>
+        <button class="btn" style="background:transparent;border:2px solid rgba(255,255,255,.5);box-shadow:none" onclick="go(1)">01로 바로 가기 →</button>
+      </div>
+    </div>
+    <div class="route" aria-hidden="true">
+      <div class="st" style="animation-delay:.2s"><i>🧩</i><div><b>문제 이해</b><small>어떤 기능이 필요할까</small></div></div>
+      <div class="ar" style="animation-delay:.6s">↓</div>
+      <div class="st" style="animation-delay:.8s"><i>✏️</i><div><b>설계</b><small>메뉴·기능·자료 구조</small></div></div>
+      <div class="ar" style="animation-delay:1.2s">↓</div>
+      <div class="st" style="animation-delay:1.4s"><i>⌨️</i><div><b>프로그래밍</b><small>역할을 나눠 구현</small></div></div>
+      <div class="ar" style="animation-delay:1.8s">↓</div>
+      <div class="st" style="animation-delay:2s"><i>🙌</i><div><b>합치기·점검</b><small>실행하고 고치기</small></div></div>
+    </div>
+  </div>
+  <div id="intro" class="today">
+    <div class="today-lead">
+      <span class="kicker">협력적 프로젝트 안내 · Ⅱ. 프로그래밍 기초 (178~189쪽)</span>
+      <p>이 프로젝트의 답은 정해져 있지 않아요. <b>어떤 메뉴를 만들지, 자료를 어떻게 담을지</b>를 모둠이 직접 정하고 구현해요. 이 화면은 그 과정을 돕는 <b>틀과 메모 칸</b>이에요.</p>
+    </div>
+    <div class="card">
+      <h3>🔁 프로젝트에 되살릴 개념</h3>
+      <p style="margin-top:0">앞에서 배운 낱말이에요. 먼저 뜻을 떠올린 뒤 카드를 눌러 확인해요.</p>
+      <div id="recallFlip" class="tcards"></div>
+    </div>
+    <div class="why3">
+      <div class="why"><span class="kicker">핵심 질문</span><ul class="uses"><li><b>오늘의 질문</b> · 할 일을 추가·보기·완료·삭제하는 프로그램을, 어떻게 나누어 설계하면 모둠이 함께 만들 수 있을까?</li></ul></div>
+      <div class="why"><span class="kicker">이 프로젝트에서 할 수 있는 것</span><ul class="can">
+        <li>필요한 기능과 자료 구조를 직접 설계할 수 있다.</li>
+        <li>기능별로 역할을 나눠 맡고 합칠 수 있다.</li>
+        <li>생성형 AI가 준 코드를 검토하고 고칠 수 있다.</li></ul></div>
+      <div class="why"><span class="kicker">오늘 만날 낱말</span><p style="margin:4px 0 0;font-size:.95rem">메뉴 · 기능 · 자료 구조 · 역할 분담 · 프롬프트 · 검토</p></div>
+    </div>
+    <div class="card">
+      <h3>📝 나의 다짐 <span class="muted" style="font-weight:400;font-size:.88rem">· (선택)</span></h3>
+      <div class="memo"><label>이 프로젝트에서 나는 이렇게 참여하고 싶다. <small>한두 줄 적어 보세요.</small></label><textarea data-memo="planMemo" rows="2"></textarea><div class="saved"></div></div>
+    </div>
+    <div style="text-align:center;margin-top:20px"><button class="btn" style="background:var(--navy)" onclick="go(1)">01 프로젝트 소개부터 시작하기 →</button></div>
+  </div>
+</section>
+
+<!-- 1 -->
+<section class="page" data-name="프로젝트 소개" data-acc="#2f6fd0">
+  <div class="head"><div class="num">01</div><div><h2>프로젝트 소개 · 4가지 기능</h2><p>교과서 178쪽 · 문제 이해</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>할 일을 <b>적고, 보고, 끝냈다고 표시하고, 지우는</b> 프로그램이에요. 목록은 파이썬 <b>리스트</b>에 담아요.</span></div>
+  <div class="card">
+    <h3>🧩 필요한 기능 <span class="muted" style="font-weight:400;font-size:.88rem">(178쪽)</span></h3>
+    <div class="td-feat">
+      <div style="--k:#2f6fd0"><b>➕ 추가</b><span>새 할 일을 목록에 넣어요.</span></div>
+      <div style="--k:#1f9d74"><b>👀 보기</b><span>번호와 함께 목록을 보여 줘요.</span></div>
+      <div style="--k:#e0702b"><b>✅ 완료 표시</b><span>번호로 골라 끝냈다고 바꿔요.</span></div>
+      <div style="--k:#d64535"><b>🗑️ 삭제</b><span>필요 없어진 할 일을 지워요.</span></div>
+    </div>
+    <p class="note" style="margin-bottom:0">프로그램은 메뉴를 보여 주고 사용자가 고른 번호에 따라 기능을 실행하는 흐름이에요. 어떤 반복문과 조건문이 어울릴지 생각해 보세요.</p>
+  </div>
+  <div class="card">
+    <h3>📦 할 일 하나는 어떤 모양일까</h3>
+    <p style="margin-top:0">할 일 하나를 <b>딕셔너리</b>로, 여러 개를 <b>리스트</b>로 묶어 담는 방법이 있어요. 이런 모양이에요.</p>
+    <div class="td-data"><div>{'task': 문자열, 'completed': False}</div><div>todo_list = [ 할 일, 할 일, … ]</div></div>
+    <p class="note" style="margin-bottom:0">completed는 완료 여부를 나타내요. 이 모양이 최선인지, 다른 방법은 없는지도 모둠에서 이야기해 봐요.</p>
+  </div>
+  <div class="card">
+    <h3>💭 우리 생활에서는?</h3>
+    <div class="memo"><label>할 일 목록 프로그램이 필요한 상황 <small>(선택) 나나 친구에게 필요한 때를 적어 보세요.</small></label><textarea data-memo="useNote" rows="2"></textarea><div class="saved"></div></div>
+  </div>
+  <div class="quiz" data-quiz="1"></div>
+</section>
+
+<!-- 2 -->
+<section class="page" data-name="모둠·역할" data-acc="#9b4fc4">
+  <div class="head"><div class="num">02</div><div><h2>모둠 역할과 진행</h2><p>교과서 178~179쪽 · 역할 분담 · AI 활용</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>기능마다 <b>맡을 사람</b>을 나누고, 마지막에 <b>하나로 합쳐</b> 실행해 봐요. 합치려면 <b>주고받는 값을 미리 약속</b>해야 해요.</span></div>
+  <div class="card">
+    <h3>👫 우리 모둠</h3>
+    <table class="plan"><tr><td>모둠명</td><td><input type="text" data-memo="teamName" placeholder="예: 할일 1팀"><div class="saved"></div></td></tr></table>
+  </div>
+  <div class="card">
+    <h3>🎒 내가 맡을 기능</h3>
+    <p class="muted" style="margin-top:0">모둠에서 정한 대로 하나를 골라요.</p>
+    <div id="featChips"></div>
+    <div class="memo"><label>모둠원 역할 정리 <small>누가 어떤 기능을 맡았는지 적어 보세요.</small></label><textarea data-memo="roleNote" rows="2"></textarea><div class="saved"></div></div>
+  </div>
+  <div class="card">
+    <h3>🧱 기능을 나누어 합치는 구조 <span class="muted" style="font-weight:400;font-size:.88rem">(그림 설명)</span></h3>
+    <p style="margin-top:0">기능을 따로 파일(모듈)로 만들어 한 파일에서 불러와 쓰는 방법이 있어요. 웹에서는 실행하기 어려워서, 여기서는 구조만 살펴봐요.</p>
+    <div class="td-mod"><div><b>추가 담당</b>기능 만들기</div><div><b>보기 담당</b>기능 만들기</div><div><b>완료·삭제 담당</b>기능 만들기</div><div><b>메뉴 담당</b>불러와 합치기</div></div>
+    <p class="note" style="margin-bottom:0">합칠 때 모든 기능이 같은 목록을 함께 쓰도록 약속하는 것이 핵심이에요.</p>
+  </div>
+  <div class="card">
+    <h3>🤖 생성형 AI와 함께하기 <span class="muted" style="font-weight:400;font-size:.88rem">(178~179쪽)</span></h3>
+    <p style="margin-top:0">교과서는 AI에게 원하는 기능을 <b>프롬프트</b>로 구체적으로 요청해 코드를 받아 보게 해요. 같은 프롬프트도 매번 다른 코드가 나올 수 있어서, <b>실행해 보고 검토·수정</b>하는 일이 중요해요.</p>
+    <ul style="margin:6px 0 0;padding-left:20px;line-height:1.7"><li>원하는 기능을 구체적으로 적기</li><li>나온 코드를 실행해 결과 확인하기</li><li>이해 안 되는 부분은 다시 물어보기</li><li>마음에 안 들면 프롬프트를 바꿔 다시 요청하기</li></ul>
+  </div>
+  <div class="quiz" data-quiz="2"></div>
+</section>
+
+<!-- 3 -->
+<section class="page" data-name="설계 메모" data-acc="#1f9d74">
+  <div class="head"><div class="num">03</div><div><h2>설계 메모</h2><p>직접 설계하기 · 정답은 없어요</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>코드를 쓰기 전에 <b>메뉴, 기능의 동작, 자료의 모양</b>을 먼저 말로 적어 두면 만들기가 쉬워져요.</span></div>
+  <div class="card">
+    <h3>📋 메뉴 구조</h3>
+    <p style="margin-top:0">프로그램을 켜면 무엇이 보이고, 번호를 고르면 어떻게 되나요? 종료는 어떻게 하나요?</p>
+    <div class="memo"><label>메뉴 구조 <small>화면에 보일 메뉴와 선택 흐름</small></label><textarea data-memo="menuDesign" rows="4"></textarea><div class="saved"></div></div>
+  </div>
+  <div class="card">
+    <h3>⚙️ 기능별 동작</h3>
+    <p style="margin-top:0">기능마다 입력은 무엇이고 목록은 어떻게 바뀌고 무엇을 출력하나요? 목록이 비었거나 잘못된 번호를 넣으면 어떻게 할까요?</p>
+    <div class="memo"><label>기능별 동작 <small>추가·보기·완료·삭제를 각각</small></label><textarea data-memo="featDesign" rows="6"></textarea><div class="saved"></div></div>
+  </div>
+  <div class="card">
+    <h3>📦 자료 구조</h3>
+    <div class="memo"><label>자료 구조 <small>할 일 하나와 전체 목록을 어떤 모양으로 담을까요?</small></label><textarea data-memo="dataDesign" rows="3"></textarea><div class="saved"></div></div>
+  </div>
+  <div class="card">
+    <h3>🤖 AI에게 요청하고 검토하기</h3>
+    <div class="memo"><label>AI에게 요청할 프롬프트 <small>기능을 구체적으로 적어 보세요.</small></label><textarea data-memo="aiPrompt" rows="4"></textarea><div class="saved"></div></div>
+    <div class="memo"><label>AI가 준 코드 검토·수정 메모 <small>실행해 보고 고친 점, 이상했던 점</small></label><textarea data-memo="aiReview" rows="3"></textarea><div class="saved"></div></div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section class="page" data-name="틀 실험" data-acc="#e0702b">
+  <div class="head"><div class="num">04</div><div><h2>틀로 실험하기 (선택)</h2><p>뼈대 코드 · 직접 채우기</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>메뉴 전체가 아니라 <b>기능 하나</b>만 작게 만들어 봐요. 아래 틀의 빈 곳을 직접 채워 실행해 보세요.</span></div>
+  <div class="card">
+    <h3>🧪 목록에 자료 넣고 보기</h3>
+    <p style="margin-top:0">주석(#)의 안내대로 직접 코드를 써 보세요. 아직 안 쓴 곳은 실행해도 아무 일도 일어나지 않아요.</p>
+    <div id="todoFrame"></div>
+    <p class="note" style="margin-bottom:0">끝없이 반복되는 메뉴는 이 칸에서 돌리지 않아요. 실제 메뉴는 개인 환경(Colab 등)에서 만들어 보세요.</p>
+    <div class="memo"><label>실험 메모 <small>막혔던 곳, 알게 된 것</small></label><textarea data-memo="frameNote" rows="3"></textarea><div class="saved"></div></div>
+  </div>
+</section>
+
+<!-- 5 마무리 -->
+<section class="page" data-name="마무리 · 질문폼" data-acc="#0f2742">
+  <div class="head"><div class="num">05</div><div><h2>마무리</h2><p>오늘 한 일 · 생각 정리 · 질문폼</p></div></div>
+  <div class="key3">
+    <div style="--k:#2f6fd0">할 일 목록은 <b>추가·보기·완료·삭제</b> 기능과, 할 일을 담는 <b>자료 구조</b>를 먼저 설계하면 만들기 쉽다.</div>
+    <div style="--k:#9b4fc4">기능별로 <b>역할을 나누고</b>, 주고받는 값을 약속해 하나로 <b>합친다</b>.</div>
+    <div style="--k:#1f9d74">생성형 AI가 준 코드는 그대로 믿지 않고 <b>실행해 검토·수정</b>한다.</div>
+  </div>
+  <div class="card">
+    <h3>오늘의 질문에 답하기</h3>
+    <b style="font-size:.93rem">할 일을 추가·보기·완료·삭제하는 프로그램을, 어떻게 나누어 설계하면 모둠이 함께 만들 수 있을까?</b>
+    <textarea data-memo="keyQ" rows="3"></textarea><div class="saved"></div>
+  </div>
+  <div class="card">
+    <h3>이해 확인 퀴즈 결과</h3>
+    <table id="result"></table>
+    <button class="btn ghost" id="quizReset">퀴즈 다시 풀기</button>
+  </div>
+  <div class="formgo">
+    <span class="kicker">생각 정리 과제</span>
+    <h3>질문폼에 내 생각 쓰기</h3>
+    <ol>
+      <li>우리 모둠이 설계한 <b>메뉴와 기능의 동작</b>을 내 말로 설명하세요. <span class="muted">(화면 03 메모 참고)</span></li>
+      <li>할 일을 담는 <b>자료 구조</b>를 어떻게 정했고 왜 그렇게 했는지 쓰세요. <span class="muted">(화면 03 참고)</span></li>
+      <li>내가 맡은 역할과, AI 코드를 <b>검토·수정</b>한 경험이나 협력하며 느낀 점을 적으세요. <span class="muted">(화면 02·03 참고)</span></li>
+    </ol>
+    <p>질문폼에는 붙여넣기가 되지 않아요. 아래 메모를 보면서 직접 다시 써 주세요.</p>
+    <a class="go" href="{{FORM_URL}}" target="_blank" rel="noopener">질문폼 열기 →</a>
+    <div class="msum" id="msum"></div>
+  </div>
+</section>

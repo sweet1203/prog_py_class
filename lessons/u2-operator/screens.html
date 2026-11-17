@@ -1,0 +1,280 @@
+<!-- 0 시작 -->
+<section class="page" data-name="시작" data-acc="#1f9d74">
+  <div class="cover">
+    <div class="in">
+      <span class="tag">프로그래밍(Python) · Ⅱ. 프로그래밍 기초 · 4. 연산자</span>
+      <h1>복잡한 계산,<br>컴퓨터에게 맡겨 볼까?</h1>
+      <div class="story"><b>현아와 은호 이야기 (110쪽)</b><br>현아는 복잡한 문제를 손으로 직접 풀어 보려고 했지만, 계산이 길어질수록 점점 어려워졌어요. 이를 본 은호가 말해요. "복잡한 계산은 컴퓨터를 활용하면 쉽게 할 수 있지." 컴퓨터는 <b>연산자</b>라는 기호로 계산과 판단을 해요.</div>
+      <p>오늘은 파이썬의 <b>산술·비교·논리 연산자</b>와 <b>우선순위</b>, <b>math 모듈</b>을 직접 코드를 돌려 보며 익혀요.</p>
+      <ol>
+        <li>산술 연산자</li><li>비교·논리 연산자</li><li>연산자 우선순위</li>
+        <li>math 모듈과 활용</li><li>스스로 해결하기 · 마무리</li>
+      </ol>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn" style="background:var(--amber);color:var(--navy);box-shadow:none" onclick="document.getElementById('intro').scrollIntoView({behavior:'smooth'})">오늘 배울 것 보기 ↓</button>
+        <button class="btn" style="background:transparent;border:2px solid rgba(255,255,255,.5);box-shadow:none" onclick="go(1)">01로 바로 가기 →</button>
+      </div>
+    </div>
+    <div class="route" aria-hidden="true">
+      <div class="st" style="animation-delay:.2s"><i>➕</i><div><b>산술</b><small>+ - * ** / // %</small></div></div>
+      <div class="ar" style="animation-delay:.6s">↓</div>
+      <div class="st" style="animation-delay:.8s"><i>⚖️</i><div><b>비교</b><small>== != &lt; &gt; 로 True/False</small></div></div>
+      <div class="ar" style="animation-delay:1.2s">↓</div>
+      <div class="st" style="animation-delay:1.4s"><i>🔗</i><div><b>논리</b><small>and · or · not</small></div></div>
+      <div class="ar" style="animation-delay:1.8s">↓</div>
+      <div class="st" style="animation-delay:2s"><i>📐</i><div><b>math 모듈</b><small>제곱근·평균·표준편차</small></div></div>
+    </div>
+  </div>
+
+  <div id="intro" class="today">
+    <div class="today-lead">
+      <span class="kicker">연산자란? (111쪽)</span>
+      <p>프로그래밍에서 값을 처리하기 위해 수행하는 작업을 <b>연산</b>, 연산에 쓰는 기호를 <b>연산자</b>라고 해요. <code>2 + 3</code>에서 <code>+</code>는 <b>연산자</b>, 2와 3은 <b>피연산자</b>예요. 연산자는 기능에 따라 산술·비교·논리·대입·비트 연산자 등으로 나뉘어요.</p>
+    </div>
+    <div class="card">
+      <h3>🖥️ 코드를 바로 돌려 봐요 <span class="muted" style="font-weight:400;font-size:.88rem">(파이썬 실행 칸)</span></h3>
+      <p style="margin-top:0">검은 칸의 코드를 고쳐 보고 <b>▶ 실행</b>을 눌러 결과를 확인해요. 처음 한 번은 파이썬을 불러오느라 몇 초 걸려요. 먼저 눌러 볼까요?</p>
+      <div id="helloRun"></div>
+      <p class="note">7 // 2와 7 % 2의 결과가 어떻게 나오는지 눈여겨보세요. 오늘 만날 연산자예요.</p>
+    </div>
+    <div class="why3">
+      <div class="why">
+        <span class="kicker">핵심 질문</span>
+        <ul class="uses">
+          <li><b>오늘의 질문</b> · 연산자를 이해하고 문제 상황에 맞게 프로그래밍할 수 있을까?</li>
+        </ul>
+      </div>
+      <div class="why">
+        <span class="kicker">배우고 나면 할 수 있는 것</span>
+        <ul class="can">
+          <li>다양한 연산자의 종류와 기능을 설명할 수 있다.</li>
+          <li>연산자를 활용하여 문제 상황에 맞게 프로그램을 작성할 수 있다.</li>
+        </ul>
+      </div>
+      <div class="why">
+        <span class="kicker">오늘 만날 낱말</span>
+        <p style="margin:4px 0 0;font-size:.95rem">연산자 · 피연산자 · 산술 · 비교 · 논리 · 우선순위 · // · % · ** · math 모듈</p>
+        <p style="font-size:.86rem;margin-top:8px" class="muted">처음 보는 낱말이 있어도 괜찮아요. 화면을 넘기며 코드로 하나씩 만나요.</p>
+      </div>
+    </div>
+    <div class="card">
+      <h3>📝 나의 계획 <span class="muted" style="font-weight:400;font-size:.88rem">(110쪽) · (선택)</span></h3>
+      <div class="memo"><label>나는 이 단원에서 다음과 같은 내용을 배우고 싶다. <small>시간이 있으면 한두 가지 적어 보세요. 마지막 화면에서 다시 볼 수 있어요.</small></label><textarea data-memo="planLearn" rows="2"></textarea><div class="saved"></div></div>
+    </div>
+    <div style="text-align:center;margin-top:20px"><button class="btn" style="background:var(--mint)" onclick="go(1)">01 산술 연산자부터 시작하기 →</button></div>
+  </div>
+</section>
+
+<!-- 1 산술 연산자 -->
+<section class="page" data-name="산술 연산자" data-acc="#1f9d74">
+  <div class="head"><div class="num">01</div><div><h2>산술 연산자</h2><p>교과서 111·115·116쪽 · 사칙 연산, 몫 //, 나머지 %, 거듭제곱 **</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>숫자를 <b>계산</b>하는 기호예요. 덧셈·뺄셈·곱셈·나눗셈 말고도 <b>몫(//)</b>, <b>나머지(%)</b>, <b>거듭제곱(**)</b>이 있어요. 7을 4로 나누면 <b>몫은 1, 나머지는 3</b>이에요.</span></div>
+  <div class="card">
+    <h3>➕ 산술 연산자의 종류 <span class="muted" style="font-weight:400;font-size:.88rem">(111쪽 표Ⅱ-8)</span></h3>
+    <p style="margin-top:0">카드를 눌러 <b>7과 4</b>로 계산한 결과를 확인해요. 먼저 결과를 예상해 보고 눌러 봐요.</p>
+    <div id="arFlip" class="tcards"></div>
+    <p style="margin:12px 0 0">같은 식을 직접 실행해서 확인해 봐요. 숫자를 바꿔 실행해도 좋아요.</p>
+    <div id="arRun"></div>
+    <p class="note"><code>/</code>는 결과가 실수(1.75)로, <code>//</code>는 정수 몫(1)으로 나와요.</p>
+  </div>
+  <div class="card">
+    <h3>⏱️ 초를 분과 초로 바꾸기 <span class="muted" style="font-weight:400;font-size:.88rem">(115쪽 해 보기 1)</span></h3>
+    <p style="margin-top:0">초 단위 시간을 입력받아 <b>몇 분 몇 초</b>인지 구해요. 60초가 1분이니 <b>몫(//)</b>이 분, <b>나머지(%)</b>가 초예요. <b>입력값</b>을 바꿔 가며 실행해 봐요. (교과서 예시는 2000초 → 33분 20초)</p>
+    <div id="secRun"></div>
+  </div>
+  <div class="card">
+    <h3>🏧 활용 · 지폐 몇 장? <span class="muted" style="font-weight:400;font-size:.88rem">(116쪽 예제 1)</span></h3>
+    <p style="margin-top:0">출금 금액을 큰 지폐부터 나눠 필요한 장수를 구해요. <code>//</code>로 <b>장수</b>를 구하고, <code>%=</code>로 <b>남은 금액</b>을 저장해 다음 지폐로 넘어가요.</p>
+    <div id="atmRun"></div>
+    <p class="note">금액은 1,000원 단위로만 입력해요. <code>amount %= 50000</code>은 <code>amount = amount % 50000</code>을 줄여 쓴 거예요.</p>
+  </div>
+  <div class="quiz" data-quiz="1"></div>
+</section>
+
+<!-- 2 비교·논리 연산자 -->
+<section class="page" data-name="비교·논리" data-acc="#2f6fd0">
+  <div class="head"><div class="num">02</div><div><h2>비교·논리 연산자</h2><p>교과서 112·115쪽 · 비교 연산자, 논리 연산자, 아이디·비밀번호 검사</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span><b>비교 연산자</b>는 두 값을 견줘 <b>True(참) 또는 False(거짓)</b>로 답하고, <b>논리 연산자</b>는 그 참·거짓을 <b>조합</b>해요. 같다는 <code>==</code>, 같지 않다는 <code>!=</code>이에요. 등호 하나(<code>=</code>)는 값을 넣는 대입이라 달라요.</span></div>
+  <div class="card">
+    <h3>🗂️ 어느 연산자일까? <span class="muted" style="font-weight:400;font-size:.88rem">(111~112쪽)</span></h3>
+    <p style="margin-top:0">기호를 보고 <b>산술·비교·논리</b> 중 알맞은 묶음으로 보내 봐요.</p>
+    <div id="opGame"></div>
+  </div>
+  <div class="card">
+    <h3>⚖️ 비교 연산자 <span class="muted" style="font-weight:400;font-size:.88rem">(112쪽 표Ⅱ-9)</span></h3>
+    <p style="margin-top:0"><code>&lt;</code> <code>&gt;</code> <code>&lt;=</code> <code>&gt;=</code> <code>==</code> <code>!=</code> 여섯 가지가 있어요. 파이썬에서는 <code>5 &lt; a &lt; 15</code>처럼 <b>연속해서</b> 써서 값이 <b>범위 안</b>에 있는지 확인할 수 있어요. 결과를 예상하고 실행해 봐요.</p>
+    <div id="cmpRun"></div>
+  </div>
+  <div class="card">
+    <h3>🔗 논리 연산자 <span class="muted" style="font-weight:400;font-size:.88rem">(112쪽 표Ⅱ-10)</span></h3>
+    <div class="tscroll"><table class="esc-t">
+      <tr><th class="c">A</th><th class="c">B</th><th class="c">A and B</th><th class="c">A or B</th></tr>
+      <tr><td class="c">False</td><td class="c">False</td><td class="c">False</td><td class="c">False</td></tr>
+      <tr><td class="c">False</td><td class="c">True</td><td class="c">False</td><td class="c">True</td></tr>
+      <tr><td class="c">True</td><td class="c">False</td><td class="c">False</td><td class="c">True</td></tr>
+      <tr><td class="c">True</td><td class="c">True</td><td class="c">True</td><td class="c">True</td></tr>
+    </table></div>
+    <p style="margin:10px 0 0"><b>and</b>(논리곱)는 둘 다 참일 때만 참, <b>or</b>(논리합)는 하나라도 참이면 참, <b>not</b>(논리 부정)은 참·거짓을 <b>뒤집어요</b>. 실행해서 진리표와 맞는지 확인해 봐요.</p>
+    <div id="logRun"></div>
+  </div>
+  <div class="card">
+    <h3>🔐 활용 · 아이디와 비밀번호 확인 <span class="muted" style="font-weight:400;font-size:.88rem">(115쪽 해 보기 3)</span></h3>
+    <p style="margin-top:0">아이디와 패스워드가 <b>둘 다</b> 맞아야 True가 되도록 <code>==</code>와 <code>and</code>를 함께 써요. 먼저 그대로 실행해 보고, <b>입력값</b>의 한쪽을 틀리게 바꿔 다시 실행해 봐요.</p>
+    <div id="loginRun"></div>
+    <p class="note">정답 아이디는 <code>user123</code>, 비밀번호는 <code>password456</code>이에요.</p>
+  </div>
+  <div class="quiz" data-quiz="2"></div>
+</section>
+
+<!-- 3 우선순위 -->
+<section class="page" data-name="우선순위" data-acc="#e0702b">
+  <div class="head"><div class="num">03</div><div><h2>연산자 우선순위</h2><p>교과서 111·113·114쪽 · 계산 순서, 괄호, 대입 연산자</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>한 식에 연산자가 여러 개면 <b>우선순위가 높은 것부터</b> 계산해요. 순서를 바꾸고 싶으면 <b>괄호</b>를 써요. 우선순위가 같으면 보통 <b>왼쪽에서 오른쪽</b>으로 계산하지만, 거듭제곱은 <b>오른쪽에서 왼쪽</b>이에요.</span></div>
+  <div class="card">
+    <h3>🔢 산술 연산자의 우선순위 <span class="muted" style="font-weight:400;font-size:.88rem">(111쪽)</span></h3>
+    <div class="tscroll"><table class="esc-t">
+      <tr><th class="c">순위</th><th class="l">연산자</th></tr>
+      <tr><td class="c">1</td><td class="l"><code>**</code></td></tr>
+      <tr><td class="c">2</td><td class="l"><code>*</code> <code>/</code> <code>//</code> <code>%</code></td></tr>
+      <tr><td class="c">3</td><td class="l"><code>+</code> <code>-</code></td></tr>
+    </table></div>
+    <p style="margin:12px 0 0">다섯 식의 결과를 먼저 예상한 뒤 실행해 봐요. 주석에 계산 순서의 이유가 적혀 있어요.</p>
+    <div id="precRun"></div>
+    <p class="note">괄호가 없을 때 <code>3 + 2 * 5</code>는 곱셈이 먼저라 13이고, <code>(3 + 2) * 5</code>는 괄호가 먼저라 25예요. 헷갈리면 괄호를 쓰는 습관이 좋아요.</p>
+  </div>
+  <div class="card">
+    <h3>📊 여러 연산자를 섞으면 <span class="muted" style="font-weight:400;font-size:.88rem">(114쪽 표Ⅱ-13에서 골라 정리)</span></h3>
+    <p style="margin-top:0">높은 순위부터 아래로 내려가요. 같은 줄은 순위가 같고, 방향은 같은 순위끼리 만났을 때의 계산 방향이에요.</p>
+    <div class="tscroll"><table class="esc-t">
+      <tr><th class="c">순위</th><th class="l">연산자</th><th class="l">설명</th><th class="c">방향</th></tr>
+      <tr><td class="c">1</td><td class="l"><code>**</code></td><td class="l">거듭제곱</td><td class="c">←</td></tr>
+      <tr><td class="c">3</td><td class="l"><code>*</code> <code>/</code> <code>%</code> <code>//</code></td><td class="l">곱셈·나눗셈·나머지·몫</td><td class="c">→</td></tr>
+      <tr><td class="c">4</td><td class="l"><code>+</code> <code>-</code></td><td class="l">덧셈·뺄셈</td><td class="c">→</td></tr>
+      <tr><td class="c">8</td><td class="l"><code>&lt;</code> <code>&gt;</code> <code>&lt;=</code> <code>&gt;=</code></td><td class="l">비교(부등호)</td><td class="c">→</td></tr>
+      <tr><td class="c">9</td><td class="l"><code>==</code> <code>!=</code></td><td class="l">비교(등호)</td><td class="c">→</td></tr>
+      <tr><td class="c">10</td><td class="l"><code>=</code> <code>+=</code> <code>-=</code> …</td><td class="l">대입</td><td class="c">←</td></tr>
+      <tr><td class="c">12</td><td class="l"><code>not</code> → <code>and</code> → <code>or</code></td><td class="l">논리(부정 → 곱 → 합 순)</td><td class="c">→</td></tr>
+    </table></div>
+    <p class="note">순위 숫자는 교과서 표Ⅱ-13의 번호예요. 중간(비트·멤버 연산자 등)은 줄였어요. 논리 연산자는 표에서는 맨 아래지만, <code>(4 &gt; 1) and (3 &gt; 5)</code>처럼 <b>괄호와 함께</b> 쓰면 순서가 분명해져요.</p>
+  </div>
+  <div class="card">
+    <h3>📥 대입 연산자 <span class="muted" style="font-weight:400;font-size:.88rem">(113쪽 표Ⅱ-11)</span></h3>
+    <p style="margin-top:0"><code>=</code>는 오른쪽 계산 결과를 <b>왼쪽 변수에 저장</b>해요. <code>a += 5</code>처럼 <b>복합 대입 연산자</b>는 <code>a = a + 5</code>를 줄여 쓴 거예요. 대입은 우선순위가 가장 낮아서 오른쪽 식을 다 계산한 뒤에 저장돼요.</p>
+    <div id="assignRun"></div>
+    <p class="note">한 식에 대입을 여러 번 쓰면 오른쪽에서 왼쪽으로 계산해요. <code>a = b = 5</code>는 b에 5가 먼저 들어가고 그 값이 a에 들어가요. 두 결과가 모두 10.0인 것도 확인해 봐요.</p>
+  </div>
+  <div class="quiz" data-quiz="3"></div>
+</section>
+
+<!-- 4 math 모듈과 활용 -->
+<section class="page" data-name="math 모듈" data-acc="#9b4fc4">
+  <div class="head"><div class="num">04</div><div><h2>math 모듈과 활용</h2><p>교과서 115·117쪽 · math 모듈, 제곱근, 거리, 평균·분산·표준편차</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span><b>math 모듈</b>은 수학 계산 도구 상자예요. <code>import math</code>로 불러오면 <code>math.sqrt(x)</code>로 <b>제곱근</b>을 구할 수 있어요. 모듈 없이도 <code>x ** 0.5</code>로 같은 값을 구할 수 있어요.</span></div>
+  <div class="card">
+    <h3>📐 math 모듈 살펴보기 <span class="muted" style="font-weight:400;font-size:.88rem">(117쪽)</span></h3>
+    <div class="tscroll"><table class="esc-t">
+      <tr><th>이름</th><th class="l">하는 일</th></tr>
+      <tr><td><code>math.pi</code></td><td class="l">원주율 값</td></tr>
+      <tr><td><code>math.sqrt(data)</code></td><td class="l">data의 제곱근</td></tr>
+      <tr><td><code>math.fabs(data)</code></td><td class="l">data의 절댓값</td></tr>
+      <tr><td><code>math.gcd(a, b)</code></td><td class="l">a와 b의 최대공약수</td></tr>
+    </table></div>
+    <p style="margin:10px 0 0">네 가지를 실행해 보고, 마지막 줄의 <code>49 ** 0.5</code>와 <code>math.sqrt(49)</code>가 같은 값인지 비교해 봐요.</p>
+    <div id="mathRun"></div>
+  </div>
+  <div class="card">
+    <h3>📏 활용 · 두 점 사이의 거리 <span class="muted" style="font-weight:400;font-size:.88rem">(115쪽 해 보기 2)</span></h3>
+    <p style="margin-top:0">두 점 (x1, y1), (x2, y2) 사이의 거리는 <b>가로 차이와 세로 차이를 각각 제곱해 더한 값의 제곱근</b>이에요. 제곱은 <code>**2</code>, 제곱근은 <code>** 0.5</code>로 나타내요. 좌표를 바꿔 실행해 봐요. (예: (1, 2)와 (4, 6)의 거리는 5)</p>
+    <div id="distRun"></div>
+  </div>
+  <div class="card">
+    <h3>📊 활용 · 평균, 분산, 표준편차 <span class="muted" style="font-weight:400;font-size:.88rem">(117쪽 해 보기)</span></h3>
+    <p style="margin-top:0">분산과 표준편차는 데이터가 평균에서 <b>얼마나 흩어져 있는지</b> 알려 주는 값이에요. <b>분산</b>은 (각 값 − 평균)을 제곱해 더한 뒤 개수로 나눈 값이고, <b>표준편차</b>는 분산의 <b>제곱근</b>이에요. 숫자 세 개를 바꿔 가며 실행해 봐요.</p>
+    <div id="statRun"></div>
+    <p class="note">숫자를 모두 같게(예: 60, 60, 60) 넣으면 분산과 표준편차가 0이 돼요. 흩어진 정도가 없기 때문이에요.</p>
+  </div>
+  <div class="quiz" data-quiz="4"></div>
+</section>
+
+<!-- 5 스스로 해결하기 -->
+<section class="page" data-name="스스로 해결하기" data-acc="#d64535">
+  <div class="head"><div class="num">05</div><div><h2>스스로 해결하기 · 복리 이자 계산기</h2><p>교과서 118쪽 · 수행 활동 「복리 이자 계산 프로그램」</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span><b>복리</b>는 원금뿐 아니라 <b>이미 붙은 이자에도 이자가 붙는</b> 방식이에요. 공식에 쓰이는 값을 입력받아, 연산자로 식을 세워 <b>만기 후 총금액</b>을 구하는 프로그램을 설계해 봐요.</span></div>
+  <div class="card">
+    <h3>🎯 만들 프로그램 <span class="muted" style="font-weight:400;font-size:.88rem">(118쪽)</span></h3>
+    <pre class="code">예치 금액(원): 1000000
+연이율(%): 4
+예금 기간(년): 3
+연간 복리 횟수(예: 4): 12
+<i># 이어서 원금·연이율·투자 기간·복리 횟수와</i>
+<i># 만기 후 총금액을 출력</i></pre>
+    <p class="note">입력할 값은 네 가지예요. 출력은 입력한 값들과 <b>만기 후 총금액</b>이에요.</p>
+  </div>
+  <div class="card">
+    <h3>🧮 복리 계산 공식 <span class="muted" style="font-weight:400;font-size:.88rem">(118쪽)</span></h3>
+    <p style="margin-top:0"><b>A = P × (1 + r ÷ n) <sup>n × t</sup></b></p>
+    <div class="tscroll"><table class="esc-t">
+      <tr><th>기호</th><th class="l">뜻</th></tr>
+      <tr><td><b>A</b></td><td class="l">최종 금액</td></tr>
+      <tr><td><b>P</b></td><td class="l">초기 투자 금액(원금)</td></tr>
+      <tr><td><b>r</b></td><td class="l">연이율(<b>소수</b>로 표현)</td></tr>
+      <tr><td><b>n</b></td><td class="l">연간 복리 횟수(예: 연 4회 복리 = 4)</td></tr>
+      <tr><td><b>t</b></td><td class="l">투자 기간(년)</td></tr>
+    </table></div>
+    <p class="note">힌트: 연이율을 4(%)로 입력받으면 소수(0.04)로 바꿔야 해요. 거듭제곱에는 <code>**</code>를 쓰고, 우선순위가 헷갈리는 부분은 괄호로 묶어요.</p>
+  </div>
+  <div class="card">
+    <h3>1️⃣ 해결해야 할 문제 적어 보기</h3>
+    <p class="muted" style="margin-top:0">무엇을 입력받고, 어떤 식을 세워, 어떻게 출력할지 내 말로 정리해 봐요.</p>
+    <div class="memo"><label>① 해결할 문제 <small>입력받을 값과 구하려는 값을 적어 보세요.</small></label><textarea data-memo="planProblem" rows="2"></textarea><div class="saved"></div></div>
+    <div class="memo"><label>② 공식을 파이썬 식으로 <small>A = P(1 + r/n)<sup>nt</sup>를 어떤 연산자로 쓸까? 괄호는 어디에 필요할까?</small></label><textarea data-memo="planFormula" rows="2"></textarea><div class="saved"></div></div>
+    <div class="memo"><label>③ 출력 형식 <small>어떤 값을 어떤 순서로, 소수점 몇 자리까지 보여 줄까?</small></label><textarea data-memo="planOut" rows="2"></textarea><div class="saved"></div></div>
+  </div>
+  <div class="card">
+    <h3>2️⃣ 핵심 기능 고르기</h3>
+    <p class="muted" style="margin-top:0">이 프로그램을 만드는 데 필요한 기능을 모두 골라요.</p>
+    <div id="featPick"></div>
+  </div>
+  <div class="card">
+    <h3>✅ 성취도 평가 · 스스로 점검</h3>
+    <p class="muted" style="margin-top:0">오늘 할 수 있게 된 것을 모두 골라요.</p>
+    <div id="selfCheck"></div>
+  </div>
+</section>
+
+<!-- 6 마무리 -->
+<section class="page" data-name="마무리 · 질문폼" data-acc="#0f2742">
+  <div class="head"><div class="num">06</div><div><h2>마무리</h2><p>핵심 문장 · 마무리 퀴즈 · 생각 정리 질문폼</p></div></div>
+  <div class="key3">
+    <div style="--k:#1f9d74"><b>연산자</b>는 값을 처리하는 기호예요. <b>산술 연산자</b>는 숫자를 계산하고, <code>//</code>는 몫, <code>%</code>는 나머지, <code>**</code>는 거듭제곱을 구한다.</div>
+    <div style="--k:#2f6fd0"><b>비교 연산자</b>(<code>==</code>·<code>!=</code>·<code>&lt;</code> 등)는 결과를 <b>True/False</b>로 내고, <b>논리 연산자</b>(<code>and</code>·<code>or</code>·<code>not</code>)는 참·거짓을 조합한다.</div>
+    <div style="--k:#e0702b">식에 연산자가 여러 개면 <b>우선순위</b>에 따라 계산하고, 괄호로 순서를 바꾼다. <b>math 모듈</b>의 <code>math.sqrt( )</code>나 <code>** 0.5</code>로 제곱근을 구한다.</div>
+  </div>
+  <div class="card">
+    <h3>오늘의 질문에 다시 답하기</h3>
+    <p class="muted" style="margin-top:0">오늘 실행해 본 코드를 떠올리며, 내 말로 답해 보세요.</p>
+    <b style="font-size:.93rem">연산자를 이해하고 문제 상황에 맞게 프로그래밍할 수 있을까?</b>
+    <textarea data-memo="keyQ" rows="3"></textarea><div class="saved"></div>
+  </div>
+  <div class="card" style="--acc:#0f2742">
+    <h3>마무리 퀴즈</h3>
+    <div class="quiz" data-quiz="6"></div>
+  </div>
+  <div class="card">
+    <h3>개념 퀴즈 결과</h3>
+    <table id="result"></table>
+    <button class="btn ghost" id="quizReset">퀴즈 다시 풀기</button>
+  </div>
+  <div class="formgo">
+    <span class="kicker">생각 정리 과제</span>
+    <h3>질문폼에 내 생각 쓰기</h3>
+    <ol>
+      <li><b>산술·비교·논리 연산자</b>가 각각 무엇을 하는지, 오늘 실행해 본 예(<code>//</code>·<code>%</code>, <code>==</code>·<code>and</code>)를 들어 설명하세요.</li>
+      <li><code>3 + 2 * 5</code>와 <code>(3 + 2) * 5</code>의 결과가 왜 다른지 <b>우선순위</b>와 괄호를 들어 설명하세요.</li>
+      <li>05에서 설계한 <b>복리 이자 계산기</b>를 떠올려, 어떤 값을 입력받아 어떤 연산자로 식을 세울지 내 말로 설명하세요.</li>
+    </ol>
+    <p>질문폼에는 붙여넣기가 되지 않아요. 아래 메모를 보면서 직접 다시 써 주세요.</p>
+    <a class="go" href="{{FORM_URL}}" target="_blank" rel="noopener">질문폼 열기 →</a>
+    <div class="msum" id="msum"></div>
+  </div>
+</section>

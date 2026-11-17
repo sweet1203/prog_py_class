@@ -1,0 +1,214 @@
+<!-- 0 시작 -->
+<section class="page" data-name="시작" data-acc="#2f6fd0">
+  <div class="cover">
+    <div class="in">
+      <span class="tag">프로그래밍(Python) · Ⅰ. 프로그래밍 개요 · 협력적 프로젝트</span>
+      <h1>무인도에 갇힌 사람을,<br>모두 구하라!</h1>
+      <div class="story"><b>협력적 프로젝트 (62쪽)</b><br>이상 기후로 큰 홍수가 나서, 사람들이 건물 지붕 위에 갇히고 말았어요. 구조용 구명보트로 이들을 구하려고 해요. 그런데 보트는 마음대로 쓸 수 없어요. 주어진 <b>조건과 제한 사항</b>을 지키면서, 보트를 <b>최대한 적게</b> 써서 <b>모든 사람</b>을 구하는 방법을 모둠이 함께 찾아봐요.</div>
+      <p>오늘은 새 내용을 배우기보다, 지금까지 배운 <b>프로그램 · 알고리즘 · 순서도</b>를 모아 모둠이 힘을 합쳐 진짜 문제를 풀어 봐요.</p>
+      <ol>
+        <li>문제 상황과 조건</li><li>모둠 구성과 진행 절차</li><li>알고리즘 설계와 순서도</li>
+        <li>읽을거리 · 직업 속으로</li><li>마무리 · 질문폼</li>
+      </ol>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn" style="background:var(--amber);color:var(--navy);box-shadow:none" onclick="document.getElementById('intro').scrollIntoView({behavior:'smooth'})">프로젝트 안내부터 보기 ↓</button>
+        <button class="btn" style="background:transparent;border:2px solid rgba(255,255,255,.5);box-shadow:none" onclick="go(1)">01로 바로 가기 →</button>
+      </div>
+    </div>
+    <div class="route" aria-hidden="true">
+      <div class="st" style="animation-delay:.2s"><i>🧩</i><div><b>문제 정의</b><small>조건·제한을 살펴 문제 정하기</small></div></div>
+      <div class="ar" style="animation-delay:.6s">↓</div>
+      <div class="st" style="animation-delay:.8s"><i>✏️</i><div><b>알고리즘 설계</b><small>해결 방법을 순서대로 나열</small></div></div>
+      <div class="ar" style="animation-delay:1.2s">↓</div>
+      <div class="st" style="animation-delay:1.4s"><i>🔀</i><div><b>순서도 작성</b><small>흐름을 기호로 그리기</small></div></div>
+      <div class="ar" style="animation-delay:1.8s">↓</div>
+      <div class="st" style="animation-delay:2s"><i>🙌</i><div><b>발표·성찰</b><small>알고리즘을 나누고 돌아보기</small></div></div>
+    </div>
+  </div>
+
+  <div id="intro" class="today">
+    <div class="today-lead">
+      <span class="kicker">협력적 프로젝트 안내 · Ⅰ. 프로그래밍 개요 (62~63쪽)</span>
+      <p>이 프로젝트는 새로운 개념을 배우는 시간이 아니라, 지금까지 배운 것을 <b>직접 써 보는</b> 시간이에요. 문제를 정의하고, 해결 방법을 <b>알고리즘</b>으로 설계하고, 그 흐름을 <b>순서도</b>로 그려 봐요. 그것도 혼자가 아니라 <b>모둠이 협력</b>해서요.</p>
+    </div>
+    <div class="card">
+      <h3>🔁 프로젝트에 되살릴 개념 <span class="muted" style="font-weight:400;font-size:.88rem">(앞 차시 되돌아보기)</span></h3>
+      <p style="margin-top:0">이 네 가지는 앞에서 이미 배운 낱말이에요. 뜻을 먼저 떠올려 본 뒤 카드를 눌러 확인해요.</p>
+      <div id="recallFlip" class="tcards"></div>
+      <p class="note">이 개념들을 프로젝트에서 실제로 꺼내 쓰게 돼요. 가물가물하면 여기서 다시 잡아 두세요.</p>
+    </div>
+
+    <div class="why3">
+      <div class="why">
+        <span class="kicker">핵심 질문</span>
+        <ul class="uses">
+          <li><b>오늘의 질문</b> · 주어진 조건과 제한을 지키면서, 어떻게 하면 구명보트를 가장 적게 써서 모두 구조할까?</li>
+        </ul>
+      </div>
+      <div class="why">
+        <span class="kicker">이 프로젝트에서 할 수 있는 것</span>
+        <ul class="can">
+          <li>문제를 조건과 제한에 맞게 정의할 수 있다.</li>
+          <li>해결 방법을 알고리즘으로 순서대로 설계할 수 있다.</li>
+          <li>설계한 알고리즘을 순서도로 표현할 수 있다.</li>
+        </ul>
+      </div>
+      <div class="why">
+        <span class="kicker">오늘 만날 낱말</span>
+        <p style="margin:4px 0 0;font-size:.95rem">문제 정의 · 조건 · 제한 사항 · 알고리즘 · 순서도 · 모둠 · 역할 분담</p>
+        <p style="font-size:.86rem;margin-top:8px" class="muted">처음 보는 낱말이 있어도 괜찮아요. 화면을 넘기며 하나씩 만나요.</p>
+      </div>
+    </div>
+    <div class="card">
+      <h3>📝 나의 다짐 <span class="muted" style="font-weight:400;font-size:.88rem">· (선택)</span></h3>
+      <div class="memo"><label>이 프로젝트에서 나는 이렇게 참여하고 싶다. <small>시간이 있으면 한두 줄 적어 보세요. 마지막 화면에서 다시 볼 수 있어요.</small></label><textarea data-memo="planMemo" rows="2"></textarea><div class="saved"></div></div>
+    </div>
+    <div style="text-align:center;margin-top:20px"><button class="btn" style="background:var(--navy)" onclick="go(1)">01 프로젝트 소개부터 시작하기 →</button></div>
+  </div>
+</section>
+
+<!-- 1 프로젝트 소개 · 문제 상황 -->
+<section class="page" data-name="프로젝트 소개" data-acc="#d64535">
+  <div class="head"><div class="num">01</div><div><h2>프로젝트 소개 · 문제 상황</h2><p>교과서 62쪽 · 고립된 사람 구조하기</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>홍수로 지붕 위에 갇힌 사람들을 구명보트로 구해요. 보트에는 <b>무게·인원 제한</b>이 있어요. 그 제한 안에서 보트를 <b>되도록 적게</b> 써서 <b>모두</b> 구하는 것이 목표예요.</span></div>
+  <div class="card">
+    <h3>🌊 어떤 상황일까? <span class="muted" style="font-weight:400;font-size:.88rem">(62쪽)</span></h3>
+    <p style="margin-top:0">이상 기후 현상으로 홍수가 발생해, 사람들이 건물 지붕 위에 고립되었어요. 구조용 구명보트를 이용해 이들을 구조하려고 해요. 아래의 <b>조건과 제한 사항</b>을 고려해, 보트를 최대한 적게 사용하면서 모든 사람을 구조하는 방법을 찾는 것이 이 프로젝트의 과제예요.</p>
+  </div>
+  <div class="card">
+    <h3>📋 조건 및 제한 사항 <span class="muted" style="font-weight:400;font-size:.88rem">(62쪽)</span></h3>
+    <div class="pj-cond">
+      <div style="--k:#2f6fd0"><b>👥 구조 인원</b><span>구조할 사람은 1명~100명이에요. 몇 명인지는 사람들의 몸무게를 입력받으면서 알게 돼요.</span></div>
+      <div style="--k:#1f9d74"><b>⚖️ 몸무게 범위</b><span>한 사람의 몸무게는 20kg 이상 200kg 이하예요. 몸무게는 사람 수만큼 입력받아요.</span></div>
+      <div style="--k:#e0702b"><b>🛟 보트 무게 제한</b><span>구명보트가 한 번에 실을 수 있는 무게는 200kg 이하예요.</span></div>
+      <div style="--k:#9b4fc4"><b>🧍🧍 탑승 인원</b><span>구명보트 한 대에 탈 수 있는 사람은 최대 2명이에요.</span></div>
+    </div>
+    <p class="note" style="margin-bottom:0">이 조건들을 <b>모두 지키면서</b> 보트를 적게 쓰는 방법을 찾는 것이 이 문제의 핵심이에요. 어떤 조건이 서로 맞물려 있는지 살펴보세요.</p>
+  </div>
+  <div class="card">
+    <h3>✍️ 문제를 내 말로 정의하기</h3>
+    <p class="muted" style="margin-top:0">조건과 제한 사항을 바탕으로, 이 프로젝트에서 풀어야 할 문제가 무엇인지 모둠과 이야기하며 적어 봐요.</p>
+    <div class="memo"><label>문제 정의 <small>풀어야 할 문제를 한두 문장으로 적어 보세요.</small></label><textarea data-memo="problemDef" rows="2"></textarea><div class="saved"></div></div>
+    <div class="memo"><label>특히 신경 써야 할 조건·제한 <small>(선택) 중요하다고 생각하는 조건을 골라 적어요.</small></label><textarea data-memo="condNote" rows="2"></textarea><div class="saved"></div></div>
+  </div>
+</section>
+
+<!-- 2 모둠 구성과 진행 절차 -->
+<section class="page" data-name="모둠·절차" data-acc="#9b4fc4">
+  <div class="head"><div class="num">02</div><div><h2>모둠 구성과 진행 절차</h2><p>교과서 62~63쪽 · 모둠 구성 · 진행 절차</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>이 프로젝트는 혼자가 아니라 <b>모둠</b>이 함께 해요. 역할을 나눠 맡고, 정해진 <b>차례(절차)</b>대로 하나씩 해결해 가요.</span></div>
+  <div class="card">
+    <h3>👫 우리 모둠 <span class="muted" style="font-weight:400;font-size:.88rem">(62쪽)</span></h3>
+    <table class="plan">
+      <tr><td>모둠명</td><td><input type="text" data-memo="teamName" placeholder="예: 구조대 1팀"><div class="saved"></div></td></tr>
+      <tr><td>모둠 인원</td><td><input type="text" data-memo="teamSize" placeholder="예: 4명"><div class="saved"></div></td></tr>
+    </table>
+    <p class="note">모둠명과 인원을 정했다면, 이제 각자 어떤 역할을 맡을지 나눠 봐요.</p>
+  </div>
+  <div class="card">
+    <h3>🎒 내 역할 정하기</h3>
+    <p class="muted" style="margin-top:0">내가 이 프로젝트에서 맡을 역할을 하나 골라요. (모둠 사정에 따라 자유롭게 정해도 돼요.)</p>
+    <div id="roleChips"></div>
+    <p class="note" style="margin-bottom:8px"><b>이끔이</b> 진행을 이끌어요 · <b>기록이</b> 의견을 정리해 적어요 · <b>점검이</b> 조건·제한을 빠짐없이 챙겨요 · <b>나눔이</b> 발표를 맡아요</p>
+    <div class="memo"><label>모둠원 역할 정리 <small>누가 어떤 역할을 맡았는지 적어 보세요.</small></label><textarea data-memo="roleNote" rows="2"></textarea><div class="saved"></div></div>
+  </div>
+  <div class="card">
+    <h3>🪜 이렇게 진행해요 <span class="muted" style="font-weight:400;font-size:.88rem">(62~63쪽)</span></h3>
+    <div class="pj-proc">
+      <div style="--k:#d64535"><span class="n">1</span><div><b>문제 정의</b><small>조건과 제한 사항을 살펴보고, 풀어야 할 문제를 정한다.</small></div></div>
+      <div style="--k:#e0702b"><span class="n">2</span><div><b>알고리즘 설계</b><small>문제를 해결하는 방법을 순서대로 나열한다.</small></div></div>
+      <div style="--k:#f2a516"><span class="n">3</span><div><b>순서도 작성</b><small>설계한 알고리즘을 순서도 기호로 그린다.</small></div></div>
+      <div style="--k:#1f9d74"><span class="n">4</span><div><b>발표와 피드백</b><small>모둠별로 알고리즘을 소개하고, 장단점을 함께 이야기한다.</small></div></div>
+      <div style="--k:#2f6fd0"><span class="n">5</span><div><b>평가와 성찰</b><small>지금까지의 과정을 스스로, 그리고 서로 돌아본다.</small></div></div>
+    </div>
+    <p class="note" style="margin-bottom:0">오늘 화면에서는 주로 <b>1~3단계</b>를 준비해요. 4~5단계는 모둠이 모여 함께 진행해요.</p>
+  </div>
+  <div class="quiz" data-quiz="2"></div>
+</section>
+
+<!-- 3 알고리즘 설계와 순서도 -->
+<section class="page" data-name="설계·순서도" data-acc="#1f9d74">
+  <div class="head"><div class="num">03</div><div><h2>알고리즘 설계와 순서도</h2><p>교과서 62~63쪽 · 알고리즘 설계 · 순서도 작성</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>문제 해결 방법을 <b>순서대로 적으면 알고리즘</b>, 그 흐름을 약속된 <b>기호로 그리면 순서도</b>예요. 머릿속 생각을 차례대로 꺼내 보는 단계예요.</span></div>
+  <div class="card">
+    <h3>🧭 해결 방법을 순서대로 <span class="muted" style="font-weight:400;font-size:.88rem">(62쪽 · 알고리즘 설계)</span></h3>
+    <p style="margin-top:0">문제를 해결하는 과정을 순서대로 떠올리며 나열해 봐요. 교과서는 첫 단계를 이렇게 시작해요.</p>
+    <div class="pj-first"><span>1</span>구조할 사람들의 몸무게를 입력받는다.</div>
+    <p style="margin:12px 0 0">그다음에는 무엇을 해야 할까요? 조건과 제한(보트 무게 200kg 이하, 최대 2명)을 떠올리며 2번부터 이어서 적어 보세요.</p>
+    <div class="memo"><label>알고리즘 설계 <small>2번부터, 해결 과정을 순서대로 적어 보세요.</small></label><textarea data-memo="algoSteps" rows="6" placeholder="2. &#10;3. &#10;4. "></textarea><div class="saved"></div></div>
+  </div>
+  <div class="card">
+    <h3>🔣 순서도 기호 다시 보기 <span class="muted" style="font-weight:400;font-size:.88rem">(63쪽 · 선택)</span></h3>
+    <p style="margin-top:0">순서도는 약속된 기호로 그려요. 기호의 의미를 떠올리며 알고리즘을 순서도로 옮겨 봐요.</p>
+    <div class="pj-sym">
+      <div style="--k:#2f6fd0"><svg viewBox="0 0 100 52" role="img" aria-label="타원 기호"><ellipse cx="50" cy="26" rx="40" ry="18"/></svg><b>시작 / 종료</b><span>순서도의 시작과 끝</span></div>
+      <div style="--k:#1f9d74"><svg viewBox="0 0 100 52" role="img" aria-label="직사각형 기호"><rect x="12" y="10" width="76" height="32" rx="2"/></svg><b>처리</b><span>연산·데이터 이동 등 처리할 명령</span></div>
+      <div style="--k:#9b4fc4"><svg viewBox="0 0 100 52" role="img" aria-label="평행사변형 기호"><polygon points="24,10 92,10 76,42 8,42"/></svg><b>입력 / 출력</b><span>데이터를 입력받거나 결과를 출력</span></div>
+      <div style="--k:#e0702b"><svg viewBox="0 0 100 52" role="img" aria-label="마름모 기호"><polygon points="50,6 92,26 50,46 8,26"/></svg><b>판단</b><span>조건을 비교·판단해 경로를 고름</span></div>
+      <div style="--k:#d64535"><svg viewBox="0 0 100 52" role="img" aria-label="육각형 기호"><polygon points="24,10 76,10 92,26 76,42 24,42 8,26"/></svg><b>준비</b><span>초깃값 설정 등 준비·선언</span></div>
+      <div style="--k:#5a6b82" class="arr"><svg viewBox="0 0 100 52" role="img" aria-label="흐름선 화살표"><line x1="16" y1="26" x2="74" y2="26"/><polygon points="74,19 90,26 74,33"/></svg><b>흐름선</b><span>처리 흐름과 실행 순서를 연결</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>🖊️ 순서도 작성 <span class="muted" style="font-weight:400;font-size:.88rem">(63쪽)</span></h3>
+    <p style="margin-top:0">순서도는 종이에 직접 그리면 가장 좋아요. 그린 뒤, 아래에는 순서도의 <b>큰 흐름</b>이나 어려웠던 점을 글로 적어 두세요.</p>
+    <div class="memo"><label>순서도 메모 <small>순서도의 흐름을 말로 설명하거나, 그리면서 든 생각을 적어 보세요.</small></label><textarea data-memo="flowNote" rows="3"></textarea><div class="saved"></div></div>
+  </div>
+</section>
+
+<!-- 4 읽을거리 · 직업 속으로 -->
+<section class="page" data-name="읽을거리" data-acc="#e0702b">
+  <div class="head"><div class="num">04</div><div><h2>읽을거리 · 직업 속으로</h2><p>교과서 64~65쪽 · 꿈과 끼</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>프로그래밍을 직업으로 삼은 두 사람의 이야기예요. 오늘 해 본 프로젝트가 진짜 직업으로 어떻게 이어지는지 엿볼 수 있어요.</span></div>
+  <div class="pj-read">
+    <div style="--k:#2f6fd0">
+      <b>💼 소프트웨어 개발자이자 경영자 · 이우진</b>
+      <span>어릴 때 게임인 줄 알고 우연히 웹 에디터를 실행했다가, 페이지를 넘나드는 <b>하이퍼링크</b> 기능을 발견하고 밤새 웹 페이지를 만들며 웹 개발에 빠졌다고 해요. 여러 산업 현장을 꼼꼼히 살펴보고 나서야 제대로 된 해결책을 제안할 수 있었고, 고객과 함께 최적의 결과를 만들어 가는 과정에서 큰 보람을 느낀다고 해요.</span>
+      <small>학생에게 준 조언 · ① 흥미 있는 분야에서 시작하기 ② 문제를 분석하고 해결하는 능력 키우기 ③ 새로운 기술을 꾸준히 배우고 적응하기</small>
+    </div>
+    <div style="--k:#9b4fc4">
+      <b>🎮 게임 개발자 · 오채연</b>
+      <span>어린 시절부터 영웅이 세상을 구하는 이야기를 좋아해서, 직접 <b>새로운 게임 세계</b>를 만드는 개발자가 되었다고 해요. 몬스터의 조건·공격·스킬, 캐릭터의 체력과 능력치를 알맞게 <b>설정</b>해 전투의 재미와 균형을 맞추는 일을 했대요. 능력치가 한쪽으로 치우치면 재미가 줄기 때문에 세심한 조정이 필요했다고 해요.</span>
+      <small>학생에게 준 조언 · 머릿속 장면을 화면으로 어떻게 구현할지 끊임없이 고민하고, 다양한 경험을 쌓으며 비교·연구하면 새로운 세상을 만드는 일이 어렵지 않다.</small>
+    </div>
+  </div>
+  <div class="card">
+    <h3>💭 읽고 나서</h3>
+    <p class="muted" style="margin-top:0">두 사람의 이야기에서 공통점을 찾아보고, 내 생각을 적어 봐요.</p>
+    <div class="memo"><label>기억에 남는 말 · 내 생각 <small>(선택) 인상 깊은 조언이나 내 진로에 대한 생각을 적어 보세요.</small></label><textarea data-memo="readThought" rows="2"></textarea><div class="saved"></div></div>
+  </div>
+  <div class="quiz" data-quiz="4"></div>
+</section>
+
+<!-- 5 마무리 -->
+<section class="page" data-name="마무리 · 질문폼" data-acc="#0f2742">
+  <div class="head"><div class="num">05</div><div><h2>마무리</h2><p>오늘 한 일 · 생각 정리 · 질문폼</p></div></div>
+  <div class="key3">
+    <div style="--k:#d64535">이 프로젝트에서는 <b>조건과 제한 사항</b>을 살펴 <b>문제를 정의</b>하고, 해결 방법을 <b>알고리즘</b>으로 순서대로 설계한 뒤, 그 흐름을 <b>순서도</b>로 표현했다.</div>
+    <div style="--k:#9b4fc4">혼자가 아니라 <b>모둠이 역할을 나눠 협력</b>하고, 문제 정의 → 알고리즘 설계 → 순서도 작성 → 발표·성찰의 <b>절차</b>를 따라 진행했다.</div>
+    <div style="--k:#1f9d74">좋은 해결 방법은 하나가 아니다. 서로의 알고리즘을 <b>발표하고 장단점을 나누며</b>, 조건을 지키는 더 나은 방법을 함께 찾아 간다.</div>
+  </div>
+  <div class="card">
+    <h3>오늘의 질문에 답하기</h3>
+    <p class="muted" style="margin-top:0">화면 01~03에서 정리한 문제·알고리즘·순서도를 떠올리며, 우리 모둠의 생각을 내 말로 적어 보세요.</p>
+    <b style="font-size:.93rem">주어진 조건과 제한을 지키면서, 어떻게 하면 구명보트를 가장 적게 써서 모두 구조할 수 있을까?</b>
+    <textarea data-memo="keyQ" rows="3"></textarea><div class="saved"></div>
+  </div>
+  <div class="card">
+    <h3>이해 확인 퀴즈 결과</h3>
+    <table id="result"></table>
+    <button class="btn ghost" id="quizReset">퀴즈 다시 풀기</button>
+  </div>
+  <div class="formgo">
+    <span class="kicker">생각 정리 과제</span>
+    <h3>질문폼에 내 생각 쓰기</h3>
+    <ol>
+      <li>이 프로젝트의 <b>문제</b>를, 주어진 <b>조건과 제한 사항</b>을 넣어 내 말로 설명하세요. <span class="muted">(화면 01 메모 참고)</span></li>
+      <li>우리 모둠이 설계한 <b>해결 알고리즘</b>을 순서대로 소개하고, 그 흐름을 <b>순서도</b>로 어떻게 표현했는지 설명하세요. <span class="muted">(화면 03 메모 참고)</span></li>
+      <li>모둠에서 <b>내가 맡은 역할</b>과, 협력하며 느낀 점이나 더 나은 해결 방법에 대한 생각을 적으세요. <span class="muted">(화면 02·04 참고)</span></li>
+    </ol>
+    <p>질문폼에는 붙여넣기가 되지 않아요. 아래 메모를 보면서 직접 다시 써 주세요.</p>
+    <a class="go" href="{{FORM_URL}}" target="_blank" rel="noopener">질문폼 열기 →</a>
+    <div class="msum" id="msum"></div>
+  </div>
+</section>

@@ -1,0 +1,60 @@
+
+  /* u1-procedure 전용 (pr-) */
+
+  /* 공용 코드 보기 (Ⅰ단원: 실행 않고 보여 주기만) */
+  .code{background:#0f2742;color:#e1e9f4;border-radius:10px;padding:12px 14px;margin:10px 0;
+    font-family:"SF Mono","Consolas","D2Coding",ui-monospace,monospace;font-size:.9rem;line-height:1.6;
+    overflow-x:auto;white-space:pre;-webkit-overflow-scrolling:touch}
+  .code b{color:var(--amber);font-weight:700}
+
+  /* 들어가기 · 핵심 키워드 */
+  .pr-key{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+  .pr-key span{background:var(--acc-soft);color:var(--acc);border-radius:999px;padding:6px 14px;font-weight:700;font-size:.92rem}
+
+  /* 01 프로그래밍 과정 흐름(그림Ⅰ-8) */
+  .pr-proc{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0 2px}
+  .pr-proc span{background:#fbfaf7;border:1.5px solid var(--line);border-radius:10px;padding:7px 12px;font-weight:700;font-size:.92rem}
+  .pr-proc span.fin{background:var(--acc);border-color:var(--acc);color:#fff}
+  .pr-proc i{color:var(--muted);font-style:normal;font-weight:700}
+
+  /* 01 디버깅 되돌아가기 2칸 */
+  .pr-loop{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0 2px}
+  @media (max-width:640px){.pr-loop{grid-template-columns:1fr}}
+  .pr-loop>div{background:#fff;border-radius:12px;border-left:6px solid #d64535;box-shadow:0 4px 12px rgba(15,39,66,.06);padding:10px 14px}
+  .pr-loop b{display:block;color:#d64535}
+  .pr-loop span{display:block;font-size:.9rem;margin-top:2px}
+
+  /* 01 소프트웨어 개발 절차 5단계 SVG */
+  .pr-run svg{width:100%;height:auto;background:radial-gradient(circle at 55% 30%,#1b3d66,#0f2742 72%);border-radius:12px}
+  .pr-run svg .bx rect.box{fill:#13263f;stroke:#3b5a86;stroke-width:1.5;transition:fill .25s,stroke .25s}
+  .pr-run svg .bx .tt{fill:#cfe0f5;font-size:12px;font-weight:700}
+  .pr-run svg .bx .ts{fill:#9fb6d6;font-size:10px}
+  .pr-run svg .bx.on rect.box{fill:#1f4b82;stroke:#f2a516;stroke-width:2.6}
+  .pr-run svg .bx.on .tt{fill:#fff}
+  .pr-run svg .bx.on .ts{fill:#ffe0a6}
+  .pr-run svg .arw{stroke:#6b82a6;stroke-width:2.4;fill:none;opacity:.22;transition:opacity .25s,stroke .25s}
+  .pr-run svg .arw.on{stroke:#f2a516;opacity:1;stroke-width:3}
+  .pr-rbtn{gap:8px}
+  .pr-rcap{font-size:.95rem;min-height:5.5em;margin:10px 0 0;line-height:1.6}
+  .pr-rcap b{color:var(--acc)}
+  @media (max-width:860px){.pr-rcap{min-height:0}}
+
+  /* 02 체계적 개발의 좋은 점 카드 */
+  .pr-crit{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:10px 0 0}
+  @media (max-width:760px){.pr-crit{grid-template-columns:1fr 1fr}}
+  .pr-crit>div{background:#fff;border-radius:12px;border-top:5px solid var(--k);box-shadow:0 5px 14px rgba(15,39,66,.07);padding:12px 14px;text-align:center}
+  .pr-crit b{display:block;color:var(--k);font-size:.98rem}
+
+  /* 02 폭포수/애자일 탭 */
+  .pr-tab{gap:8px;margin:4px 0 10px}
+  .pr-tab button{display:flex;align-items:center;gap:7px;border:2px solid var(--line);background:#fff;border-radius:999px;padding:6px 16px;font:inherit;font-weight:700;cursor:pointer;color:var(--ink)}
+  .pr-tab button .e{font-size:1.1rem}
+  .pr-tab button.on{border-color:var(--acc);background:var(--acc);color:#fff}
+  .pr-tw{background:#fbfaf7;border-radius:12px;border-left:6px solid var(--k);padding:12px 16px}
+  .pr-tw p{margin:0 0 6px}
+  .pr-tw ul{margin:6px 0;padding-left:20px;font-size:.93rem}
+  .pr-tw li{margin:3px 0}
+  .pr-mini{display:flex;flex-wrap:wrap;align-items:center;gap:5px;background:#fff;border:1px dashed var(--line);border-radius:10px;padding:8px 12px;margin:4px 0 8px;font-weight:700;font-size:.9rem;color:var(--k)}
+  .pr-mini i{color:var(--muted);font-style:normal}
+  .pr-ex{background:#fff;border:1px dashed var(--line);border-radius:10px;padding:7px 12px;margin:8px 0 2px;font-size:.92rem}
+  .pr-note2{font-size:.86rem;color:var(--muted);margin:8px 0 0}

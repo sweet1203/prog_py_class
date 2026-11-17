@@ -1,0 +1,229 @@
+<!-- 0 시작 -->
+<section class="page" data-name="시작" data-acc="#2f6fd0">
+  <div class="cover">
+    <div class="in">
+      <span class="tag">프로그래밍(Python) · Ⅰ. 프로그래밍 개요 · 3. 알고리즘</span>
+      <h1>문제를 푸는<br>가장 똑똑한 순서</h1>
+      <div class="story"><b>현아와 은호의 이야기 (32쪽)</b><br>현아는 「난 학생들의 정보를 <b>정렬하는 프로그램</b>을 개발하고 싶은데 알고리즘을 어떻게 작성하면 좋을까?」라고 말해요. 은호는 「알고리즘은 문제를 해결하기 위한 <b>논리적인 절차</b>라고 하잖아. 논리적인 표현을 잘 나타내는 방법을 생각해 보자.」라고 답해요.</div>
+      <p>오늘은 알고리즘이 <b>무엇</b>이고, 좋은 알고리즘이 갖춰야 할 <b>조건</b>은 무엇이며, 알고리즘을 <b>어떻게 표현</b>하는지 살펴봐요.</p>
+      <ol>
+        <li>알고리즘이란?</li><li>알고리즘의 조건 5가지</li><li>알고리즘 표현 방법</li>
+        <li>순서도 기호와 작성 규칙</li><li>스스로 해결하기 · 마무리</li>
+      </ol>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn" style="background:var(--amber);color:var(--navy);box-shadow:none" onclick="document.getElementById('intro').scrollIntoView({behavior:'smooth'})">이 절 도입부터 보기 ↓</button>
+        <button class="btn" style="background:transparent;border:2px solid rgba(255,255,255,.5);box-shadow:none" onclick="go(1)">01로 바로 가기 →</button>
+      </div>
+    </div>
+    <div class="route" aria-hidden="true">
+      <div class="st" style="animation-delay:.2s"><i>🧩</i><div><b>알고리즘</b><small>문제를 푸는 논리적인 절차</small></div></div>
+      <div class="ar" style="animation-delay:.6s">↓</div>
+      <div class="st" style="animation-delay:.8s"><i>✅</i><div><b>조건 5가지</b><small>입력·출력·명확성·가능성·유한성</small></div></div>
+      <div class="ar" style="animation-delay:1.2s">↓</div>
+      <div class="st" style="animation-delay:1.4s"><i>🗣️</i><div><b>표현 방법</b><small>자연어·의사 코드·순서도</small></div></div>
+      <div class="ar" style="animation-delay:1.8s">↓</div>
+      <div class="st" style="animation-delay:2s"><i>🔷</i><div><b>순서도</b><small>약속된 기호로 흐름 그리기</small></div></div>
+    </div>
+  </div>
+
+  <div id="intro" class="today">
+    <div class="today-lead">
+      <span class="kicker">3. 알고리즘 · 도입 (32~33쪽)</span>
+      <p>주어진 문제를 해결하려면 <b>알고리즘의 기본 개념</b>을 이해하는 것이 중요해요. 문제를 정확히 파악하고, 합리적이고 논리적인 사고로 문제 해결에 적합한 방법을 작성해야 하지요. 특히 <b>순서도</b>처럼 시각적인 표현 도구로 구조화하면, 알고리즘을 더 명확하고 체계적으로 정리할 수 있어요.</p>
+    </div>
+    <div class="card">
+      <h3>🧭 알고리즘은 일상 곳곳에 있어요 <span class="muted" style="font-weight:400;font-size:.88rem">(33쪽)</span></h3>
+      <p style="margin-top:0">우리는 선택을 하거나 문제를 풀어야 할 때 가장 합리적인 방법을 찾아가며 생활해요. 카드를 눌러 알고리즘이 무엇인지 느껴 봐요.</p>
+      <div id="lifeAlg" class="tcards"></div>
+      <p class="note">알고리즘이 「문제를 푸는 합리적인 순서·방법」이라는 느낌만 잡아 두세요. 자세한 조건과 표현은 01·02 화면에서 만나요.</p>
+    </div>
+
+    <div class="why3">
+      <div class="why">
+        <span class="kicker">핵심 질문</span>
+        <ul class="uses">
+          <li><b>오늘의 질문</b> · 문제를 해결하기 위해 가장 적합한 알고리즘을 어떻게 작성할까?</li>
+        </ul>
+      </div>
+      <div class="why">
+        <span class="kicker">배우고 나면 할 수 있는 것</span>
+        <ul class="can">
+          <li>알고리즘의 개념과 역할을 설명할 수 있다.</li>
+          <li>주어진 문제를 해결할 수 있는 알고리즘을 작성할 수 있다.</li>
+        </ul>
+      </div>
+      <div class="why">
+        <span class="kicker">오늘 만날 낱말</span>
+        <p style="margin:4px 0 0;font-size:.95rem">알고리즘 · 입력 · 출력 · 명확성 · 수행 가능성 · 유한성 · 자연어 · 의사 코드 · 순서도 · 순서도 기호</p>
+        <p style="font-size:.86rem;margin-top:8px" class="muted">처음 보는 낱말이 있어도 괜찮아요. 화면을 넘기며 하나씩 만나요.</p>
+      </div>
+    </div>
+    <div class="card">
+      <h3>📝 나의 계획 <span class="muted" style="font-weight:400;font-size:.88rem">(32쪽) · (선택)</span></h3>
+      <div class="memo"><label>나는 이 단원에서 다음과 같은 내용을 배우고 싶다. <small>시간이 있으면 한두 가지 적어 보세요. 마지막 화면에서 다시 볼 수 있어요.</small></label><textarea data-memo="planLearn" rows="2"></textarea><div class="saved"></div></div>
+    </div>
+    <div style="text-align:center;margin-top:20px"><button class="btn" style="background:var(--navy)" onclick="go(1)">01 알고리즘의 이해부터 시작하기 →</button></div>
+  </div>
+</section>
+
+<!-- 1 알고리즘의 이해 -->
+<section class="page" data-name="알고리즘의 이해" data-acc="#2f6fd0">
+  <div class="head"><div class="num">01</div><div><h2>알고리즘의 이해</h2><p>교과서 33~35쪽 · 알고리즘의 정의·필요성·조건</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span><b>알고리즘</b>은 문제를 푸는 「가장 똑똑한 순서」예요. 요리로 치면 <b>조리법(레시피)</b>, 프로그램으로 치면 코드를 짜기 전에 먼저 그리는 <b>설계도</b>랍니다. 알고리즘이 「계획」이라면 프로그램은 그 계획을 「실행」한 결과예요.</span></div>
+  <div class="card">
+    <h3>🧩 알고리즘이란? <span class="muted" style="font-weight:400;font-size:.88rem">(33쪽 그림Ⅰ-12)</span></h3>
+    <p style="margin-top:0">특정한 문제를 합리적으로 해결하기 위한 <b>논리적인 절차 또는 방법</b>을 알고리즘(algorithm)이라고 해요. 음식을 만드는 방법(조리법)에 비유할 수 있어요. 아래는 빵을 만드는 조리법을 알고리즘처럼 순서대로 적은 예예요.</p>
+    <div class="flow2">
+      <div style="--k:#2f6fd0"><b>1 반죽 뭉치기</b><span>재료를 모아 반죽을 만들어요.</span></div>
+      <div class="ar">→</div>
+      <div style="--k:#2f6fd0"><b>2 반죽 밀기</b><span>반죽을 납작하게 밀어요.</span></div>
+      <div class="ar">→</div>
+      <div style="--k:#1f9d74"><b>3 재료 올리기</b><span>반죽 위에 재료를 올려요.</span></div>
+      <div class="ar">→</div>
+      <div style="--k:#1f9d74"><b>4 소스 바르기</b><span>재료 위에 소스를 발라요.</span></div>
+      <div class="ar">→</div>
+      <div style="--k:#e0702b"><b>5 굽기</b><span>오븐에 넣어 구워 완성해요.</span></div>
+    </div>
+    <p class="note">순서가 바뀌거나 한 단계라도 빠지면 원하는 음식이 나오지 않아요. 알고리즘도 마찬가지로 <b>순서와 절차</b>가 중요해요.</p>
+  </div>
+  <div class="card">
+    <h3>🏗️ 알고리즘은 왜 필요할까? <span class="muted" style="font-weight:400;font-size:.88rem">(33~34쪽)</span></h3>
+    <p style="margin-top:0">프로그래밍 언어로 실제 코드(code)를 작성하기 <b>전에 반드시 알고리즘을 먼저 작성</b>해야 해요. 알고리즘 작성은 소프트웨어 개발 단계 중 가장 중요한 과정이라고 할 수 있어요.</p>
+    <div class="callout">🏢 <b>아파트 도면 비유</b> · 아파트를 지으려면 먼저 <b>도면</b>을 설계해야 해요. 도면을 잘못 설계하면 공사 중에 문제가 생기거나, 완공된 뒤에 구조적 결함이 발견되고, 심하면 무너질 수도 있어요. 알고리즘을 잘못 작성하면 프로그램 결과에 <b>논리적 오류</b>가 생겨 원하는 기능을 발휘할 수 없고, 개발 과정을 처음부터 다시 해야 할 수도 있어요.</div>
+    <p class="note"><b>소프트웨어 개발 절차</b>는 「기획 → 설계 → 구현 → 테스트 → 유지 보수」 순서예요. 알고리즘 작성은 그중 <b>설계</b> 단계에 해당해요.</p>
+  </div>
+  <div class="card">
+    <h3>✅ 알고리즘의 조건 5가지 <span class="muted" style="font-weight:400;font-size:.88rem">(34쪽 표Ⅰ-3)</span></h3>
+    <p style="margin-top:0">컴퓨터는 스스로 생각하거나 판단하지 못해요. 그래서 알고리즘은 <b>명확하고 구체적</b>으로 작성해야 하고, 다음 조건을 만족해야 해요.</p>
+    <table class="al-cond">
+      <tr><th>조건</th><th>뜻</th></tr>
+      <tr><td><b>입력</b></td><td>외부에서 입력되는 데이터의 값은 0개 이상이다. 즉 입력값이 없을 수도 있다.</td></tr>
+      <tr><td><b>출력</b></td><td>적어도 1개 이상의 결과를 출력해야 한다.</td></tr>
+      <tr><td><b>명확성</b></td><td>절차와 표현이 명확하고 구체적이어야 한다.</td></tr>
+      <tr><td><b>수행 가능성</b></td><td>각 절차와 표현이 논리적으로 수행 가능해야 한다.</td></tr>
+      <tr><td><b>유한성</b></td><td>유한한 시간 내에 동작하고 결국 종료되어야 한다(무한 반복 같은 무한 동작 금지).</td></tr>
+    </table>
+    <p class="muted" style="margin:12px 0 4px"><b>노래방 점수 알고리즘</b>과 비교해 봐요 (그림Ⅰ-13).</p>
+    <div class="grid2">
+      <div class="al-sw" style="--k:#2f6fd0"><b>🎵 알고리즘 1 · 동전을 넣어 노래</b>
+        <span><b>입력</b> 동전, 노래 번호 / <b>출력</b> 해당 노래의 반주</span>
+        <span style="margin-top:4px"><b>명확성</b> 노래 번호마다 반주가 1:1로 연결돼 어떤 입력이 어떤 출력을 낳는지 분명해요.</span>
+        <small>가능성: 각 단계가 논리적으로 수행돼 반주를 출력 · 유한성: 노래가 끝나면 종료</small>
+      </div>
+      <div class="al-sw" style="--k:#1f9d74"><b>🎤 알고리즘 2 · 노래하면 점수</b>
+        <span><b>입력</b> 노래하는 목소리 / <b>출력</b> 노래 점수</span>
+        <span style="margin-top:4px"><b>명확성</b> 점수를 구하는 기준과 공식이 분명해요.</span>
+        <small>가능성: 각 단계가 논리적으로 수행돼 점수를 출력 · 유한성: 노래가 끝나면 종료</small>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>🧪 이건 알고리즘일까? · 5조건 판정</h3>
+    <p class="muted" style="margin-top:0">아래 절차가 알고리즘의 <b>5조건</b>을 만족하는지 골라 봐요. 「끝나는가(유한성)」, 「결과가 나오는가(출력)」, 「분명한가(명확성·수행 가능성)」를 살펴봐요.</p>
+    <div id="condGame"></div>
+  </div>
+  <div class="quiz" data-quiz="1"></div>
+</section>
+
+<!-- 2 알고리즘 표현 -->
+<section class="page" data-name="알고리즘 표현" data-acc="#1f9d74">
+  <div class="head"><div class="num">02</div><div><h2>알고리즘 표현</h2><p>교과서 36~37쪽 · 표현 방법과 순서도 기호</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>같은 알고리즘도 적는 방법은 여러 가지예요. 말로 풀어 쓰는 <b>자연어</b>, 코드처럼 간결한 <b>의사 코드</b>, 약속된 기호로 흐름을 그리는 <b>순서도</b>—그중 순서도가 가장 널리 쓰여요.</span></div>
+  <div class="card">
+    <h3>🗣️ 알고리즘 표현 방법 <span class="muted" style="font-weight:400;font-size:.88rem">(36쪽 표Ⅰ-4)</span></h3>
+    <p style="margin-top:0">알고리즘을 표현하는 방법에는 다음과 같은 것들이 있어요.</p>
+    <div class="grid2">
+      <div class="al-sw" style="--k:#2f6fd0"><b>자연어</b><span>사람들이 일상에서 쓰는 말로 표현해요.</span><small>예 · 「남은 시간이 충분(50분 이상)하면 버스를, 그렇지 않으면 택시를 탄다.」</small></div>
+      <div class="al-sw" style="--k:#9b4fc4"><b>의사 코드(pseudocode)</b><span>자연어를 프로그래밍 언어와 유사한 형식으로 간결하게 표현해요.</span><small>예 · if (남은 시간 ＞= 50분) 버스로 이동 else 택시로 이동</small></div>
+      <div class="al-sw" style="--k:#1f9d74"><b>순서도(flowchart)</b><span>약속된 기호들과 흐름선으로 표현해요.</span><small>국제 표준화 기구(ISO)에서 지정한 기호와 규칙을 사용 · 아래 체험에서 직접 봐요</small></div>
+      <div class="al-sw" style="--k:#e0702b"><b>프로그래밍 언어</b><span>Python, C 같은 실제 언어로 표현해요.</span><small>알고리즘을 그대로 코드로 옮기는 단계예요.</small></div>
+    </div>
+    <p class="note">이 중 <b>순서도</b>는 전체 흐름을 한눈에 파악할 수 있고 간단히 작성할 수 있는 장점이 있어 <b>가장 많이 사용</b>해요.</p>
+  </div>
+  <div class="card">
+    <h3>🔁 같은 알고리즘, 세 가지 표현 · 「점수 → 합격/불합격」 <span class="muted" style="font-weight:400;font-size:.88rem">(37쪽 그림Ⅰ-14)</span></h3>
+    <p style="margin-top:0">점수(score)가 60점 이상이면 「합격」, 아니면 「불합격」으로 판정하는 같은 알고리즘을 세 가지 방법으로 나란히 봐요. 버튼을 눌러 비교해요.</p>
+    <div class="row al-tab" id="exprBtn"></div>
+    <div class="al-tabview" id="exprView"></div>
+  </div>
+  <div class="card">
+    <h3>🔷 순서도 기호 <span class="muted" style="font-weight:400;font-size:.88rem">(37쪽 표Ⅰ-5)</span></h3>
+    <p style="margin-top:0">순서도는 국제 표준화 기구(ISO)에서 지정한 기호와 작성 규칙에 따라 그려요. 카드를 눌러 <b>기호 ↔ 뜻</b>을 맞춰 봐요.</p>
+    <div id="symFlip" class="tcards"></div>
+  </div>
+  <div class="card">
+    <h3>📏 순서도 작성 규칙 <span class="muted" style="font-weight:400;font-size:.88rem">(37쪽)</span></h3>
+    <ul class="al-rule">
+      <li>순서도 <b>표준 기호</b>를 사용해요.</li>
+      <li>처리 과정은 해당하는 기호로 표시하고, 각 기호는 <b>흐름선(화살표)</b>으로 연결해요.</li>
+      <li>흐름선은 <b>위에서 아래로, 왼쪽에서 오른쪽으로</b> 그려요. 다만 「예 또는 아니요」 분기에 따라 아래에서 위로 향하는 경우도 있는데, 이는 반복문일 때 사용해요.</li>
+      <li>흐름선으로 기호를 연결할 때는 <b>흐름선끼리 교차하지 않도록</b> 해요.</li>
+      <li>처리 과정이 길어 한 면에 작성하기 어려우면 <b>연결자</b>를 사용해 분리해 작성해요.</li>
+    </ul>
+  </div>
+  <p class="callout">💡 <b>NS 차트 <span class="muted" style="font-weight:400;font-size:.86rem">(36쪽 「정보」)</span></b> 흐름을 나타내는 화살표 없이 처리를 <b>직사각형으로 포개어 나열</b>하는 방식이에요. 전체 논리 구조를 한 쪽에 나타낼 수 있어 제어 구조가 복합된 처리를 명확하게 식별하는 데 적합해요. NS 차트는 순서도로 변환해 나타내는 것도 가능해요.</p>
+  <div class="quiz" data-quiz="2"></div>
+</section>
+
+<!-- 3 스스로 해결하기 -->
+<section class="page" data-name="스스로 해결하기" data-acc="#e0702b">
+  <div class="head"><div class="num">03</div><div><h2>스스로 해결하기 · 등교 알고리즘 작성</h2><p>교과서 35쪽 해 보기 · 등교 과정을 알고리즘으로</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>이제 내가 직접 알고리즘을 만들어 봐요. 매일 아침 학교에 가는 과정을, <b>다른 사람도 그대로 따라 할 수 있을 만큼</b> 구체적이고 명확하게 적어 봅니다.</span></div>
+  <div class="card">
+    <h3>1️⃣ 무엇을 가장 중요하게 생각할까?</h3>
+    <p class="muted" style="margin-top:0">등교 방법을 고를 때 가장 중요하게 볼 기준을 하나 골라요.</p>
+    <div id="goalChips"></div>
+  </div>
+  <div class="card">
+    <h3>2️⃣ 등교 알고리즘의 입력·출력·절차</h3>
+    <p class="muted" style="margin-top:0">알고리즘의 조건을 떠올리며, <b>입력</b>(무엇이 주어지는지)과 <b>출력</b>(무엇을 얻는지)을 먼저 정해요.</p>
+    <table class="plan">
+      <tr><td>입력</td><td><input type="text" data-memo="inputMemo" placeholder="예: 출발 시각, 날씨, 가진 돈"><div class="saved"></div></td></tr>
+      <tr><td>출력</td><td><input type="text" data-memo="outputMemo" placeholder="예: 학교에 도착(등교 완료)"><div class="saved"></div></td></tr>
+    </table>
+    <div class="memo"><label>등교 과정(절차)을 순서대로 적어 보세요. <small>「집에서 나온다 → 버스 정류장까지 걷는다 → …」처럼 단계별로 명확하게.</small></label><textarea data-memo="stepWrite" rows="4"></textarea><div class="saved"></div></div>
+  </div>
+  <div class="card">
+    <h3>✅ 성취도 평가 · 알고리즘 조건 자기 점검</h3>
+    <p class="muted" style="margin-top:0">내가 쓴 등교 알고리즘이 조건을 만족하는지 모두 골라요.</p>
+    <div id="selfCheck"></div>
+    <p class="note">「알고리즘을 알고리즘 조건에 맞게 정확히 설명할 수 있는가?」를 스스로 점검해 봐요.</p>
+  </div>
+</section>
+
+<!-- 4 마무리 -->
+<section class="page" data-name="마무리" data-acc="#0f2742">
+  <div class="head"><div class="num">04</div><div><h2>마무리</h2><p>핵심 문장 · 마무리 퀴즈 · 생각 정리 질문폼</p></div></div>
+  <div class="key3">
+    <div style="--k:#2f6fd0">알고리즘은 특정한 문제를 합리적으로 해결하기 위한 <b>논리적인 절차 또는 방법</b>이다. 코드를 작성하기 전에 반드시 먼저 작성하는 <b>설계</b> 단계로, 잘못 작성하면 프로그램에 논리적 오류가 생긴다.</div>
+    <div style="--k:#1f9d74">알고리즘은 다섯 가지 <b>조건</b>을 만족해야 한다. <b>입력</b>(0개 이상)·<b>출력</b>(1개 이상)·<b>명확성</b>·<b>수행 가능성</b>·<b>유한성</b>(유한한 시간에 반드시 종료).</div>
+    <div style="--k:#9b4fc4">알고리즘은 <b>자연어·의사 코드·순서도</b>(와 프로그래밍 언어)로 표현한다. 순서도는 <b>표준 기호</b>(터미널·처리·조건·입출력·준비·흐름선·연결자)로 전체 흐름을 한눈에 보여 주어 가장 많이 쓰인다.</div>
+  </div>
+  <div class="card">
+    <h3>오늘의 질문에 다시 답하기</h3>
+    <p class="muted" style="margin-top:0">03에서 만든 내 등교 알고리즘을 떠올리며, 오늘 배운 조건과 표현 방법을 근거로 내 말로 답해 보세요.</p>
+    <b style="font-size:.93rem">문제를 해결하기 위해 가장 적합한 알고리즘을 어떻게 작성할까?</b>
+    <textarea data-memo="keyQ" rows="3"></textarea><div class="saved"></div>
+  </div>
+  <div class="card" style="--acc:#0f2742">
+    <h3>마무리 퀴즈</h3>
+    <div class="quiz" data-quiz="4"></div>
+  </div>
+  <div class="card">
+    <h3>개념 퀴즈 결과</h3>
+    <table id="result"></table>
+    <button class="btn ghost" id="quizReset">퀴즈 다시 풀기</button>
+  </div>
+  <div class="formgo">
+    <span class="kicker">생각 정리 과제</span>
+    <h3>질문폼에 내 생각 쓰기</h3>
+    <ol>
+      <li><b>알고리즘</b>이 무엇이고, 왜 코드를 작성하기 전에 먼저 알고리즘을 작성해야 하는지 <b>아파트 도면 비유</b>를 들어 설명하세요.</li>
+      <li>알고리즘의 <b>다섯 가지 조건</b>을 쓰고, 「끝나지 않고 무한히 반복되는 절차」가 왜 알고리즘이 될 수 없는지 <b>유한성</b>과 연결해 설명하세요.</li>
+      <li>03에서 만든 <b>등교 알고리즘</b>을 자연어·의사 코드·순서도 중 한 가지 방법으로 표현하고, 왜 그 방법을 골랐는지 설명하세요.</li>
+    </ol>
+    <p>질문폼에는 붙여넣기가 되지 않아요. 아래 메모를 보면서 직접 다시 써 주세요.</p>
+    <a class="go" href="{{FORM_URL}}" target="_blank" rel="noopener">질문폼 열기 →</a>
+    <div class="msum" id="msum"></div>
+  </div>
+</section>

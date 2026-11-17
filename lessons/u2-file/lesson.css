@@ -1,0 +1,13 @@
+
+  /* u2-file 전용 */
+
+  /* 본문 속 짧은 코드 조각 */
+  code{font-family:"Menlo","Consolas","Courier New",monospace;font-size:.9em;
+    background:#eef1f5;color:#1d3a5c;border-radius:5px;padding:1px 5px}
+  .pr-out code,.pr-code code,.code code{background:none;padding:0;color:inherit}
+
+  /* 모드·함수 설명용 작은 표 */
+  .esc-t{width:100%;margin:10px 0 0;font-size:.93rem}
+  .esc-t th{color:var(--muted);font-weight:700;font-size:.82rem;white-space:nowrap}
+  .esc-t td{border-bottom:1px solid var(--line);padding:6px 9px}
+  .esc-t td code{font-size:.92em}

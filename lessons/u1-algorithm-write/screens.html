@@ -1,0 +1,295 @@
+<!-- 0 시작 -->
+<section class="page" data-name="시작" data-acc="#2f6fd0">
+  <div class="cover">
+    <div class="in">
+      <span class="tag">프로그래밍(Python) · Ⅰ. 프로그래밍 개요 · 3. 알고리즘</span>
+      <h1>순차·선택·반복,<br>알고리즘을 짜 보자</h1>
+      <div class="story"><b>문제 해결을 위한 알고리즘은 어떻게 작성할까? (38쪽)</b><br>프로그래밍 절차에서 <b>알고리즘 설계</b>는 매우 중요한 단계예요. 문제를 해결하는 합리적이고 논리적인 절차와 방법을 알고리즘으로 잘 작성해야, 프로그램을 <b>정확하고 효율적으로</b> 만들 수 있어요.</div>
+      <p>지난 차시에서 알고리즘의 뜻과 표현 방법(자연어·의사 코드·순서도)을 배웠지요. 오늘은 그 알고리즘을 <b>실제로 작성하는 법</b>을 익혀요.</p>
+      <ol>
+        <li>제어 구조(순차·선택·반복)</li><li>정수의 합 구하기</li><li>그리디 거스름돈</li>
+        <li>정렬과 탐색</li><li>스스로 해결하기</li><li>마무리 · Ⅰ단원 3절 정리</li>
+      </ol>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn" style="background:var(--amber);color:var(--navy);box-shadow:none" onclick="document.getElementById('aw-intro').scrollIntoView({behavior:'smooth'})">도입부터 보기 ↓</button>
+        <button class="btn" style="background:transparent;border:2px solid rgba(255,255,255,.5);box-shadow:none" onclick="go(1)">01로 바로 가기 →</button>
+      </div>
+    </div>
+    <div class="route" aria-hidden="true">
+      <div class="st" style="animation-delay:.2s"><i>🧭</i><div><b>제어 구조</b><small>순차 · 선택 · 반복</small></div></div>
+      <div class="ar" style="animation-delay:.6s">↓</div>
+      <div class="st" style="animation-delay:.8s"><i>🧮</i><div><b>정수의 합 · 그리디</b><small>반복과 공식 · 거스름돈 최소 동전</small></div></div>
+      <div class="ar" style="animation-delay:1.2s">↓</div>
+      <div class="st" style="animation-delay:1.4s"><i>📊</i><div><b>정렬 · 탐색</b><small>오름차순 정렬 · 찾기</small></div></div>
+      <div class="ar" style="animation-delay:1.8s">↓</div>
+      <div class="st" style="animation-delay:2s"><i>✍️</i><div><b>스스로 작성</b><small>교실 책상 배치 알고리즘</small></div></div>
+    </div>
+  </div>
+
+  <div id="aw-intro" class="today">
+    <div class="today-lead">
+      <span class="kicker">단원 도입 · 알고리즘 작성 (38~39쪽)</span>
+      <p>알고리즘은 <b>다양한 방법</b>으로 설계할 수 있어요. 하지만 복잡하게 작성하면 유지 보수와 디버깅이 어려워지므로, <b>간결하고 명확하게</b> 작성하는 것이 중요해요. 문제에 가장 알맞고 효율적인 방법을 찾아 <b>추상화·일반화</b>한 뒤, 단계적 절차로 설계해 기술해요.</p>
+    </div>
+    <div class="card">
+      <h3>🧩 좋은 알고리즘을 작성하려면? <span class="muted" style="font-weight:400;font-size:.88rem">(38~39쪽)</span></h3>
+      <p style="margin-top:0">카드를 눌러 알고리즘을 작성할 때 지켜야 할 것을 하나씩 확인해요.</p>
+      <div id="awStartFlip" class="tcards"></div>
+    </div>
+
+    <div class="why3">
+      <div class="why">
+        <span class="kicker">핵심 질문</span>
+        <ul class="uses">
+          <li><b>오늘의 질문</b> · 문제 해결을 위한 알고리즘은 어떻게 작성할까?</li>
+        </ul>
+      </div>
+      <div class="why">
+        <span class="kicker">배우고 나면 할 수 있는 것</span>
+        <ul class="can">
+          <li>순차·선택·반복 세 가지 제어 구조로 알고리즘을 작성할 수 있다.</li>
+          <li>그리디·정렬·탐색 같은 문제 해결 방법을 이해하고 설명할 수 있다.</li>
+        </ul>
+      </div>
+      <div class="why">
+        <span class="kicker">오늘 만날 낱말</span>
+        <p style="margin:4px 0 0;font-size:.95rem">순차 구조 · 선택 구조 · 반복 구조 · 그리디 알고리즘 · 정렬(오름차순·내림차순) · 버블 정렬 · 탐색 · 이진 탐색 · 순차 탐색 · 추상화</p>
+        <p style="font-size:.86rem;margin-top:8px" class="muted">처음 보는 낱말이 있어도 괜찮아요. 화면을 넘기며 하나씩 만나요.</p>
+      </div>
+    </div>
+    <div class="card">
+      <h3>📝 나의 계획 <span class="muted" style="font-weight:400;font-size:.88rem">(선택)</span></h3>
+      <div class="memo"><label>나는 이 차시에서 다음과 같은 내용을 익히고 싶다. <small>시간이 있으면 한두 가지 적어 보세요. 마지막 화면에서 다시 볼 수 있어요.</small></label><textarea data-memo="planLearn" rows="2"></textarea><div class="saved"></div></div>
+    </div>
+    <div style="text-align:center;margin-top:20px"><button class="btn" style="background:var(--navy)" onclick="go(1)">01 제어 구조부터 시작하기 →</button></div>
+  </div>
+</section>
+
+<!-- 1 제어 구조 -->
+<section class="page" data-name="제어 구조" data-acc="#2f6fd0">
+  <div class="head"><div class="num">01</div><div><h2>알고리즘의 제어 구조</h2><p>교과서 38쪽 · 그림Ⅰ-15 순차·선택·반복</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>알고리즘은 세 가지 틀, 즉 <b>순차</b>(차례대로) · <b>선택</b>(조건에 따라 갈라짐) · <b>반복</b>(조건을 만족하는 동안 되풀이)을 <b>조합</b>해서 작성해요. 이 세 가지를 <b>제어 구조</b>라고 불러요.</span></div>
+  <div class="card">
+    <h3>🧭 세 가지 제어 구조 <span class="muted" style="font-weight:400;font-size:.88rem">(38쪽 그림Ⅰ-15)</span></h3>
+    <p style="margin-top:0">알고리즘의 모든 과정은 명확하고 구체적으로, 모든 경우의 수를 고려해 실현 가능하도록 작성해요. 일반적으로 아래 세 가지 형태를 이용해요.</p>
+    <div class="aw-cs">
+      <div style="--k:#2f6fd0">
+        <h4>순차 구조</h4>
+        <span style="font-size:.88rem">처리 절차를 순서대로 실행하는 알고리즘</span>
+        <svg viewBox="0 0 120 165" class="aw-fc" style="--k:#2f6fd0" role="img" aria-label="순차 구조: 명령 1, 명령 2, 명령 3을 위에서 아래로 차례대로 실행한다">
+          <defs><marker id="awm1" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto"><path d="M0,0 L5,3 L0,6 Z" fill="#9aa5b1"/></marker></defs>
+          <rect class="b" x="20" y="6" width="80" height="32" rx="7"/><text class="cap" x="60" y="26" text-anchor="middle">명령 1</text>
+          <path class="ln" d="M60,38 L60,54" marker-end="url(#awm1)"/>
+          <rect class="b" x="20" y="56" width="80" height="32" rx="7"/><text class="cap" x="60" y="76" text-anchor="middle">명령 2</text>
+          <path class="ln" d="M60,88 L60,104" marker-end="url(#awm1)"/>
+          <rect class="b" x="20" y="106" width="80" height="32" rx="7"/><text class="cap" x="60" y="126" text-anchor="middle">명령 3</text>
+        </svg>
+        <p class="ex">예 · 청소하기 (먼지를 턴다 → 청소기를 돌린다 → 바닥을 닦는다)</p>
+      </div>
+      <div style="--k:#1f9d74">
+        <h4>선택 구조</h4>
+        <span style="font-size:.88rem">조건식의 만족 여부에 따라 분기해 실행하는 알고리즘</span>
+        <svg viewBox="0 0 240 200" class="aw-fc" style="--k:#1f9d74" role="img" aria-label="선택 구조: 조건식을 만족하면 명령 1, 아니면 명령 2를 실행한 뒤 명령 3으로 모인다">
+          <defs><marker id="awm2" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto"><path d="M0,0 L5,3 L0,6 Z" fill="#9aa5b1"/></marker></defs>
+          <polygon class="d" points="120,10 182,38 120,66 58,38"/><text class="cap" x="120" y="42" text-anchor="middle">조건식</text>
+          <path class="ln" d="M58,38 L36,38 L36,88 L57,88 L57,98" marker-end="url(#awm2)"/><text class="yn" x="34" y="66" text-anchor="middle">예</text>
+          <path class="ln" d="M182,38 L204,38 L204,88 L183,88 L183,98" marker-end="url(#awm2)"/><text class="yn" x="206" y="66" text-anchor="middle">아니요</text>
+          <rect class="b" x="14" y="100" width="86" height="30" rx="7"/><text class="cap" x="57" y="119" text-anchor="middle">명령 1</text>
+          <rect class="b" x="140" y="100" width="86" height="30" rx="7"/><text class="cap" x="183" y="119" text-anchor="middle">명령 2</text>
+          <path class="ln" d="M57,130 L57,152 L120,152"/><path class="ln" d="M183,130 L183,152 L120,152"/>
+          <path class="ln" d="M120,152 L120,166" marker-end="url(#awm2)"/>
+          <rect class="b" x="77" y="168" width="86" height="30" rx="7"/><text class="cap" x="120" y="187" text-anchor="middle">명령 3</text>
+        </svg>
+        <p class="ex">예 · 나이 &gt; 18 이면 성인 요금, 아니면 청소년 요금</p>
+      </div>
+      <div style="--k:#e0702b">
+        <h4>반복 구조</h4>
+        <span style="font-size:.88rem">조건식을 만족하는 동안 같은 명령을 되풀이하는 알고리즘</span>
+        <svg viewBox="0 0 240 200" class="aw-fc" style="--k:#e0702b" role="img" aria-label="반복 구조: 조건식을 만족하는 동안 명령을 되풀이하고, 아니면 빠져나간다">
+          <defs><marker id="awm3" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto"><path d="M0,0 L5,3 L0,6 Z" fill="#9aa5b1"/></marker></defs>
+          <polygon class="d" points="120,8 182,34 120,60 58,34"/><text class="cap" x="120" y="38" text-anchor="middle">조건식</text>
+          <path class="ln" d="M120,60 L120,80" marker-end="url(#awm3)"/><text class="yn" x="130" y="74" text-anchor="start">예</text>
+          <rect class="b" x="84" y="82" width="72" height="28" rx="7"/><text class="cap" x="120" y="100" text-anchor="middle">명령 1</text>
+          <path class="ln" d="M120,110 L120,126" marker-end="url(#awm3)"/>
+          <rect class="b" x="84" y="128" width="72" height="28" rx="7"/><text class="cap" x="120" y="146" text-anchor="middle">명령 2</text>
+          <path class="ln" d="M84,142 L30,142 L30,34 L56,34" marker-end="url(#awm3)"/><text class="yn" x="30" y="96" text-anchor="middle">반복</text>
+          <path class="ln" d="M182,34 L214,34" marker-end="url(#awm3)"/><text class="yn" x="214" y="52" text-anchor="middle">아니요</text>
+        </svg>
+        <p class="ex">예 · 잔액 &gt;= 1000 인 동안 음료 선택 되풀이</p>
+      </div>
+    </div>
+    <p class="note">제어 구조를 활용한 실제 프로그래밍(제어문)은 Ⅱ단원에서 자세히 배워요. 지금은 <b>세 틀로 흐름을 그리는 법</b>에 익숙해지면 돼요.</p>
+  </div>
+  <div class="card">
+    <h3>🎮 장면을 보고 제어 구조 고르기</h3>
+    <p class="muted" style="margin-top:0">아래 장면이 <b>순차·선택·반복</b> 중 어느 구조인지 골라 봐요. 「순서대로인지」, 「조건에 따라 갈라지는지」, 「조건을 만족하는 동안 되풀이하는지」를 살펴봐요.</p>
+    <div id="awCtrlGame"></div>
+  </div>
+  <div class="quiz" data-quiz="1"></div>
+</section>
+
+<!-- 2 정수의 합 -->
+<section class="page" data-name="정수의 합" data-acc="#1f9d74">
+  <div class="head"><div class="num">02</div><div><h2>정수의 합 구하기</h2><p>교과서 39~40쪽 · 그림Ⅰ-16·17 · 반복 구조와 공식</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>같은 문제도 <b>여러 방법</b>으로 풀 수 있어요. 1부터 차례로 더하는 <b>반복</b>으로도, 한 번에 구하는 <b>공식</b>으로도 합을 구할 수 있지요. 공식은 반복이 없어 더 빨라요.</span></div>
+  <div class="card">
+    <h3>➕ 예제 1 · 1부터 10까지의 합 <span class="muted" style="font-weight:400;font-size:.88rem">(39쪽 그림Ⅰ-16)</span></h3>
+    <p style="margin-top:0"><code class="mono">sum</code>에 1부터 10까지를 차례로 더해요. 아래 순서도(반복 구조)를 의사 코드로 적으면 이래요.</p>
+    <pre class="code">sum = 0, i = 1
+i &lt;= 10 인 동안 반복:
+    sum = sum + i
+    i = i + 1
+sum 출력        <b># 결과 55</b></pre>
+    <p class="muted" style="margin:10px 0 4px">버튼을 눌러 반복을 한 번씩 실행하며 <code class="mono">i</code>와 <code class="mono">sum</code>이 어떻게 바뀌는지 따라가 봐요.</p>
+    <div id="awSum"></div>
+  </div>
+  <div class="card">
+    <h3>⚡ 예제 2 · 1부터 n까지의 합 (더 빠른 방법) <span class="muted" style="font-weight:400;font-size:.88rem">(40쪽 그림Ⅰ-17)</span></h3>
+    <p style="margin-top:0">반복으로 하나하나 더하는 대신, <b>가우스의 덧셈 공식</b>으로 한 번에 구할 수 있어요.</p>
+    <pre class="code">sum = (1 + n) * n / 2
+sum 출력</pre>
+    <p style="margin:6px 0">1부터 100까지라면 <b>101 × 100 ÷ 2 = 5050</b> 이지요. 일반식으로는 <b>n × (n + 1) ÷ 2</b> 예요. 반복 횟수가 없어 <b>실행 속도가 빨라요.</b></p>
+    <div id="awFormula"></div>
+    <p class="note">같은 문제라도 더 간단하고 빠른 방법을 찾는 것이 알고리즘 설계의 중요한 일이에요.</p>
+  </div>
+  <div class="quiz" data-quiz="2"></div>
+</section>
+
+<!-- 3 그리디 -->
+<section class="page" data-name="그리디" data-acc="#e0702b">
+  <div class="head"><div class="num">03</div><div><h2>그리디 알고리즘 · 거스름돈</h2><p>교과서 41쪽 · 그림Ⅰ-18·19 · 최소 동전 개수</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span><b>그리디(욕심쟁이) 알고리즘</b>은 매 순간 <b>지금 가장 좋아 보이는 것</b>을 고르는 방법이에요. 거스름돈을 <b>큰 동전부터</b> 최대한 많이 주면, 동전 수가 가장 적어져요.</span></div>
+  <div class="card">
+    <h3>🪙 거스름돈 최소 동전 구하기 <span class="muted" style="font-weight:400;font-size:.88rem">(41쪽)</span></h3>
+    <p style="margin-top:0"><b>그리디 알고리즘</b>은 현재 상황에서 가장 최적의 답을 선택하는 알고리즘이에요. 거슬러 줄 돈 n원(10의 배수)을 <b>500·100·50·10원</b> 동전으로 줄 때, 가장 큰 금액부터 최대한 나눠 주면 필요한 동전 수가 가장 적어요.</p>
+    <pre class="code">count = 0, i = 0
+n 입력
+coin = [500, 100, 50, 10]
+i &lt; 4 인 동안 반복:
+    count = count + n / coin[i]   <b># 몫(개수)</b>
+    n = n % coin[i]               <b># 나머지(남은 돈)</b>
+    i = i + 1
+count 출력</pre>
+    <p class="muted" style="margin:10px 0 4px">금액을 정하고 「다음 동전 ▶」을 눌러 큰 동전부터 개수를 세어 봐요.</p>
+    <div id="awGreedy"></div>
+  </div>
+  <p class="callout">⚠️ <b>그리디가 늘 최선은 아니에요 <span class="muted" style="font-weight:400;font-size:.86rem">(41쪽)</span></b> 만약 동전이 <code class="mono">coin = [500, 400, 100, 50, 10]</code> 처럼 있다면, 800원을 그리디는 500원 1개 + 100원 3개 = <b>4개</b>로 줘요. 하지만 400원 2개면 <b>2개</b>로 끝나죠. 그리디는 매 순간 최적을 고르지만 <b>전체적으로 가장 좋은 결과를 늘 보장하지는 않아요.</b> 다행히 우리나라 동전은 큰 동전이 작은 동전의 배수라, 거스름돈 문제에 그리디를 써도 가장 적은 개수가 나와요.</p>
+  <div class="quiz" data-quiz="3"></div>
+</section>
+
+<!-- 4 정렬·탐색 -->
+<section class="page" data-name="정렬·탐색" data-acc="#9b4fc4">
+  <div class="head"><div class="num">04</div><div><h2>정렬과 탐색</h2><p>교과서 42~43쪽 · 그림Ⅰ-20 버블 정렬 · 그림Ⅰ-21 이진 탐색</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span><b>정렬</b>은 데이터를 정해진 순서로 나열하는 것, <b>탐색</b>은 원하는 데이터를 찾는 것이에요. 학교에서 학생을 키·이름 순으로 줄 세우거나(정렬), 명렬표에서 한 사람을 찾는(탐색) 일과 같아요.</span></div>
+  <div class="card">
+    <h3>📊 정렬 · 오름차순과 내림차순 <span class="muted" style="font-weight:400;font-size:.88rem">(42쪽)</span></h3>
+    <div class="grid2 even">
+      <div class="aw-box" style="--k:#1f9d74"><b>오름차순</b><span>가장 작은 값을 앞에 두고 뒤로 갈수록 값이 커지도록 정렬</span><small>예 · 1, 2, 3, 4, 5 / 가, 나, 다, 라</small></div>
+      <div class="aw-box" style="--k:#d64535"><b>내림차순</b><span>가장 큰 값을 앞에 두고 뒤로 갈수록 값이 작아지도록 정렬</span><small>예 · 5, 4, 3, 2, 1 / 라, 다, 나, 가</small></div>
+    </div>
+    <p style="margin:12px 0 4px"><b>버블 정렬</b>은 서로 <b>이웃한 두 데이터를 비교</b>해, 더 큰 값을 뒤쪽으로 보내는 과정을 되풀이하는 정렬 방식이에요.</p>
+    <pre class="code">score = [100, 83, 92, 88, 96]
+i = 0 ~ len(score)-1 반복:
+    j = 0 ~ len(score)-2 반복:
+        score[j] &gt; score[j+1] 이면
+            score[j] 와 score[j+1] 의 자리를 바꾼다
+score 출력</pre>
+    <p class="muted" style="margin:10px 0 4px">5명의 점수(100, 83, 92, 88, 96)를 오름차순으로 정렬해요. 버튼으로 <b>한 비교씩</b> 따라가 봐요. (노란 막대는 지금 비교 중, 초록 막대는 자리가 정해진 값)</p>
+    <div id="awSort"></div>
+  </div>
+  <div class="card">
+    <h3>🔍 탐색 · 순차 탐색과 이진 탐색 <span class="muted" style="font-weight:400;font-size:.88rem">(43쪽)</span></h3>
+    <div class="grid2 even">
+      <div class="aw-box" style="--k:#2f6fd0"><b>순차 탐색</b><span>처음부터 하나씩 차례대로 비교하며 찾는 방식</span><small>정렬되지 않은 데이터에서도 가능</small></div>
+      <div class="aw-box" style="--k:#9b4fc4"><b>이진 탐색</b><span>정렬된 데이터에서 중간값을 기준으로 절반씩 줄여 가며 빠르게 찾는 방식</span><small>정렬된 데이터에서만 사용 가능</small></div>
+    </div>
+    <p style="margin:12px 0 4px">오름차순으로 정렬된 7명의 점수에서 <b>95점</b>을 이진 탐색으로 찾아요.</p>
+    <pre class="code">score = [83, 86, 88, 92, 95, 96, 100]
+target = 95
+start = 0, end = len(score) - 1
+start &lt;= end 인 동안 반복:
+    mid = (start + end) // 2
+    score[mid] == target 이면 break
+    score[mid] &gt; target 이면 end = mid - 1
+    아니면 start = mid + 1
+mid 출력</pre>
+    <p class="muted" style="margin:10px 0 4px">「다음 ▶」을 눌러 범위가 절반씩 줄어드는 과정을 따라가 봐요.</p>
+    <div id="awBin"></div>
+  </div>
+  <div class="quiz" data-quiz="4"></div>
+</section>
+
+<!-- 5 스스로 해결하기 -->
+<section class="page" data-name="스스로 해결하기" data-acc="#d64535">
+  <div class="head"><div class="num">05</div><div><h2>스스로 해결하기 · 알고리즘 작성</h2><p>교과서 44쪽 · 수행 활동 · 교실 책상 배치 알고리즘</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>알고리즘 표현 방법을 다시 정리하고, 오늘 배운 제어 구조를 떠올리며 <b>내 손으로 알고리즘을 작성</b>해 봐요.</span></div>
+  <div class="card">
+    <h3>1️⃣ 알고리즘 표현 방법 짝짓기</h3>
+    <p class="muted" style="margin-top:0">아래 설명에 해당하는 표현 방법을 <b>자연어 · 의사 코드 · 순서도 · 프로그래밍 언어</b> 중에서 골라 봐요.</p>
+    <div id="awMethod"></div>
+  </div>
+  <div class="card">
+    <h3>2️⃣ 세 가지 제어 구조 이름 떠올리기</h3>
+    <p class="muted" style="margin-top:0">카드 앞면의 설명을 읽고 어떤 제어 구조인지 떠올린 뒤, 눌러서 이름을 확인해요.</p>
+    <div id="awCtrlFlip" class="tcards"></div>
+  </div>
+  <div class="card">
+    <h3>3️⃣ 교실 책상 배치 알고리즘 작성하기</h3>
+    <p style="margin-top:0"><b>제한 사항</b> · 축제 준비를 위해 정리되지 않은 교실에서 교탁을 뒷문으로 복도에 내놓으려고 해요. 책상을 <b>가장 적게 움직여서</b> 내놓을 수 있는 알고리즘을 작성해 보세요. (책상은 상·하·좌·우로만 이동하고, 대각선 이동은 할 수 없어요.)</p>
+    <div class="memo"><label>나의 알고리즘 <small>예 · 1) ④번 책상을 오른쪽으로 1칸 → 2) 교탁을 아래로 2칸 → … 처럼 단계로 적어 보세요.</small></label><textarea data-memo="deskAlgo" rows="4"></textarea><div class="saved"></div></div>
+    <p class="note">정답은 하나가 아니에요. 책상을 적게 움직이면서 교탁이 뒷문으로 나갈 수 있으면 돼요. 순서를 명확하게 적을 수 있으면 좋은 알고리즘이에요.</p>
+  </div>
+  <div class="card">
+    <h3>✅ 성취도 평가 · 스스로 점검 <span class="muted" style="font-weight:400;font-size:.88rem">(45쪽)</span></h3>
+    <p class="muted" style="margin-top:0">오늘 할 수 있게 된 것을 모두 골라요.</p>
+    <div id="awSelfCheck"></div>
+  </div>
+</section>
+
+<!-- 6 마무리 -->
+<section class="page" data-name="마무리" data-acc="#0f2742">
+  <div class="head"><div class="num">06</div><div><h2>마무리 · Ⅰ단원 3절 정리</h2><p>핵심 문장 · 알고리즘 정리 · 마무리 퀴즈 · 질문폼</p></div></div>
+  <div class="key3">
+    <div style="--k:#2f6fd0">알고리즘은 <b>순차·선택·반복</b> 세 가지 제어 구조로 작성한다. 순차는 차례대로, 선택은 조건에 따라 갈라지고, 반복은 조건을 만족하는 동안 같은 명령을 되풀이한다.</div>
+    <div style="--k:#1f9d74">같은 문제도 여러 방법으로 풀 수 있다. 1부터 n까지의 합은 <b>반복</b>으로도, 공식 <b>(1+n)×n÷2</b>로도 구할 수 있고 공식이 더 빠르다. <b>그리디</b>는 매 순간 최적을 고르는 방법으로, 거스름돈을 큰 동전부터 주면 동전 수가 가장 적어진다(늘 최적을 보장하지는 않는다).</div>
+    <div style="--k:#9b4fc4"><b>정렬</b>은 데이터를 순서대로 나열하는 것(버블 정렬은 이웃한 두 값을 비교해 교환), <b>탐색</b>은 원하는 데이터를 찾는 것(이진 탐색은 정렬된 데이터에서 절반씩 줄이며 찾는다).</div>
+  </div>
+  <div class="card">
+    <h3>📘 Ⅰ단원 3. 알고리즘 — 핵심 정리 <span class="muted" style="font-weight:400;font-size:.88rem">(45쪽)</span></h3>
+    <div class="grid2 even">
+      <div class="aw-box" style="--k:#2f6fd0"><b>알고리즘</b><span>특정한 문제를 합리적으로 해결하기 위한 논리적인 절차 및 방법</span></div>
+      <div class="aw-box" style="--k:#1f9d74"><b>순서도</b><span>약속된 기호들과 흐름선 등으로 알고리즘을 표현하는 방법</span></div>
+    </div>
+    <div class="grid2 even" style="margin-top:12px">
+      <div class="aw-box" style="--k:#e0702b"><b>알고리즘의 조건</b><span>입력은 <b>0개 이상</b>, 출력은 <b>1개 이상</b>이어야 한다</span></div>
+      <div class="aw-box" style="--k:#9b4fc4"><b>순서도 작성 규칙</b><span>표준 기호 사용 · 흐름선은 위→아래, 왼쪽→오른쪽 · 흐름선끼리 교차 금지 · 유한한 시간 내 반드시 종료</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>오늘의 질문에 다시 답하기</h3>
+    <p class="muted" style="margin-top:0">오늘 배운 제어 구조와 문제 해결 방법을 떠올리며 내 말로 답해 보세요.</p>
+    <b style="font-size:.93rem">문제 해결을 위한 알고리즘은 어떻게 작성할까?</b>
+    <textarea data-memo="keyQ" rows="3"></textarea><div class="saved"></div>
+  </div>
+  <div class="card" style="--acc:#0f2742">
+    <h3>마무리 퀴즈</h3>
+    <div class="quiz" data-quiz="6"></div>
+  </div>
+  <div class="card">
+    <h3>개념 퀴즈 결과</h3>
+    <table id="result"></table>
+    <button class="btn ghost" id="quizReset">퀴즈 다시 풀기</button>
+  </div>
+  <div class="formgo">
+    <span class="kicker">생각 정리 과제</span>
+    <h3>질문폼에 내 생각 쓰기</h3>
+    <ol>
+      <li>알고리즘을 작성하는 <b>세 가지 제어 구조(순차·선택·반복)</b>를 각각 설명하고, 실생활 예를 하나씩 들어 보세요.</li>
+      <li>1부터 n까지의 합을 구하는 <b>두 가지 방법(반복 구조와 공식)</b>을 비교하고, <b>그리디 알고리즘</b>으로 거스름돈 동전 수를 최소로 만드는 원리를 설명하세요.</li>
+      <li>05에서 작성한 <b>「교실 책상 배치 알고리즘」</b>을 순서대로 적고, 왜 책상을 가장 적게 움직이는 방법인지 설명하세요.</li>
+    </ol>
+    <p>질문폼에는 붙여넣기가 되지 않아요. 아래 메모를 보면서 직접 다시 써 주세요.</p>
+    <a class="go" href="{{FORM_URL}}" target="_blank" rel="noopener">질문폼 열기 →</a>
+    <div class="msum" id="msum"></div>
+  </div>
+</section>

@@ -1,0 +1,257 @@
+<!-- 0 시작 -->
+<section class="page" data-name="시작" data-acc="#2f6fd0">
+  <div class="cover">
+    <div class="in">
+      <span class="tag">프로그래밍(Python) · Ⅰ. 프로그래밍 개요 · 1. 프로그래밍 언어의 종류와 특징</span>
+      <h1>무엇을 만들까,<br>어떤 언어가 맞을까?</h1>
+      <div class="story"><b>현아와 은호의 프로젝트 이야기 (14쪽)</b><br>프로그래머가 꿈인 현아와 은호는 공부에 도움이 되는 프로그램을 만드는 프로젝트에 도전하려고 해요. 현아는 「공부를 재미있게 할 수 있는 <b>교육용 게임</b>을 만들고 싶은데, 어떤 언어가 맞을까?」, 은호는 「난 교육용 <b>웹 사이트</b>를 만들어 볼게. 웹 프로그래밍을 위한 언어는 뭐가 있지?」라고 말해요. 같은 꿈이지만 만들려는 것이 다르니, 고르는 언어도 달라져요.</div>
+      <p>오늘은 프로그램이 <b>무엇</b>이고, <b>어떻게 실행</b>되며, 프로그래밍 언어를 <b>어떻게 나누고 고르는지</b> 살펴봐요.</p>
+      <ol>
+        <li>프로그램이란?</li><li>프로그램의 실행 원리</li><li>프로그래밍 언어의 분류</li>
+        <li>스스로 해결하기 · 분야에 맞는 언어 고르기</li><li>마무리 · 질문폼</li>
+      </ol>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn" style="background:var(--amber);color:var(--navy);box-shadow:none" onclick="document.getElementById('intro').scrollIntoView({behavior:'smooth'})">단원 도입부터 보기 ↓</button>
+        <button class="btn" style="background:transparent;border:2px solid rgba(255,255,255,.5);box-shadow:none" onclick="go(1)">01로 바로 가기 →</button>
+      </div>
+    </div>
+    <div class="route" aria-hidden="true">
+      <div class="st" style="animation-delay:.2s"><i>🧑‍💻</i><div><b>프로그램</b><small>명령어들의 집합</small></div></div>
+      <div class="ar" style="animation-delay:.6s">↓</div>
+      <div class="st" style="animation-delay:.8s"><i>⚙️</i><div><b>실행 원리</b><small>하드웨어가 프로그램을 돌리는 과정</small></div></div>
+      <div class="ar" style="animation-delay:1.2s">↓</div>
+      <div class="st" style="animation-delay:1.4s"><i>🗂️</i><div><b>언어 분류</b><small>저급·고급 / 절차지향·객체지향</small></div></div>
+      <div class="ar" style="animation-delay:1.8s">↓</div>
+      <div class="st" style="animation-delay:2s"><i>🎯</i><div><b>언어 선택</b><small>분야와 용도에 맞게</small></div></div>
+    </div>
+  </div>
+
+  <div id="intro" class="today">
+    <div class="today-lead">
+      <span class="kicker">단원 도입 · Ⅰ. 프로그래밍 개요 (10~13쪽)</span>
+      <p>이 단원에서는 <b>프로그래밍의 개념과 절차</b>를 이해하고, <b>알고리즘</b>을 설계·표현하며, 프로그램을 만드는 <b>개발 환경</b>을 갖추는 법을 배워요. 그 첫걸음으로, 오늘은 프로그램이 무엇이고 프로그래밍 언어에는 어떤 종류가 있으며 분야에 맞는 언어를 어떻게 고르는지 알아봐요.</p>
+    </div>
+    <div class="card">
+      <h3>🐍 이 과목의 주인공 · 파이썬(Python) 이야기 <span class="muted" style="font-weight:400;font-size:.88rem">(단원 도입 · 18쪽 「파이썬의 발전」)</span></h3>
+      <p style="margin-top:0">파이썬은 처음에 교육과 연구를 위해 쓰이기 시작했지만, 지금은 아주 여러 분야에서 쓰이는 <b>범용 프로그래밍 언어</b>로 자랐어요. 왜 이렇게 인기가 많을까요? 카드를 눌러 하나씩 뒤집어 봐요.</p>
+      <div id="pyFlip" class="tcards"></div>
+      <p class="note">파이썬이 왜 「쉽고 쓸모가 많은」 언어인지 느낌만 잡아 두세요. 자세한 분류와 특징은 03 화면에서 다시 만나요.</p>
+    </div>
+
+    <div class="why3">
+      <div class="why">
+        <span class="kicker">핵심 질문</span>
+        <ul class="uses">
+          <li><b>오늘의 질문</b> · 개발하려는 분야에 가장 적합한 프로그래밍 언어를 어떻게 선택할까?</li>
+        </ul>
+      </div>
+      <div class="why">
+        <span class="kicker">배우고 나면 할 수 있는 것</span>
+        <ul class="can">
+          <li>프로그래밍 언어의 종류와 특징을 설명할 수 있다.</li>
+          <li>프로그램의 분야와 용도에 따라 적절한 프로그래밍 언어를 선택할 수 있다.</li>
+        </ul>
+      </div>
+      <div class="why">
+        <span class="kicker">오늘 만날 낱말</span>
+        <p style="margin:4px 0 0;font-size:.95rem">프로그램 · 프로그래밍 · 프로그래밍 언어 · 저급 언어 · 고급 언어 · 컴파일 · 인터프리트 · 절차지향 · 객체지향</p>
+        <p style="font-size:.86rem;margin-top:8px" class="muted">처음 보는 낱말이 있어도 괜찮아요. 화면을 넘기며 하나씩 만나요.</p>
+      </div>
+    </div>
+    <div class="card">
+      <h3>📝 나의 계획 <span class="muted" style="font-weight:400;font-size:.88rem">(14쪽) · (선택)</span></h3>
+      <div class="memo"><label>나는 이 단원에서 다음과 같은 내용을 배우고 싶다. <small>시간이 있으면 한두 가지 적어 보세요. 마지막 화면에서 다시 볼 수 있어요.</small></label><textarea data-memo="planLearn" rows="2"></textarea><div class="saved"></div></div>
+    </div>
+    <div style="text-align:center;margin-top:20px"><button class="btn" style="background:var(--navy)" onclick="go(1)">01 프로그램이란?부터 시작하기 →</button></div>
+  </div>
+</section>
+
+<!-- 1 프로그램이란? -->
+<section class="page" data-name="프로그램이란?" data-acc="#2f6fd0">
+  <div class="head"><div class="num">01</div><div><h2>프로그램이란?</h2><p>교과서 15~16쪽 · 프로그래밍 과정, 프로그램과 소프트웨어</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span><b>프로그램</b>은 컴퓨터에게 「이 순서로, 이렇게 해라」라고 알려 주는 <b>명령어들의 묶음</b>이에요. 사람이 <b>프로그래밍 언어</b>로 이 명령을 적는 전 과정을 <b>프로그래밍</b>이라 하고, 그 일을 하는 사람이 <b>프로그래머</b>예요.</span></div>
+  <div class="card">
+    <h3>🔄 프로그래밍 과정 <span class="muted" style="font-weight:400;font-size:.88rem">(15쪽 그림Ⅰ-2)</span></h3>
+    <p style="margin-top:0">프로그램은 프로그래머가 프로그래밍 언어로 명령을 적는 <b>프로그래밍 과정</b>을 통해 만들어져요.</p>
+    <div class="flow2 pl-make">
+      <div style="--k:#2f6fd0"><b>🧑‍💻 프로그래머</b><span>프로그램의 알고리즘을 설계하고 프로그램을 개발하는 전문가</span></div>
+      <div class="ar">→</div>
+      <div style="--k:#9b4fc4"><b>⌨️ 프로그래밍</b><span>프로그래밍 언어를 사용하여 프로그램을 실제로 구현하는 전반적인 작업</span></div>
+      <div class="ar">→</div>
+      <div style="--k:#1f9d74"><b>📦 프로그램</b><span>컴퓨터가 처리할 순서와 방법을 지시하는 명령어들의 집합</span></div>
+    </div>
+    <p class="note"><b>코딩</b>이란? 프로그래밍 언어로 작성된 문서를 흔히 <b>코드(code)</b>라 하고, 이 코드를 작성하는 일을 <b>코딩(coding)</b>이라고 해요.</p>
+  </div>
+  <div class="card">
+    <h3>🧱 프로그램 · 소프트웨어 · 앱, 어떻게 다를까? <span class="muted" style="font-weight:400;font-size:.88rem">(16쪽)</span></h3>
+    <p style="margin-top:0"><b>소프트웨어</b>는 컴퓨터를 더 효율적으로 운영하기 위해 만든 프로그램을 통틀어 가리키는 <b>더 넓은 말</b>이에요. 소프트웨어는 두 가지로 나뉘어요.</p>
+    <div class="grid2">
+      <div class="pl-sw" style="--k:#2f6fd0"><b>시스템 소프트웨어</b><span>컴퓨터 하드웨어를 제어하고 접근할 수 있도록 설계된 소프트웨어</span><small>예 · 운영체제(윈도, 맥OS, 리눅스, 안드로이드, iOS)</small></div>
+      <div class="pl-sw" style="--k:#1f9d74"><b>응용 소프트웨어</b><span>운영체제가 주는 자원과 인터페이스를 활용해 사용자가 특정 작업을 직접 하도록 돕는 소프트웨어</span><small>예 · 문서 작성, 이미지 편집, 게임 등</small></div>
+    </div>
+    <p style="margin-bottom:0">우리가 말하는 <b>프로그램</b>은 대체로 <b>응용 소프트웨어</b>에 속하고, 소프트웨어라는 더 넓은 개념 안에 들어가요. 스마트폰이나 태블릿에서 쓰는 소프트웨어는 흔히 <b>애플리케이션(application)</b> 또는 <b>앱(app)</b>이라고 불러요.</p>
+  </div>
+  <div class="card">
+    <h3>🃏 용어 카드 뒤집기</h3>
+    <p class="muted" style="margin-top:0">카드를 눌러 낱말의 뜻을 확인해요. 뜻을 먼저 떠올려 본 뒤 뒤집으면 더 잘 외워져요.</p>
+    <div id="termFlip" class="tcards"></div>
+  </div>
+  <p class="callout">💡 <b>4차 산업혁명의 핵심은 소프트웨어 <span class="muted" style="font-weight:400;font-size:.86rem">(16쪽 「정보」)</span></b> 자동차가 「가솔린이 아니라 소프트웨어로 움직인다」는 말이 나올 만큼, 차의 주요 기능이 소프트웨어로 돌아가는 자동차(SDV, Software Defined Vehicle)가 등장했어요. 인공지능(AI)·사물 인터넷(IoT)·로봇·빅데이터의 발전과 함께, 소프트웨어는 산업 전반에 혁신을 일으키는 핵심 동력으로 꼽혀요.</p>
+  <div class="quiz" data-quiz="1"></div>
+</section>
+
+<!-- 2 프로그램의 실행 원리 -->
+<section class="page" data-name="실행 원리" data-acc="#9b4fc4">
+  <div class="head"><div class="num">02</div><div><h2>프로그램의 실행 원리</h2><p>교과서 17쪽 · 하드웨어와 소프트웨어, 프로그램 실행 과정</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>소프트웨어는 혼자서는 아무 일도 못 해요. 실제 기계인 <b>하드웨어</b>를 통해서만 실행돼요. 반대로 하드웨어도 소프트웨어가 없으면 아무 기능을 못 하지요. 둘은 <b>서로 꼭 필요한 짝</b>이에요.</span></div>
+  <div class="card">
+    <h3>🏗️ 하드웨어와 소프트웨어의 관계 <span class="muted" style="font-weight:400;font-size:.88rem">(17쪽 그림Ⅰ-3)</span></h3>
+    <p style="margin-top:0">사용자부터 하드웨어까지, 아래로 내려갈수록 기계에 가까워져요. 위층은 아래층의 도움을 받아 움직여요.</p>
+    <div class="pl-stack">
+      <div style="--k:#2f6fd0"><b>🙋 사용자</b><span>소프트웨어를 설치하고 실행시켜 다양한 하드웨어를 원하는 대로 이용하는 주체</span></div>
+      <div style="--k:#1f9d74"><b>🖌️ 응용 소프트웨어</b><span>사용자가 하고 싶은 작업을 마음껏 하도록 지원하는 소프트웨어</span></div>
+      <div style="--k:#9b4fc4"><b>🧰 시스템 소프트웨어</b><span>컴퓨팅 시스템을 구성하는 하드웨어를 올바르게 제어하는 소프트웨어</span></div>
+      <div style="--k:#e0702b"><b>🔩 하드웨어</b><span>소프트웨어에게 지시받은 특정한 일을 수행하도록 제작된 전자 장치</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>⚙️ 프로그램의 실행 과정 <span class="muted" style="font-weight:400;font-size:.88rem">(17쪽 그림Ⅰ-4)</span></h3>
+    <p style="margin-top:0">「2 더하기 3」을 계산하는 프로그램을 예로, 실행되는 순서를 <b>버튼으로 하나씩</b> 밝혀 봐요.</p>
+    <div class="grid2">
+      <div class="pl-run">
+        <svg id="runSvg" viewBox="0 0 360 300" role="img" aria-label="보조 기억 장치에서 주기억 장치로 프로그램을 불러오고 CPU가 연산한 뒤 출력하는 과정을 단계별로 보여 주는 그림"></svg>
+      </div>
+      <div>
+        <div class="row pl-rbtn" id="runBtns"></div>
+        <p class="pl-rcap" id="runCap"></p>
+      </div>
+    </div>
+    <p class="note"><b>휘발성</b> · 전원이 차단되면 저장된 데이터가 사라지는 성질이에요. 주기억 장치(RAM)는 휘발성이라, 프로그램 결과를 오래 보존하려면 보조 기억 장치에 다시 저장해야 해요.</p>
+  </div>
+  <div class="quiz" data-quiz="2"></div>
+</section>
+
+<!-- 3 프로그래밍 언어의 분류 -->
+<section class="page" data-name="언어 분류" data-acc="#1f9d74">
+  <div class="head"><div class="num">03</div><div><h2>프로그래밍 언어의 분류</h2><p>교과서 18~21쪽 · 세 가지 기준, 컴파일과 인터프리트</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>프로그래밍 언어는 아주 많아서, 보는 <b>기준</b>에 따라 여러 갈래로 나눠요. ①<b>기계·사람 중심</b>(저급·고급) ②<b>설계 방법</b>(절차지향·객체지향) ③<b>개발 분야·목적</b>(시스템·응용·교육용), 이렇게 세 기준을 하나씩 만나 봐요.</span></div>
+  <div class="card">
+    <h3>🗂️ 세 가지 분류 기준 <span class="muted" style="font-weight:400;font-size:.88rem">(18쪽 표Ⅰ-1)</span></h3>
+    <div class="pl-crit">
+      <div style="--k:#2f6fd0"><b>① 기계와 사람 중심</b><span>저급 언어 · 고급 언어</span></div>
+      <div style="--k:#1f9d74"><b>② 설계 방법</b><span>절차지향 언어 · 객체지향 언어</span></div>
+      <div style="--k:#e0702b"><b>③ 개발 분야·목적</b><span>시스템 · 응용 · 교육용 프로그래밍 언어</span></div>
+    </div>
+    <p class="note" style="margin-bottom:0">같은 언어라도 기준이 다르면 서로 다른 칸에 들어가요. 예를 들어 파이썬은 <b>고급</b>이면서 <b>객체지향</b>이고, <b>응용(웹·인공지능 등)</b> 개발에 쓰여요.</p>
+  </div>
+  <div class="card">
+    <h3>① 기계와 사람 중심 · 저급 언어와 고급 언어 <span class="muted" style="font-weight:400;font-size:.88rem">(19쪽)</span></h3>
+    <p style="margin-top:0">컴퓨터는 사람의 자연어를 이해하지 못해요. 그래서 컴퓨터에 얼마나 가까운 언어인가로 나눠요.</p>
+    <div class="grid2">
+      <div class="pl-sw" style="--k:#d64535"><b>저급 언어</b>
+        <span><b>기계어</b> · 0과 1로 이루어진 2진 코드로 하드웨어를 직접 제어해요. 번역 없이 바로 실행되어 <b>빠르지만</b>, 사람이 이해하기 매우 어려워요.</span>
+        <span style="margin-top:6px"><b>어셈블리어</b> · 기계어를 사람이 읽기 쉬운 명령어로 1:1 대응시킨 언어예요. <b>어셈블러</b>라는 번역 프로그램으로 기계어로 바꿔 실행해요.</span>
+      </div>
+      <div class="pl-sw" style="--k:#1f9d74"><b>고급 언어</b>
+        <span>사람이 쓰는 자연어와 비슷한 형태라 하드웨어를 깊이 몰라도 <b>작성하기 쉬워요.</b></span>
+        <span style="margin-top:6px">컴퓨터가 이해하도록 <b>컴파일러나 인터프리터</b> 같은 번역 프로그램으로 기계어로 바꿔야 실행돼요.</span>
+        <small>예 · C, Java, Python 등</small>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>🌐 번역 프로그램 · 컴파일 vs 인터프리트 <span class="muted" style="font-weight:400;font-size:.88rem">(19쪽 「정보」)</span></h3>
+    <p style="margin-top:0">고급 언어로 짠 소스 코드를 기계어로 바꾸는 방법은 두 가지예요. 버튼을 눌러 비교해 봐요.</p>
+    <div class="row pl-tab" id="transBtn"></div>
+    <div class="pl-tabview" id="transView"></div>
+  </div>
+  <div class="card">
+    <h3>② 설계 방법 · 절차지향과 객체지향 <span class="muted" style="font-weight:400;font-size:.88rem">(20쪽 표Ⅰ-2)</span></h3>
+    <p style="margin-top:0"><b>자전거 만들기</b>로 비교해 봐요. 같은 자전거라도 만드는 방식이 달라요.</p>
+    <div class="grid2">
+      <div class="pl-sw" style="--k:#e0702b"><b>🚲 절차지향 언어</b>
+        <span>자전거를 만들려고 프레임을 만들고 핸들·안장을 조립하고 바퀴를 다는 등, 제작 과정을 <b>순서대로 하나하나</b> 수행해 완성해요.</span>
+        <small>단계에 따라 순서대로 처리 · 데이터와 함수를 따로 다룸 · C, Fortran, Basic 등</small>
+      </div>
+      <div class="pl-sw" style="--k:#1f9d74"><b>🛠️ 객체지향 언어</b>
+        <span>자전거를 핸들·안장·바퀴 같은 <b>부품(객체) 단위로 나눠</b> 각각의 기능을 정하고, 이들을 조합해 완성해요.</span>
+        <small>객체 중심으로 프로그래밍 · 코드 재사용·생산성·유지 보수에 유리 · Java, C++, C#, Python 등</small>
+      </div>
+    </div>
+    <p class="muted" style="margin:10px 0 0">아래 카드를 읽고 <b>절차지향</b>인지 <b>객체지향</b>인지 골라 봐요. 「순서대로 하나하나」인지, 「부품(객체)으로 나눠 조합」인지를 살펴봐요.</p>
+    <div id="oopGame"></div>
+  </div>
+  <div class="card">
+    <h3>③ 개발 분야·목적에 따른 분류 <span class="muted" style="font-weight:400;font-size:.88rem">(21쪽)</span></h3>
+    <div class="pl-crit">
+      <div style="--k:#9b4fc4"><b>시스템 프로그램 개발 언어</b><span>운영체제·유틸리티처럼 컴퓨터의 기본 동작을 지원하는 프로그램 개발 · C, C++ 등</span></div>
+      <div style="--k:#2f6fd0"><b>응용 프로그램 개발 언어</b><span>웹(JavaScript·PHP·Python 등), 모바일 앱(Kotlin·Swift·Java 등), 게임(C#·C++ 등), 인공지능(Python 등)</span></div>
+      <div style="--k:#1f9d74"><b>교육용 프로그래밍 언어</b><span>명령을 블록으로 조립하듯 만드는, 초보자를 위한 블록 코딩 언어 · Scratch, Entry, MakeCode 등</span></div>
+    </div>
+  </div>
+  <div class="quiz" data-quiz="3"></div>
+</section>
+
+<!-- 4 스스로 해결하기 -->
+<section class="page" data-name="언어 고르기" data-acc="#d64535">
+  <div class="head"><div class="num">04</div><div><h2>스스로 해결하기 · 분야에 맞는 언어 고르기</h2><p>교과서 22쪽 · 수행 활동 · 조사 보고서</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>현아와 은호처럼, 내가 만들고 싶은 프로그램을 하나 정해요. 그 <b>분야</b>를 고르고, 거기에 <b>어떤 언어가 어울리는지</b> 오늘 배운 내용과 자료를 바탕으로 조사해 적어 봐요.</span></div>
+  <div class="card">
+    <h3>1️⃣ 어떤 분야의 프로그램을 만들고 싶나요?</h3>
+    <p class="muted" style="margin-top:0">개발하고 싶은 응용 프로그램 분야를 하나 골라요.</p>
+    <div id="fieldPick"></div>
+    <div class="memo"><label>만들고 싶은 프로그램 이름</label><input type="text" data-memo="progName" placeholder="예: 영어 단어 암기 게임"><div class="saved"></div></div>
+    <div class="memo"><label>프로그램 설명 <small>무엇을 하는 프로그램인지 한두 줄로 적어요.</small></label><textarea data-memo="progDesc" rows="2"></textarea><div class="saved"></div></div>
+  </div>
+  <div class="card">
+    <h3>2️⃣ 어떤 프로그래밍 언어가 어울릴까?</h3>
+    <p class="muted" style="margin-top:0">고른 분야의 프로그램을 개발하기에 적절한 언어를 조사해, 하나를 고르고 이유를 적어요.</p>
+    <table class="plan">
+      <tr><td>고른 언어</td><td><input type="text" data-memo="langChoose" placeholder="예: Python"><div class="saved"></div></td></tr>
+      <tr><td>고른 이유</td><td><input type="text" data-memo="langReason" placeholder="그 분야에 왜 어울리는지 (특징·장점)"><div class="saved"></div></td></tr>
+    </table>
+    <p class="note">정답은 하나가 아니에요. 같은 분야라도 사람마다 다른 언어를 고를 수 있어요. 고른 이유를 설명할 수 있으면 돼요.</p>
+  </div>
+  <div class="card">
+    <h3>✅ 성취도 평가 · 스스로 점검</h3>
+    <p class="muted" style="margin-top:0">오늘 할 수 있게 된 것을 모두 골라요.</p>
+    <div id="selfCheck"></div>
+  </div>
+</section>
+
+<!-- 5 마무리 -->
+<section class="page" data-name="마무리 · 질문폼" data-acc="#0f2742">
+  <div class="head"><div class="num">05</div><div><h2>마무리</h2><p>핵심 문장 · 마무리 퀴즈 · 생각 정리 질문폼</p></div></div>
+  <div class="key3">
+    <div style="--k:#2f6fd0">프로그래머가 <b>프로그래밍 언어</b>로 명령을 적는 <b>프로그래밍</b> 과정을 통해 <b>프로그램</b>이 만들어진다. 프로그램은 보조 기억 장치에 저장되었다가, 실행되면 주기억 장치로 올라와 중앙 처리 장치(CPU)에서 연산되고 결과가 출력된다.</div>
+    <div style="--k:#1f9d74">프로그래밍 언어는 보는 기준에 따라 <b>기계와 사람 중심(저급·고급)</b>, <b>설계 방법(절차지향·객체지향)</b>, <b>개발 분야·목적(시스템·응용·교육용)</b>의 세 갈래로 나눌 수 있다.</div>
+    <div style="--k:#9b4fc4">고급 언어는 기계어로 <b>번역</b>해야 실행된다. 소스 코드 전체를 한꺼번에 번역한 뒤 실행하면 <b>컴파일</b>(C, C++), 실행할 때마다 한 줄씩 번역하며 실행하면 <b>인터프리트</b>(Python, JavaScript 등)이다.</div>
+  </div>
+  <div class="card">
+    <h3>오늘의 질문에 다시 답하기</h3>
+    <p class="muted" style="margin-top:0">04에서 고른 내 프로그램과 언어를 떠올리며, 오늘 배운 분류 기준을 근거로 내 말로 답해 보세요.</p>
+    <b style="font-size:.93rem">개발하려는 분야에 가장 적합한 프로그래밍 언어를 어떻게 선택할까?</b>
+    <textarea data-memo="keyQ" rows="3"></textarea><div class="saved"></div>
+  </div>
+  <div class="card" style="--acc:#0f2742">
+    <h3>마무리 퀴즈</h3>
+    <div class="quiz" data-quiz="5"></div>
+  </div>
+  <div class="card">
+    <h3>개념 퀴즈 결과</h3>
+    <table id="result"></table>
+    <button class="btn ghost" id="quizReset">퀴즈 다시 풀기</button>
+  </div>
+  <div class="formgo">
+    <span class="kicker">생각 정리 과제</span>
+    <h3>질문폼에 내 생각 쓰기</h3>
+    <ol>
+      <li><b>프로그램</b>이 만들어져 실행되는 과정을, 「프로그래밍 과정(프로그래머·프로그래밍 언어·프로그래밍)」과 「실행 과정(보조 기억 장치 → 주기억 장치 → CPU → 출력)」을 모두 넣어 내 말로 설명하세요.</li>
+      <li>프로그래밍 언어를 나누는 <b>세 가지 기준</b>을 쓰고, 각 기준에서 언어가 어떻게 나뉘는지(저급·고급 / 절차지향·객체지향 / 시스템·응용·교육용) 예를 들어 설명하세요. <b>컴파일과 인터프리트</b>의 차이도 함께 적으세요.</li>
+      <li>04에서 고른 <b>만들고 싶은 프로그램의 분야</b>와 그에 어울린다고 고른 <b>프로그래밍 언어</b>를 쓰고, 왜 그 언어가 적절한지 오늘 배운 분류·특징을 근거로 설명하세요.</li>
+    </ol>
+    <p>질문폼에는 붙여넣기가 되지 않아요. 아래 메모를 보면서 직접 다시 써 주세요.</p>
+    <a class="go" href="{{FORM_URL}}" target="_blank" rel="noopener">질문폼 열기 →</a>
+    <div class="msum" id="msum"></div>
+  </div>
+</section>

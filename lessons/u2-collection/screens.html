@@ -1,0 +1,272 @@
+<!-- 0 시작 -->
+<section class="page" data-name="시작" data-acc="#1f9d74">
+  <div class="cover">
+    <div class="in">
+      <span class="tag">프로그래밍(Python) · Ⅱ. 프로그래밍 기초 · 3. 컬렉션 자료형</span>
+      <h1>여러 값을<br>어떻게 묶어 둘까?</h1>
+      <div class="story"><b>학생 100명의 생년월일 (100쪽)</b><br>학생 100명의 생년월일이 리스트에 들어 있다고 해 봐요. 특정 학생의 생년월일을 찾으려면 <b>그 학생이 몇 번째인지</b> 정확히 알아야 해요. 번호 대신 <b>이름(키)</b>으로 바로 찾을 수 있다면 훨씬 편하겠지요? 여러 값을 묶는 자료형마다 <b>저장하고 꺼내는 방법</b>이 달라요.</div>
+      <p>오늘은 <b>리스트·튜플·딕셔너리·집합</b>을 직접 코드를 돌려 보며 비교하고, 상황에 맞는 자료형을 골라 써 봐요.</p>
+      <ol>
+        <li>리스트와 튜플</li><li>딕셔너리</li><li>집합</li>
+        <li>컬렉션 활용 · 단어 목록과 추첨</li><li>스스로 해결하기 · 마무리</li>
+      </ol>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn" style="background:var(--amber);color:var(--navy);box-shadow:none" onclick="document.getElementById('intro').scrollIntoView({behavior:'smooth'})">오늘 배울 것 보기 ↓</button>
+        <button class="btn" style="background:transparent;border:2px solid rgba(255,255,255,.5);box-shadow:none" onclick="go(1)">01로 바로 가기 →</button>
+      </div>
+    </div>
+    <div class="route" aria-hidden="true">
+      <div class="st" style="animation-delay:.2s"><i>📋</i><div><b>리스트</b><small>[ ] · 바꿀 수 있어요</small></div></div>
+      <div class="ar" style="animation-delay:.6s">↓</div>
+      <div class="st" style="animation-delay:.8s"><i>🔒</i><div><b>튜플</b><small>( ) · 바꿀 수 없어요</small></div></div>
+      <div class="ar" style="animation-delay:1.2s">↓</div>
+      <div class="st" style="animation-delay:1.4s"><i>📖</i><div><b>딕셔너리</b><small>{키: 값} · 키로 찾아요</small></div></div>
+      <div class="ar" style="animation-delay:1.8s">↓</div>
+      <div class="st" style="animation-delay:2s"><i>🧺</i><div><b>집합</b><small>{값} · 중복 없이</small></div></div>
+    </div>
+  </div>
+
+  <div id="intro" class="today">
+    <div class="today-lead">
+      <span class="kicker">컨테이너 자료형 (100~109쪽)</span>
+      <p>숫자나 문자열은 값 <b>하나</b>를 담지만, <b>컨테이너 자료형</b>은 여러 값을 한꺼번에 담아요. 리스트·튜플·딕셔너리·집합은 값을 담는 방법과 꺼내는 방법이 서로 달라서, 문제에 맞게 골라 쓰는 힘이 중요해요.</p>
+    </div>
+    <div class="card">
+      <h3>🖥️ 먼저 한 번 실행해 봐요 <span class="muted" style="font-weight:400;font-size:.88rem">(파이썬 실행 칸)</span></h3>
+      <p style="margin-top:0">리스트에 과일 세 개를 담아 출력하는 코드예요. <b>▶ 실행</b>을 눌러 결과를 확인해요. 처음 한 번은 파이썬을 불러오느라 몇 초 걸려요.</p>
+      <div id="helloRun"></div>
+    </div>
+    <div class="why3">
+      <div class="why">
+        <span class="kicker">핵심 질문</span>
+        <ul class="uses">
+          <li><b>오늘의 질문</b> · 여러 값을 묶어 다루는 컬렉션은 어떻게 쓸까?</li>
+        </ul>
+      </div>
+      <div class="why">
+        <span class="kicker">배우고 나면 할 수 있는 것</span>
+        <ul class="can">
+          <li>리스트·튜플·딕셔너리·집합의 특징을 비교해 설명할 수 있다.</li>
+          <li>딕셔너리의 값을 수정·추가·삭제하고, 집합으로 중복 제거와 교집합을 구할 수 있다.</li>
+        </ul>
+      </div>
+      <div class="why">
+        <span class="kicker">오늘 만날 낱말</span>
+        <p style="margin:4px 0 0;font-size:.95rem">리스트 · 튜플 · 딕셔너리 · 키와 값 · 집합 · 교집합 · sorted( ) · random.sample( )</p>
+        <p style="font-size:.86rem;margin-top:8px" class="muted">처음 보는 낱말이 있어도 괜찮아요. 코드를 돌려 보며 하나씩 만나요.</p>
+      </div>
+    </div>
+    <div class="card">
+      <h3>📝 나의 계획 <span class="muted" style="font-weight:400;font-size:.88rem">(선택)</span></h3>
+      <div class="memo"><label>여러 값을 한꺼번에 저장해 두면 편할 때는 언제일까? <small>시간이 있으면 한두 가지 적어 보세요. 마지막 화면에서 다시 볼 수 있어요.</small></label><textarea data-memo="planLearn" rows="2"></textarea><div class="saved"></div></div>
+    </div>
+    <div style="text-align:center;margin-top:20px"><button class="btn" style="background:var(--mint)" onclick="go(1)">01 리스트와 튜플부터 시작하기 →</button></div>
+  </div>
+</section>
+
+<!-- 1 리스트와 튜플 -->
+<section class="page" data-name="리스트·튜플" data-acc="#2f6fd0">
+  <div class="head"><div class="num">01</div><div><h2>리스트와 튜플</h2><p>교과서 100·103·109쪽 · 순서(인덱스)가 있는 컨테이너</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>리스트와 튜플은 값을 <b>순서대로 줄 세워</b> 저장해요. 줄마다 <b>0번부터</b> 번호(인덱스)가 붙어서 번호로 꺼낼 수 있어요. 둘의 가장 큰 차이는 <b>저장한 뒤에 요소를 바꿀 수 있느냐</b>예요.</span></div>
+  <div class="card">
+    <h3>📋 리스트 · 요소를 바꿀 수 있어요</h3>
+    <p style="margin-top:0">리스트는 <code>[값, 값, ...]</code> 모양으로 만들어요. 인덱스로 꺼내고(인덱싱), 구간을 잘라 오고(슬라이싱), 요소를 새 값으로 바꿀 수 있어요. 결과를 예상해 보고 <b>▶ 실행</b>해요.</p>
+    <div id="listRun"></div>
+    <p class="note">100쪽 · 리스트에 없는 인덱스(예: 길이가 2인 리스트의 <code>a[2]</code>)에 접근하면 <b>오류</b>가 나요.</p>
+  </div>
+  <div class="card" style="--acc:#e0702b">
+    <h3>🔒 튜플 · 요소를 바꿀 수 없어요</h3>
+    <p style="margin-top:0">튜플은 <code>(값, 값, ...)</code> 모양으로 만들어요. 인덱싱·슬라이싱은 리스트와 같지만, <b>요소 변경은 불가능</b>해요. 주석 줄의 <code>#</code>을 지우고 실행해서 어떤 오류가 나는지 확인해 봐요.</p>
+    <div id="tupleRun"></div>
+  </div>
+  <div class="card">
+    <h3>⚖️ 한눈에 비교 <span class="muted" style="font-weight:400;font-size:.88rem">(103쪽 정보)</span></h3>
+    <div class="tscroll"><table class="esc-t">
+      <tr><th>자료형</th><th class="l">만드는 모양</th><th>요소 변경</th><th>순서·인덱싱</th><th>요소 중복</th></tr>
+      <tr><td><b>리스트</b></td><td class="l"><code>[값, 값]</code></td><td class="c">가능</td><td class="c">가능</td><td class="c">허용</td></tr>
+      <tr><td><b>튜플</b></td><td class="l"><code>(값, 값)</code></td><td class="c">불가능</td><td class="c">가능</td><td class="c">허용</td></tr>
+    </table></div>
+    <p class="note">리스트·튜플처럼 요소가 순서대로 나열된 자료형을 <b>시퀀스 자료형</b>이라고 해요. 둘은 <code>in</code>·<code>not in</code>, <code>len( )</code>, <code>sorted( )</code>도 같이 쓸 수 있어요.</p>
+  </div>
+  <div class="quiz" data-quiz="1"></div>
+</section>
+
+<!-- 2 딕셔너리 -->
+<section class="page" data-name="딕셔너리" data-acc="#1f9d74">
+  <div class="head"><div class="num">02</div><div><h2>딕셔너리</h2><p>교과서 100·101쪽 · 키와 값, 수정·추가·삭제, 메소드</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>사전에서 낱말(<b>키</b>)을 찾으면 뜻(<b>값</b>)이 나오는 것과 같아요. 딕셔너리는 <b>키와 값을 쌍으로</b> 저장하고, 번호 대신 <b>키로 값을 찾아요</b>.</span></div>
+  <div class="card">
+    <h3>📖 딕셔너리 만들기 <span class="muted" style="font-weight:400;font-size:.88rem">(100쪽)</span></h3>
+    <p style="margin-top:0"><code>{키: 값, 키: 값}</code>처럼 콜론(<code>:</code>)으로 키와 값을 묶고, 쉼표로 구분해 중괄호 안에 넣어요. 키는 숫자·문자열·튜플처럼 <b>바꿀 수 없는 자료형</b>만 쓸 수 있고, 키가 같으면 <b>마지막에 넣은 값만</b> 남아요.</p>
+    <div id="dictMakeRun"></div>
+    <p class="note">키가 문자열이면 따옴표를 붙여야 해요. 딕셔너리는 순서 번호가 없어서 슬라이싱은 쓸 수 없어요.</p>
+  </div>
+  <div class="card">
+    <h3>✏️ 값 수정 · 추가 · 삭제 <span class="muted" style="font-weight:400;font-size:.88rem">(100쪽)</span></h3>
+    <p style="margin-top:0">키를 이용해 요소를 바꿔요. <b>있는 키</b>에 값을 넣으면 수정, <b>없는 키</b>에 넣으면 추가, <code>del</code>을 쓰면 그 키의 요소가 삭제돼요. 실행 전에 결과를 먼저 예상해 봐요.</p>
+    <div id="dictEditRun"></div>
+  </div>
+  <div class="card">
+    <h3>🍔 직접 해 보기 · 메뉴 가격 관리 <span class="muted" style="font-weight:400;font-size:.88rem">(101쪽 해 보기 4)</span></h3>
+    <p style="margin-top:0">메뉴와 가격이 저장된 딕셔너리에서 가격 수정·메뉴 추가·삭제를 하고, 가격을 <b>높은 순</b>으로 정렬해요. <code>.values( )</code>는 값만 꺼내고 <code>sorted(..., reverse=True)</code>는 내림차순으로 정렬해요. 가격이나 메뉴 이름을 바꿔 실행해 봐요.</p>
+    <div id="menuRun"></div>
+  </div>
+  <div class="card">
+    <h3>🧰 딕셔너리 메소드 <span class="muted" style="font-weight:400;font-size:.88rem">(101쪽 표Ⅱ-5)</span></h3>
+    <div class="tscroll"><table class="esc-t">
+      <tr><th>메소드</th><th class="l">하는 일</th></tr>
+      <tr><td><code>.keys( )</code></td><td class="l">키를 돌려줘요</td></tr>
+      <tr><td><code>.values( )</code></td><td class="l">값을 돌려줘요</td></tr>
+      <tr><td><code>.items( )</code></td><td class="l">키와 값을 쌍으로 돌려줘요</td></tr>
+      <tr><td><code>.get( )</code></td><td class="l">특정 키의 값을 돌려줘요. 키가 없으면 지정한 값(생략하면 <code>None</code>)</td></tr>
+      <tr><td><code>.pop( )</code></td><td class="l">특정 키의 값을 돌려주고 그 요소를 지워요</td></tr>
+      <tr><td><code>.clear( )</code></td><td class="l">모든 요소를 지워요</td></tr>
+    </table></div>
+    <p style="margin:10px 0 0"><code>.get( )</code>에 마지막 값을 바꿔 보며 없는 키일 때 무엇이 나오는지 확인해 봐요.</p>
+    <div id="dicMethodRun"></div>
+    <p class="note">값을 고치거나 추가할 때 <code>update( )</code> 메소드를 써도 돼요(100쪽 Tip). 예를 들면 <code>a.update({88: 's'})</code>처럼 써요.</p>
+  </div>
+  <div class="quiz" data-quiz="2"></div>
+</section>
+
+<!-- 3 집합 -->
+<section class="page" data-name="집합" data-acc="#9b4fc4">
+  <div class="head"><div class="num">03</div><div><h2>집합 set</h2><p>교과서 102·103쪽 · 중복 제거, 교집합</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>집합은 수학의 집합처럼 <b>서로 다른 값</b>을 <b>순서 없이</b> 모아 둔 자료형이에요. 같은 값을 여러 번 넣어도 <b>하나만</b> 남아서 <b>중복 제거</b>에 편리해요.</span></div>
+  <div class="card">
+    <h3>🧺 집합의 기본 <span class="muted" style="font-weight:400;font-size:.88rem">(102쪽)</span></h3>
+    <p style="margin-top:0">집합은 <code>{값, 값}</code>으로 만들어요. 값 없이 <code>{ }</code>만 쓰면 <b>빈 딕셔너리</b>가 되므로, 빈 집합은 <code>set( )</code>으로 만들어요. 교집합 <code>&amp;</code>, 합집합 <code>|</code>, 차집합 <code>-</code>도 확인해 봐요.</p>
+    <div id="setBasicRun"></div>
+    <p class="note">집합은 값의 순서를 유지하지 않아서, 출력되는 순서가 실행 환경에 따라 달라질 수 있어요.</p>
+  </div>
+  <div class="card">
+    <h3>🛒 직접 해 보기 · 쇼핑 목록 비교 <span class="muted" style="font-weight:400;font-size:.88rem">(103쪽 해 보기 5)</span></h3>
+    <p style="margin-top:0">쇼핑 목록 두 개가 리스트로 있어요. <code>set( )</code>으로 바꿔 <b>중복을 없애고</b>, <code>&amp;</code>로 <b>공통 항목</b>만 구해요. 목록에 항목을 더하거나 빼고 다시 실행해 봐요.</p>
+    <div id="shopRun"></div>
+  </div>
+  <div class="card">
+    <h3>🔧 집합 메소드 <span class="muted" style="font-weight:400;font-size:.88rem">(102쪽 표Ⅱ-6)</span></h3>
+    <div class="tscroll"><table class="esc-t">
+      <tr><th>메소드</th><th class="l">하는 일</th></tr>
+      <tr><td><code>.add( )</code> · <code>.update( )</code></td><td class="l">값 한 개 추가 · 여러 값 추가</td></tr>
+      <tr><td><code>.discard( )</code> · <code>.remove( )</code></td><td class="l">값 삭제 · 값 삭제(없으면 오류)</td></tr>
+      <tr><td><code>.intersection( )</code></td><td class="l">교집합(<code>&amp;</code>와 같아요)</td></tr>
+      <tr><td><code>.union( )</code> · <code>.difference( )</code></td><td class="l">합집합(<code>|</code>) · 차집합(<code>-</code>)</td></tr>
+    </table></div>
+  </div>
+  <div class="card">
+    <h3>🧩 네 가지 자료형 분류 <span class="muted" style="font-weight:400;font-size:.88rem">(103쪽 정보)</span></h3>
+    <p style="margin-top:0">설명을 읽고 어느 자료형인지 골라 봐요.</p>
+    <div id="typeSort"></div>
+  </div>
+  <div class="quiz" data-quiz="3"></div>
+</section>
+
+<!-- 4 컬렉션 활용 -->
+<section class="page" data-name="컬렉션 활용" data-acc="#e0702b">
+  <div class="head"><div class="num">04</div><div><h2>컬렉션 활용</h2><p>교과서 104·105쪽 · 단어 목록 만들기, 당첨자 추첨</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>배운 자료형을 <b>이어서</b> 쓰면 문제를 풀 수 있어요. 문장 → <b>리스트</b>(단어 나누기) → <b>집합</b>(중복 제거) → <b>리스트</b>(정렬)처럼 자료형을 바꿔 가며 필요한 기능을 빌려 와요.</span></div>
+  <div class="card">
+    <h3>📚 영어 단어 목록 만들기 <span class="muted" style="font-weight:400;font-size:.88rem">(104쪽 해 보기 6)</span></h3>
+    <p style="margin-top:0">영어 문장 세 개에서 단어만 뽑아 <b>중복 없이, 알파벳 순서로</b> 출력해요. 줄마다 어떤 자료형이 되는지 주석을 읽으며 따라가 봐요. <b>입력값</b>의 문장을 바꿔 실행해도 좋아요.</p>
+    <div id="wordsRun"></div>
+    <p class="note"><code>split( )</code>은 공백 기준으로 나눈 <b>리스트</b>를, <code>set( )</code>은 중복이 없는 <b>집합</b>을, <code>sorted( )</code>는 정렬된 <b>리스트</b>를 돌려줘요.</p>
+  </div>
+  <div class="card">
+    <h3>🎲 당첨자 추첨 <span class="muted" style="font-weight:400;font-size:.88rem">(105쪽 해 보기 7)</span></h3>
+    <p style="margin-top:0">후보자 5명 중 입력한 수만큼 <b>무작위로</b> 뽑고, 이름순으로 정렬해 출력해요. <code>random.sample(data, n)</code>은 data에서 <b>중복 없이 n개</b>를 뽑아요. 뽑을 당첨자 수(마지막 입력값)를 바꾸고 여러 번 실행해 봐요.</p>
+    <div id="drawRun"></div>
+    <p class="note">실행할 때마다 결과가 달라지는 것이 정상이에요. 당첨자가 이름순으로 나오는지 확인해 봐요.</p>
+  </div>
+  <div class="card" style="--acc:#d64535">
+    <h3>⚠️ 교과서 소스 코드 확인 · sort와 sort( )</h3>
+    <p style="margin-top:0">105쪽 소스 코드에는 <code>winners.sort</code>처럼 <b>괄호 없이</b> 적혀 있어요. 그대로 실행하면 정렬이 되지 않아요. 함수는 <b>괄호를 붙여야 실행</b>돼서, 위 추첨 코드에서는 <code>winners.sort( )</code>로 고쳐 썼어요. 두 줄의 차이를 직접 확인해 봐요.</p>
+    <div id="sortRun"></div>
+  </div>
+  <p class="callout">💡 <b>random 모듈 <span class="muted" style="font-weight:400;font-size:.86rem">(105쪽)</span></b> <code>random( )</code> 0~1 사이 실수 · <code>randint(a, b)</code> a~b 정수 · <code>shuffle(data)</code> 리스트 섞기 · <code>choice(data)</code> 하나 뽑기 · <code>sample(data, n)</code> 중복 없이 n개 뽑기</p>
+  <div class="quiz" data-quiz="4"></div>
+</section>
+
+<!-- 5 스스로 해결하기 -->
+<section class="page" data-name="스스로 해결하기" data-acc="#d64535">
+  <div class="head"><div class="num">05</div><div><h2>스스로 해결하기 · 재고 관리 설계</h2><p>교과서 108쪽 · 수행 활동 「재고 관리 프로그램」</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>문구점에서 상품을 <b>추가</b>하면 재고가 늘고, 상품을 <b>판매</b>하면 재고가 줄어요. 이 프로그램을 만들려면 <b>상품 이름과 개수</b>를 짝지어 저장해야 해요. 코드를 쓰기 전에 <b>어떤 자료형을 어떻게 쓸지</b> 설계해 봐요.</span></div>
+  <div class="card">
+    <h3>🎯 만들 프로그램 <span class="muted" style="font-weight:400;font-size:.88rem">(108쪽 실행 결과)</span></h3>
+    <pre class="code">추가할 상품명을 입력하세요: 연필
+추가할 상품명을 입력하세요: 볼펜
+추가할 상품명을 입력하세요: 연필
+현재 재고: [('볼펜', 1), ('연필', 2)]
+판매할 상품명을 입력하세요: 볼펜
+현재 재고: [('볼펜', 0), ('연필', 2)]</pre>
+    <p class="note">같은 상품을 또 입력하면 개수가 늘고, 판매하면 줄어요. 정렬해서 출력해요.</p>
+  </div>
+  <div class="card">
+    <h3>💡 아이디어 · 없으면 0에서 시작하기</h3>
+    <p style="margin-top:0">딕셔너리의 <code>.get(키, 0)</code>은 키가 없으면 <b>0</b>을 돌려줘요. 그래서 처음 보는 이름이든 이미 있는 이름이든 같은 식으로 <b>개수를 1 늘릴</b> 수 있어요. 아래는 재고가 아니라 <b>급식 메뉴 투표</b>에 쓴 예예요.</p>
+    <div id="getRun"></div>
+    <pre class="code"><i># 재고 관리 틀 (직접 채워 보세요)</i>
+inventory = { }
+item = input('추가할 상품명을 입력하세요: ')
+inventory[item] = <b>____</b>            <i># 현재 개수에서 어떻게 바꿀까?</i>
+...
+print('현재 재고:', sorted(inventory.<b>____</b>( )))   <i># 키·값 쌍을 정렬해 출력</i></pre>
+  </div>
+  <div class="card">
+    <h3>1️⃣ 문제 해결 순서 적어 보기</h3>
+    <div class="memo"><label>무엇을 입력받고, 어떤 순서로 처리하고, 무엇을 출력할까? <small>예: 상품명 입력 → 개수 늘리기 → 정렬해 출력 → 판매할 상품 입력 → 개수 줄이기</small></label><textarea data-memo="invFlow" rows="3"></textarea><div class="saved"></div></div>
+    <div class="memo"><label>재고를 저장할 때 딕셔너리가 편한 까닭은? <small>리스트와 비교해서 내 말로 적어 보세요.</small></label><textarea data-memo="invIdea" rows="2"></textarea><div class="saved"></div></div>
+  </div>
+  <div class="card">
+    <h3>2️⃣ 어울리는 자료형 고르기</h3>
+    <p class="muted" style="margin-top:0">상품 이름별 개수를 저장하는 데 가장 어울리는 자료형을 골라요.</p>
+    <div id="typePick"></div>
+  </div>
+  <div class="card">
+    <h3>3️⃣ 핵심 기능 고르기</h3>
+    <p class="muted" style="margin-top:0">이 프로그램에 필요한 기능을 모두 골라요.</p>
+    <div id="featPick"></div>
+  </div>
+  <div class="card">
+    <h3>✅ 스스로 점검</h3>
+    <p class="muted" style="margin-top:0">오늘 할 수 있게 된 것을 모두 골라요.</p>
+    <div id="selfCheck"></div>
+  </div>
+</section>
+
+<!-- 6 마무리 -->
+<section class="page" data-name="마무리 · 질문폼" data-acc="#0f2742">
+  <div class="head"><div class="num">06</div><div><h2>마무리</h2><p>핵심 문장 · 마무리 퀴즈 · 생각 정리 질문폼</p></div></div>
+  <div class="key3">
+    <div style="--k:#2f6fd0"><b>리스트</b> [ ]와 <b>튜플</b> ( )은 요소에 0부터 번호(인덱스)가 있어 인덱싱·슬라이싱을 쓸 수 있다. 리스트는 요소를 바꿀 수 있고, 튜플은 바꿀 수 없다.</div>
+    <div style="--k:#1f9d74"><b>딕셔너리</b>는 <b>키와 값</b>을 쌍으로 저장하고 키로 값을 찾는다. 키에 값을 넣어 수정·추가하고 <b>del</b>로 삭제하며, 키는 바꿀 수 없는 자료형만 쓴다.</div>
+    <div style="--k:#9b4fc4"><b>집합</b>은 순서가 없고 같은 값을 하나만 저장한다. <b>set( )</b>으로 중복을 없애고 <b>&amp;</b>로 교집합을 구한다. 자료형을 바꿔 가며 쓰면 문제를 풀 수 있다.</div>
+  </div>
+  <div class="card">
+    <h3>오늘의 질문에 다시 답하기</h3>
+    <p class="muted" style="margin-top:0">오늘 실행해 본 코드를 떠올리며, 내 말로 답해 보세요.</p>
+    <b style="font-size:.93rem">여러 값을 묶어 다루는 컬렉션은 어떻게 쓸까?</b>
+    <textarea data-memo="keyQ" rows="3"></textarea><div class="saved"></div>
+  </div>
+  <div class="card" style="--acc:#0f2742">
+    <h3>마무리 퀴즈</h3>
+    <div class="quiz" data-quiz="6"></div>
+  </div>
+  <div class="card">
+    <h3>개념 퀴즈 결과</h3>
+    <table id="result"></table>
+    <button class="btn ghost" id="quizReset">퀴즈 다시 풀기</button>
+  </div>
+  <div class="formgo">
+    <span class="kicker">생각 정리 과제</span>
+    <h3>질문폼에 내 생각 쓰기</h3>
+    <ol>
+      <li><b>리스트와 튜플</b>의 같은 점과 다른 점을 오늘 실행해 본 예로 설명하세요.</li>
+      <li><b>딕셔너리</b>가 리스트보다 편한 상황을 하나 들고, 키로 값을 <b>수정·추가·삭제</b>하는 방법을 적으세요.</li>
+      <li>05에서 설계한 <b>재고 관리</b>에서 어떤 자료형을 왜 골랐는지, 그리고 <b>집합</b>은 어떤 문제에 어울리는지 내 말로 설명하세요.</li>
+    </ol>
+    <p>질문폼에는 붙여넣기가 되지 않아요. 아래 메모를 보면서 직접 다시 써 주세요.</p>
+    <a class="go" href="{{FORM_URL}}" target="_blank" rel="noopener">질문폼 열기 →</a>
+    <div class="msum" id="msum"></div>
+  </div>
+</section>

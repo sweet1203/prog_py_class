@@ -1,0 +1,247 @@
+<section class="page" data-name="시작" data-acc="#1f9d74">
+  <div class="cover">
+    <div class="in">
+      <span class="tag">프로그래밍(Python) · Ⅱ. 프로그래밍 기초 · 실습</span>
+      <h1>배운 것으로<br>내 프로그램 만들기</h1>
+      <div class="story"><b>실습 모음 (190~197쪽)</b><br>입출력·변수·연산자·제어문·함수·리스트·딕셔너리를 배웠으니, 이제 <b>스스로 코드를 짜</b> 볼 차례예요. 게임, 정렬·탐색, 자리 배치처럼 <b>생활 속 문제</b> 8가지가 기다려요.</div>
+      <p>여기서는 실습마다 <b>무엇을 만드는지, 어떤 개념을 쓰는지, 실행하면 어떻게 보이는지</b>만 알려 줘요. 코드는 교과서를 보며 <b>내가 직접</b> 완성해요.</p>
+      <ol><li>구구단·타자</li><li>정렬·탐색</li><li>자리 배치·웹 추천</li><li>타이머·비밀번호</li><li>마무리</li></ol>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn" style="background:var(--amber);color:var(--navy);box-shadow:none" onclick="document.getElementById('intro').scrollIntoView({behavior:'smooth'})">오늘 할 일 보기 ↓</button>
+        <button class="btn" style="background:transparent;border:2px solid rgba(255,255,255,.5);box-shadow:none" onclick="go(1)">01로 바로 가기 →</button>
+      </div>
+    </div>
+    <div class="route" aria-hidden="true">
+      <div class="st" style="animation-delay:.2s"><i>🎲</i><div><b>난수</b><small>random 모듈</small></div></div>
+      <div class="ar" style="animation-delay:.6s">↓</div>
+      <div class="st" style="animation-delay:.8s"><i>🔁</i><div><b>반복·판단</b><small>for · while · if</small></div></div>
+      <div class="ar" style="animation-delay:1.2s">↓</div>
+      <div class="st" style="animation-delay:1.4s"><i>🗂️</i><div><b>자료 구조</b><small>리스트 · 딕셔너리</small></div></div>
+      <div class="ar" style="animation-delay:1.8s">↓</div>
+      <div class="st" style="animation-delay:2s"><i>🧩</i><div><b>함수</b><small>나누어 짜기</small></div></div>
+    </div>
+  </div>
+
+  <div id="intro" class="today">
+    <div class="today-lead">
+      <span class="kicker">오늘의 방식</span>
+      <p>이 차시는 <b>답을 알려 주는 시간이 아니라 스스로 해 보는 시간</b>이에요. 화면에서는 실습의 <b>핵심 개념</b>을 작은 실험으로 만져 보고, 완성 프로그램은 <b>내 컴퓨터(또는 교실 환경)</b>에서 직접 써 봐요.</p>
+    </div>
+    <div class="why3">
+      <div class="why"><span class="kicker">핵심 질문</span><ul class="uses"><li><b>오늘의 질문</b> · 배운 개념을 조합해 생활 속 문제를 해결하는 프로그램은 어떻게 만들까?</li></ul></div>
+      <div class="why"><span class="kicker">배우고 나면 할 수 있는 것</span><ul class="can"><li>실습 문제에서 필요한 개념을 찾아낼 수 있다.</li><li>입력과 출력의 틀을 먼저 그려 보고 코드를 짤 수 있다.</li></ul></div>
+      <div class="why"><span class="kicker">오늘 만날 낱말</span><p style="margin:4px 0 0;font-size:.95rem">random · 중첩 제어문 · 사용자 정의 함수 · 정렬 · 이진 탐색 · 2차원 리스트 · 딕셔너리 · time</p></div>
+    </div>
+    <div class="card">
+      <h3>🧭 8가지 실습 한눈에</h3>
+      <table class="tbl">
+        <tr><th>실습</th><th class="l">만드는 것</th><th class="l">핵심 개념</th></tr>
+        <tr><td>1</td><td class="l">구구단 게임</td><td class="l">난수 · 중첩 제어문</td></tr>
+        <tr><td>2</td><td class="l">타자 프로그램</td><td class="l">사용자 정의 함수 · 시간</td></tr>
+        <tr><td>3</td><td class="l">정렬</td><td class="l">이중 반복 · 값 교환</td></tr>
+        <tr><td>4</td><td class="l">탐색</td><td class="l">이진 탐색 · while</td></tr>
+        <tr><td>5</td><td class="l">자리 배치</td><td class="l">리스트 · 2차원 리스트</td></tr>
+        <tr><td>6</td><td class="l">웹 추천</td><td class="l">딕셔너리 · 난수</td></tr>
+        <tr><td>7</td><td class="l">타이머</td><td class="l">반복문 · 예외 처리</td></tr>
+        <tr><td>8</td><td class="l">비밀번호 생성</td><td class="l">중첩 반복문 · 난수</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3>🎯 먼저 도전하고 싶은 실습 <span class="muted" style="font-weight:400;font-size:.88rem">(여러 개 가능)</span></h3>
+      <div id="labPick"></div>
+      <div class="memo" style="margin-top:10px"><label>왜 그 실습이 끌리나요? <small>(선택)</small></label><textarea data-memo="labPlan" rows="2"></textarea><div class="saved"></div></div>
+    </div>
+    <div style="text-align:center;margin-top:20px"><button class="btn" style="background:var(--mint)" onclick="go(1)">01 구구단·타자부터 →</button></div>
+  </div>
+</section>
+
+<section class="page" data-name="구구단·타자" data-acc="#1f9d74">
+<div class="head"><div class="num">01</div><div><h2>구구단 · 타자 프로그램</h2><p>교과서 190~191쪽 · 실습 1, 2</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>난수로 문제를 <b>무작위로 내고</b>(실습 1), 사용자가 친 글자를 원문과 <b>비교해 정확도를 계산</b>해요(실습 2). 두 실습 모두 입력을 받아 <b>판단하고 결과를 출력</b>하는 틀이에요.</span></div>
+  <div class="card">
+    <h3>① 구구단 프로그램 <span class="muted" style="font-weight:400;font-size:.88rem">(190쪽)</span></h3>
+    <p class="lab-goal"><b>목표</b> · 중첩 제어문으로 구구단 문제 3개를 내고 점수에 따라 평가를 출력해요.</p>
+    <div class="lab-tg"><span>random 모듈</span><span>for 반복</span><span>if · elif · else</span><span>입력 확인</span></div>
+    <div class="lab-box"><b style="font-size:.9rem">입력·출력 틀 (실행 모습)</b>
+<pre class="code">구구단 게임에 오신 것을 환영합니다!
+
+□ x □ = ? (사용자 입력)
+정답입니다! 또는 틀렸습니다. 정답은 □입니다.
+(숫자가 아니면 안내만 하고 정답 처리하지 않음)
+  … 3문제 반복 …
+게임 종료! 총 □문제를 맞혔습니다.
+점수에 따라 평가 한 줄 출력</pre></div>
+    <p style="margin:8px 0 0"><b>생각해 볼 점</b> · 문제 수는 몇 번 반복하는지, 점수에 따라 평가 문구를 어떻게 나누는지 먼저 말로 정리해 봐요. 숫자가 아닌 글자를 넣으면 프로그램은 어떻게 해야 할까요?</p>
+  </div>
+  <div class="card">
+    <h3>▶ 개념 조각 · 난수와 숫자 확인</h3>
+    <p style="margin-top:0"><code>random.randint(a, b)</code>로 문제 숫자를 뽑고, <code>isdigit( )</code>로 입력이 숫자인지 확인해 봐요. 아래 목록의 글자를 바꿔 결과를 비교해요.</p>
+    <div id="guguRun"></div>
+    <p class="note">실습 1의 일부 개념일 뿐이에요. 반복·점수 계산·평가는 직접 짜 봐요. <code>random.seed(2)</code>를 지우면 실행할 때마다 다른 문제가 나와요.</p>
+  </div>
+  <div class="card">
+    <h3>② 타자 프로그램 <span class="muted" style="font-weight:400;font-size:.88rem">(191쪽)</span></h3>
+    <p class="lab-goal"><b>목표</b> · 문장을 보여 주고 사용자가 친 글자와 비교해 정확도·걸린 시간·분당 타수를 보여 줘요.</p>
+    <div class="lab-tg"><span>사용자 정의 함수</span><span>리스트 · random.choice</span><span>문자열 비교</span><span>time 모듈</span></div>
+    <div class="lab-box"><b style="font-size:.9rem">입력·출력 틀 (실행 모습)</b>
+<pre class="code">문장: (리스트에서 무작위로 고른 문장)
+입력: (사용자가 친 문장)
+결과
+정확도: □%
+걸린 시간: □초
+분당 타수: □타</pre></div>
+    <p style="margin:8px 0 0"><b>생각해 볼 점</b> · 정확도는 <b>맞은 글자 수 ÷ 원문 글자 수 × 100</b>, 타수는 <b>입력한 글자 수 ÷ 걸린 시간(초) × 60</b>으로 계산해요. 정확도 계산을 함수로 따로 빼면 어떤 점이 좋을까요?</p>
+  </div>
+  <p class="callout">⏱️ <b>시간 측정은 내 컴퓨터에서</b> 시작할 때와 끝날 때의 <code>time.time( )</code> 값 차이가 걸린 시간이에요. 이 화면에서는 키 입력 속도를 잴 수 없어서 <b>실행 칸을 쓰지 않아요</b>. 설명만 읽고 직접 만들어 봐요.</p>
+  <div class="quiz" data-quiz="1"></div>
+  <div class="card"><div class="memo"><label>실습 1·2 중 하나를 골라, 입력과 출력 틀을 내 말로 적어 보세요. <small>(예: 몇 번 반복? 무엇을 비교?)</small></label><textarea data-memo="idea1" rows="3"></textarea><div class="saved"></div></div></div>
+</section>
+
+<section class="page" data-name="정렬·탐색" data-acc="#2f6fd0">
+<div class="head"><div class="num">02</div><div><h2>정렬 · 탐색</h2><p>교과서 192~193쪽 · 실습 3, 4</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span><b>정렬</b>은 값을 순서대로 늘어놓는 일, <b>탐색</b>은 값을 찾는 일이에요. 버블 정렬은 이웃한 두 값을 비교해 바꾸고, 이진 탐색은 <b>가운데 값과 비교해 범위를 절반씩</b> 줄여요.</span></div>
+  <div class="card">
+    <h3>③ 정렬 프로그램 <span class="muted" style="font-weight:400;font-size:.88rem">(192쪽)</span></h3>
+    <p class="lab-goal"><b>목표</b> · 이중 반복문과 사용자 정의 함수로 리스트를 작은 값부터 정렬해요.</p>
+    <div class="lab-tg"><span>버블 정렬</span><span>이중 for</span><span>값 교환 a, b = b, a</span><span>함수</span></div>
+    <div class="lab-box"><b style="font-size:.9rem">입력·출력 틀 (실행 모습)</b>
+<pre class="code">정렬 전: [□, □, □, □, □]
+(비교·교환을 반복)
+정렬 후: [□, □, □, □, □]</pre></div>
+    <p style="margin:8px 0 0"><b>생각해 볼 점</b> · 바깥 반복은 <b>몇 번 훑을지</b>, 안쪽 반복은 <b>이웃한 두 값 비교</b>를 맡아요. 한 번 훑으면 가장 큰 값이 어디로 갈까요?</p>
+  </div>
+  <div class="card">
+    <h3>▶ 개념 조각 · 이웃한 두 값 비교·교환 (한 번 훑기)</h3>
+    <p style="margin-top:0">값이 서로 바뀌는 모습을 단계별로 출력해요. 리스트의 숫자를 바꿔 봐요.</p>
+    <div id="bubbleRun"></div>
+    <p class="note">전체 정렬은 아니에요. 몇 번 더 훑어야 끝나는지, 반복을 어떻게 겹칠지 생각해 직접 완성해요.</p>
+  </div>
+  <div class="card">
+    <h3>④ 탐색 프로그램 <span class="muted" style="font-weight:400;font-size:.88rem">(193쪽)</span></h3>
+    <p class="lab-goal"><b>목표</b> · 정렬된 리스트에서 이진 탐색으로 찾는 값의 위치를 찾아요.</p>
+    <div class="lab-tg"><span>이진 탐색</span><span>while 반복</span><span>left · right · mid</span><span>사용자 정의 함수</span></div>
+    <div class="lab-box"><b style="font-size:.9rem">입력·출력 틀 (실행 모습)</b>
+<pre class="code">찾을 값: (사용자 입력)
+□ 은(는) □번째에 있습니다. 또는 찾는 값이 없습니다.</pre></div>
+    <p style="margin:8px 0 0"><b>생각해 볼 점</b> · <code>while left &lt;= right</code> 동안 가운데 값과 비교하며 범위를 줄여요. 값이 없으면 언제 반복을 멈추게 될까요?</p>
+  </div>
+  <div class="card">
+    <h3>▶ 개념 조각 · 범위를 한 단계 줄이기</h3>
+    <p style="margin-top:0">가운데 값과 찾는 값을 비교해 남길 범위가 어떻게 바뀌는지 봐요. <code>target</code>을 8, 80, 50으로 바꿔 세 경우를 모두 확인해요.</p>
+    <div id="binRun"></div>
+    <p class="note">한 단계만 보여 줘요. 반복해서 끝까지 찾아가는 일은 내가 짜 봐요.</p>
+  </div>
+  <div class="quiz" data-quiz="2"></div>
+  <div class="card"><div class="memo"><label>정렬이나 탐색 중 하나를 골라, 값이 바뀌는 과정을 말이나 표로 적어 보세요.</label><textarea data-memo="idea2" rows="3"></textarea><div class="saved"></div></div></div>
+</section>
+
+<section class="page" data-name="자리 배치·웹 추천" data-acc="#e0702b">
+<div class="head"><div class="num">03</div><div><h2>자리 배치 · 웹 추천</h2><p>교과서 194~195쪽 · 실습 5, 6</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>리스트를 <b>무작위로 섞으면</b> 자리 배치가 되고, 딕셔너리에서 <b>무작위로 하나 고르면</b> 추천이 돼요. 자료를 어떤 틀에 담느냐가 핵심이에요.</span></div>
+  <div class="card">
+    <h3>⑤ 자리 배치 프로그램 <span class="muted" style="font-weight:400;font-size:.88rem">(194쪽)</span></h3>
+    <p class="lab-goal"><b>목표</b> · 학생 이름 리스트를 섞어 줄·칸에 맞게 자리 배치표로 보여 줘요.</p>
+    <div class="lab-tg"><span>리스트</span><span>random.shuffle</span><span>2차원 리스트</span><span>중첩 for</span></div>
+    <div class="lab-box"><b style="font-size:.9rem">입력·출력 틀 (실행 모습)</b>
+<pre class="code">[이름  이름  이름]
+[이름  이름  이름]
+(줄마다 한 줄씩 출력)</pre></div>
+    <p style="margin:8px 0 0"><b>생각해 볼 점</b> · 섞은 리스트를 한 줄에 몇 명씩 끊을지가 2차원 리스트의 모양을 정해요. 인원이 줄 수에 딱 나누어떨어지지 않으면 어떻게 할까요?</p>
+  </div>
+  <div class="card">
+    <h3>▶ 개념 조각 · 섞고, 줄로 나누기</h3>
+    <p style="margin-top:0"><code>shuffle( )</code>로 섞은 뒤 두 줄로 나눠 2차원 리스트를 만들어 봐요. 이름이나 <code>seed</code> 숫자를 바꿔 봐요.</p>
+    <div id="shufRun"></div>
+    <p class="note">번호로 자리를 꺼내는 방법만 보여요. 배치표 출력은 직접 완성해요.</p>
+  </div>
+  <div class="card">
+    <h3>⑥ 웹 추천 프로그램 <span class="muted" style="font-weight:400;font-size:.88rem">(195쪽)</span></h3>
+    <p class="lab-goal"><b>목표</b> · 종류별 목록을 딕셔너리에 담아 무작위로 하나를 추천해요.</p>
+    <div class="lab-tg"><span>딕셔너리</span><span>리스트</span><span>random.choice</span><span>입력 처리</span></div>
+    <div class="lab-box"><b style="font-size:.9rem">입력·출력 틀 (실행 모습)</b>
+<pre class="code">어떤 종류를 추천할까요? (사용자 입력)
+추천: □□□</pre></div>
+    <p style="margin:8px 0 0"><b>생각해 볼 점</b> · <b>키는 종류, 값은 목록</b>인 딕셔너리를 만들면 입력받은 종류로 목록을 바로 꺼낼 수 있어요. 목록에 없는 종류가 입력되면 어떻게 안내할까요?</p>
+  </div>
+  <div class="card">
+    <h3>▶ 개념 조각 · 딕셔너리에서 무작위로 고르기</h3>
+    <p style="margin-top:0">종류를 고른 뒤 그 종류의 목록에서 하나를 골라요. 목록에 항목을 더하거나 <code>seed</code> 값을 바꿔 봐요.</p>
+    <div id="dictRun"></div>
+    <p class="note">나만의 추천 목록(음악·영화·간식 등)은 내가 정해서 만들어요.</p>
+  </div>
+  <div class="quiz" data-quiz="3"></div>
+  <div class="card"><div class="memo"><label>자리 배치나 추천 프로그램에 쓸 자료는 무엇이고, 어떤 틀(리스트·딕셔너리)에 담을지 적어 보세요.</label><textarea data-memo="idea3" rows="3"></textarea><div class="saved"></div></div></div>
+</section>
+
+<section class="page" data-name="타이머·비밀번호" data-acc="#9b4fc4">
+<div class="head"><div class="num">04</div><div><h2>타이머 · 비밀번호</h2><p>교과서 196~197쪽 · 실습 7, 8</p></div></div>
+  <div class="easy"><b class="t">쉽게 말하면</b><span>타이머는 <b>1초씩 쉬면서 반복</b>해 숫자를 줄여 가고, 비밀번호는 글자를 <b>무작위로 하나씩 뽑아 이어 붙여요</b>. 둘 다 반복문이 중심이에요.</span></div>
+  <div class="card">
+    <h3>⑦ 타이머 프로그램 <span class="muted" style="font-weight:400;font-size:.88rem">(196쪽)</span></h3>
+    <p class="lab-goal"><b>목표</b> · 입력한 시간(초)부터 0까지 1초마다 줄여 보여 주고, 잘못된 입력은 안내해요.</p>
+    <div class="lab-tg"><span>반복문</span><span>time.sleep</span><span>예외 처리</span><span>화면 지우기</span></div>
+    <div class="lab-box"><b style="font-size:.9rem">입력·출력 틀 (실행 모습)</b>
+<pre class="code">시간을 입력하세요(초): (사용자 입력)
+남은 시간: □초
+남은 시간: □초
+ …
+시간 종료!</pre></div>
+    <p style="margin:8px 0 0"><b>생각해 볼 점</b> · 숫자가 아닌 입력이 오면 프로그램이 멈추지 않게 <b>예외 처리</b>를 어디에 둘지 생각해요. 1초 쉬는 일은 반복문 안 어디에서 할까요?</p>
+  </div>
+  <p class="callout">⏳ <b>이 화면에서는 실행하지 않아요</b> 실제로 시간을 기다리고 화면을 지우는 일은 웹 실행 칸과 맞지 않아요. 내 컴퓨터에서 <code>time</code> 모듈로 직접 만들어 봐요.</p>
+  <div class="card">
+    <h3>⑧ 비밀번호 생성 프로그램 <span class="muted" style="font-weight:400;font-size:.88rem">(197쪽)</span></h3>
+    <p class="lab-goal"><b>목표</b> · 글자 모음에서 무작위로 골라 정해진 길이의 비밀번호를 여러 개 만들어요.</p>
+    <div class="lab-tg"><span>random.choice</span><span>중첩 for</span><span>문자열 이어 붙이기</span></div>
+    <div class="lab-box"><b style="font-size:.9rem">입력·출력 틀 (실행 모습)</b>
+<pre class="code">비밀번호 길이: (사용자 입력)
+만들 개수: (사용자 입력)
+□□□□□□□□
+□□□□□□□□</pre></div>
+    <p style="margin:8px 0 0"><b>생각해 볼 점</b> · 바깥 반복은 <b>몇 개 만들지</b>, 안쪽 반복은 <b>한 개에 몇 글자를 뽑을지</b>를 맡아요. 숫자·영문·기호를 섞으려면 글자 모음을 어떻게 준비할까요?</p>
+  </div>
+  <div class="card">
+    <h3>▶ 개념 조각 · 글자 모음에서 하나씩 뽑기</h3>
+    <p style="margin-top:0"><code>choice( )</code>로 글자를 하나씩 뽑아 봐요. 글자 모음이나 반복 횟수를 바꿔 봐요.</p>
+    <div id="pwRun"></div>
+    <p class="note">뽑은 글자를 이어 붙여 한 개의 비밀번호로 만드는 일은 직접 해 봐요.</p>
+  </div>
+  <div class="quiz" data-quiz="4"></div>
+  <div class="card"><div class="memo"><label>타이머나 비밀번호 프로그램에서 쓸 반복 구조(몇 번, 무엇을 반복)를 적어 보세요.</label><textarea data-memo="idea4" rows="3"></textarea><div class="saved"></div></div></div>
+</section>
+
+<section class="page" data-name="마무리 · 질문폼" data-acc="#0f2742">
+<div class="head"><div class="num">05</div><div><h2>마무리</h2><p>핵심 문장 · 개념 퀴즈 · 생각 정리 질문폼</p></div></div>
+  <div class="key3">
+    <div style="--k:#1f9d74">실습은 <b>입력 → 처리 → 출력</b> 틀을 먼저 그린 뒤, 필요한 <b>개념(난수·반복·자료 구조·함수)</b>을 골라 코드로 옮긴다.</div>
+    <div style="--k:#2f6fd0"><b>정렬</b>은 값 비교와 교환(<code>a, b = b, a</code>)을 반복하고, <b>이진 탐색</b>은 가운데 값과 비교해 범위를 절반씩 줄인다.</div>
+    <div style="--k:#e0702b"><b>random 모듈</b>의 randint·shuffle·choice는 문제 출제, 자리 배치, 추천, 비밀번호처럼 <b>무작위</b>가 필요한 곳에 쓰고, 목록은 <b>리스트·딕셔너리</b>에 담는다.</div>
+  </div>
+  <div class="card">
+    <h3>스스로 점검</h3>
+    <div id="selfCheck"></div>
+  </div>
+  <div class="card">
+    <h3>오늘의 질문에 다시 답하기</h3>
+    <b style="font-size:.93rem">배운 개념을 조합해 생활 속 문제를 해결하는 프로그램은 어떻게 만들까?</b>
+    <textarea data-memo="keyQ" rows="3"></textarea><div class="saved"></div>
+  </div>
+  <div class="card">
+    <h3>개념 퀴즈 결과</h3>
+    <table id="result"></table>
+    <button class="btn ghost" id="quizReset">퀴즈 다시 풀기</button>
+  </div>
+  <div class="formgo">
+    <span class="kicker">생각 정리 과제</span>
+    <h3>질문폼에 내 생각 쓰기</h3>
+    <ol>
+      <li>내가 고른 실습 하나를 소개하고, <b>어떤 입력을 받아 어떤 출력</b>을 내는지 적으세요.</li>
+      <li>그 실습에 필요한 <b>핵심 개념</b>(난수·반복문·리스트·딕셔너리·함수 중)을 골라, 왜 필요한지 설명하세요.</li>
+      <li>정렬이나 이진 탐색에서 <b>값이나 범위가 어떻게 바뀌는지</b>를 내 말로 설명하세요.</li>
+    </ol>
+    <p>질문폼에는 붙여넣기가 되지 않아요. 아래 메모를 보면서 직접 다시 써 주세요.</p>
+    <a class="go" href="{{FORM_URL}}" target="_blank" rel="noopener">질문폼 열기 →</a>
+    <div class="msum" id="msum"></div>
+  </div>
+</section>
+

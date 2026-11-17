@@ -1,0 +1,223 @@
+{
+ "_설명": "학기 운영표. status: ready=학생 공개, draft=만드는 중(교사 목록에만), todo=아직 없음. no=이번 학기 차시 번호(화면·주소에는 안 씀).",
+ "course": "프로그래밍(Python)",
+ "site": "https://progpyclass.vercel.app/",
+ "classes": [],
+ "_classes": "명단 확인이 안 될 때 학생이 직접 고르는 반 이름(진도 수집 시트 명단의 반 이름과 같게)",
+ "progressEndpoint": "",
+ "_progressEndpoint": "진도 수집 시트의 Apps Script 웹 앱 주소(…/exec). 비어 있으면 진도를 보내지 않는다",
+ "teacherHash": "853zuh",
+ "_teacherHash": "교사 모드(학번·이름) 확인값. 바꾸려면 tools/teacher_hash.py 로 새 값을 만든다",
+ "assessments": [],
+ "_assessments": "이번 학기 수행평가 안내 페이지(assessments/pages/<path>). 학기마다 바꾼다.",
+ "units": [
+  {
+   "id": "u1",
+   "name": "Ⅰ. 프로그래밍 개요",
+   "color": "#2f6fd0",
+   "lessons": [
+    {
+     "no": "01",
+     "id": "u1-languages",
+     "title": "프로그래밍 언어의 종류와 특징",
+     "pages": "14~23",
+     "form": "prog-u1-languages",
+     "status": "draft"
+    },
+    {
+     "no": "02",
+     "id": "u1-procedure",
+     "title": "프로그래밍 절차와 소프트웨어 개발 방법",
+     "pages": "24~31",
+     "form": "prog-u1-procedure",
+     "status": "draft"
+    },
+    {
+     "no": "03",
+     "id": "u1-algorithm",
+     "title": "알고리즘의 이해와 표현",
+     "pages": "32~37",
+     "form": "prog-u1-algorithm",
+     "status": "draft"
+    },
+    {
+     "no": "04",
+     "id": "u1-algorithm-write",
+     "title": "알고리즘 작성 · 정리",
+     "pages": "38~45",
+     "form": "prog-u1-algorithm-write",
+     "status": "draft"
+    },
+    {
+     "no": "05",
+     "id": "u1-dev-env",
+     "title": "프로그램 개발 환경과 IDE 구축",
+     "pages": "46~53",
+     "form": "prog-u1-dev-env",
+     "status": "draft"
+    },
+    {
+     "no": "06",
+     "id": "u1-collab",
+     "title": "공유·협업 개발 환경(Git·GitHub) · 정리",
+     "pages": "54~61",
+     "form": "prog-u1-collab",
+     "status": "draft"
+    },
+    {
+     "no": "07",
+     "id": "u1-project",
+     "title": "협력적 프로젝트: 무인도 구조",
+     "pages": "62~67",
+     "form": "prog-u1-project",
+     "status": "draft"
+    }
+   ]
+  },
+  {
+   "id": "u2",
+   "name": "Ⅱ. 프로그래밍 기초",
+   "color": "#1f9d74",
+   "lessons": [
+    {
+     "no": "08",
+     "id": "u2-io",
+     "title": "입력과 출력",
+     "pages": "72~83",
+     "form": "prog-u2-io",
+     "status": "draft"
+    },
+    {
+     "no": "09",
+     "id": "u2-variable",
+     "title": "변수와 자료형",
+     "pages": "84~99",
+     "form": "prog-u2-variable",
+     "status": "draft"
+    },
+    {
+     "no": "10",
+     "id": "u2-collection",
+     "title": "컬렉션 자료형: 리스트·튜플·딕셔너리",
+     "pages": "100~109",
+     "form": "prog-u2-collection",
+     "status": "draft"
+    },
+    {
+     "no": "11",
+     "id": "u2-operator",
+     "title": "연산자",
+     "pages": "110~119",
+     "form": "prog-u2-operator",
+     "status": "draft"
+    },
+    {
+     "no": "12",
+     "id": "u2-if",
+     "title": "제어문: 조건문",
+     "pages": "120~131",
+     "form": "prog-u2-if",
+     "status": "draft"
+    },
+    {
+     "no": "13",
+     "id": "u2-loop",
+     "title": "제어문: 반복문 · 정리",
+     "pages": "132~145",
+     "form": "prog-u2-loop",
+     "status": "draft"
+    },
+    {
+     "no": "14",
+     "id": "u2-function",
+     "title": "함수",
+     "pages": "146~161",
+     "form": "prog-u2-function",
+     "status": "draft"
+    },
+    {
+     "no": "15",
+     "id": "u2-file",
+     "title": "파일 처리",
+     "pages": "162~177",
+     "form": "prog-u2-file",
+     "status": "draft"
+    },
+    {
+     "no": "16",
+     "id": "u2-project",
+     "title": "협력적 프로젝트: To-Do List",
+     "pages": "178~189",
+     "form": "prog-u2-project",
+     "status": "draft"
+    },
+    {
+     "no": "17",
+     "id": "u2-lab",
+     "title": "프로그래밍 실습 모음",
+     "pages": "190~197",
+     "form": "prog-u2-lab",
+     "status": "draft"
+    }
+   ]
+  },
+  {
+   "id": "u3",
+   "name": "Ⅲ. 프로그램 설계와 구현",
+   "color": "#9b4fc4",
+   "lessons": [
+    {
+     "no": "18",
+     "id": "u3-design",
+     "title": "설계와 절차: 급식 메뉴 선택 ① 분석·설계",
+     "pages": "202~211",
+     "form": "prog-u3-design",
+     "status": "draft"
+    },
+    {
+     "no": "19",
+     "id": "u3-build",
+     "title": "급식 메뉴 선택 ② 구현",
+     "pages": "212~221",
+     "form": "prog-u3-build",
+     "status": "draft"
+    },
+    {
+     "no": "20",
+     "id": "u3-automate",
+     "title": "프로그래밍 실제: PDF 문서 자동 변환 ①",
+     "pages": "222~227",
+     "form": "prog-u3-automate",
+     "status": "draft"
+    },
+    {
+     "no": "21",
+     "id": "u3-automate-2",
+     "title": "PDF 문서 자동 변환 ② · 정리",
+     "pages": "228~233",
+     "form": "prog-u3-automate-2",
+     "status": "draft"
+    }
+   ]
+  },
+  {
+   "id": "appendix",
+   "name": "부록",
+   "color": "#5a6b7b",
+   "lessons": [
+    {
+     "no": "22",
+     "id": "appendix-turtle",
+     "title": "터틀 그래픽",
+     "pages": "235~241",
+     "form": "prog-appendix-turtle",
+     "status": "draft"
+    }
+   ]
+  }
+ ],
+ "_units": "단원: {\"id\",\"name\",\"color\",\"lessons\":[{\"no\",\"id\",\"title\",\"pages\",\"form\",\"status\"}]} · 차시 id = 주소, 한 번 정하면 바꾸지 않기",
+ "_form": "질문폼 ID = \"prog-\" + 차시 ID (주소처럼 바꾸지 않음). forms/forms.json 원본은 차시를 만들 때 넣는다",
+ "_textbook": "씨마스커뮤니케이션 『고등학교 프로그래밍』(임종현 외 3인, 2022 개정 정보·통신 전공 일반 과목). 지도서 기준 64차시(4학점)를 학교 사정에 맞춰 조정. 이 운영표는 교과서 주제 단위의 웹 차시 제안안이며, 학점·시수·압축 범위는 선생님이 확정한다",
+ "_결정필요": "학점/시수(4학점 64차시 그대로일지, 3학점으로 압축할지), 반 이름, 질문폼 수집기 공유 여부, 수행평가 범위 → 작업자료_프로그래밍/결정_필요사항.md 참고"
+}

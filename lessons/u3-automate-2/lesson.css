@@ -1,0 +1,34 @@
+
+  /* u3-automate-2 전용 */
+
+  /* 본문 속 짧은 코드 조각 (.code 카드는 framework/pyrun.css에 있음) */
+  code{font-family:"Menlo","Consolas","Courier New",monospace;font-size:.9em;
+    background:#eef1f5;color:#1d3a5c;border-radius:5px;padding:1px 5px}
+  .pr-out code,.pr-code code,.code code{background:none;padding:0;color:inherit}
+
+  /* 설명용 작은 표 (u2-io와 동일) */
+  .esc-t{width:100%;margin:10px 0 0;font-size:.93rem;border-collapse:collapse}
+  .esc-t th{color:var(--muted);font-weight:700;font-size:.82rem;white-space:nowrap;text-align:center}
+  .esc-t th.l{text-align:left}
+  .esc-t td{border-bottom:1px solid var(--line);padding:6px 9px;text-align:center;vertical-align:top}
+  .esc-t td.l{text-align:left}
+  .esc-t td code{font-size:.92em}
+  .esc-t .ok2{color:#1f9d74;font-weight:700}
+
+  /* 04 개발 절차 파이프라인 (커스텀 SVG) */
+  .pipe{display:flex;justify-content:center}
+  .pipe svg{width:100%;max-width:340px;height:auto}
+  .pipe .pst{fill:#fbfaf7;stroke-width:2}
+  .pipe .pt{font-size:14px;font-weight:800}
+  .pipe .po{font-size:12px;fill:#5b6776;
+    font-family:"SF Mono","D2Coding",ui-monospace,monospace}
+  .pipe .pfl{fill:none;stroke:#8a94a3;stroke-width:1.8}
+
+  /* 05 직업 속으로 읽을거리 카드 */
+  .rd-read{display:grid;gap:12px;margin:4px 0 0}
+  .rd-read>div{background:#fbfaf7;border-radius:14px;border-left:6px solid var(--k);
+    box-shadow:var(--shadow);padding:14px 16px}
+  .rd-read>div>b{display:block;color:var(--k);font-size:1.04rem}
+  .rd-read>div>span{display:block;font-size:.93rem;margin-top:6px;line-height:1.6}
+  .rd-read>div>small{display:block;color:var(--muted);font-size:.86rem;line-height:1.55;
+    border-top:1px dashed var(--line);padding-top:8px;margin-top:9px}
