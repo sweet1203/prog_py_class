@@ -123,7 +123,11 @@ def build_teacher(c):
     (SITE / 'teacher' / 'progress' / 'index.html').write_text(dash, encoding='utf-8')
     hub = rd(ROOT / 'teacher' / 'hub.html').replace('__UNITS__', json.dumps(units, ensure_ascii=False)).replace('__ASSESS__', json.dumps(c.get('assessments', []), ensure_ascii=False)).replace('__SITE__', c['site']).replace('__COURSE__', html.escape(c['course']))
     (SITE / 'teacher' / 'index.html').write_text(hub, encoding='utf-8')
-    (SITE / 'index.html').write_text(rd(ROOT / 'teacher' / 'root.html').replace('__COURSE__', html.escape(c['course'])), encoding='utf-8')
+    root = (rd(ROOT / 'teacher' / 'root.html')
+            .replace('__UNITS__', json.dumps(units, ensure_ascii=False))
+            .replace('__SITE__', c['site'])
+            .replace('__COURSE__', html.escape(c['course'])))
+    (SITE / 'index.html').write_text(root, encoding='utf-8')
 
 
 def main(argv):
