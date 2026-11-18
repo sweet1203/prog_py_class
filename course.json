@@ -22,7 +22,7 @@
      "title": "프로그래밍 언어의 종류와 특징",
      "pages": "14~23",
      "form": "prog-u1-languages",
-     "status": "draft"
+     "status": "ready"
     },
     {
      "no": "02",
@@ -30,7 +30,7 @@
      "title": "프로그래밍 절차와 소프트웨어 개발 방법",
      "pages": "24~31",
      "form": "prog-u1-procedure",
-     "status": "draft"
+     "status": "ready"
     },
     {
      "no": "03",
@@ -38,7 +38,7 @@
      "title": "알고리즘의 이해와 표현",
      "pages": "32~37",
      "form": "prog-u1-algorithm",
-     "status": "draft"
+     "status": "ready"
     },
     {
      "no": "04",
@@ -46,7 +46,7 @@
      "title": "알고리즘 작성 · 정리",
      "pages": "38~45",
      "form": "prog-u1-algorithm-write",
-     "status": "draft"
+     "status": "ready"
     },
     {
      "no": "05",
@@ -54,7 +54,7 @@
      "title": "프로그램 개발 환경과 IDE 구축",
      "pages": "46~53",
      "form": "prog-u1-dev-env",
-     "status": "draft"
+     "status": "ready"
     },
     {
      "no": "06",
@@ -62,7 +62,7 @@
      "title": "공유·협업 개발 환경(Git·GitHub) · 정리",
      "pages": "54~61",
      "form": "prog-u1-collab",
-     "status": "draft"
+     "status": "ready"
     },
     {
      "no": "07",
@@ -70,7 +70,7 @@
      "title": "협력적 프로젝트: 무인도 구조",
      "pages": "62~67",
      "form": "prog-u1-project",
-     "status": "draft"
+     "status": "ready"
     }
    ]
   },
@@ -85,7 +85,7 @@
      "title": "입력과 출력",
      "pages": "72~83",
      "form": "prog-u2-io",
-     "status": "draft"
+     "status": "ready"
     },
     {
      "no": "09",
@@ -93,7 +93,7 @@
      "title": "변수와 자료형",
      "pages": "84~99",
      "form": "prog-u2-variable",
-     "status": "draft"
+     "status": "ready"
     },
     {
      "no": "10",
@@ -101,7 +101,7 @@
      "title": "컬렉션 자료형: 리스트·튜플·딕셔너리",
      "pages": "100~109",
      "form": "prog-u2-collection",
-     "status": "draft"
+     "status": "ready"
     },
     {
      "no": "11",
@@ -109,7 +109,7 @@
      "title": "연산자",
      "pages": "110~119",
      "form": "prog-u2-operator",
-     "status": "draft"
+     "status": "ready"
     },
     {
      "no": "12",
@@ -117,7 +117,7 @@
      "title": "제어문: 조건문",
      "pages": "120~131",
      "form": "prog-u2-if",
-     "status": "draft"
+     "status": "ready"
     },
     {
      "no": "13",
@@ -125,7 +125,7 @@
      "title": "제어문: 반복문 · 정리",
      "pages": "132~145",
      "form": "prog-u2-loop",
-     "status": "draft"
+     "status": "ready"
     },
     {
      "no": "14",
@@ -133,7 +133,7 @@
      "title": "함수",
      "pages": "146~161",
      "form": "prog-u2-function",
-     "status": "draft"
+     "status": "ready"
     },
     {
      "no": "15",
@@ -141,7 +141,7 @@
      "title": "파일 처리",
      "pages": "162~177",
      "form": "prog-u2-file",
-     "status": "draft"
+     "status": "ready"
     },
     {
      "no": "16",
@@ -149,7 +149,7 @@
      "title": "협력적 프로젝트: To-Do List",
      "pages": "178~189",
      "form": "prog-u2-project",
-     "status": "draft"
+     "status": "ready"
     },
     {
      "no": "17",
@@ -157,7 +157,7 @@
      "title": "프로그래밍 실습 모음",
      "pages": "190~197",
      "form": "prog-u2-lab",
-     "status": "draft"
+     "status": "ready"
     }
    ]
   },
@@ -172,7 +172,7 @@
      "title": "설계와 절차: 급식 메뉴 선택 ① 분석·설계",
      "pages": "202~211",
      "form": "prog-u3-design",
-     "status": "draft"
+     "status": "ready"
     },
     {
      "no": "19",
@@ -180,7 +180,7 @@
      "title": "급식 메뉴 선택 ② 구현",
      "pages": "212~221",
      "form": "prog-u3-build",
-     "status": "draft"
+     "status": "ready"
     },
     {
      "no": "20",
@@ -188,7 +188,7 @@
      "title": "프로그래밍 실제: PDF 문서 자동 변환 ①",
      "pages": "222~227",
      "form": "prog-u3-automate",
-     "status": "draft"
+     "status": "ready"
     },
     {
      "no": "21",
@@ -196,7 +196,7 @@
      "title": "PDF 문서 자동 변환 ② · 정리",
      "pages": "228~233",
      "form": "prog-u3-automate-2",
-     "status": "draft"
+     "status": "ready"
     }
    ]
   },
@@ -211,7 +211,7 @@
      "title": "터틀 그래픽",
      "pages": "235~241",
      "form": "prog-appendix-turtle",
-     "status": "draft"
+     "status": "ready"
     }
    ]
   }
